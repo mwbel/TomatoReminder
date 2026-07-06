@@ -1,0 +1,11 @@
+# Swift build artifacts
+.build/
+
+# macOS
+.DS_Store
+
+# App build output
+/dist/
+
+# Temporary/attachments
+启示/
