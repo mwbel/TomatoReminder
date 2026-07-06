@@ -8,7 +8,7 @@ struct TomatoReminderApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(store)
-                .frame(minWidth: 1320, minHeight: 660)
+                .frame(minWidth: 820, minHeight: 520)
         }
         .windowStyle(.hiddenTitleBar)
         .commands {

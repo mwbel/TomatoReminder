@@ -23,29 +23,39 @@ struct ContentView: View {
                 FullscreenTimerView(isPresented: $isTimerFullscreen)
                     .transition(.opacity.combined(with: .scale(scale: 0.98)))
             } else {
-                VStack(spacing: 18) {
-                    HeaderView()
+                GeometryReader { proxy in
+                    let referenceWidth: CGFloat = 1320
+                    let scale = min(1, proxy.size.width / referenceWidth)
+                    let contentWidth = max(proxy.size.width / max(scale, 0.01), referenceWidth)
+                    let contentHeight = max(proxy.size.height / max(scale, 0.01), 660)
 
-                    HStack(alignment: .top, spacing: 18) {
-                        PlanSidebar(selectedPlan: $selectedPlan, searchText: $searchText)
-                            .frame(width: 244)
+                    VStack(spacing: 18) {
+                        HeaderView()
 
-                        TaskColumn(selectedPlan: $selectedPlan, searchText: searchText)
-                            .frame(width: 360)
+                        HStack(alignment: .top, spacing: 18) {
+                            PlanSidebar(selectedPlan: $selectedPlan, searchText: $searchText)
+                                .frame(width: 244)
 
-                        TimerPanel {
-                            withAnimation(.easeInOut(duration: 0.18)) {
-                                isTimerFullscreen = true
+                            TaskColumn(selectedPlan: $selectedPlan, searchText: searchText)
+                                .frame(width: 360)
+
+                            TimerPanel {
+                                withAnimation(.easeInOut(duration: 0.18)) {
+                                    isTimerFullscreen = true
+                                }
                             }
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-                        StatsColumn()
-                            .frame(width: 238)
+                            StatsColumn()
+                                .frame(width: 238)
+                        }
+                        .frame(maxHeight: .infinity)
                     }
-                    .frame(maxHeight: .infinity)
+                    .padding(24)
+                    .frame(width: contentWidth, height: contentHeight, alignment: .topLeading)
+                    .scaleEffect(scale, anchor: .topLeading)
+                    .frame(width: proxy.size.width, height: proxy.size.height, alignment: .topLeading)
                 }
-                .padding(24)
                 .transition(.opacity)
             }
         }
@@ -61,11 +71,18 @@ private struct HeaderView: View {
                 Text("Tomato Reminder")
                     .font(.system(size: 24, weight: .bold, design: .rounded))
                     .foregroundStyle(Color(hex: 0x232323))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.62)
+                    .allowsTightening(true)
 
                 Text("今日专注 \(store.todayFocusSeconds.hourMinuteText) · \(store.todayFocusSessions) 个番茄")
                     .font(.system(size: 13, weight: .medium))
                     .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.72)
+                    .allowsTightening(true)
             }
+            .layoutPriority(1)
 
             Spacer()
 
@@ -496,6 +513,8 @@ private struct TimerPanel: View {
             }
             .padding(.vertical, 8)
 
+            InspirationTextView(text: store.currentInspirationText, maxWidth: 340)
+
             HStack(spacing: 14) {
                 Button {
                     store.resetTimer()
@@ -516,14 +535,14 @@ private struct TimerPanel: View {
                 .help(store.isRunning ? "暂停" : "开始")
 
                 Button {
-                    store.markSelectedTaskDone()
+                    store.finishCurrentIntervalNow()
                 } label: {
                     Image(systemName: "checkmark")
                         .font(.system(size: 17, weight: .semibold))
                 }
                 .buttonStyle(.largeCircle(color: Color(hex: 0xE9ECEF), foreground: Color(hex: 0x40444D)))
-                .help("完成当前任务")
-                .disabled(store.selectedTask == nil)
+                .help(store.isRunning ? "完成当前计时" : "完成当前任务")
+                .disabled(!store.isRunning && store.selectedTask == nil)
             }
 
             FocusDots()
@@ -610,6 +629,8 @@ private struct FullscreenTimerView: View {
                         }
                     }
 
+                    InspirationTextView(text: store.currentInspirationText, maxWidth: min(max(proxy.size.width * 0.56, 560), 820), fontSize: 18)
+
                     HStack(spacing: 20) {
                         Button {
                             store.resetTimer()
@@ -630,14 +651,14 @@ private struct FullscreenTimerView: View {
                         .help(store.isRunning ? "暂停" : "开始")
 
                         Button {
-                            store.markSelectedTaskDone()
+                            store.finishCurrentIntervalNow()
                         } label: {
                             Image(systemName: "checkmark")
                                 .font(.system(size: 20, weight: .semibold))
                         }
                         .buttonStyle(.largeCircle(color: Color(hex: 0xE9ECEF), foreground: Color(hex: 0x40444D), size: 60))
-                        .help("完成当前任务")
-                        .disabled(store.selectedTask == nil)
+                        .help(store.isRunning ? "完成当前计时" : "完成当前任务")
+                        .disabled(!store.isRunning && store.selectedTask == nil)
                     }
 
                     FocusDots()
@@ -657,16 +678,49 @@ private struct FullscreenTimerView: View {
     }
 }
 
+private struct InspirationTextView: View {
+    let text: String?
+    var maxWidth: CGFloat
+    var fontSize: CGFloat = 14
+
+    var body: some View {
+        if let text, !text.isEmpty {
+            Text(text)
+                .font(.system(size: fontSize, weight: .semibold))
+                .foregroundStyle(Color(hex: 0x555B64))
+                .multilineTextAlignment(.center)
+                .lineSpacing(4)
+                .lineLimit(nil)
+                .padding(.horizontal, 18)
+                .padding(.vertical, 12)
+                .frame(maxWidth: maxWidth)
+                .fixedSize(horizontal: false, vertical: true)
+                .layoutPriority(10)
+                .background(Color.white.opacity(0.56), in: RoundedRectangle(cornerRadius: 8))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.white.opacity(0.72), lineWidth: 1)
+                )
+        }
+    }
+}
+
 private struct FocusDots: View {
     @EnvironmentObject private var store: FocusStore
 
     var body: some View {
-        HStack(spacing: 8) {
-            ForEach(0..<store.longBreakAfter, id: \.self) { index in
-                Circle()
-                    .fill(index < store.focusCycleCount % store.longBreakAfter ? Color(hex: 0xF05A4F) : Color(hex: 0xD9DDE5))
-                    .frame(width: 9, height: 9)
+        VStack(spacing: 7) {
+            HStack(spacing: 8) {
+                ForEach(0..<store.longBreakAfter, id: \.self) { index in
+                    Circle()
+                        .fill(index < store.focusCycleCount % store.longBreakAfter ? Color(hex: 0xF05A4F) : Color(hex: 0xD9DDE5))
+                        .frame(width: 9, height: 9)
+                }
             }
+
+            Text("长休息进度 \(store.focusCycleCount % store.longBreakAfter)/\(store.longBreakAfter)")
+                .font(.system(size: 11, weight: .semibold))
+                .foregroundStyle(Color(hex: 0xA5ABB5))
         }
         .accessibilityLabel("长休息前番茄进度")
     }

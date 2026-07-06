@@ -183,6 +183,14 @@ private struct AppSnapshot: Codable {
     var focusCycleCount: Int
 }
 
+private struct InspirationDatabase: Decodable {
+    struct Record: Decodable {
+        let text: String
+    }
+
+    let records: [Record]
+}
+
 @MainActor
 final class FocusStore: ObservableObject {
     @Published var tasks: [FocusTask] = [] { didSet { saveSnapshot() } }
@@ -231,12 +239,14 @@ final class FocusStore: ObservableObject {
     @Published var autoStartFocus = false { didSet { saveSnapshot() } }
     @Published var playFinishSound = true { didSet { saveSnapshot() } }
     @Published var focusCycleCount = 0 { didSet { saveSnapshot() } }
+    @Published var currentInspirationText: String?
 
     private let defaultsKey = "tomatoReminder.snapshot.v1"
     private var timer: Timer?
     private var intervalStartedAt: Date?
     private var lastTickAt: Date?
     private var isRestoring = false
+    private var inspirationTexts: [String] = []
 
     init() {
         restoreSnapshot()
@@ -250,6 +260,7 @@ final class FocusStore: ObservableObject {
         }
 
         remainingSeconds = duration(for: selectedMode)
+        inspirationTexts = loadInspirationTexts()
         requestNotificationPermission()
     }
 
@@ -341,9 +352,14 @@ final class FocusStore: ObservableObject {
 
     func startTimer() {
         guard !isRunning else { return }
+        let isStartingNewInterval = intervalStartedAt == nil
 
         if selectedMode == .focus, selectedTaskID == nil {
             selectedTaskID = activeTasks.first?.id
+        }
+
+        if selectedMode == .focus, isStartingNewInterval {
+            currentInspirationText = inspirationTexts.randomElement()
         }
 
         intervalStartedAt = intervalStartedAt ?? Date()
@@ -371,6 +387,9 @@ final class FocusStore: ObservableObject {
         pauseTimer()
         remainingSeconds = duration(for: selectedMode)
         intervalStartedAt = nil
+        if selectedMode == .focus {
+            currentInspirationText = nil
+        }
     }
 
     func switchMode(_ mode: FocusMode) {
@@ -423,6 +442,14 @@ final class FocusStore: ObservableObject {
         toggleTaskDone(selectedTask)
     }
 
+    func finishCurrentIntervalNow() {
+        if isRunning {
+            completeCurrentInterval()
+        } else {
+            markSelectedTaskDone()
+        }
+    }
+
     func clearCompletedTasks() {
         tasks.removeAll(where: \.isDone)
         if let selectedTaskID, !tasks.contains(where: { $0.id == selectedTaskID }) {
@@ -469,7 +496,7 @@ final class FocusStore: ObservableObject {
         let completedMode = selectedMode
         let endDate = Date()
         let startedAt = intervalStartedAt ?? endDate.addingTimeInterval(TimeInterval(-duration(for: completedMode)))
-        let completedSeconds = duration(for: completedMode)
+        let completedSeconds = max(duration(for: completedMode) - remainingSeconds, 1)
         let taskTitle = selectedTask?.title ?? "自由专注"
         let taskID = selectedTask?.id
 
@@ -516,6 +543,7 @@ final class FocusStore: ObservableObject {
         case .shortBreak, .longBreak:
             selectedMode = .focus
             remainingSeconds = duration(for: .focus)
+            currentInspirationText = nil
             if autoStartFocus {
                 startTimer()
             }
@@ -596,6 +624,84 @@ final class FocusStore: ObservableObject {
         guard let data = try? JSONEncoder().encode(snapshot) else { return }
         UserDefaults.standard.set(data, forKey: defaultsKey)
     }
+
+    private func loadInspirationTexts() -> [String] {
+        let urls = [
+            Bundle.main.resourceURL?.appendingPathComponent("data/qishi_ocr.json"),
+            URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+                .appendingPathComponent("data/qishi_ocr.json")
+        ].compactMap { $0 }
+
+        guard
+            let url = urls.first(where: { FileManager.default.fileExists(atPath: $0.path) }),
+            let data = try? Data(contentsOf: url),
+            let database = try? JSONDecoder().decode(InspirationDatabase.self, from: data)
+        else { return [] }
+
+        return database.records
+            .compactMap { Self.inspirationCandidate(from: $0.text) }
+            .uniqued()
+    }
+
+    private static func inspirationCandidate(from text: String) -> String? {
+        let ignoredExactLines: Set<String> = [
+            "打开",
+            "我治好您，您治好世界",
+            "我治好您 您治好世界",
+            "日中一坐",
+            "专注中",
+            "休息中",
+            "点击填写本次专注心得",
+            "结果生成中…"
+        ]
+
+        let ignoredFragments = [
+            "我治好您",
+            "您治好世界",
+            "五根本气",
+            "根本气",
+            "习惯"
+        ]
+
+        let lines = text
+            .components(separatedBy: .newlines)
+            .map { Self.cleanedInspirationLine($0) }
+            .filter { line in
+                guard !ignoredExactLines.contains(line) else { return false }
+                guard !ignoredFragments.contains(where: { line.contains($0) }) else { return false }
+                guard !line.allSatisfy({ $0.isNumber || $0 == ":" || $0 == " " }) else { return false }
+                guard line.range(of: "\\p{Han}", options: .regularExpression) != nil else { return false }
+                if line.count >= 3 { return true }
+                return line.rangeOfCharacter(from: CharacterSet(charactersIn: "的一是在不有中人了为和以到始向上子己自心力生")) != nil
+            }
+
+        let quote = lines.joined()
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+
+        guard quote.count >= 12 else { return nil }
+        return quote
+    }
+
+    private static func cleanedInspirationLine(_ line: String) -> String {
+        line
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .replacingOccurrences(
+                of: #"^\d{1,2}[:：]\d{2}\s*[-—–~·•|丨:：>》）\]\)]*\s*"#,
+                with: "",
+                options: .regularExpression
+            )
+            .replacingOccurrences(
+                of: #"[-—–~·•|丨:：>》）\]\)]*\s*今日\s*\d+\s*/\s*\d+\s*次\s*$"#,
+                with: "",
+                options: .regularExpression
+            )
+            .replacingOccurrences(
+                of: #"(?<=\p{Han})[.．](?=\p{Han})"#,
+                with: "，",
+                options: .regularExpression
+            )
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
 }
 
 extension Int {
@@ -629,6 +735,13 @@ extension Int {
         }
 
         return "\(hours)h \(minutes)m"
+    }
+}
+
+private extension Array where Element: Hashable {
+    func uniqued() -> [Element] {
+        var seen = Set<Element>()
+        return filter { seen.insert($0).inserted }
     }
 }
 
