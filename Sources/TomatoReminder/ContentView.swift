@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var selectedPlan: PlanView = .today
     @State private var searchText = ""
     @State private var isTimerFullscreen = false
+    @State private var isAddItemPresented = false
 
     var body: some View {
         ZStack {
@@ -36,8 +37,10 @@ struct ContentView: View {
                             PlanSidebar(selectedPlan: $selectedPlan, searchText: $searchText)
                                 .frame(width: 244)
 
-                            TaskColumn(selectedPlan: $selectedPlan, searchText: searchText)
-                                .frame(width: 360)
+                            TaskColumn(selectedPlan: $selectedPlan, searchText: searchText) {
+                                isAddItemPresented = true
+                            }
+                            .frame(width: 360)
 
                             TimerPanel {
                                 withAnimation(.easeInOut(duration: 0.18)) {
@@ -57,6 +60,20 @@ struct ContentView: View {
                     .frame(width: proxy.size.width, height: proxy.size.height, alignment: .topLeading)
                 }
                 .transition(.opacity)
+            }
+
+            if isAddItemPresented {
+                Color.black.opacity(0.24)
+                    .ignoresSafeArea()
+                    .transition(.opacity)
+
+                AddFocusItemDialog(
+                    isPresented: $isAddItemPresented,
+                    defaultPlan: selectedPlan == .completed ? .today : selectedPlan.defaultTaskPlan
+                )
+                .environmentObject(store)
+                .transition(.opacity.combined(with: .scale(scale: 0.98)))
+                .zIndex(2)
             }
         }
     }
@@ -229,10 +246,7 @@ private struct TaskColumn: View {
     @EnvironmentObject private var store: FocusStore
     @Binding var selectedPlan: PlanView
     let searchText: String
-    @State private var newTaskTitle = ""
-    @State private var newTaskEstimate = 1
-    @State private var newTaskPriority: TaskPriority = .medium
-    @State private var newTaskPlan: TaskPlan = .today
+    let onAddItem: () -> Void
 
     private var visibleTasks: [FocusTask] {
         store.filteredTasks(for: selectedPlan, searchText: searchText)
@@ -252,64 +266,12 @@ private struct TaskColumn: View {
                 .buttonStyle(.plainIcon)
                 .help("清理已完成任务")
                 .disabled(!store.tasks.contains(where: \.isDone))
-            }
 
-            VStack(spacing: 10) {
-                TextField("输入一个待办事项", text: $newTaskTitle)
-                    .textFieldStyle(.plain)
-                    .font(.system(size: 14))
-                    .padding(.horizontal, 12)
-                    .frame(height: 38)
-                    .background(.white.opacity(0.82), in: RoundedRectangle(cornerRadius: 8))
-                    .onSubmit(addTask)
-
-                VStack(spacing: 8) {
-                    HStack(spacing: 8) {
-                        Text("计划")
-                            .font(.system(size: 12, weight: .semibold))
-                            .foregroundStyle(.secondary)
-
-                        Picker("计划", selection: $newTaskPlan) {
-                            ForEach(TaskPlan.allCases) { plan in
-                                Text(plan.title).tag(plan)
-                            }
-                        }
-                        .pickerStyle(.menu)
-                        .labelsHidden()
-                        .frame(width: 90)
-
-                        Text("番茄")
-                            .font(.system(size: 12, weight: .semibold))
-                            .foregroundStyle(.secondary)
-
-                        Stepper("\(newTaskEstimate)", value: $newTaskEstimate, in: 1...12)
-                            .labelsHidden()
-                            .frame(width: 64)
-
-                        Spacer(minLength: 0)
-
-                        Button(action: addTask) {
-                            Image(systemName: "plus")
-                        }
-                        .buttonStyle(.accentCircle(color: Color(hex: 0xF05A4F)))
-                        .keyboardShortcut(.return, modifiers: [.command])
-                        .help("添加任务")
-                    }
-
-                    HStack(spacing: 8) {
-                        Text("优先级")
-                            .font(.system(size: 12, weight: .semibold))
-                            .foregroundStyle(.secondary)
-
-                        Picker("优先级", selection: $newTaskPriority) {
-                            ForEach(TaskPriority.allCases) { priority in
-                                Text(priority.title).tag(priority)
-                            }
-                        }
-                        .pickerStyle(.segmented)
-                        .labelsHidden()
-                    }
+                Button(action: onAddItem) {
+                    Image(systemName: "plus")
                 }
+                .buttonStyle(.accentCircle(color: Color(hex: 0xF05A4F)))
+                .help("添加番茄钟、习惯或目标")
             }
 
             ScrollView {
@@ -332,25 +294,6 @@ private struct TaskColumn: View {
             RoundedRectangle(cornerRadius: 8)
                 .stroke(.white.opacity(0.7), lineWidth: 1)
         )
-        .onAppear {
-            newTaskPlan = selectedPlan.defaultTaskPlan
-        }
-        .onChange(of: selectedPlan) { _, newValue in
-            newTaskPlan = newValue.defaultTaskPlan
-        }
-    }
-
-    private func addTask() {
-        let targetPlan = selectedPlan == .completed ? .today : newTaskPlan
-        store.addTask(title: newTaskTitle, estimate: newTaskEstimate, priority: newTaskPriority, plan: targetPlan)
-        newTaskTitle = ""
-        newTaskEstimate = 1
-        newTaskPriority = .medium
-        newTaskPlan = selectedPlan.defaultTaskPlan
-
-        if selectedPlan == .completed {
-            selectedPlan = .today
-        }
     }
 }
 
@@ -372,6 +315,352 @@ private struct EmptyPlanView: View {
     }
 }
 
+private struct AddFocusItemDialog: View {
+    @EnvironmentObject private var store: FocusStore
+    @Binding var isPresented: Bool
+    let defaultPlan: TaskPlan
+
+    @State private var kind: FocusItemKind = .pomodoro
+    @State private var title = ""
+    @State private var plan: TaskPlan = .today
+    @State private var priority: TaskPriority = .medium
+    @State private var estimate = 1
+    @State private var timingStyle: FocusTimingStyle = .countdown
+    @State private var durationMinutes = 25
+    @State private var targetAmount = 1
+    @State private var targetUnit: FocusGoalUnit = .times
+    @State private var habitFrequency: HabitFrequency = .daily
+    @State private var useDeadline = true
+    @State private var deadline = Calendar.current.date(byAdding: .day, value: 7, to: Date()) ?? Date()
+
+    private var dialogTitle: String {
+        switch kind {
+        case .pomodoro: return "添加待办"
+        case .habit: return "添加习惯养成"
+        case .goal: return "添加目标"
+        }
+    }
+
+    private var canCreate: Bool {
+        !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            HStack {
+                Button {
+                    isPresented = false
+                } label: {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 22, weight: .black))
+                }
+                .buttonStyle(.plain)
+                .help("取消")
+
+                Spacer()
+
+                Text(dialogTitle)
+                    .font(.system(size: 22, weight: .heavy))
+                    .foregroundStyle(Color(hex: 0x1F2329))
+
+                Spacer()
+
+                Button(action: createItem) {
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 24, weight: .black))
+                }
+                .buttonStyle(.plain)
+                .disabled(!canCreate)
+                .help("保存")
+            }
+            .padding(.horizontal, 30)
+            .frame(height: 74)
+            .background(Color(hex: 0xF5F6F8))
+
+            VStack(spacing: 22) {
+                Picker("类型", selection: $kind) {
+                    ForEach(FocusItemKind.allCases) { itemKind in
+                        Text(itemKind.title).tag(itemKind)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .labelsHidden()
+
+                TextField("请输入事项名称", text: $title)
+                    .textFieldStyle(.plain)
+                    .font(.system(size: 18, weight: .semibold))
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 18)
+                    .frame(height: 54)
+                    .background(.white, in: RoundedRectangle(cornerRadius: 8))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color(hex: 0xDFE3EA), lineWidth: 1)
+                    )
+                    .onSubmit(createItem)
+
+                kindSpecificFields
+
+                VStack(alignment: .leading, spacing: 14) {
+                    Text("最后一步，设置单次专注的时长：")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundStyle(Color(hex: 0x4D5360))
+
+                    HStack(spacing: 12) {
+                        ForEach(FocusTimingStyle.allCases) { style in
+                            TimingStyleChip(
+                                title: style.title,
+                                isSelected: timingStyle == style
+                            ) {
+                                timingStyle = style
+                            }
+                        }
+                    }
+
+                    HStack(spacing: 16) {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("\(durationMinutes) 分钟")
+                                .font(.system(size: 16, weight: .heavy))
+                                .foregroundStyle(Color(hex: 0x23A8E0))
+                                .padding(.horizontal, 14)
+                                .frame(height: 34)
+                                .background(Color(hex: 0xEAF8FE), in: Capsule())
+
+                            Slider(
+                                value: Binding(
+                                    get: { Double(durationMinutes) },
+                                    set: { durationMinutes = Int($0.rounded()) }
+                                ),
+                                in: 1...120,
+                                step: 1
+                            )
+                            .tint(Color(hex: 0x23A8E0))
+                        }
+
+                        Button {
+                            durationMinutes = 25
+                        } label: {
+                            Image(systemName: "pencil")
+                                .font(.system(size: 18, weight: .bold))
+                        }
+                        .buttonStyle(.largeCircle(color: Color(hex: 0xEAF8FE), foreground: Color(hex: 0x23A8E0), size: 48))
+                        .help("恢复 25 分钟")
+                    }
+                }
+
+                Picker("计划", selection: $plan) {
+                    ForEach(TaskPlan.allCases) { plan in
+                        Text(plan.title).tag(plan)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .labelsHidden()
+
+                Button("更多设置") {}
+                    .buttonStyle(.plain)
+                    .foregroundStyle(Color(hex: 0x23A8E0))
+                    .font(.system(size: 17, weight: .semibold))
+                    .disabled(true)
+            }
+            .padding(.horizontal, 42)
+            .padding(.vertical, 28)
+        }
+        .frame(width: 620)
+        .background(.white, in: RoundedRectangle(cornerRadius: 28, style: .continuous))
+        .shadow(color: .black.opacity(0.22), radius: 28, y: 14)
+        .onAppear {
+            plan = defaultPlan
+            durationMinutes = store.focusSeconds / 60
+        }
+        .onChange(of: kind) { _, newKind in
+            switch newKind {
+            case .pomodoro:
+                timingStyle = .countdown
+                targetUnit = .times
+                targetAmount = max(estimate, 1)
+            case .habit:
+                timingStyle = .countdown
+                targetUnit = .times
+                targetAmount = 1
+            case .goal:
+                timingStyle = .countdown
+                targetUnit = .minutes
+                targetAmount = max(durationMinutes, 25)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var kindSpecificFields: some View {
+        switch kind {
+        case .pomodoro:
+            VStack(spacing: 12) {
+                HStack(spacing: 12) {
+                    Label("番茄数量", systemImage: "timer")
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(Color(hex: 0x5A6170))
+
+                    Stepper("\(estimate)", value: $estimate, in: 1...24)
+                        .frame(width: 104)
+
+                    Spacer()
+
+                    Picker("优先级", selection: $priority) {
+                        ForEach(TaskPriority.allCases) { priority in
+                            Text(priority.title).tag(priority)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .labelsHidden()
+                    .frame(width: 150)
+                }
+            }
+        case .habit:
+            VStack(alignment: .leading, spacing: 14) {
+                HStack(spacing: 12) {
+                    Text("我想")
+                        .font(.system(size: 19, weight: .semibold))
+
+                    Picker("频率", selection: $habitFrequency) {
+                        ForEach(HabitFrequency.allCases) { frequency in
+                            Text(frequency.title).tag(frequency)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    .labelsHidden()
+                    .frame(width: 110)
+
+                    Text("完成")
+                        .font(.system(size: 19, weight: .semibold))
+
+                    TextField("完成量", value: $targetAmount, format: .number)
+                        .textFieldStyle(.plain)
+                        .multilineTextAlignment(.center)
+                        .frame(width: 92, height: 38)
+                        .background(.white, in: RoundedRectangle(cornerRadius: 8))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color(hex: 0xDFE3EA), lineWidth: 1)
+                        )
+
+                    Picker("单位", selection: $targetUnit) {
+                        ForEach(FocusGoalUnit.allCases) { unit in
+                            Text(unit.title).tag(unit)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    .labelsHidden()
+                    .frame(width: 82)
+
+                    Spacer()
+                }
+            }
+            .font(.system(size: 16, weight: .medium))
+            .foregroundStyle(Color(hex: 0x4D5360))
+        case .goal:
+            VStack(alignment: .leading, spacing: 14) {
+                Toggle("设置截止日期", isOn: $useDeadline)
+                    .font(.system(size: 15, weight: .semibold))
+
+                HStack(spacing: 12) {
+                    Text("我想在")
+                        .font(.system(size: 19, weight: .semibold))
+
+                    if useDeadline {
+                        DatePicker("", selection: $deadline, displayedComponents: .date)
+                            .labelsHidden()
+                            .frame(width: 146)
+                    } else {
+                        Text("不设截止日期")
+                            .font(.system(size: 18, weight: .bold))
+                            .foregroundStyle(Color(hex: 0x23A8E0))
+                    }
+
+                    Text("之前")
+                        .font(.system(size: 19, weight: .semibold))
+
+                    Spacer()
+                }
+
+                HStack(spacing: 12) {
+                    Text("一共完成")
+                        .font(.system(size: 19, weight: .semibold))
+
+                    TextField("完成量", value: $targetAmount, format: .number)
+                        .textFieldStyle(.plain)
+                        .multilineTextAlignment(.center)
+                        .frame(width: 112, height: 38)
+                        .background(.white, in: RoundedRectangle(cornerRadius: 8))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color(hex: 0xDFE3EA), lineWidth: 1)
+                        )
+
+                    Picker("单位", selection: $targetUnit) {
+                        ForEach(FocusGoalUnit.allCases) { unit in
+                            Text(unit.title).tag(unit)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    .labelsHidden()
+                    .frame(width: 90)
+
+                    Spacer()
+                }
+            }
+            .font(.system(size: 16, weight: .medium))
+            .foregroundStyle(Color(hex: 0x4D5360))
+        }
+    }
+
+    private func createItem() {
+        guard canCreate else { return }
+
+        let normalizedTarget = max(1, targetAmount)
+        let normalizedEstimate: Int
+
+        switch kind {
+        case .pomodoro:
+            normalizedEstimate = estimate
+        case .habit, .goal:
+            normalizedEstimate = targetUnit == .times ? normalizedTarget : max(1, normalizedTarget / max(durationMinutes, 1))
+        }
+
+        store.addTask(
+            title: title,
+            estimate: normalizedEstimate,
+            priority: priority,
+            plan: plan,
+            kind: kind,
+            timingStyle: timingStyle,
+            durationSeconds: durationMinutes * 60,
+            targetAmount: kind == .pomodoro ? nil : normalizedTarget,
+            targetUnit: kind == .pomodoro ? nil : targetUnit,
+            habitFrequency: kind == .habit ? habitFrequency : nil,
+            deadline: kind == .goal && useDeadline ? deadline : nil
+        )
+        isPresented = false
+    }
+}
+
+private struct TimingStyleChip: View {
+    let title: String
+    let isSelected: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Text(title)
+                .font(.system(size: 17, weight: .bold))
+                .foregroundStyle(isSelected ? Color(hex: 0x23A8E0) : Color(hex: 0x1F2329))
+                .frame(maxWidth: .infinity)
+                .frame(height: 44)
+                .background(isSelected ? Color(hex: 0xEAF8FE) : Color(hex: 0xF1F2F4), in: Capsule())
+        }
+        .buttonStyle(.plain)
+    }
+}
+
 private struct TaskRow: View {
     @EnvironmentObject private var store: FocusStore
     let task: FocusTask
@@ -382,6 +671,10 @@ private struct TaskRow: View {
 
     private var plan: TaskPlan {
         store.taskPlan(for: task)
+    }
+
+    private var kind: FocusItemKind {
+        store.itemKind(for: task)
     }
 
     var body: some View {
@@ -404,13 +697,17 @@ private struct TaskRow: View {
                     .lineLimit(2)
 
                 HStack(spacing: 6) {
-                    Capsule()
-                        .fill(task.priority.color)
-                        .frame(width: 7, height: 7)
+                    Label(kind.shortTitle, systemImage: kind.systemImage)
+                        .font(.system(size: 11, weight: .bold))
+                        .foregroundStyle(kind.color)
+                        .padding(.horizontal, 7)
+                        .frame(height: 18)
+                        .background(kind.color.opacity(0.12), in: Capsule())
 
-                    Text("\(task.completedSessions)/\(task.estimate) 番茄")
+                    Text(store.taskSummary(for: task))
                         .font(.system(size: 12, weight: .medium))
                         .foregroundStyle(.secondary)
+                        .lineLimit(1)
 
                     Menu {
                         ForEach(TaskPlan.allCases) { plan in

@@ -148,6 +148,92 @@ enum PlanView: String, CaseIterable, Identifiable {
     }
 }
 
+enum FocusItemKind: String, CaseIterable, Codable, Identifiable {
+    case pomodoro
+    case habit
+    case goal
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .pomodoro: return "普通番茄钟"
+        case .habit: return "定习惯"
+        case .goal: return "目标"
+        }
+    }
+
+    var shortTitle: String {
+        switch self {
+        case .pomodoro: return "番茄"
+        case .habit: return "习惯"
+        case .goal: return "目标"
+        }
+    }
+
+    var systemImage: String {
+        switch self {
+        case .pomodoro: return "timer"
+        case .habit: return "repeat.circle"
+        case .goal: return "flag.checkered"
+        }
+    }
+
+    var color: Color {
+        switch self {
+        case .pomodoro: return Color(hex: 0xF05A4F)
+        case .habit: return Color(hex: 0x23A8E0)
+        case .goal: return Color(hex: 0x7C58FF)
+        }
+    }
+}
+
+enum FocusTimingStyle: String, CaseIterable, Codable, Identifiable {
+    case countdown
+    case countUp
+    case none
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .countdown: return "倒计时"
+        case .countUp: return "正向计时"
+        case .none: return "不计时"
+        }
+    }
+}
+
+enum FocusGoalUnit: String, CaseIterable, Codable, Identifiable {
+    case minutes
+    case times
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .minutes: return "分钟"
+        case .times: return "次"
+        }
+    }
+}
+
+enum HabitFrequency: String, CaseIterable, Codable, Identifiable {
+    case daily
+    case weekdays
+    case weekly
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .daily: return "每天"
+        case .weekdays: return "工作日"
+        case .weekly: return "每周"
+        }
+    }
+}
+
 struct FocusTask: Codable, Identifiable, Equatable {
     var id: UUID = UUID()
     var title: String
@@ -156,6 +242,13 @@ struct FocusTask: Codable, Identifiable, Equatable {
     var isDone: Bool = false
     var priority: TaskPriority = .medium
     var plan: TaskPlan? = .today
+    var kind: FocusItemKind?
+    var timingStyle: FocusTimingStyle?
+    var customDurationSeconds: Int?
+    var targetAmount: Int?
+    var targetUnit: FocusGoalUnit?
+    var habitFrequency: HabitFrequency?
+    var deadline: Date?
     var createdAt: Date = Date()
 }
 
@@ -334,13 +427,17 @@ final class FocusStore: ObservableObject {
     func estimatedSeconds(for view: PlanView) -> Int {
         filteredTasks(for: view, searchText: "").reduce(0) { total, task in
             let remainingSessions = max(task.estimate - task.completedSessions, 0)
-            return total + remainingSessions * focusSeconds
+            return total + remainingSessions * durationSeconds(for: task)
         }
     }
 
     func duration(for mode: FocusMode) -> Int {
         switch mode {
-        case .focus: return focusSeconds
+        case .focus:
+            if let customDurationSeconds = selectedTask?.customDurationSeconds {
+                return clampedDuration(customDurationSeconds)
+            }
+            return focusSeconds
         case .shortBreak: return shortBreakSeconds
         case .longBreak: return longBreakSeconds
         }
@@ -397,13 +494,73 @@ final class FocusStore: ObservableObject {
         resetTimer()
     }
 
-    func addTask(title: String, estimate: Int, priority: TaskPriority, plan: TaskPlan = .today) {
+    func itemKind(for task: FocusTask) -> FocusItemKind {
+        task.kind ?? .pomodoro
+    }
+
+    func timingStyle(for task: FocusTask) -> FocusTimingStyle {
+        task.timingStyle ?? .countdown
+    }
+
+    func durationSeconds(for task: FocusTask) -> Int {
+        clampedDuration(task.customDurationSeconds ?? focusSeconds)
+    }
+
+    func taskSummary(for task: FocusTask) -> String {
+        let timingStyle = timingStyle(for: task)
+        let minutes = durationSeconds(for: task) / 60
+
+        switch itemKind(for: task) {
+        case .pomodoro:
+            return "\(timingStyle.title) · \(minutes) 分钟"
+        case .habit:
+            let frequency = task.habitFrequency?.title ?? HabitFrequency.daily.title
+            let amount = task.targetAmount ?? 1
+            let unit = task.targetUnit?.title ?? FocusGoalUnit.times.title
+            return "\(timingStyle.title)-习惯 · \(frequency) \(amount)\(unit)"
+        case .goal:
+            let amount = task.targetAmount ?? max(task.estimate, 1)
+            let unit = task.targetUnit?.title ?? FocusGoalUnit.times.title
+            let completed: Int
+            if task.targetUnit == .minutes {
+                completed = task.completedSessions * durationSeconds(for: task) / 60
+            } else {
+                completed = task.completedSessions
+            }
+            return "\(timingStyle.title)-目标 · \(completed)/\(amount)\(unit)"
+        }
+    }
+
+    func addTask(
+        title: String,
+        estimate: Int,
+        priority: TaskPriority,
+        plan: TaskPlan = .today,
+        kind: FocusItemKind = .pomodoro,
+        timingStyle: FocusTimingStyle = .countdown,
+        durationSeconds: Int? = nil,
+        targetAmount: Int? = nil,
+        targetUnit: FocusGoalUnit? = nil,
+        habitFrequency: HabitFrequency? = nil,
+        deadline: Date? = nil
+    ) {
         let trimmed = title.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty else { return }
 
-        let task = FocusTask(title: trimmed, estimate: max(1, estimate), priority: priority, plan: plan)
+        var task = FocusTask(title: trimmed, estimate: max(1, estimate), priority: priority, plan: plan)
+        task.kind = kind
+        task.timingStyle = timingStyle
+        task.customDurationSeconds = durationSeconds.map(clampedDuration)
+        task.targetAmount = targetAmount.map { max(1, $0) }
+        task.targetUnit = targetUnit
+        task.habitFrequency = habitFrequency
+        task.deadline = deadline
         tasks.insert(task, at: 0)
         selectedTaskID = task.id
+
+        if selectedMode == .focus, !isRunning {
+            remainingSeconds = duration(for: .focus)
+        }
     }
 
     func deleteTasks(at offsets: IndexSet) {
@@ -416,6 +573,9 @@ final class FocusStore: ObservableObject {
 
     func selectTask(_ task: FocusTask) {
         selectedTaskID = task.id
+        if selectedMode == .focus, !isRunning {
+            remainingSeconds = duration(for: .focus)
+        }
     }
 
     func toggleTaskDone(_ task: FocusTask) {
@@ -524,7 +684,7 @@ final class FocusStore: ObservableObject {
         guard let taskID, let index = tasks.firstIndex(where: { $0.id == taskID }) else { return }
         tasks[index].completedSessions += 1
 
-        if tasks[index].completedSessions >= tasks[index].estimate {
+        if itemKind(for: tasks[index]) != .habit, tasks[index].completedSessions >= tasks[index].estimate {
             tasks[index].isDone = true
             selectedTaskID = activeTasks.first?.id
         }
