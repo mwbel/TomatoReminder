@@ -39,9 +39,7 @@ struct ContentView: View {
 
                             Group {
                                 if selectedPlan == .practiceStats {
-                                    PracticeStatsColumn(searchText: searchText) {
-                                        isAddItemPresented = true
-                                    }
+                                    PracticeStatsColumn(searchText: searchText)
                                 } else {
                                     TaskColumn(selectedPlan: $selectedPlan, searchText: searchText) {
                                         isAddItemPresented = true
@@ -308,8 +306,9 @@ private struct TaskColumn: View {
 private struct PracticeStatsColumn: View {
     @EnvironmentObject private var store: FocusStore
     let searchText: String
-    let onAddItem: () -> Void
     @State private var selectedSummaryID: UUID?
+    @State private var isCreatePracticePresented = false
+    @State private var isDailyAddPresented = false
 
     private var summaries: [PracticeSummary] {
         store.practiceSummaries(searchText: searchText)
@@ -328,106 +327,142 @@ private struct PracticeStatsColumn: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            HStack {
-                Label("功课统计", systemImage: "chart.bar.xaxis")
-                    .font(.system(size: 16, weight: .semibold))
+        ZStack {
+            VStack(alignment: .leading, spacing: 14) {
+                HStack {
+                    Label("功课统计", systemImage: "chart.bar.xaxis")
+                        .font(.system(size: 16, weight: .semibold))
 
-                Spacer()
+                    Spacer()
 
-                Button(action: onAddItem) {
-                    Image(systemName: "plus")
-                }
-                .buttonStyle(.accentCircle(color: Color(hex: 0xB38B59)))
-                .help("添加功课")
-            }
-
-            VStack(spacing: 12) {
-                HStack(spacing: 10) {
-                    PracticeOverviewTile(title: "今日总打卡", value: "\(todayTotal)")
-                    PracticeOverviewTile(title: "功课数", value: "\(summaries.count)")
+                    Button {
+                        isCreatePracticePresented = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .buttonStyle(.accentCircle(color: Color(hex: 0xB38B59)))
+                    .help("创建功课")
                 }
 
-                if let selectedSummary {
-                    VStack(spacing: 12) {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 5) {
-                                Text(selectedSummary.title)
-                                    .font(.system(size: 18, weight: .heavy))
-                                    .foregroundStyle(Color(hex: 0x2D3138))
-                                    .lineLimit(1)
+                VStack(spacing: 12) {
+                    HStack(spacing: 10) {
+                        PracticeOverviewTile(title: "今日总打卡", value: "\(todayTotal)")
+                        PracticeOverviewTile(title: "功课数", value: "\(summaries.count)")
+                    }
 
-                                Text("\(selectedSummary.kind.shortTitle) · 单位：\(selectedSummary.unitTitle)")
-                                    .font(.system(size: 12, weight: .semibold))
-                                    .foregroundStyle(.secondary)
+                    if let selectedSummary {
+                        VStack(spacing: 12) {
+                            HStack {
+                                VStack(alignment: .leading, spacing: 5) {
+                                    Text(selectedSummary.title)
+                                        .font(.system(size: 18, weight: .heavy))
+                                        .foregroundStyle(Color(hex: 0x2D3138))
+                                        .lineLimit(1)
+
+                                    Text("\(selectedSummary.kind.shortTitle) · 单位：\(selectedSummary.unitTitle)")
+                                        .font(.system(size: 12, weight: .semibold))
+                                        .foregroundStyle(.secondary)
+                                }
+
+                                Spacer()
+
+                                Text("\(selectedSummary.today)")
+                                    .font(.system(size: 34, weight: .heavy, design: .rounded))
+                                    .foregroundStyle(Color(hex: 0x7D828B))
+                                    .monospacedDigit()
                             }
 
-                            Spacer()
+                            HStack(spacing: 0) {
+                                PracticeMetricCell(title: "周", value: selectedSummary.week)
+                                Divider().frame(height: 30)
+                                PracticeMetricCell(title: "月", value: selectedSummary.month)
+                                Divider().frame(height: 30)
+                                PracticeMetricCell(title: "年", value: selectedSummary.year)
+                                Divider().frame(height: 30)
+                                PracticeMetricCell(title: "总", value: selectedSummary.total)
+                            }
 
-                            Text("\(selectedSummary.today)")
-                                .font(.system(size: 34, weight: .heavy, design: .rounded))
-                                .foregroundStyle(Color(hex: 0x7D828B))
-                                .monospacedDigit()
+                            Button {
+                                selectedSummaryID = selectedSummary.id
+                                isDailyAddPresented = true
+                            } label: {
+                                Label("当日添加", systemImage: "plus.circle")
+                                    .frame(maxWidth: .infinity)
+                            }
+                            .buttonStyle(.quiet)
+                        }
+                        .padding(14)
+                        .background(.white.opacity(0.74), in: RoundedRectangle(cornerRadius: 8))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(.white.opacity(0.72), lineWidth: 1)
+                        )
+                    }
+                }
+
+                ScrollView {
+                    LazyVStack(spacing: 8) {
+                        ForEach(Array(summaries.enumerated()), id: \.element.id) { index, summary in
+                            PracticeStatsRow(
+                                rank: index + 1,
+                                summary: summary,
+                                isSelected: selectedSummary?.id == summary.id,
+                                color: practiceRowColor(at: index)
+                            ) {
+                                selectedSummaryID = summary.id
+                            }
                         }
 
-                        HStack(spacing: 0) {
-                            PracticeMetricCell(title: "周", value: selectedSummary.week)
-                            Divider().frame(height: 30)
-                            PracticeMetricCell(title: "月", value: selectedSummary.month)
-                            Divider().frame(height: 30)
-                            PracticeMetricCell(title: "年", value: selectedSummary.year)
-                            Divider().frame(height: 30)
-                            PracticeMetricCell(title: "总", value: selectedSummary.total)
+                        if summaries.isEmpty {
+                            VStack(spacing: 10) {
+                                Image(systemName: "chart.bar.xaxis")
+                                    .font(.system(size: 34, weight: .medium))
+                                    .foregroundStyle(Color(hex: 0xC4CAD3))
+
+                                Text(searchText.isEmpty ? "还没有功课记录" : "没有匹配的功课")
+                                    .font(.system(size: 14, weight: .semibold))
+                                    .foregroundStyle(.secondary)
+
+                                Button("创建功课") {
+                                    isCreatePracticePresented = true
+                                }
+                                .buttonStyle(.quiet)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding(.top, 48)
                         }
                     }
-                    .padding(14)
-                    .background(.white.opacity(0.74), in: RoundedRectangle(cornerRadius: 8))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(.white.opacity(0.72), lineWidth: 1)
-                    )
+                    .padding(.vertical, 2)
                 }
             }
+            .padding(16)
+            .background(.white.opacity(0.72), in: RoundedRectangle(cornerRadius: 8))
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(.white.opacity(0.7), lineWidth: 1)
+            )
 
-            ScrollView {
-                LazyVStack(spacing: 8) {
-                    ForEach(Array(summaries.enumerated()), id: \.element.id) { index, summary in
-                        PracticeStatsRow(
-                            rank: index + 1,
-                            summary: summary,
-                            isSelected: selectedSummary?.id == summary.id,
-                            color: practiceRowColor(at: index)
-                        ) {
-                            selectedSummaryID = summary.id
-                        }
-                    }
+            if isCreatePracticePresented {
+                Color.black.opacity(0.18)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
 
-                    if summaries.isEmpty {
-                        VStack(spacing: 10) {
-                            Image(systemName: "chart.bar.xaxis")
-                                .font(.system(size: 34, weight: .medium))
-                                .foregroundStyle(Color(hex: 0xC4CAD3))
+                PracticeCreateDialog(isPresented: $isCreatePracticePresented)
+                    .environmentObject(store)
+                    .padding(18)
+            }
 
-                            Text(searchText.isEmpty ? "还没有功课记录" : "没有匹配的功课")
-                                .font(.system(size: 14, weight: .semibold))
-                                .foregroundStyle(.secondary)
+            if isDailyAddPresented, let selectedSummary {
+                Color.black.opacity(0.18)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
 
-                            Button("添加功课", action: onAddItem)
-                                .buttonStyle(.quiet)
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, 48)
-                    }
-                }
-                .padding(.vertical, 2)
+                PracticeDailyAddDialog(
+                    isPresented: $isDailyAddPresented,
+                    summary: selectedSummary
+                )
+                .environmentObject(store)
+                .padding(18)
             }
         }
-        .padding(16)
-        .background(.white.opacity(0.72), in: RoundedRectangle(cornerRadius: 8))
-        .overlay(
-            RoundedRectangle(cornerRadius: 8)
-                .stroke(.white.opacity(0.7), lineWidth: 1)
-        )
     }
 
     private func practiceRowColor(at index: Int) -> Color {
@@ -536,6 +571,128 @@ private struct PracticeStatsRow: View {
             )
         }
         .buttonStyle(.plain)
+    }
+}
+
+private struct PracticeCreateDialog: View {
+    @EnvironmentObject private var store: FocusStore
+    @Binding var isPresented: Bool
+    @State private var title = ""
+    @State private var unit: FocusGoalUnit = .times
+
+    private var canCreate: Bool {
+        !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
+    var body: some View {
+        VStack(spacing: 18) {
+            Text("创建功课")
+                .font(.system(size: 22, weight: .heavy))
+                .foregroundStyle(Color(hex: 0x1F2329))
+
+            TextField("请输入功课名称", text: $title)
+                .textFieldStyle(.plain)
+                .font(.system(size: 16, weight: .semibold))
+                .padding(.horizontal, 14)
+                .frame(height: 44)
+                .background(.white, in: RoundedRectangle(cornerRadius: 8))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color(hex: 0xDFE3EA), lineWidth: 1)
+                )
+                .onSubmit(create)
+
+            Picker("单位", selection: $unit) {
+                ForEach(FocusGoalUnit.allCases) { unit in
+                    Text(unit.title).tag(unit)
+                }
+            }
+            .pickerStyle(.segmented)
+            .labelsHidden()
+
+            HStack(spacing: 0) {
+                Button("取消") {
+                    isPresented = false
+                }
+                .buttonStyle(.quiet)
+
+                Spacer(minLength: 12)
+
+                Button("确定") {
+                    create()
+                }
+                .buttonStyle(.quiet)
+                .disabled(!canCreate)
+            }
+        }
+        .padding(22)
+        .background(.white.opacity(0.96), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .shadow(color: .black.opacity(0.18), radius: 18, y: 8)
+    }
+
+    private func create() {
+        guard canCreate else { return }
+        store.addPractice(title: title, unit: unit)
+        isPresented = false
+    }
+}
+
+private struct PracticeDailyAddDialog: View {
+    @EnvironmentObject private var store: FocusStore
+    @Binding var isPresented: Bool
+    let summary: PracticeSummary
+    @State private var amount = 1
+
+    var body: some View {
+        VStack(spacing: 18) {
+            Text("当日添加")
+                .font(.system(size: 22, weight: .heavy))
+                .foregroundStyle(Color(hex: 0x1F2329))
+
+            Text(summary.title)
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+
+            TextField("数量", value: $amount, format: .number)
+                .textFieldStyle(.plain)
+                .font(.system(size: 22, weight: .heavy, design: .rounded))
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 14)
+                .frame(height: 48)
+                .background(.white, in: RoundedRectangle(cornerRadius: 8))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color(hex: 0xDFE3EA), lineWidth: 1)
+                )
+                .onSubmit(add)
+
+            Text("单位：\(summary.unitTitle)")
+                .font(.system(size: 12, weight: .semibold))
+                .foregroundStyle(.secondary)
+
+            HStack(spacing: 0) {
+                Button("取消") {
+                    isPresented = false
+                }
+                .buttonStyle(.quiet)
+
+                Spacer(minLength: 12)
+
+                Button("确定") {
+                    add()
+                }
+                .buttonStyle(.quiet)
+            }
+        }
+        .padding(22)
+        .background(.white.opacity(0.96), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .shadow(color: .black.opacity(0.18), radius: 18, y: 8)
+    }
+
+    private func add() {
+        store.addPracticeEntry(taskID: summary.id, amount: amount)
+        isPresented = false
     }
 }
 

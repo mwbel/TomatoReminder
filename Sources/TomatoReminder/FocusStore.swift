@@ -266,6 +266,14 @@ struct SessionRecord: Codable, Identifiable, Equatable {
     var seconds: Int
 }
 
+struct PracticeEntry: Codable, Identifiable, Equatable {
+    var id: UUID = UUID()
+    var taskID: UUID
+    var amount: Int
+    var unit: FocusGoalUnit
+    var recordedAt: Date = Date()
+}
+
 struct PracticeSummary: Identifiable, Equatable {
     var id: UUID
     var title: String
@@ -292,6 +300,7 @@ private struct AppSnapshot: Codable {
     var autoStartFocus: Bool
     var playFinishSound: Bool
     var focusCycleCount: Int
+    var practiceEntries: [PracticeEntry]?
 }
 
 private struct InspirationDatabase: Decodable {
@@ -306,6 +315,7 @@ private struct InspirationDatabase: Decodable {
 final class FocusStore: ObservableObject {
     @Published var tasks: [FocusTask] = [] { didSet { saveSnapshot() } }
     @Published var sessions: [SessionRecord] = [] { didSet { saveSnapshot() } }
+    @Published var practiceEntries: [PracticeEntry] = [] { didSet { saveSnapshot() } }
     @Published var selectedTaskID: UUID? { didSet { saveSnapshot() } }
 
     @Published var selectedMode: FocusMode = .focus {
@@ -573,6 +583,7 @@ final class FocusStore: ObservableObject {
         return sourceTasks.map { task in
             let taskSessions = sessions.filter { $0.taskID == task.id && $0.mode == .focus }
             let unit = task.targetUnit ?? (itemKind(for: task) == .pomodoro ? .times : .minutes)
+            let taskEntries = practiceEntries.filter { $0.taskID == task.id }
 
             func amount(for sessions: [SessionRecord]) -> Int {
                 switch unit {
@@ -583,21 +594,31 @@ final class FocusStore: ObservableObject {
                 }
             }
 
+            func entryAmount(for entries: [PracticeEntry]) -> Int {
+                entries.reduce(0) { total, entry in
+                    total + max(entry.amount, 0)
+                }
+            }
+
             let todaySessions = taskSessions.filter { calendar.isDateInToday($0.endedAt) }
             let weekSessions = taskSessions.filter { calendar.isDate($0.endedAt, equalTo: Date(), toGranularity: .weekOfYear) }
             let monthSessions = taskSessions.filter { calendar.isDate($0.endedAt, equalTo: Date(), toGranularity: .month) }
             let yearSessions = taskSessions.filter { calendar.isDate($0.endedAt, equalTo: Date(), toGranularity: .year) }
+            let todayEntries = taskEntries.filter { calendar.isDateInToday($0.recordedAt) }
+            let weekEntries = taskEntries.filter { calendar.isDate($0.recordedAt, equalTo: Date(), toGranularity: .weekOfYear) }
+            let monthEntries = taskEntries.filter { calendar.isDate($0.recordedAt, equalTo: Date(), toGranularity: .month) }
+            let yearEntries = taskEntries.filter { calendar.isDate($0.recordedAt, equalTo: Date(), toGranularity: .year) }
 
             return PracticeSummary(
                 id: task.id,
                 title: task.title,
                 kind: itemKind(for: task),
                 unit: unit,
-                today: amount(for: todaySessions),
-                week: amount(for: weekSessions),
-                month: amount(for: monthSessions),
-                year: amount(for: yearSessions),
-                total: amount(for: taskSessions)
+                today: amount(for: todaySessions) + entryAmount(for: todayEntries),
+                week: amount(for: weekSessions) + entryAmount(for: weekEntries),
+                month: amount(for: monthSessions) + entryAmount(for: monthEntries),
+                year: amount(for: yearSessions) + entryAmount(for: yearEntries),
+                total: amount(for: taskSessions) + entryAmount(for: taskEntries)
             )
         }
         .sorted {
@@ -606,6 +627,31 @@ final class FocusStore: ObservableObject {
             }
             return $0.today > $1.today
         }
+    }
+
+    func addPractice(title: String, unit: FocusGoalUnit) {
+        addTask(
+            title: title,
+            estimate: 1,
+            priority: .medium,
+            plan: .today,
+            kind: .habit,
+            timingStyle: .none,
+            durationSeconds: focusSeconds,
+            targetAmount: 1,
+            targetUnit: unit,
+            habitFrequency: .daily
+        )
+    }
+
+    func addPracticeEntry(taskID: UUID, amount: Int) {
+        guard let task = tasks.first(where: { $0.id == taskID }) else { return }
+        let entry = PracticeEntry(
+            taskID: taskID,
+            amount: max(amount, 1),
+            unit: task.targetUnit ?? .times
+        )
+        practiceEntries.append(entry)
     }
 
     func addTask(
@@ -829,6 +875,7 @@ final class FocusStore: ObservableObject {
         isRestoring = true
         tasks = snapshot.tasks
         sessions = snapshot.sessions
+        practiceEntries = snapshot.practiceEntries ?? []
         selectedTaskID = snapshot.selectedTaskID
         focusSeconds = clampedDuration(snapshot.focusSeconds)
         shortBreakSeconds = clampedDuration(snapshot.shortBreakSeconds)
@@ -855,7 +902,8 @@ final class FocusStore: ObservableObject {
             autoStartBreaks: autoStartBreaks,
             autoStartFocus: autoStartFocus,
             playFinishSound: playFinishSound,
-            focusCycleCount: focusCycleCount
+            focusCycleCount: focusCycleCount,
+            practiceEntries: practiceEntries
         )
 
         guard let data = try? JSONEncoder().encode(snapshot) else { return }
