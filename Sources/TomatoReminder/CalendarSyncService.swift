@@ -21,6 +21,12 @@ enum CalendarSyncError: LocalizedError {
     }
 }
 
+struct CalendarSyncResult {
+    let eventIdentifier: String
+    let calendarTitle: String
+    let scheduledDate: Date
+}
+
 @MainActor
 final class CalendarSyncService {
     static let shared = CalendarSyncService()
@@ -35,7 +41,7 @@ final class CalendarSyncService {
         scheduledOn date: Date,
         planTitle: String,
         summary: String
-    ) async throws -> String {
+    ) async throws -> CalendarSyncResult {
         try await ensureCalendarAccess()
 
         let targetCalendar = try writableCalendar()
@@ -44,7 +50,7 @@ final class CalendarSyncService {
         let event = existingEvent(for: task.calendarEventID) ?? EKEvent(eventStore: eventStore)
 
         event.calendar = targetCalendar
-        event.title = "任务：\(task.title)"
+        event.title = task.title
         event.isAllDay = true
         event.startDate = startDate
         event.endDate = endDate
@@ -62,7 +68,11 @@ final class CalendarSyncService {
             throw CalendarSyncError.eventIdentifierMissing
         }
 
-        return eventIdentifier
+        return CalendarSyncResult(
+            eventIdentifier: eventIdentifier,
+            calendarTitle: targetCalendar.title,
+            scheduledDate: startDate
+        )
     }
 
     private func ensureCalendarAccess() async throws {
@@ -82,6 +92,11 @@ final class CalendarSyncService {
     }
 
     private func writableCalendar() throws -> EKCalendar {
+        if let defaultCalendar = eventStore.defaultCalendarForNewEvents,
+           defaultCalendar.allowsContentModifications {
+            return defaultCalendar
+        }
+
         if let calendar = eventStore.calendars(for: .event).first(where: {
             $0.title == calendarTitle && $0.allowsContentModifications
         }) {

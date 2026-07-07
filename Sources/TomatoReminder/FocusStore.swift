@@ -752,7 +752,7 @@ final class FocusStore: ObservableObject {
         }
 
         do {
-            let eventID = try await calendarSyncService.syncTask(
+            let result = try await calendarSyncService.syncTask(
                 task,
                 scheduledOn: calendarDate(for: task),
                 planTitle: taskPlan(for: task).title,
@@ -760,10 +760,10 @@ final class FocusStore: ObservableObject {
             )
 
             if let index = tasks.firstIndex(where: { $0.id == task.id }) {
-                tasks[index].calendarEventID = eventID
+                tasks[index].calendarEventID = result.eventIdentifier
             }
 
-            return "已同步到 Mac 日历。"
+            return "已同步到“\(result.calendarTitle)”日历，日期：\(calendarDateText(result.scheduledDate))。"
         } catch {
             return error.localizedDescription
         }
@@ -785,6 +785,13 @@ final class FocusStore: ObservableObject {
         case .planned:
             return Date()
         }
+    }
+
+    private func calendarDateText(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "zh_CN")
+        formatter.dateFormat = "yyyy年M月d日"
+        return formatter.string(from: date)
     }
 
     func markSelectedTaskDone() {
