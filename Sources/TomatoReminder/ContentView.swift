@@ -6,6 +6,16 @@ struct ContentView: View {
     @State private var searchText = ""
     @State private var isTimerFullscreen = false
     @State private var isAddItemPresented = false
+    @State private var selectedPracticeID: UUID?
+
+    private var selectedPracticeSummary: PracticeSummary? {
+        let summaries = store.practiceSummaries(searchText: searchText)
+        if let selectedPracticeID, let summary = summaries.first(where: { $0.id == selectedPracticeID }) {
+            return summary
+        }
+
+        return summaries.first
+    }
 
     var body: some View {
         ZStack {
@@ -39,7 +49,10 @@ struct ContentView: View {
 
                             Group {
                                 if selectedPlan == .practiceStats {
-                                    PracticeStatsColumn(searchText: searchText)
+                                    PracticeStatsColumn(
+                                        searchText: searchText,
+                                        selectedSummaryID: $selectedPracticeID
+                                    )
                                 } else {
                                     TaskColumn(selectedPlan: $selectedPlan, searchText: searchText) {
                                         isAddItemPresented = true
@@ -48,15 +61,22 @@ struct ContentView: View {
                             }
                             .frame(width: 360)
 
-                            TimerPanel {
-                                withAnimation(.easeInOut(duration: 0.18)) {
-                                    isTimerFullscreen = true
+                            if selectedPlan == .practiceStats,
+                               let practiceSummary = selectedPracticeSummary,
+                               practiceSummary.unit == .times {
+                                PracticeCounterDetailView(summary: practiceSummary)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            } else {
+                                TimerPanel {
+                                    withAnimation(.easeInOut(duration: 0.18)) {
+                                        isTimerFullscreen = true
+                                    }
                                 }
-                            }
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-                            StatsColumn()
-                                .frame(width: 238)
+                                StatsColumn()
+                                    .frame(width: 238)
+                            }
                         }
                         .frame(maxHeight: .infinity)
                     }
@@ -306,12 +326,17 @@ private struct TaskColumn: View {
 private struct PracticeStatsColumn: View {
     @EnvironmentObject private var store: FocusStore
     let searchText: String
-    @State private var selectedSummaryID: UUID?
+    @Binding var selectedSummaryID: UUID?
     @State private var isCreatePracticePresented = false
     @State private var isDailyAddPresented = false
+    @State private var isRenamePracticePresented = false
 
     private var summaries: [PracticeSummary] {
         store.practiceSummaries(searchText: searchText)
+    }
+
+    private var summaryIDs: [UUID] {
+        summaries.map(\.id)
     }
 
     private var selectedSummary: PracticeSummary? {
@@ -354,10 +379,21 @@ private struct PracticeStatsColumn: View {
                         VStack(spacing: 12) {
                             HStack {
                                 VStack(alignment: .leading, spacing: 5) {
-                                    Text(selectedSummary.title)
-                                        .font(.system(size: 18, weight: .heavy))
-                                        .foregroundStyle(Color(hex: 0x2D3138))
-                                        .lineLimit(1)
+                                    HStack(spacing: 6) {
+                                        Text(selectedSummary.title)
+                                            .font(.system(size: 18, weight: .heavy))
+                                            .foregroundStyle(Color(hex: 0x2D3138))
+                                            .lineLimit(1)
+
+                                        Button {
+                                            selectedSummaryID = selectedSummary.id
+                                            isRenamePracticePresented = true
+                                        } label: {
+                                            Image(systemName: "pencil")
+                                        }
+                                        .buttonStyle(.plainIcon)
+                                        .help("修改功课名称")
+                                    }
 
                                     Text("\(selectedSummary.kind.shortTitle) · 单位：\(selectedSummary.unitTitle)")
                                         .font(.system(size: 12, weight: .semibold))
@@ -451,6 +487,19 @@ private struct PracticeStatsColumn: View {
                     .padding(18)
             }
 
+            if isRenamePracticePresented, let selectedSummary {
+                Color.black.opacity(0.18)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+
+                PracticeRenameDialog(
+                    isPresented: $isRenamePracticePresented,
+                    taskID: selectedSummary.id,
+                    currentTitle: selectedSummary.title
+                )
+                .environmentObject(store)
+                .padding(18)
+            }
+
             if isDailyAddPresented, let selectedSummary {
                 Color.black.opacity(0.18)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -462,6 +511,12 @@ private struct PracticeStatsColumn: View {
                 .environmentObject(store)
                 .padding(18)
             }
+        }
+        .onAppear {
+            syncSelection()
+        }
+        .onChange(of: summaryIDs) { _, _ in
+            syncSelection()
         }
     }
 
@@ -475,6 +530,20 @@ private struct PracticeStatsColumn: View {
             Color(hex: 0x9EA786)
         ]
         return colors[index % colors.count]
+    }
+
+    private func syncSelection() {
+        guard !summaries.isEmpty else {
+            selectedSummaryID = nil
+            return
+        }
+
+        if let selectedSummaryID,
+           summaries.contains(where: { $0.id == selectedSummaryID }) {
+            return
+        }
+
+        selectedSummaryID = summaries.first?.id
     }
 }
 
@@ -521,6 +590,149 @@ private struct PracticeMetricCell: View {
                 .minimumScaleFactor(0.7)
         }
         .frame(maxWidth: .infinity)
+    }
+}
+
+private struct PracticeCounterDetailView: View {
+    @EnvironmentObject private var store: FocusStore
+    let summary: PracticeSummary
+    @State private var isDailyAddPresented = false
+    @State private var isRenamePracticePresented = false
+
+    var body: some View {
+        ZStack {
+            VStack(alignment: .leading, spacing: 22) {
+                HStack(alignment: .top, spacing: 16) {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(summary.title)
+                            .font(.system(size: 26, weight: .heavy))
+                            .foregroundStyle(Color(hex: 0x1F2329))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.72)
+
+                        Text("计数目标 · 单位：\(summary.unitTitle)")
+                            .font(.system(size: 13, weight: .semibold))
+                            .foregroundStyle(.secondary)
+                    }
+
+                    Spacer()
+
+                    HStack(spacing: 10) {
+                        Button {
+                            isRenamePracticePresented = true
+                        } label: {
+                            Label("编辑名称", systemImage: "pencil")
+                        }
+                        .buttonStyle(.quiet)
+
+                        Button {
+                            isDailyAddPresented = true
+                        } label: {
+                            Label("当日添加", systemImage: "plus.circle")
+                        }
+                        .buttonStyle(.quiet)
+                    }
+                }
+
+                HStack(spacing: 0) {
+                    PracticeMetricCell(title: "周", value: summary.week)
+                    Divider().frame(height: 36)
+                    PracticeMetricCell(title: "月", value: summary.month)
+                    Divider().frame(height: 36)
+                    PracticeMetricCell(title: "年", value: summary.year)
+                    Divider().frame(height: 36)
+                    PracticeMetricCell(title: "总", value: summary.total)
+                }
+                .padding(.vertical, 14)
+                .background(.white.opacity(0.68), in: RoundedRectangle(cornerRadius: 8))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(.white.opacity(0.72), lineWidth: 1)
+                )
+
+                Spacer(minLength: 18)
+
+                VStack(spacing: 18) {
+                    Text("\(summary.today)")
+                        .font(.system(size: 92, weight: .light, design: .rounded))
+                        .foregroundStyle(Color(hex: 0x7D828B))
+                        .monospacedDigit()
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.62)
+
+                    CounterGlyphView()
+                        .frame(width: 260, height: 260)
+
+                    Text("今日已完成 \(summary.today) \(summary.unitTitle)")
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(.secondary)
+                }
+                .frame(maxWidth: .infinity)
+
+                Spacer(minLength: 18)
+            }
+            .padding(30)
+            .background(.white.opacity(0.72), in: RoundedRectangle(cornerRadius: 8))
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(.white.opacity(0.7), lineWidth: 1)
+            )
+
+            if isRenamePracticePresented {
+                Color.black.opacity(0.18)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+
+                PracticeRenameDialog(
+                    isPresented: $isRenamePracticePresented,
+                    taskID: summary.id,
+                    currentTitle: summary.title
+                )
+                .environmentObject(store)
+                .frame(width: 360)
+            }
+
+            if isDailyAddPresented {
+                Color.black.opacity(0.18)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+
+                PracticeDailyAddDialog(
+                    isPresented: $isDailyAddPresented,
+                    summary: summary
+                )
+                .environmentObject(store)
+                .frame(width: 360)
+            }
+        }
+    }
+}
+
+private struct CounterGlyphView: View {
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(Color(hex: 0xCDBA82).opacity(0.24), lineWidth: 2)
+                .frame(width: 230, height: 230)
+
+            Circle()
+                .stroke(Color(hex: 0xCDBA82).opacity(0.18), lineWidth: 2)
+                .frame(width: 154, height: 154)
+
+            ForEach(0..<12, id: \.self) { index in
+                Capsule()
+                    .fill(Color(hex: 0xCDBA82).opacity(0.16))
+                    .frame(width: 2, height: 70)
+                    .offset(y: -58)
+                    .rotationEffect(.degrees(Double(index) * 30))
+            }
+
+            Circle()
+                .fill(Color(hex: 0xF4F1EA).opacity(0.9))
+                .frame(width: 84, height: 84)
+
+            Image(systemName: "plus")
+                .font(.system(size: 42, weight: .ultraLight))
+                .foregroundStyle(Color(hex: 0xB38B59).opacity(0.54))
+        }
     }
 }
 
@@ -633,6 +845,65 @@ private struct PracticeCreateDialog: View {
     private func create() {
         guard canCreate else { return }
         store.addPractice(title: title, unit: unit)
+        isPresented = false
+    }
+}
+
+private struct PracticeRenameDialog: View {
+    @EnvironmentObject private var store: FocusStore
+    @Binding var isPresented: Bool
+    let taskID: UUID
+    let currentTitle: String
+    @State private var title = ""
+
+    private var canRename: Bool {
+        !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
+    var body: some View {
+        VStack(spacing: 18) {
+            Text("修改功课名称")
+                .font(.system(size: 22, weight: .heavy))
+                .foregroundStyle(Color(hex: 0x1F2329))
+
+            TextField("请输入功课名称", text: $title)
+                .textFieldStyle(.plain)
+                .font(.system(size: 16, weight: .semibold))
+                .padding(.horizontal, 14)
+                .frame(height: 44)
+                .background(.white, in: RoundedRectangle(cornerRadius: 8))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color(hex: 0xDFE3EA), lineWidth: 1)
+                )
+                .onSubmit(rename)
+
+            HStack(spacing: 0) {
+                Button("取消") {
+                    isPresented = false
+                }
+                .buttonStyle(.quiet)
+
+                Spacer(minLength: 12)
+
+                Button("确定") {
+                    rename()
+                }
+                .buttonStyle(.quiet)
+                .disabled(!canRename)
+            }
+        }
+        .padding(22)
+        .background(.white.opacity(0.96), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .shadow(color: .black.opacity(0.18), radius: 18, y: 8)
+        .onAppear {
+            title = currentTitle
+        }
+    }
+
+    private func rename() {
+        guard canRename else { return }
+        store.renamePractice(taskID: taskID, title: title)
         isPresented = false
     }
 }

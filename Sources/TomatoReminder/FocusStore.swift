@@ -654,6 +654,15 @@ final class FocusStore: ObservableObject {
         practiceEntries.append(entry)
     }
 
+    func renamePractice(taskID: UUID, title: String) {
+        let trimmed = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty,
+              let index = tasks.firstIndex(where: { $0.id == taskID })
+        else { return }
+
+        tasks[index].title = trimmed
+    }
+
     func addTask(
         title: String,
         estimate: Int,
