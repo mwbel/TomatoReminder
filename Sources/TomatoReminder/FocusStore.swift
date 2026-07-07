@@ -253,6 +253,7 @@ struct FocusTask: Codable, Identifiable, Equatable {
     var targetUnit: FocusGoalUnit?
     var habitFrequency: HabitFrequency?
     var deadline: Date?
+    var calendarEventID: String? = nil
     var createdAt: Date = Date()
 }
 
@@ -368,6 +369,7 @@ final class FocusStore: ObservableObject {
     private var lastTickAt: Date?
     private var isRestoring = false
     private var inspirationTexts: [String] = []
+    private let calendarSyncService = CalendarSyncService.shared
 
     init() {
         restoreSnapshot()
@@ -742,6 +744,47 @@ final class FocusStore: ObservableObject {
     func moveTask(_ task: FocusTask, to plan: TaskPlan) {
         guard let index = tasks.firstIndex(where: { $0.id == task.id }) else { return }
         tasks[index].plan = plan
+    }
+
+    func syncTaskToCalendar(_ task: FocusTask) async -> String {
+        guard tasks.contains(where: { $0.id == task.id }) else {
+            return "这个任务已经不存在。"
+        }
+
+        do {
+            let eventID = try await calendarSyncService.syncTask(
+                task,
+                scheduledOn: calendarDate(for: task),
+                planTitle: taskPlan(for: task).title,
+                summary: taskSummary(for: task)
+            )
+
+            if let index = tasks.firstIndex(where: { $0.id == task.id }) {
+                tasks[index].calendarEventID = eventID
+            }
+
+            return "已同步到 Mac 日历。"
+        } catch {
+            return error.localizedDescription
+        }
+    }
+
+    func calendarDate(for task: FocusTask) -> Date {
+        if let deadline = task.deadline {
+            return deadline
+        }
+
+        let calendar = Calendar.current
+        switch taskPlan(for: task) {
+        case .today:
+            return Date()
+        case .tomorrow:
+            return calendar.date(byAdding: .day, value: 1, to: Date()) ?? Date()
+        case .thisWeek:
+            return Date()
+        case .planned:
+            return Date()
+        }
     }
 
     func markSelectedTaskDone() {

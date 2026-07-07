@@ -1429,6 +1429,9 @@ private struct TimingStyleChip: View {
 private struct TaskRow: View {
     @EnvironmentObject private var store: FocusStore
     let task: FocusTask
+    @State private var isSyncingCalendar = false
+    @State private var calendarMessage = ""
+    @State private var isCalendarMessagePresented = false
 
     private var isSelected: Bool {
         store.selectedTaskID == task.id
@@ -1508,6 +1511,21 @@ private struct TaskRow: View {
             Spacer(minLength: 4)
 
             Button {
+                syncToCalendar()
+            } label: {
+                if isSyncingCalendar {
+                    ProgressView()
+                        .controlSize(.small)
+                } else {
+                    Image(systemName: task.calendarEventID == nil ? "calendar.badge.plus" : "calendar.badge.checkmark")
+                        .font(.system(size: 13, weight: .bold))
+                }
+            }
+            .buttonStyle(.plainIcon)
+            .help(task.calendarEventID == nil ? "同步任务到日历" : "更新日历任务")
+            .disabled(isSyncingCalendar)
+
+            Button {
                 store.selectTask(task)
             } label: {
                 Image(systemName: isSelected ? "play.fill" : "play")
@@ -1516,6 +1534,11 @@ private struct TaskRow: View {
             .buttonStyle(.accentCircle(color: isSelected ? Color(hex: 0xF05A4F) : Color(hex: 0xD9DDE5)))
             .help("设为当前任务")
             .disabled(task.isDone)
+        }
+        .alert("日历同步", isPresented: $isCalendarMessagePresented) {
+            Button("好", role: .cancel) {}
+        } message: {
+            Text(calendarMessage)
         }
         .padding(12)
         .background(
@@ -1526,6 +1549,17 @@ private struct TaskRow: View {
             RoundedRectangle(cornerRadius: 8)
                 .stroke(isSelected ? Color(hex: 0xF05A4F).opacity(0.55) : .white.opacity(0.45), lineWidth: 1)
         )
+    }
+
+    private func syncToCalendar() {
+        guard !isSyncingCalendar else { return }
+        isSyncingCalendar = true
+
+        Task {
+            calendarMessage = await store.syncTaskToCalendar(task)
+            isSyncingCalendar = false
+            isCalendarMessagePresented = true
+        }
     }
 }
 

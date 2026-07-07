@@ -40,6 +40,10 @@ cat > "$CONTENTS_DIR/Info.plist" <<PLIST
   <string>14.0</string>
   <key>NSHighResolutionCapable</key>
   <true/>
+  <key>NSCalendarsFullAccessUsageDescription</key>
+  <string>用于将你手动选择的任务同步到 Mac 日历，不会写入番茄钟专注记录。</string>
+  <key>NSCalendarsUsageDescription</key>
+  <string>用于将你手动选择的任务同步到 Mac 日历，不会写入番茄钟专注记录。</string>
 </dict>
 </plist>
 PLIST
