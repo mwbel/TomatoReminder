@@ -217,7 +217,7 @@ enum FocusGoalUnit: String, CaseIterable, Codable, Identifiable {
     var title: String {
         switch self {
         case .minutes: return "分钟"
-        case .times: return "次"
+        case .times: return "遍"
         }
     }
 }
@@ -985,7 +985,7 @@ final class FocusStore: ObservableObject {
                 options: .regularExpression
             )
             .replacingOccurrences(
-                of: #"[-—–~·•|丨:：>》）\]\)]*\s*今日\s*\d+\s*/\s*\d+\s*次\s*$"#,
+                of: #"[-—–~·•|丨:：>》）\]\)]*\s*今日\s*\d+\s*/\s*\d+\s*[次遍]\s*$"#,
                 with: "",
                 options: .regularExpression
             )
