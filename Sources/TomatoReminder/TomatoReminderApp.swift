@@ -47,11 +47,11 @@ private struct MenuBarTimerBadge: View {
     var body: some View {
         HStack(spacing: 3) {
             Image(systemName: "timer")
-                .font(.system(size: 9, weight: .heavy))
+                .font(.system(size: AppFontSize.scaled(9), weight: .heavy))
                 .symbolRenderingMode(.monochrome)
 
             Text(seconds.timerText)
-                .font(.system(size: 11, weight: .heavy, design: .rounded))
+                .font(.system(size: AppFontSize.scaled(11), weight: .heavy, design: .rounded))
                 .monospacedDigit()
         }
             .foregroundStyle(.white)

@@ -134,14 +134,14 @@ private struct HeaderView: View {
         HStack(spacing: 16) {
             VStack(alignment: .leading, spacing: 4) {
                 Text("Tomato Reminder")
-                    .font(.system(size: 24, weight: .bold, design: .rounded))
+                    .font(.system(size: AppFontSize.scaled(24), weight: .bold, design: .rounded))
                     .foregroundStyle(Color(hex: 0x232323))
                     .lineLimit(1)
                     .minimumScaleFactor(0.62)
                     .allowsTightening(true)
 
                 Text("今日专注 \(store.todayFocusSeconds.hourMinuteText) · \(store.todayFocusSessions) 个番茄")
-                    .font(.system(size: 13, weight: .medium))
+                    .font(.system(size: AppFontSize.scaled(13), weight: .medium))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
                     .minimumScaleFactor(0.72)
@@ -179,12 +179,12 @@ private struct PlanSidebar: View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(spacing: 9) {
                 Image(systemName: "magnifyingglass")
-                    .font(.system(size: 19, weight: .medium))
+                    .font(.system(size: AppFontSize.scaled(19), weight: .medium))
                     .foregroundStyle(Color(hex: 0xA8ADB4))
 
                 TextField("搜索", text: $searchText)
                     .textFieldStyle(.plain)
-                    .font(.system(size: 16, weight: .semibold))
+                    .font(.system(size: AppFontSize.scaled(16), weight: .semibold))
                     .focused($searchFocused)
 
                 if !searchText.isEmpty {
@@ -193,7 +193,7 @@ private struct PlanSidebar: View {
                         searchFocused = false
                     } label: {
                         Image(systemName: "xmark.circle.fill")
-                            .font(.system(size: 13, weight: .semibold))
+                            .font(.system(size: AppFontSize.scaled(13), weight: .semibold))
                             .foregroundStyle(Color(hex: 0xB5BAC2))
                     }
                     .buttonStyle(.plain)
@@ -241,12 +241,12 @@ private struct PlanSidebarRow: View {
     var body: some View {
         HStack(spacing: 8) {
             Image(systemName: view.systemImage)
-                .font(.system(size: 18, weight: .medium))
+                .font(.system(size: AppFontSize.scaled(18), weight: .medium))
                 .foregroundStyle(view.color)
                 .frame(width: 24)
 
             Text(view.title)
-                .font(.system(size: 16, weight: .semibold))
+                .font(.system(size: AppFontSize.scaled(16), weight: .semibold))
                 .foregroundStyle(Color(hex: 0x42454A))
                 .lineLimit(1)
                 .frame(width: 58, alignment: .leading)
@@ -254,7 +254,7 @@ private struct PlanSidebarRow: View {
             Spacer()
 
             Text(estimatedSeconds.compactDurationText)
-                .font(.system(size: 13, weight: .bold))
+                .font(.system(size: AppFontSize.scaled(13), weight: .bold))
                 .foregroundStyle(Color(hex: 0xA8ADB4))
                 .monospacedDigit()
                 .lineLimit(1)
@@ -262,7 +262,7 @@ private struct PlanSidebarRow: View {
                 .frame(width: 54, alignment: .trailing)
 
             Text("\(count)")
-                .font(.system(size: 13, weight: .bold))
+                .font(.system(size: AppFontSize.scaled(13), weight: .bold))
                 .foregroundStyle(Color(hex: 0xA8ADB4))
                 .monospacedDigit()
                 .frame(minWidth: 18, alignment: .trailing)
@@ -306,7 +306,7 @@ private struct TaskColumn: View {
         VStack(alignment: .leading, spacing: 14) {
             HStack {
                 Label(selectedPlan.title, systemImage: selectedPlan.systemImage)
-                    .font(.system(size: 16, weight: .semibold))
+                    .font(.system(size: AppFontSize.scaled(16), weight: .semibold))
                 Spacer()
                 Button {
                     store.clearCompletedTasks()
@@ -381,7 +381,7 @@ private struct PracticeStatsColumn: View {
             VStack(alignment: .leading, spacing: 14) {
                 HStack {
                     Label("功课统计", systemImage: "chart.bar.xaxis")
-                        .font(.system(size: 16, weight: .semibold))
+                        .font(.system(size: AppFontSize.scaled(16), weight: .semibold))
 
                     Spacer()
 
@@ -406,7 +406,7 @@ private struct PracticeStatsColumn: View {
                                 VStack(alignment: .leading, spacing: 5) {
                                     HStack(spacing: 6) {
                                         Text(selectedSummary.title)
-                                            .font(.system(size: 18, weight: .heavy))
+                                            .font(.system(size: AppFontSize.scaled(18), weight: .heavy))
                                             .foregroundStyle(Color(hex: 0x2D3138))
                                             .lineLimit(1)
 
@@ -430,14 +430,14 @@ private struct PracticeStatsColumn: View {
                                     }
 
                                     Text("\(selectedSummary.kind.shortTitle) · 单位：\(selectedSummary.unitTitle)")
-                                        .font(.system(size: 12, weight: .semibold))
+                                        .font(.system(size: AppFontSize.scaled(12), weight: .semibold))
                                         .foregroundStyle(.secondary)
                                 }
 
                                 Spacer()
 
                                 Text("\(selectedSummary.today)")
-                                    .font(.system(size: 34, weight: .heavy, design: .rounded))
+                                    .font(.system(size: AppFontSize.scaled(34), weight: .heavy, design: .rounded))
                                     .foregroundStyle(Color(hex: 0x7D828B))
                                     .monospacedDigit()
                             }
@@ -486,11 +486,11 @@ private struct PracticeStatsColumn: View {
                         if summaries.isEmpty {
                             VStack(spacing: 10) {
                                 Image(systemName: "chart.bar.xaxis")
-                                    .font(.system(size: 34, weight: .medium))
+                                    .font(.system(size: AppFontSize.scaled(34), weight: .medium))
                                     .foregroundStyle(Color(hex: 0xC4CAD3))
 
                                 Text(searchText.isEmpty ? "还没有功课记录" : "没有匹配的功课")
-                                    .font(.system(size: 14, weight: .semibold))
+                                    .font(.system(size: AppFontSize.scaled(14), weight: .semibold))
                                     .foregroundStyle(.secondary)
 
                                 Button("创建功课") {
@@ -602,11 +602,11 @@ private struct PracticeOverviewTile: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text(title)
-                .font(.system(size: 12, weight: .semibold))
+                .font(.system(size: AppFontSize.scaled(12), weight: .semibold))
                 .foregroundStyle(.secondary)
 
             Text(value)
-                .font(.system(size: 24, weight: .heavy, design: .rounded))
+                .font(.system(size: AppFontSize.scaled(24), weight: .heavy, design: .rounded))
                 .foregroundStyle(Color(hex: 0x2D3138))
                 .monospacedDigit()
         }
@@ -627,11 +627,11 @@ private struct PracticeMetricCell: View {
     var body: some View {
         VStack(spacing: 4) {
             Text(title)
-                .font(.system(size: 12, weight: .semibold))
+                .font(.system(size: AppFontSize.scaled(12), weight: .semibold))
                 .foregroundStyle(.secondary)
 
             Text("\(value)")
-                .font(.system(size: 18, weight: .heavy, design: .rounded))
+                .font(.system(size: AppFontSize.scaled(18), weight: .heavy, design: .rounded))
                 .foregroundStyle(Color(hex: 0x7D828B))
                 .monospacedDigit()
                 .lineLimit(1)
@@ -658,13 +658,13 @@ private struct PracticeCounterDetailView: View {
                 HStack(alignment: .top, spacing: 16) {
                     VStack(alignment: .leading, spacing: 6) {
                         Text(summary.title)
-                            .font(.system(size: 26, weight: .heavy))
+                            .font(.system(size: AppFontSize.scaled(26), weight: .heavy))
                             .foregroundStyle(Color(hex: 0x1F2329))
                             .lineLimit(1)
                             .minimumScaleFactor(0.72)
 
                         Text("\(detailKindTitle) · 单位：\(summary.unitTitle)")
-                            .font(.system(size: 13, weight: .semibold))
+                            .font(.system(size: AppFontSize.scaled(13), weight: .semibold))
                             .foregroundStyle(.secondary)
                     }
 
@@ -714,7 +714,7 @@ private struct PracticeCounterDetailView: View {
 
                 VStack(spacing: 18) {
                     Text("\(summary.today)")
-                        .font(.system(size: 92, weight: .light, design: .rounded))
+                        .font(.system(size: AppFontSize.scaled(92), weight: .light, design: .rounded))
                         .foregroundStyle(Color(hex: 0x7D828B))
                         .monospacedDigit()
                         .lineLimit(1)
@@ -724,7 +724,7 @@ private struct PracticeCounterDetailView: View {
                         .frame(width: 260, height: 260)
 
                     Text("今日已完成 \(summary.today) \(summary.unitTitle)")
-                        .font(.system(size: 15, weight: .semibold))
+                        .font(.system(size: AppFontSize.scaled(15), weight: .semibold))
                         .foregroundStyle(.secondary)
                 }
                 .frame(maxWidth: .infinity)
@@ -802,7 +802,7 @@ private struct CounterGlyphView: View {
                 .frame(width: 84, height: 84)
 
             Image(systemName: "plus")
-                .font(.system(size: 42, weight: .ultraLight))
+                .font(.system(size: AppFontSize.scaled(42), weight: .ultraLight))
                 .foregroundStyle(Color(hex: 0xB38B59).opacity(0.54))
         }
     }
@@ -817,11 +817,11 @@ private struct PracticeDeleteDialog: View {
     var body: some View {
         VStack(spacing: 18) {
             Text("删除功课")
-                .font(.system(size: 22, weight: .heavy))
+                .font(.system(size: AppFontSize.scaled(22), weight: .heavy))
                 .foregroundStyle(Color(hex: 0x1F2329))
 
             Text("确定删除“\(summary.title)”吗？它的手动打卡记录也会一起删除。")
-                .font(.system(size: 14, weight: .semibold))
+                .font(.system(size: AppFontSize.scaled(14), weight: .semibold))
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
                 .lineLimit(3)
@@ -841,7 +841,7 @@ private struct PracticeDeleteDialog: View {
                     isPresented = false
                 } label: {
                     Label("删除", systemImage: "trash")
-                        .font(.system(size: 13, weight: .bold))
+                        .font(.system(size: AppFontSize.scaled(13), weight: .bold))
                         .foregroundStyle(.white)
                         .padding(.horizontal, 14)
                         .frame(height: 36)
@@ -867,7 +867,7 @@ private struct PracticeStatsRow: View {
         Button(action: action) {
             HStack(spacing: 13) {
                 Text("\(rank)")
-                    .font(.system(size: 24, weight: .heavy, design: .rounded))
+                    .font(.system(size: AppFontSize.scaled(24), weight: .heavy, design: .rounded))
                     .foregroundStyle(.white)
                     .monospacedDigit()
                     .frame(width: 48, height: 48)
@@ -878,12 +878,12 @@ private struct PracticeStatsRow: View {
 
                 VStack(alignment: .leading, spacing: 6) {
                     Text(summary.title)
-                        .font(.system(size: 18, weight: .heavy))
+                        .font(.system(size: AppFontSize.scaled(18), weight: .heavy))
                         .foregroundStyle(.white)
                         .lineLimit(1)
 
                     Text("日 \(summary.today) / 总 \(summary.total) \(summary.unitTitle)")
-                        .font(.system(size: 13, weight: .bold))
+                        .font(.system(size: AppFontSize.scaled(13), weight: .bold))
                         .foregroundStyle(.white.opacity(0.86))
                         .lineLimit(1)
                 }
@@ -891,7 +891,7 @@ private struct PracticeStatsRow: View {
                 Spacer()
 
                 Image(systemName: summary.kind.systemImage)
-                    .font(.system(size: 18, weight: .bold))
+                    .font(.system(size: AppFontSize.scaled(18), weight: .bold))
                     .foregroundStyle(.white.opacity(0.86))
             }
             .padding(.horizontal, 12)
@@ -919,12 +919,12 @@ private struct PracticeCreateDialog: View {
     var body: some View {
         VStack(spacing: 18) {
             Text("创建功课")
-                .font(.system(size: 22, weight: .heavy))
+                .font(.system(size: AppFontSize.scaled(22), weight: .heavy))
                 .foregroundStyle(Color(hex: 0x1F2329))
 
             TextField("请输入功课名称", text: $title)
                 .textFieldStyle(.plain)
-                .font(.system(size: 16, weight: .semibold))
+                .font(.system(size: AppFontSize.scaled(16), weight: .semibold))
                 .padding(.horizontal, 14)
                 .frame(height: 44)
                 .background(.white, in: RoundedRectangle(cornerRadius: 8))
@@ -983,12 +983,12 @@ private struct PracticeRenameDialog: View {
     var body: some View {
         VStack(spacing: 18) {
             Text("修改功课名称")
-                .font(.system(size: 22, weight: .heavy))
+                .font(.system(size: AppFontSize.scaled(22), weight: .heavy))
                 .foregroundStyle(Color(hex: 0x1F2329))
 
             TextField("请输入功课名称", text: $title)
                 .textFieldStyle(.plain)
-                .font(.system(size: 16, weight: .semibold))
+                .font(.system(size: AppFontSize.scaled(16), weight: .semibold))
                 .padding(.horizontal, 14)
                 .frame(height: 44)
                 .background(.white, in: RoundedRectangle(cornerRadius: 8))
@@ -1037,17 +1037,17 @@ private struct PracticeDailyAddDialog: View {
     var body: some View {
         VStack(spacing: 18) {
             Text("当日添加")
-                .font(.system(size: 22, weight: .heavy))
+                .font(.system(size: AppFontSize.scaled(22), weight: .heavy))
                 .foregroundStyle(Color(hex: 0x1F2329))
 
             Text(summary.title)
-                .font(.system(size: 14, weight: .semibold))
+                .font(.system(size: AppFontSize.scaled(14), weight: .semibold))
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
 
             TextField("数量", value: $amount, format: .number)
                 .textFieldStyle(.plain)
-                .font(.system(size: 22, weight: .heavy, design: .rounded))
+                .font(.system(size: AppFontSize.scaled(22), weight: .heavy, design: .rounded))
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 14)
                 .frame(height: 48)
@@ -1059,7 +1059,7 @@ private struct PracticeDailyAddDialog: View {
                 .onSubmit(add)
 
             Text("单位：\(summary.unitTitle)")
-                .font(.system(size: 12, weight: .semibold))
+                .font(.system(size: AppFontSize.scaled(12), weight: .semibold))
                 .foregroundStyle(.secondary)
 
             HStack(spacing: 0) {
@@ -1094,11 +1094,11 @@ private struct EmptyPlanView: View {
     var body: some View {
         VStack(spacing: 10) {
             Image(systemName: searchText.isEmpty ? selectedPlan.systemImage : "magnifyingglass")
-                .font(.system(size: 34, weight: .medium))
+                .font(.system(size: AppFontSize.scaled(34), weight: .medium))
                 .foregroundStyle(Color(hex: 0xC4CAD3))
 
             Text(searchText.isEmpty ? "这里还没有任务" : "没有匹配的任务")
-                .font(.system(size: 14, weight: .semibold))
+                .font(.system(size: AppFontSize.scaled(14), weight: .semibold))
                 .foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity)
@@ -1142,7 +1142,7 @@ private struct AddFocusItemDialog: View {
                     isPresented = false
                 } label: {
                     Image(systemName: "xmark")
-                        .font(.system(size: 22, weight: .black))
+                        .font(.system(size: AppFontSize.scaled(22), weight: .black))
                 }
                 .buttonStyle(.plain)
                 .help("取消")
@@ -1150,14 +1150,14 @@ private struct AddFocusItemDialog: View {
                 Spacer()
 
                 Text(dialogTitle)
-                    .font(.system(size: 22, weight: .heavy))
+                    .font(.system(size: AppFontSize.scaled(22), weight: .heavy))
                     .foregroundStyle(Color(hex: 0x1F2329))
 
                 Spacer()
 
                 Button(action: createItem) {
                     Image(systemName: "checkmark")
-                        .font(.system(size: 24, weight: .black))
+                        .font(.system(size: AppFontSize.scaled(24), weight: .black))
                 }
                 .buttonStyle(.plain)
                 .disabled(!canCreate)
@@ -1178,7 +1178,7 @@ private struct AddFocusItemDialog: View {
 
                 TextField("请输入事项名称", text: $title)
                     .textFieldStyle(.plain)
-                    .font(.system(size: 18, weight: .semibold))
+                    .font(.system(size: AppFontSize.scaled(18), weight: .semibold))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 18)
                     .frame(height: 54)
@@ -1193,7 +1193,7 @@ private struct AddFocusItemDialog: View {
 
                 VStack(alignment: .leading, spacing: 14) {
                     Text("最后一步，设置单次专注的时长：")
-                        .font(.system(size: 18, weight: .semibold))
+                        .font(.system(size: AppFontSize.scaled(18), weight: .semibold))
                         .foregroundStyle(Color(hex: 0x4D5360))
 
                     HStack(spacing: 12) {
@@ -1210,7 +1210,7 @@ private struct AddFocusItemDialog: View {
                     HStack(spacing: 16) {
                         VStack(alignment: .leading, spacing: 8) {
                             Text("\(durationMinutes) 分钟")
-                                .font(.system(size: 16, weight: .heavy))
+                                .font(.system(size: AppFontSize.scaled(16), weight: .heavy))
                                 .foregroundStyle(Color(hex: 0x23A8E0))
                                 .padding(.horizontal, 14)
                                 .frame(height: 34)
@@ -1231,7 +1231,7 @@ private struct AddFocusItemDialog: View {
                             durationMinutes = 25
                         } label: {
                             Image(systemName: "pencil")
-                                .font(.system(size: 18, weight: .bold))
+                                .font(.system(size: AppFontSize.scaled(18), weight: .bold))
                         }
                         .buttonStyle(.largeCircle(color: Color(hex: 0xEAF8FE), foreground: Color(hex: 0x23A8E0), size: 48))
                         .help("恢复 25 分钟")
@@ -1249,7 +1249,7 @@ private struct AddFocusItemDialog: View {
                 Button("更多设置") {}
                     .buttonStyle(.plain)
                     .foregroundStyle(Color(hex: 0x23A8E0))
-                    .font(.system(size: 17, weight: .semibold))
+                    .font(.system(size: AppFontSize.scaled(17), weight: .semibold))
                     .disabled(true)
             }
             .padding(.horizontal, 42)
@@ -1287,7 +1287,7 @@ private struct AddFocusItemDialog: View {
             VStack(spacing: 12) {
                 HStack(spacing: 12) {
                     Label("番茄数量", systemImage: "timer")
-                        .font(.system(size: 15, weight: .semibold))
+                        .font(.system(size: AppFontSize.scaled(15), weight: .semibold))
                         .foregroundStyle(Color(hex: 0x5A6170))
 
                     Stepper("\(estimate)", value: $estimate, in: 1...24)
@@ -1309,7 +1309,7 @@ private struct AddFocusItemDialog: View {
             VStack(alignment: .leading, spacing: 14) {
                 HStack(spacing: 12) {
                     Text("我想")
-                        .font(.system(size: 19, weight: .semibold))
+                        .font(.system(size: AppFontSize.scaled(19), weight: .semibold))
 
                     Picker("频率", selection: $habitFrequency) {
                         ForEach(HabitFrequency.allCases) { frequency in
@@ -1321,7 +1321,7 @@ private struct AddFocusItemDialog: View {
                     .frame(width: 110)
 
                     Text("完成")
-                        .font(.system(size: 19, weight: .semibold))
+                        .font(.system(size: AppFontSize.scaled(19), weight: .semibold))
 
                     TextField("完成量", value: $targetAmount, format: .number)
                         .textFieldStyle(.plain)
@@ -1345,16 +1345,16 @@ private struct AddFocusItemDialog: View {
                     Spacer()
                 }
             }
-            .font(.system(size: 16, weight: .medium))
+            .font(.system(size: AppFontSize.scaled(16), weight: .medium))
             .foregroundStyle(Color(hex: 0x4D5360))
         case .goal:
             VStack(alignment: .leading, spacing: 14) {
                 Toggle("设置截止日期", isOn: $useDeadline)
-                    .font(.system(size: 15, weight: .semibold))
+                    .font(.system(size: AppFontSize.scaled(15), weight: .semibold))
 
                 HStack(spacing: 12) {
                     Text("我想在")
-                        .font(.system(size: 19, weight: .semibold))
+                        .font(.system(size: AppFontSize.scaled(19), weight: .semibold))
 
                     if useDeadline {
                         DatePicker("", selection: $deadline, displayedComponents: .date)
@@ -1362,19 +1362,19 @@ private struct AddFocusItemDialog: View {
                             .frame(width: 146)
                     } else {
                         Text("不设截止日期")
-                            .font(.system(size: 18, weight: .bold))
+                            .font(.system(size: AppFontSize.scaled(18), weight: .bold))
                             .foregroundStyle(Color(hex: 0x23A8E0))
                     }
 
                     Text("之前")
-                        .font(.system(size: 19, weight: .semibold))
+                        .font(.system(size: AppFontSize.scaled(19), weight: .semibold))
 
                     Spacer()
                 }
 
                 HStack(spacing: 12) {
                     Text("一共完成")
-                        .font(.system(size: 19, weight: .semibold))
+                        .font(.system(size: AppFontSize.scaled(19), weight: .semibold))
 
                     TextField("完成量", value: $targetAmount, format: .number)
                         .textFieldStyle(.plain)
@@ -1398,7 +1398,7 @@ private struct AddFocusItemDialog: View {
                     Spacer()
                 }
             }
-            .font(.system(size: 16, weight: .medium))
+            .font(.system(size: AppFontSize.scaled(16), weight: .medium))
             .foregroundStyle(Color(hex: 0x4D5360))
         }
     }
@@ -1441,7 +1441,7 @@ private struct TimingStyleChip: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .font(.system(size: 17, weight: .bold))
+                .font(.system(size: AppFontSize.scaled(17), weight: .bold))
                 .foregroundStyle(isSelected ? Color(hex: 0x23A8E0) : Color(hex: 0x1F2329))
                 .frame(maxWidth: .infinity)
                 .frame(height: 44)
@@ -1476,7 +1476,7 @@ private struct TaskRow: View {
                 store.toggleTaskDone(task)
             } label: {
                 Image(systemName: task.isDone ? "checkmark.circle.fill" : "circle")
-                    .font(.system(size: 18, weight: .semibold))
+                    .font(.system(size: AppFontSize.scaled(18), weight: .semibold))
                     .foregroundStyle(task.isDone ? Color(hex: 0x2E9E73) : .secondary)
             }
             .buttonStyle(.plain)
@@ -1484,21 +1484,21 @@ private struct TaskRow: View {
 
             VStack(alignment: .leading, spacing: 6) {
                 Text(task.title)
-                    .font(.system(size: 14, weight: .semibold))
+                    .font(.system(size: AppFontSize.scaled(14), weight: .semibold))
                     .foregroundStyle(task.isDone ? .secondary : Color(hex: 0x242424))
                     .strikethrough(task.isDone)
                     .lineLimit(2)
 
                 HStack(spacing: 6) {
                     Label(kind.shortTitle, systemImage: kind.systemImage)
-                        .font(.system(size: 11, weight: .bold))
+                        .font(.system(size: AppFontSize.scaled(11), weight: .bold))
                         .foregroundStyle(kind.color)
                         .padding(.horizontal, 7)
                         .frame(height: 18)
                         .background(kind.color.opacity(0.12), in: Capsule())
 
                     Text(store.taskSummary(for: task))
-                        .font(.system(size: 12, weight: .medium))
+                        .font(.system(size: AppFontSize.scaled(12), weight: .medium))
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
 
@@ -1512,7 +1512,7 @@ private struct TaskRow: View {
                         }
                     } label: {
                         Text(plan.title)
-                            .font(.system(size: 11, weight: .bold))
+                            .font(.system(size: AppFontSize.scaled(11), weight: .bold))
                             .foregroundStyle(plan.color)
                             .padding(.horizontal, 7)
                             .frame(height: 18)
@@ -1543,7 +1543,7 @@ private struct TaskRow: View {
                         .controlSize(.small)
                 } else {
                     Image(systemName: task.calendarEventID == nil ? "calendar.badge.plus" : "calendar.badge.checkmark")
-                        .font(.system(size: 13, weight: .bold))
+                        .font(.system(size: AppFontSize.scaled(13), weight: .bold))
                 }
             }
             .buttonStyle(.plainIcon)
@@ -1554,7 +1554,7 @@ private struct TaskRow: View {
                 store.selectTask(task)
             } label: {
                 Image(systemName: isSelected ? "play.fill" : "play")
-                    .font(.system(size: 13, weight: .bold))
+                    .font(.system(size: AppFontSize.scaled(13), weight: .bold))
             }
             .buttonStyle(.accentCircle(color: isSelected ? Color(hex: 0xF05A4F) : Color(hex: 0xD9DDE5)))
             .help("设为当前任务")
@@ -1606,11 +1606,11 @@ private struct TimerPanel: View {
 
             VStack(spacing: 6) {
                 Text(store.selectedMode.title)
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
+                    .font(.system(size: AppFontSize.scaled(18), weight: .bold, design: .rounded))
                     .foregroundStyle(store.selectedMode.accent)
 
                 Text(store.selectedMode.subtitle)
-                    .font(.system(size: 13, weight: .medium))
+                    .font(.system(size: AppFontSize.scaled(13), weight: .medium))
                     .foregroundStyle(.secondary)
             }
 
@@ -1620,12 +1620,12 @@ private struct TimerPanel: View {
 
                 VStack(spacing: 10) {
                     Text(store.remainingSeconds.timerText)
-                        .font(.system(size: 58, weight: .heavy, design: .rounded))
+                        .font(.system(size: AppFontSize.scaled(58), weight: .heavy, design: .rounded))
                         .monospacedDigit()
                         .foregroundStyle(Color(hex: 0x222222))
 
                     Text(store.selectedTask?.title ?? "选择一个任务开始")
-                        .font(.system(size: 14, weight: .semibold))
+                        .font(.system(size: AppFontSize.scaled(14), weight: .semibold))
                         .foregroundStyle(.secondary)
                         .lineLimit(2)
                         .multilineTextAlignment(.center)
@@ -1641,7 +1641,7 @@ private struct TimerPanel: View {
                     store.resetTimer()
                 } label: {
                     Image(systemName: "arrow.counterclockwise")
-                        .font(.system(size: 17, weight: .semibold))
+                        .font(.system(size: AppFontSize.scaled(17), weight: .semibold))
                 }
                 .buttonStyle(.largeCircle(color: Color(hex: 0xE9ECEF), foreground: Color(hex: 0x40444D)))
                 .help("重置")
@@ -1650,7 +1650,7 @@ private struct TimerPanel: View {
                     store.toggleTimer()
                 } label: {
                     Image(systemName: store.isRunning ? "pause.fill" : "play.fill")
-                        .font(.system(size: 24, weight: .bold))
+                        .font(.system(size: AppFontSize.scaled(24), weight: .bold))
                 }
                 .buttonStyle(.largeCircle(color: store.selectedMode.accent, foreground: .white, size: 72))
                 .help(store.isRunning ? "暂停" : "开始")
@@ -1659,7 +1659,7 @@ private struct TimerPanel: View {
                     store.finishCurrentIntervalNow()
                 } label: {
                     Image(systemName: "checkmark")
-                        .font(.system(size: 17, weight: .semibold))
+                        .font(.system(size: AppFontSize.scaled(17), weight: .semibold))
                 }
                 .buttonStyle(.largeCircle(color: Color(hex: 0xE9ECEF), foreground: Color(hex: 0x40444D)))
                 .help(store.isRunning ? "完成当前计时" : "完成当前任务")
@@ -1721,11 +1721,11 @@ private struct FullscreenTimerView: View {
                 VStack(spacing: 22) {
                     VStack(spacing: 8) {
                         Text(store.selectedMode.title)
-                            .font(.system(size: 28, weight: .heavy, design: .rounded))
+                            .font(.system(size: AppFontSize.scaled(28), weight: .heavy, design: .rounded))
                             .foregroundStyle(store.selectedMode.accent)
 
                         Text(store.selectedMode.subtitle)
-                            .font(.system(size: 15, weight: .semibold))
+                            .font(.system(size: AppFontSize.scaled(15), weight: .semibold))
                             .foregroundStyle(.secondary)
                     }
 
@@ -1735,14 +1735,14 @@ private struct FullscreenTimerView: View {
 
                         VStack(spacing: 14) {
                             Text(store.remainingSeconds.timerText)
-                                .font(.system(size: max(side * 0.18, 70), weight: .heavy, design: .rounded))
+                                .font(.system(size: AppFontSize.scaled(max(side * 0.18, 70)), weight: .heavy, design: .rounded))
                                 .monospacedDigit()
                                 .foregroundStyle(Color(hex: 0x222222))
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.72)
 
                             Text(store.selectedTask?.title ?? "选择一个任务开始")
-                                .font(.system(size: 17, weight: .semibold))
+                                .font(.system(size: AppFontSize.scaled(17), weight: .semibold))
                                 .foregroundStyle(.secondary)
                                 .lineLimit(2)
                                 .multilineTextAlignment(.center)
@@ -1757,7 +1757,7 @@ private struct FullscreenTimerView: View {
                             store.resetTimer()
                         } label: {
                             Image(systemName: "arrow.counterclockwise")
-                                .font(.system(size: 20, weight: .semibold))
+                                .font(.system(size: AppFontSize.scaled(20), weight: .semibold))
                         }
                         .buttonStyle(.largeCircle(color: Color(hex: 0xE9ECEF), foreground: Color(hex: 0x40444D), size: 60))
                         .help("重置")
@@ -1766,7 +1766,7 @@ private struct FullscreenTimerView: View {
                             store.toggleTimer()
                         } label: {
                             Image(systemName: store.isRunning ? "pause.fill" : "play.fill")
-                                .font(.system(size: 30, weight: .bold))
+                                .font(.system(size: AppFontSize.scaled(30), weight: .bold))
                         }
                         .buttonStyle(.largeCircle(color: store.selectedMode.accent, foreground: .white, size: 88))
                         .help(store.isRunning ? "暂停" : "开始")
@@ -1775,7 +1775,7 @@ private struct FullscreenTimerView: View {
                             store.finishCurrentIntervalNow()
                         } label: {
                             Image(systemName: "checkmark")
-                                .font(.system(size: 20, weight: .semibold))
+                                .font(.system(size: AppFontSize.scaled(20), weight: .semibold))
                         }
                         .buttonStyle(.largeCircle(color: Color(hex: 0xE9ECEF), foreground: Color(hex: 0x40444D), size: 60))
                         .help(store.isRunning ? "完成当前计时" : "完成当前任务")
@@ -1807,7 +1807,7 @@ private struct InspirationTextView: View {
     var body: some View {
         if let text, !text.isEmpty {
             Text(text)
-                .font(.system(size: fontSize, weight: .semibold))
+                .font(.system(size: AppFontSize.scaled(fontSize), weight: .semibold))
                 .foregroundStyle(Color(hex: 0x555B64))
                 .multilineTextAlignment(.center)
                 .lineSpacing(4)
@@ -1840,7 +1840,7 @@ private struct FocusDots: View {
             }
 
             Text("长休息进度 \(store.focusCycleCount % store.longBreakAfter)/\(store.longBreakAfter)")
-                .font(.system(size: 11, weight: .semibold))
+                .font(.system(size: AppFontSize.scaled(11), weight: .semibold))
                 .foregroundStyle(Color(hex: 0xA5ABB5))
         }
         .accessibilityLabel("长休息前番茄进度")
@@ -1924,18 +1924,18 @@ private struct MetricCard: View {
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: systemImage)
-                .font(.system(size: 18, weight: .bold))
+                .font(.system(size: AppFontSize.scaled(18), weight: .bold))
                 .foregroundStyle(.white)
                 .frame(width: 38, height: 38)
                 .background(color, in: RoundedRectangle(cornerRadius: 8))
 
             VStack(alignment: .leading, spacing: 3) {
                 Text(title)
-                    .font(.system(size: 12, weight: .semibold))
+                    .font(.system(size: AppFontSize.scaled(12), weight: .semibold))
                     .foregroundStyle(.secondary)
 
                 Text(value)
-                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                    .font(.system(size: AppFontSize.scaled(20), weight: .bold, design: .rounded))
                     .foregroundStyle(Color(hex: 0x222222))
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
@@ -1958,7 +1958,7 @@ private struct SettingsCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
             Label("设置", systemImage: "slider.horizontal.3")
-                .font(.system(size: 16, weight: .semibold))
+                .font(.system(size: AppFontSize.scaled(16), weight: .semibold))
 
             DurationStepper(title: "番茄", seconds: $store.focusSeconds, color: Color(hex: 0xF05A4F))
             DurationStepper(title: "短休", seconds: $store.shortBreakSeconds, color: Color(hex: 0x2E9E73))
@@ -1975,7 +1975,7 @@ private struct SettingsCard: View {
             Toggle("自动开始专注", isOn: $store.autoStartFocus)
             Toggle("结束提醒音", isOn: $store.playFinishSound)
         }
-        .font(.system(size: 13, weight: .medium))
+        .font(.system(size: AppFontSize.scaled(13), weight: .medium))
         .padding(14)
         .background(.white.opacity(0.72), in: RoundedRectangle(cornerRadius: 8))
         .overlay(
@@ -2011,7 +2011,7 @@ private struct DurationStepper: View {
 private struct PlainIconButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 14, weight: .semibold))
+            .font(.system(size: AppFontSize.scaled(14), weight: .semibold))
             .foregroundStyle(.secondary)
             .frame(width: 28, height: 28)
             .background(configuration.isPressed ? Color.black.opacity(0.08) : Color.black.opacity(0.04), in: Circle())
@@ -2023,7 +2023,7 @@ private struct AccentCircleButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 13, weight: .bold))
+            .font(.system(size: AppFontSize.scaled(13), weight: .bold))
             .foregroundStyle(.white)
             .frame(width: 30, height: 30)
             .background(color.opacity(configuration.isPressed ? 0.7 : 1), in: Circle())
@@ -2047,7 +2047,7 @@ private struct LargeCircleButtonStyle: ButtonStyle {
 private struct QuietButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 13, weight: .semibold))
+            .font(.system(size: AppFontSize.scaled(13), weight: .semibold))
             .foregroundStyle(Color(hex: 0x40444D))
             .padding(.horizontal, 12)
             .frame(height: 36)
