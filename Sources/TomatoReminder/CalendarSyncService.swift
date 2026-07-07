@@ -5,6 +5,7 @@ enum CalendarSyncError: LocalizedError {
     case accessDenied
     case calendarUnavailable
     case eventIdentifierMissing
+    case eventVerificationFailed
     case unknownAuthorization
 
     var errorDescription: String? {
@@ -15,6 +16,8 @@ enum CalendarSyncError: LocalizedError {
             return "没有找到可写入的日历账户。请先在系统日历中启用一个可写日历。"
         case .eventIdentifierMissing:
             return "日历事件已创建，但系统没有返回事件 ID。"
+        case .eventVerificationFailed:
+            return "日历保存后没有反查到该事件，请稍后再试或检查日历账户同步状态。"
         case .unknownAuthorization:
             return "当前日历权限状态暂不支持同步。"
         }
@@ -24,7 +27,8 @@ enum CalendarSyncError: LocalizedError {
 struct CalendarSyncResult {
     let eventIdentifier: String
     let calendarTitle: String
-    let scheduledDate: Date
+    let startDate: Date
+    let endDate: Date
 }
 
 @MainActor
@@ -45,13 +49,14 @@ final class CalendarSyncService {
         try await ensureCalendarAccess()
 
         let targetCalendar = try writableCalendar()
-        let startDate = Calendar.current.startOfDay(for: date)
-        let endDate = Calendar.current.date(byAdding: .day, value: 1, to: startDate) ?? startDate.addingTimeInterval(86_400)
+        let dayStart = Calendar.current.startOfDay(for: date)
+        let startDate = Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: dayStart) ?? dayStart.addingTimeInterval(32_400)
+        let endDate = Calendar.current.date(byAdding: .minute, value: 30, to: startDate) ?? startDate.addingTimeInterval(1_800)
         let event = existingEvent(for: task.calendarEventID) ?? EKEvent(eventStore: eventStore)
 
         event.calendar = targetCalendar
         event.title = task.title
-        event.isAllDay = true
+        event.isAllDay = false
         event.startDate = startDate
         event.endDate = endDate
         event.notes = [
@@ -68,10 +73,21 @@ final class CalendarSyncService {
             throw CalendarSyncError.eventIdentifierMissing
         }
 
+        guard eventExists(
+            eventIdentifier: eventIdentifier,
+            title: task.title,
+            from: startDate,
+            to: endDate,
+            in: targetCalendar
+        ) else {
+            throw CalendarSyncError.eventVerificationFailed
+        }
+
         return CalendarSyncResult(
             eventIdentifier: eventIdentifier,
             calendarTitle: targetCalendar.title,
-            scheduledDate: startDate
+            startDate: startDate,
+            endDate: endDate
         )
     }
 
@@ -123,5 +139,21 @@ final class CalendarSyncService {
     private func existingEvent(for eventIdentifier: String?) -> EKEvent? {
         guard let eventIdentifier else { return nil }
         return eventStore.event(withIdentifier: eventIdentifier)
+    }
+
+    private func eventExists(
+        eventIdentifier: String,
+        title: String,
+        from startDate: Date,
+        to endDate: Date,
+        in calendar: EKCalendar
+    ) -> Bool {
+        let lookupStart = startDate.addingTimeInterval(-60)
+        let lookupEnd = endDate.addingTimeInterval(60)
+        let predicate = eventStore.predicateForEvents(withStart: lookupStart, end: lookupEnd, calendars: [calendar])
+
+        return eventStore.events(matching: predicate).contains { event in
+            event.eventIdentifier == eventIdentifier || event.title == title
+        }
     }
 }

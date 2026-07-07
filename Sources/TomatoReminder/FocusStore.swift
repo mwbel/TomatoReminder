@@ -763,7 +763,7 @@ final class FocusStore: ObservableObject {
                 tasks[index].calendarEventID = result.eventIdentifier
             }
 
-            return "已同步到“\(result.calendarTitle)”日历，日期：\(calendarDateText(result.scheduledDate))。"
+            return "已同步到“\(result.calendarTitle)”日历，时间：\(calendarDateTimeRangeText(start: result.startDate, end: result.endDate))。"
         } catch {
             return error.localizedDescription
         }
@@ -787,11 +787,16 @@ final class FocusStore: ObservableObject {
         }
     }
 
-    private func calendarDateText(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "zh_CN")
-        formatter.dateFormat = "yyyy年M月d日"
-        return formatter.string(from: date)
+    private func calendarDateTimeRangeText(start: Date, end: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "zh_CN")
+        dateFormatter.dateFormat = "yyyy年M月d日"
+
+        let timeFormatter = DateFormatter()
+        timeFormatter.locale = Locale(identifier: "zh_CN")
+        timeFormatter.dateFormat = "HH:mm"
+
+        return "\(dateFormatter.string(from: start)) \(timeFormatter.string(from: start))-\(timeFormatter.string(from: end))"
     }
 
     func markSelectedTaskDone() {
