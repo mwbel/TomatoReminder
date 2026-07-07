@@ -17,6 +17,29 @@ struct ContentView: View {
         return summaries.first
     }
 
+    private var selectedTaskPracticeSummary: PracticeSummary? {
+        guard selectedPlan != .practiceStats,
+              let selectedTask = store.selectedTask,
+              store.itemKind(for: selectedTask) != .pomodoro
+        else {
+            return nil
+        }
+
+        return store.practiceSummaries(searchText: "").first { $0.id == selectedTask.id }
+    }
+
+    private var activePracticeSummary: PracticeSummary? {
+        if selectedPlan == .practiceStats {
+            return selectedPracticeSummary
+        }
+
+        return selectedTaskPracticeSummary
+    }
+
+    private var shouldShowModePicker: Bool {
+        selectedPlan != .practiceStats && selectedTaskPracticeSummary == nil
+    }
+
     var body: some View {
         ZStack {
             LinearGradient(
@@ -41,7 +64,7 @@ struct ContentView: View {
                     let contentHeight = max(proxy.size.height / max(scale, 0.01), 660)
 
                     VStack(spacing: 18) {
-                        HeaderView(selectedPlan: selectedPlan)
+                        HeaderView(showsModePicker: shouldShowModePicker)
 
                         HStack(alignment: .top, spacing: 18) {
                             PlanSidebar(selectedPlan: $selectedPlan, searchText: $searchText)
@@ -61,9 +84,7 @@ struct ContentView: View {
                             }
                             .frame(width: 360)
 
-                            if selectedPlan == .practiceStats,
-                               let practiceSummary = selectedPracticeSummary,
-                               practiceSummary.unit == .times {
+                            if let practiceSummary = activePracticeSummary {
                                 PracticeCounterDetailView(summary: practiceSummary)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                             } else {
@@ -107,7 +128,7 @@ struct ContentView: View {
 
 private struct HeaderView: View {
     @EnvironmentObject private var store: FocusStore
-    let selectedPlan: PlanView
+    let showsModePicker: Bool
 
     var body: some View {
         HStack(spacing: 16) {
@@ -130,7 +151,7 @@ private struct HeaderView: View {
 
             Spacer()
 
-            if selectedPlan != .practiceStats {
+            if showsModePicker {
                 Picker("模式", selection: Binding(
                     get: { store.selectedMode },
                     set: { store.switchMode($0) }
@@ -627,6 +648,10 @@ private struct PracticeCounterDetailView: View {
     @State private var isRenamePracticePresented = false
     @State private var isDeletePracticePresented = false
 
+    private var detailKindTitle: String {
+        summary.unit == .times ? "计数目标" : "功课统计"
+    }
+
     var body: some View {
         ZStack {
             VStack(alignment: .leading, spacing: 22) {
@@ -638,7 +663,7 @@ private struct PracticeCounterDetailView: View {
                             .lineLimit(1)
                             .minimumScaleFactor(0.72)
 
-                        Text("计数目标 · 单位：\(summary.unitTitle)")
+                        Text("\(detailKindTitle) · 单位：\(summary.unitTitle)")
                             .font(.system(size: 13, weight: .semibold))
                             .foregroundStyle(.secondary)
                     }
