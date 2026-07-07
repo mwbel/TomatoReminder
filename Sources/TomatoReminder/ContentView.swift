@@ -330,6 +330,7 @@ private struct PracticeStatsColumn: View {
     @State private var isCreatePracticePresented = false
     @State private var isDailyAddPresented = false
     @State private var isRenamePracticePresented = false
+    @State private var isDeletePracticePresented = false
 
     private var summaries: [PracticeSummary] {
         store.practiceSummaries(searchText: searchText)
@@ -393,6 +394,15 @@ private struct PracticeStatsColumn: View {
                                         }
                                         .buttonStyle(.plainIcon)
                                         .help("修改功课名称")
+
+                                        Button {
+                                            selectedSummaryID = selectedSummary.id
+                                            isDeletePracticePresented = true
+                                        } label: {
+                                            Image(systemName: "trash")
+                                        }
+                                        .buttonStyle(.plainIcon)
+                                        .help("删除功课")
                                     }
 
                                     Text("\(selectedSummary.kind.shortTitle) · 单位：\(selectedSummary.unitTitle)")
@@ -500,6 +510,20 @@ private struct PracticeStatsColumn: View {
                 .padding(18)
             }
 
+            if isDeletePracticePresented, let selectedSummary {
+                Color.black.opacity(0.18)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+
+                PracticeDeleteDialog(
+                    isPresented: $isDeletePracticePresented,
+                    summary: selectedSummary
+                ) {
+                    selectedSummaryID = nil
+                }
+                .environmentObject(store)
+                .padding(18)
+            }
+
             if isDailyAddPresented, let selectedSummary {
                 Color.black.opacity(0.18)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -598,6 +622,7 @@ private struct PracticeCounterDetailView: View {
     let summary: PracticeSummary
     @State private var isDailyAddPresented = false
     @State private var isRenamePracticePresented = false
+    @State private var isDeletePracticePresented = false
 
     var body: some View {
         ZStack {
@@ -629,6 +654,13 @@ private struct PracticeCounterDetailView: View {
                             isDailyAddPresented = true
                         } label: {
                             Label("当日添加", systemImage: "plus.circle")
+                        }
+                        .buttonStyle(.quiet)
+
+                        Button {
+                            isDeletePracticePresented = true
+                        } label: {
+                            Label("删除", systemImage: "trash")
                         }
                         .buttonStyle(.quiet)
                     }
@@ -691,6 +723,18 @@ private struct PracticeCounterDetailView: View {
                 .frame(width: 360)
             }
 
+            if isDeletePracticePresented {
+                Color.black.opacity(0.18)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+
+                PracticeDeleteDialog(
+                    isPresented: $isDeletePracticePresented,
+                    summary: summary
+                )
+                .environmentObject(store)
+                .frame(width: 360)
+            }
+
             if isDailyAddPresented {
                 Color.black.opacity(0.18)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -733,6 +777,54 @@ private struct CounterGlyphView: View {
                 .font(.system(size: 42, weight: .ultraLight))
                 .foregroundStyle(Color(hex: 0xB38B59).opacity(0.54))
         }
+    }
+}
+
+private struct PracticeDeleteDialog: View {
+    @EnvironmentObject private var store: FocusStore
+    @Binding var isPresented: Bool
+    let summary: PracticeSummary
+    var onDelete: () -> Void = {}
+
+    var body: some View {
+        VStack(spacing: 18) {
+            Text("删除功课")
+                .font(.system(size: 22, weight: .heavy))
+                .foregroundStyle(Color(hex: 0x1F2329))
+
+            Text("确定删除“\(summary.title)”吗？它的手动打卡记录也会一起删除。")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+                .lineLimit(3)
+                .fixedSize(horizontal: false, vertical: true)
+
+            HStack(spacing: 12) {
+                Button("取消") {
+                    isPresented = false
+                }
+                .buttonStyle(.quiet)
+
+                Spacer(minLength: 12)
+
+                Button {
+                    store.deletePractice(taskID: summary.id)
+                    onDelete()
+                    isPresented = false
+                } label: {
+                    Label("删除", systemImage: "trash")
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 14)
+                        .frame(height: 36)
+                        .background(Color(hex: 0xF05A4F), in: RoundedRectangle(cornerRadius: 8))
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(22)
+        .background(.white.opacity(0.96), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .shadow(color: .black.opacity(0.18), radius: 18, y: 8)
     }
 }
 

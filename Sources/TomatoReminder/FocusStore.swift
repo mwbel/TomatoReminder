@@ -663,6 +663,21 @@ final class FocusStore: ObservableObject {
         tasks[index].title = trimmed
     }
 
+    func deletePractice(taskID: UUID) {
+        guard tasks.contains(where: { $0.id == taskID }) else { return }
+
+        tasks.removeAll { $0.id == taskID }
+        practiceEntries.removeAll { $0.taskID == taskID }
+
+        if selectedTaskID == taskID {
+            selectedTaskID = activeTasks.first?.id
+        }
+
+        if selectedMode == .focus, !isRunning {
+            remainingSeconds = duration(for: .focus)
+        }
+    }
+
     func addTask(
         title: String,
         estimate: Int,
