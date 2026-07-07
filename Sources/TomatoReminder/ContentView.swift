@@ -41,7 +41,7 @@ struct ContentView: View {
                     let contentHeight = max(proxy.size.height / max(scale, 0.01), 660)
 
                     VStack(spacing: 18) {
-                        HeaderView()
+                        HeaderView(selectedPlan: selectedPlan)
 
                         HStack(alignment: .top, spacing: 18) {
                             PlanSidebar(selectedPlan: $selectedPlan, searchText: $searchText)
@@ -107,6 +107,7 @@ struct ContentView: View {
 
 private struct HeaderView: View {
     @EnvironmentObject private var store: FocusStore
+    let selectedPlan: PlanView
 
     var body: some View {
         HStack(spacing: 16) {
@@ -129,16 +130,18 @@ private struct HeaderView: View {
 
             Spacer()
 
-            Picker("模式", selection: Binding(
-                get: { store.selectedMode },
-                set: { store.switchMode($0) }
-            )) {
-                ForEach(FocusMode.allCases) { mode in
-                    Text(mode.title).tag(mode)
+            if selectedPlan != .practiceStats {
+                Picker("模式", selection: Binding(
+                    get: { store.selectedMode },
+                    set: { store.switchMode($0) }
+                )) {
+                    ForEach(FocusMode.allCases) { mode in
+                        Text(mode.title).tag(mode)
+                    }
                 }
+                .pickerStyle(.segmented)
+                .frame(width: 280)
             }
-            .pickerStyle(.segmented)
-            .frame(width: 280)
         }
     }
 }
