@@ -101,6 +101,7 @@ enum PlanView: String, CaseIterable, Identifiable {
     case planned
     case completed
     case all
+    case practiceStats
 
     var id: String { rawValue }
 
@@ -112,6 +113,7 @@ enum PlanView: String, CaseIterable, Identifiable {
         case .planned: return "已计划"
         case .completed: return "已完成"
         case .all: return "任务"
+        case .practiceStats: return "功课统计"
         }
     }
 
@@ -123,6 +125,7 @@ enum PlanView: String, CaseIterable, Identifiable {
         case .planned: return "calendar.badge.checkmark"
         case .completed: return "checkmark.circle"
         case .all: return "tray"
+        case .practiceStats: return "chart.bar.xaxis"
         }
     }
 
@@ -134,6 +137,7 @@ enum PlanView: String, CaseIterable, Identifiable {
         case .planned: return Color(hex: 0x148BFF)
         case .completed: return Color(hex: 0x7D8697)
         case .all: return Color(hex: 0x148BFF)
+        case .practiceStats: return Color(hex: 0xB38B59)
         }
     }
 
@@ -143,7 +147,7 @@ enum PlanView: String, CaseIterable, Identifiable {
         case .tomorrow: return .tomorrow
         case .thisWeek: return .thisWeek
         case .planned: return .planned
-        case .completed, .all: return .today
+        case .completed, .all, .practiceStats: return .today
         }
     }
 }
@@ -260,6 +264,20 @@ struct SessionRecord: Codable, Identifiable, Equatable {
     var startedAt: Date
     var endedAt: Date
     var seconds: Int
+}
+
+struct PracticeSummary: Identifiable, Equatable {
+    var id: UUID
+    var title: String
+    var kind: FocusItemKind
+    var unit: FocusGoalUnit
+    var today: Int
+    var week: Int
+    var month: Int
+    var year: Int
+    var total: Int
+
+    var unitTitle: String { unit.title }
 }
 
 private struct AppSnapshot: Codable {
@@ -413,6 +431,8 @@ final class FocusStore: ObservableObject {
                 return task.isDone
             case .all:
                 return !task.isDone
+            case .practiceStats:
+                return false
             }
         }
 
@@ -421,11 +441,19 @@ final class FocusStore: ObservableObject {
     }
 
     func taskCount(for view: PlanView) -> Int {
-        filteredTasks(for: view, searchText: "").count
+        if view == .practiceStats {
+            return practiceSummaries(searchText: "").count
+        }
+
+        return filteredTasks(for: view, searchText: "").count
     }
 
     func estimatedSeconds(for view: PlanView) -> Int {
-        filteredTasks(for: view, searchText: "").reduce(0) { total, task in
+        if view == .practiceStats {
+            return practiceSummaries(searchText: "").reduce(0) { $0 + $1.today * 60 }
+        }
+
+        return filteredTasks(for: view, searchText: "").reduce(0) { total, task in
             let remainingSessions = max(task.estimate - task.completedSessions, 0)
             return total + remainingSessions * durationSeconds(for: task)
         }
@@ -528,6 +556,55 @@ final class FocusStore: ObservableObject {
                 completed = task.completedSessions
             }
             return "\(timingStyle.title)-目标 · \(completed)/\(amount)\(unit)"
+        }
+    }
+
+    func practiceSummaries(searchText: String) -> [PracticeSummary] {
+        let calendar = Calendar.current
+        let trimmedSearch = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        let sourceTasks = tasks.filter { task in
+            !task.isDone || sessions.contains(where: { $0.taskID == task.id })
+        }
+        .filter { task in
+            trimmedSearch.isEmpty || task.title.localizedCaseInsensitiveContains(trimmedSearch)
+        }
+
+        return sourceTasks.map { task in
+            let taskSessions = sessions.filter { $0.taskID == task.id && $0.mode == .focus }
+            let unit = task.targetUnit ?? (itemKind(for: task) == .pomodoro ? .times : .minutes)
+
+            func amount(for sessions: [SessionRecord]) -> Int {
+                switch unit {
+                case .minutes:
+                    return sessions.reduce(0) { $0 + max($1.seconds / 60, 1) }
+                case .times:
+                    return sessions.count
+                }
+            }
+
+            let todaySessions = taskSessions.filter { calendar.isDateInToday($0.endedAt) }
+            let weekSessions = taskSessions.filter { calendar.isDate($0.endedAt, equalTo: Date(), toGranularity: .weekOfYear) }
+            let monthSessions = taskSessions.filter { calendar.isDate($0.endedAt, equalTo: Date(), toGranularity: .month) }
+            let yearSessions = taskSessions.filter { calendar.isDate($0.endedAt, equalTo: Date(), toGranularity: .year) }
+
+            return PracticeSummary(
+                id: task.id,
+                title: task.title,
+                kind: itemKind(for: task),
+                unit: unit,
+                today: amount(for: todaySessions),
+                week: amount(for: weekSessions),
+                month: amount(for: monthSessions),
+                year: amount(for: yearSessions),
+                total: amount(for: taskSessions)
+            )
+        }
+        .sorted {
+            if $0.today == $1.today {
+                return $0.total > $1.total
+            }
+            return $0.today > $1.today
         }
     }
 

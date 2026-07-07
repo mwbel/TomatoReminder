@@ -37,8 +37,16 @@ struct ContentView: View {
                             PlanSidebar(selectedPlan: $selectedPlan, searchText: $searchText)
                                 .frame(width: 244)
 
-                            TaskColumn(selectedPlan: $selectedPlan, searchText: searchText) {
-                                isAddItemPresented = true
+                            Group {
+                                if selectedPlan == .practiceStats {
+                                    PracticeStatsColumn(searchText: searchText) {
+                                        isAddItemPresented = true
+                                    }
+                                } else {
+                                    TaskColumn(selectedPlan: $selectedPlan, searchText: searchText) {
+                                        isAddItemPresented = true
+                                    }
+                                }
                             }
                             .frame(width: 360)
 
@@ -123,7 +131,7 @@ private struct PlanSidebar: View {
     @Binding var searchText: String
     @FocusState private var searchFocused: Bool
 
-    private let rows: [PlanView] = [.today, .tomorrow, .thisWeek, .planned, .completed, .all]
+    private let rows: [PlanView] = [.today, .tomorrow, .thisWeek, .planned, .completed, .all, .practiceStats]
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -294,6 +302,240 @@ private struct TaskColumn: View {
             RoundedRectangle(cornerRadius: 8)
                 .stroke(.white.opacity(0.7), lineWidth: 1)
         )
+    }
+}
+
+private struct PracticeStatsColumn: View {
+    @EnvironmentObject private var store: FocusStore
+    let searchText: String
+    let onAddItem: () -> Void
+    @State private var selectedSummaryID: UUID?
+
+    private var summaries: [PracticeSummary] {
+        store.practiceSummaries(searchText: searchText)
+    }
+
+    private var selectedSummary: PracticeSummary? {
+        if let selectedSummaryID, let summary = summaries.first(where: { $0.id == selectedSummaryID }) {
+            return summary
+        }
+
+        return summaries.first
+    }
+
+    private var todayTotal: Int {
+        summaries.reduce(0) { $0 + $1.today }
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack {
+                Label("功课统计", systemImage: "chart.bar.xaxis")
+                    .font(.system(size: 16, weight: .semibold))
+
+                Spacer()
+
+                Button(action: onAddItem) {
+                    Image(systemName: "plus")
+                }
+                .buttonStyle(.accentCircle(color: Color(hex: 0xB38B59)))
+                .help("添加功课")
+            }
+
+            VStack(spacing: 12) {
+                HStack(spacing: 10) {
+                    PracticeOverviewTile(title: "今日总打卡", value: "\(todayTotal)")
+                    PracticeOverviewTile(title: "功课数", value: "\(summaries.count)")
+                }
+
+                if let selectedSummary {
+                    VStack(spacing: 12) {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text(selectedSummary.title)
+                                    .font(.system(size: 18, weight: .heavy))
+                                    .foregroundStyle(Color(hex: 0x2D3138))
+                                    .lineLimit(1)
+
+                                Text("\(selectedSummary.kind.shortTitle) · 单位：\(selectedSummary.unitTitle)")
+                                    .font(.system(size: 12, weight: .semibold))
+                                    .foregroundStyle(.secondary)
+                            }
+
+                            Spacer()
+
+                            Text("\(selectedSummary.today)")
+                                .font(.system(size: 34, weight: .heavy, design: .rounded))
+                                .foregroundStyle(Color(hex: 0x7D828B))
+                                .monospacedDigit()
+                        }
+
+                        HStack(spacing: 0) {
+                            PracticeMetricCell(title: "周", value: selectedSummary.week)
+                            Divider().frame(height: 30)
+                            PracticeMetricCell(title: "月", value: selectedSummary.month)
+                            Divider().frame(height: 30)
+                            PracticeMetricCell(title: "年", value: selectedSummary.year)
+                            Divider().frame(height: 30)
+                            PracticeMetricCell(title: "总", value: selectedSummary.total)
+                        }
+                    }
+                    .padding(14)
+                    .background(.white.opacity(0.74), in: RoundedRectangle(cornerRadius: 8))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(.white.opacity(0.72), lineWidth: 1)
+                    )
+                }
+            }
+
+            ScrollView {
+                LazyVStack(spacing: 8) {
+                    ForEach(Array(summaries.enumerated()), id: \.element.id) { index, summary in
+                        PracticeStatsRow(
+                            rank: index + 1,
+                            summary: summary,
+                            isSelected: selectedSummary?.id == summary.id,
+                            color: practiceRowColor(at: index)
+                        ) {
+                            selectedSummaryID = summary.id
+                        }
+                    }
+
+                    if summaries.isEmpty {
+                        VStack(spacing: 10) {
+                            Image(systemName: "chart.bar.xaxis")
+                                .font(.system(size: 34, weight: .medium))
+                                .foregroundStyle(Color(hex: 0xC4CAD3))
+
+                            Text(searchText.isEmpty ? "还没有功课记录" : "没有匹配的功课")
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundStyle(.secondary)
+
+                            Button("添加功课", action: onAddItem)
+                                .buttonStyle(.quiet)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 48)
+                    }
+                }
+                .padding(.vertical, 2)
+            }
+        }
+        .padding(16)
+        .background(.white.opacity(0.72), in: RoundedRectangle(cornerRadius: 8))
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(.white.opacity(0.7), lineWidth: 1)
+        )
+    }
+
+    private func practiceRowColor(at index: Int) -> Color {
+        let colors = [
+            Color(hex: 0xC7BBB8),
+            Color(hex: 0xAEBEC0),
+            Color(hex: 0xAAA5B0),
+            Color(hex: 0x8FA0B2),
+            Color(hex: 0x918EA5),
+            Color(hex: 0x9EA786)
+        ]
+        return colors[index % colors.count]
+    }
+}
+
+private struct PracticeOverviewTile: View {
+    let title: String
+    let value: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text(title)
+                .font(.system(size: 12, weight: .semibold))
+                .foregroundStyle(.secondary)
+
+            Text(value)
+                .font(.system(size: 24, weight: .heavy, design: .rounded))
+                .foregroundStyle(Color(hex: 0x2D3138))
+                .monospacedDigit()
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(12)
+        .background(.white.opacity(0.74), in: RoundedRectangle(cornerRadius: 8))
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(.white.opacity(0.72), lineWidth: 1)
+        )
+    }
+}
+
+private struct PracticeMetricCell: View {
+    let title: String
+    let value: Int
+
+    var body: some View {
+        VStack(spacing: 4) {
+            Text(title)
+                .font(.system(size: 12, weight: .semibold))
+                .foregroundStyle(.secondary)
+
+            Text("\(value)")
+                .font(.system(size: 18, weight: .heavy, design: .rounded))
+                .foregroundStyle(Color(hex: 0x7D828B))
+                .monospacedDigit()
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+        }
+        .frame(maxWidth: .infinity)
+    }
+}
+
+private struct PracticeStatsRow: View {
+    let rank: Int
+    let summary: PracticeSummary
+    let isSelected: Bool
+    let color: Color
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 13) {
+                Text("\(rank)")
+                    .font(.system(size: 24, weight: .heavy, design: .rounded))
+                    .foregroundStyle(.white)
+                    .monospacedDigit()
+                    .frame(width: 48, height: 48)
+                    .overlay(
+                        Circle()
+                            .stroke(.white.opacity(0.92), lineWidth: 2)
+                    )
+
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(summary.title)
+                        .font(.system(size: 18, weight: .heavy))
+                        .foregroundStyle(.white)
+                        .lineLimit(1)
+
+                    Text("日 \(summary.today) / 总 \(summary.total) \(summary.unitTitle)")
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundStyle(.white.opacity(0.86))
+                        .lineLimit(1)
+                }
+
+                Spacer()
+
+                Image(systemName: summary.kind.systemImage)
+                    .font(.system(size: 18, weight: .bold))
+                    .foregroundStyle(.white.opacity(0.86))
+            }
+            .padding(.horizontal, 12)
+            .frame(height: 82)
+            .background(color.opacity(isSelected ? 1 : 0.88), in: RoundedRectangle(cornerRadius: 8))
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(isSelected ? .white.opacity(0.95) : .clear, lineWidth: 2)
+            )
+        }
+        .buttonStyle(.plain)
     }
 }
 
