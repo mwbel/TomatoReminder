@@ -20,12 +20,23 @@ struct ContentView: View {
     private var selectedTaskPracticeSummary: PracticeSummary? {
         guard selectedPlan != .practiceStats,
               let selectedTask = store.selectedTask,
-              store.itemKind(for: selectedTask) != .pomodoro
+              [.habit, .goal].contains(store.itemKind(for: selectedTask))
         else {
             return nil
         }
 
         return store.practiceSummaries(searchText: "").first { $0.id == selectedTask.id }
+    }
+
+    private var selectedReminderTask: FocusTask? {
+        guard selectedPlan != .practiceStats,
+              let selectedTask = store.selectedTask,
+              store.itemKind(for: selectedTask) == .reminder
+        else {
+            return nil
+        }
+
+        return selectedTask
     }
 
     private var activePracticeSummary: PracticeSummary? {
@@ -37,7 +48,7 @@ struct ContentView: View {
     }
 
     private var shouldShowModePicker: Bool {
-        selectedPlan != .practiceStats && selectedTaskPracticeSummary == nil
+        selectedPlan != .practiceStats && selectedTaskPracticeSummary == nil && selectedReminderTask == nil
     }
 
     var body: some View {
@@ -86,6 +97,9 @@ struct ContentView: View {
 
                             if let practiceSummary = activePracticeSummary {
                                 PracticeCounterDetailView(summary: practiceSummary)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            } else if let reminderTask = selectedReminderTask {
+                                ReminderDetailView(task: reminderTask)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                             } else {
                                 TimerPanel {
@@ -778,6 +792,142 @@ private struct PracticeCounterDetailView: View {
     }
 }
 
+private struct ReminderDetailView: View {
+    @EnvironmentObject private var store: FocusStore
+    let task: FocusTask
+    @State private var isSyncingCalendar = false
+    @State private var calendarMessage = ""
+    @State private var isCalendarMessagePresented = false
+
+    private var plan: TaskPlan {
+        store.taskPlan(for: task)
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 24) {
+            HStack(alignment: .top, spacing: 16) {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(task.title)
+                        .font(.system(size: AppFontSize.scaled(28), weight: .heavy))
+                        .foregroundStyle(Color(hex: 0x1F2329))
+                        .lineLimit(2)
+
+                    Label("提醒事项", systemImage: FocusItemKind.reminder.systemImage)
+                        .font(.system(size: AppFontSize.scaled(13), weight: .semibold))
+                        .foregroundStyle(FocusItemKind.reminder.color)
+                }
+
+                Spacer()
+
+                HStack(spacing: 10) {
+                    Button {
+                        syncToCalendar()
+                    } label: {
+                        if isSyncingCalendar {
+                            ProgressView()
+                                .controlSize(.small)
+                        } else {
+                            Label(task.calendarEventID == nil ? "同步日历" : "更新日历", systemImage: task.calendarEventID == nil ? "calendar.badge.plus" : "calendar.badge.checkmark")
+                        }
+                    }
+                    .buttonStyle(.quiet)
+                    .disabled(isSyncingCalendar)
+
+                    Button {
+                        store.toggleTaskDone(task)
+                    } label: {
+                        Label(task.isDone ? "恢复" : "完成", systemImage: task.isDone ? "arrow.uturn.backward" : "checkmark.circle")
+                    }
+                    .buttonStyle(.quiet)
+                }
+            }
+
+            HStack(spacing: 14) {
+                ReminderInfoTile(title: "计划", value: plan.title, systemImage: plan.systemImage, color: plan.color)
+                ReminderInfoTile(title: "状态", value: task.isDone ? "已完成" : "待处理", systemImage: task.isDone ? "checkmark.circle.fill" : "circle", color: task.isDone ? Color(hex: 0x2E9E73) : Color(hex: 0x7D8697))
+                ReminderInfoTile(title: "日历", value: task.calendarEventID == nil ? "未同步" : "已同步", systemImage: "calendar", color: Color(hex: 0x148BFF))
+            }
+
+            VStack(alignment: .leading, spacing: 10) {
+                Text("备注")
+                    .font(.system(size: AppFontSize.scaled(14), weight: .semibold))
+                    .foregroundStyle(.secondary)
+
+                Text("当前先记录提醒事项名称、计划和日历同步状态。")
+                    .font(.system(size: AppFontSize.scaled(15), weight: .medium))
+                    .foregroundStyle(Color(hex: 0x555B64))
+            }
+            .padding(16)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(.white.opacity(0.68), in: RoundedRectangle(cornerRadius: 8))
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(.white.opacity(0.72), lineWidth: 1)
+            )
+
+            Spacer()
+        }
+        .alert("日历同步", isPresented: $isCalendarMessagePresented) {
+            Button("好", role: .cancel) {}
+        } message: {
+            Text(calendarMessage)
+        }
+        .padding(30)
+        .background(.white.opacity(0.72), in: RoundedRectangle(cornerRadius: 8))
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(.white.opacity(0.7), lineWidth: 1)
+        )
+    }
+
+    private func syncToCalendar() {
+        guard !isSyncingCalendar else { return }
+        isSyncingCalendar = true
+
+        Task {
+            calendarMessage = await store.syncTaskToCalendar(task)
+            isSyncingCalendar = false
+            isCalendarMessagePresented = true
+        }
+    }
+}
+
+private struct ReminderInfoTile: View {
+    let title: String
+    let value: String
+    let systemImage: String
+    let color: Color
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(systemName: systemImage)
+                .font(.system(size: AppFontSize.scaled(16), weight: .bold))
+                .foregroundStyle(color)
+                .frame(width: 28, height: 28)
+                .background(color.opacity(0.12), in: RoundedRectangle(cornerRadius: 7))
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(title)
+                    .font(.system(size: AppFontSize.scaled(12), weight: .semibold))
+                    .foregroundStyle(.secondary)
+
+                Text(value)
+                    .font(.system(size: AppFontSize.scaled(16), weight: .heavy))
+                    .foregroundStyle(Color(hex: 0x2D3138))
+            }
+
+            Spacer()
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity)
+        .background(.white.opacity(0.68), in: RoundedRectangle(cornerRadius: 8))
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(.white.opacity(0.72), lineWidth: 1)
+        )
+    }
+}
+
 private struct CounterGlyphView: View {
     var body: some View {
         ZStack {
@@ -1105,11 +1255,26 @@ private struct EmptyPlanView: View {
     }
 }
 
+private enum AddItemCategory: String, CaseIterable, Identifiable {
+    case reminder
+    case tomato
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .reminder: return "提醒事项"
+        case .tomato: return "番茄钟"
+        }
+    }
+}
+
 private struct AddFocusItemDialog: View {
     @EnvironmentObject private var store: FocusStore
     @Binding var isPresented: Bool
     let defaultPlan: TaskPlan
 
+    @State private var category: AddItemCategory = .reminder
     @State private var kind: FocusItemKind = .pomodoro
     @State private var title = ""
     @State private var plan: TaskPlan = .today
@@ -1124,7 +1289,12 @@ private struct AddFocusItemDialog: View {
     @State private var deadline = Calendar.current.date(byAdding: .day, value: 7, to: Date()) ?? Date()
 
     private var dialogTitle: String {
+        guard category == .tomato else {
+            return "添加提醒事项"
+        }
+
         switch kind {
+        case .reminder: return "添加提醒事项"
         case .pomodoro: return "添加待办"
         case .habit: return "添加习惯养成"
         case .goal: return "添加目标"
@@ -1168,13 +1338,23 @@ private struct AddFocusItemDialog: View {
             .background(Color(hex: 0xF5F6F8))
 
             VStack(spacing: 22) {
-                Picker("类型", selection: $kind) {
-                    ForEach(FocusItemKind.allCases) { itemKind in
-                        Text(itemKind.title).tag(itemKind)
+                Picker("类别", selection: $category) {
+                    ForEach(AddItemCategory.allCases) { itemCategory in
+                        Text(itemCategory.title).tag(itemCategory)
                     }
                 }
                 .pickerStyle(.segmented)
                 .labelsHidden()
+
+                if category == .tomato {
+                    Picker("类型", selection: $kind) {
+                        ForEach([FocusItemKind.pomodoro, .habit, .goal]) { itemKind in
+                            Text(itemKind.title).tag(itemKind)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .labelsHidden()
+                }
 
                 TextField("请输入事项名称", text: $title)
                     .textFieldStyle(.plain)
@@ -1189,53 +1369,9 @@ private struct AddFocusItemDialog: View {
                     )
                     .onSubmit(createItem)
 
-                kindSpecificFields
-
-                VStack(alignment: .leading, spacing: 14) {
-                    Text("最后一步，设置单次专注的时长：")
-                        .font(.system(size: AppFontSize.scaled(18), weight: .semibold))
-                        .foregroundStyle(Color(hex: 0x4D5360))
-
-                    HStack(spacing: 12) {
-                        ForEach(FocusTimingStyle.allCases) { style in
-                            TimingStyleChip(
-                                title: style.title,
-                                isSelected: timingStyle == style
-                            ) {
-                                timingStyle = style
-                            }
-                        }
-                    }
-
-                    HStack(spacing: 16) {
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("\(durationMinutes) 分钟")
-                                .font(.system(size: AppFontSize.scaled(16), weight: .heavy))
-                                .foregroundStyle(Color(hex: 0x23A8E0))
-                                .padding(.horizontal, 14)
-                                .frame(height: 34)
-                                .background(Color(hex: 0xEAF8FE), in: Capsule())
-
-                            Slider(
-                                value: Binding(
-                                    get: { Double(durationMinutes) },
-                                    set: { durationMinutes = Int($0.rounded()) }
-                                ),
-                                in: 1...120,
-                                step: 1
-                            )
-                            .tint(Color(hex: 0x23A8E0))
-                        }
-
-                        Button {
-                            durationMinutes = 25
-                        } label: {
-                            Image(systemName: "pencil")
-                                .font(.system(size: AppFontSize.scaled(18), weight: .bold))
-                        }
-                        .buttonStyle(.largeCircle(color: Color(hex: 0xEAF8FE), foreground: Color(hex: 0x23A8E0), size: 48))
-                        .help("恢复 25 分钟")
-                    }
+                if category == .tomato {
+                    kindSpecificFields
+                    focusDurationFields
                 }
 
                 Picker("计划", selection: $plan) {
@@ -1262,8 +1398,27 @@ private struct AddFocusItemDialog: View {
             plan = defaultPlan
             durationMinutes = store.focusSeconds / 60
         }
+        .onChange(of: category) { _, newCategory in
+            switch newCategory {
+            case .reminder:
+                kind = .reminder
+                timingStyle = .none
+                targetUnit = .times
+                targetAmount = 1
+                estimate = 1
+            case .tomato:
+                if kind == .reminder {
+                    kind = .pomodoro
+                }
+                timingStyle = .countdown
+            }
+        }
         .onChange(of: kind) { _, newKind in
             switch newKind {
+            case .reminder:
+                timingStyle = .none
+                targetUnit = .times
+                targetAmount = 1
             case .pomodoro:
                 timingStyle = .countdown
                 targetUnit = .times
@@ -1283,6 +1438,8 @@ private struct AddFocusItemDialog: View {
     @ViewBuilder
     private var kindSpecificFields: some View {
         switch kind {
+        case .reminder:
+            EmptyView()
         case .pomodoro:
             VStack(spacing: 12) {
                 HStack(spacing: 12) {
@@ -1403,13 +1560,65 @@ private struct AddFocusItemDialog: View {
         }
     }
 
+    private var focusDurationFields: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text("最后一步，设置单次专注的时长：")
+                .font(.system(size: AppFontSize.scaled(18), weight: .semibold))
+                .foregroundStyle(Color(hex: 0x4D5360))
+
+            HStack(spacing: 12) {
+                ForEach(FocusTimingStyle.allCases) { style in
+                    TimingStyleChip(
+                        title: style.title,
+                        isSelected: timingStyle == style
+                    ) {
+                        timingStyle = style
+                    }
+                }
+            }
+
+            HStack(spacing: 16) {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("\(durationMinutes) 分钟")
+                        .font(.system(size: AppFontSize.scaled(16), weight: .heavy))
+                        .foregroundStyle(Color(hex: 0x23A8E0))
+                        .padding(.horizontal, 14)
+                        .frame(height: 34)
+                        .background(Color(hex: 0xEAF8FE), in: Capsule())
+
+                    Slider(
+                        value: Binding(
+                            get: { Double(durationMinutes) },
+                            set: { durationMinutes = Int($0.rounded()) }
+                        ),
+                        in: 1...120,
+                        step: 1
+                    )
+                    .tint(Color(hex: 0x23A8E0))
+                }
+
+                Button {
+                    durationMinutes = 25
+                } label: {
+                    Image(systemName: "pencil")
+                        .font(.system(size: AppFontSize.scaled(18), weight: .bold))
+                }
+                .buttonStyle(.largeCircle(color: Color(hex: 0xEAF8FE), foreground: Color(hex: 0x23A8E0), size: 48))
+                .help("恢复 25 分钟")
+            }
+        }
+    }
+
     private func createItem() {
         guard canCreate else { return }
 
+        let itemKind: FocusItemKind = category == .reminder ? .reminder : kind
         let normalizedTarget = max(1, targetAmount)
         let normalizedEstimate: Int
 
-        switch kind {
+        switch itemKind {
+        case .reminder:
+            normalizedEstimate = 1
         case .pomodoro:
             normalizedEstimate = estimate
         case .habit, .goal:
@@ -1421,13 +1630,13 @@ private struct AddFocusItemDialog: View {
             estimate: normalizedEstimate,
             priority: priority,
             plan: plan,
-            kind: kind,
-            timingStyle: timingStyle,
-            durationSeconds: durationMinutes * 60,
-            targetAmount: kind == .pomodoro ? nil : normalizedTarget,
-            targetUnit: kind == .pomodoro ? nil : targetUnit,
-            habitFrequency: kind == .habit ? habitFrequency : nil,
-            deadline: kind == .goal && useDeadline ? deadline : nil
+            kind: itemKind,
+            timingStyle: itemKind == .reminder ? .none : timingStyle,
+            durationSeconds: itemKind == .reminder ? nil : durationMinutes * 60,
+            targetAmount: [.habit, .goal].contains(itemKind) ? normalizedTarget : nil,
+            targetUnit: [.habit, .goal].contains(itemKind) ? targetUnit : nil,
+            habitFrequency: itemKind == .habit ? habitFrequency : nil,
+            deadline: itemKind == .goal && useDeadline ? deadline : nil
         )
         isPresented = false
     }
@@ -1468,6 +1677,10 @@ private struct TaskRow: View {
 
     private var kind: FocusItemKind {
         store.itemKind(for: task)
+    }
+
+    private var isReminder: Bool {
+        kind == .reminder
     }
 
     var body: some View {
@@ -1522,14 +1735,16 @@ private struct TaskRow: View {
                     .fixedSize()
                     .help("调整计划")
 
-                    Stepper("", onIncrement: {
-                        store.incrementEstimate(for: task, by: 1)
-                    }, onDecrement: {
-                        store.incrementEstimate(for: task, by: -1)
-                    })
-                    .labelsHidden()
-                    .controlSize(.mini)
-                    .frame(width: 42)
+                    if !isReminder {
+                        Stepper("", onIncrement: {
+                            store.incrementEstimate(for: task, by: 1)
+                        }, onDecrement: {
+                            store.incrementEstimate(for: task, by: -1)
+                        })
+                        .labelsHidden()
+                        .controlSize(.mini)
+                        .frame(width: 42)
+                    }
                 }
             }
 
@@ -1550,15 +1765,17 @@ private struct TaskRow: View {
             .help(task.calendarEventID == nil ? "同步任务到日历" : "更新日历任务")
             .disabled(isSyncingCalendar)
 
-            Button {
-                store.selectTask(task)
-            } label: {
-                Image(systemName: isSelected ? "play.fill" : "play")
-                    .font(.system(size: AppFontSize.scaled(13), weight: .bold))
+            if !isReminder {
+                Button {
+                    store.selectTask(task)
+                } label: {
+                    Image(systemName: isSelected ? "play.fill" : "play")
+                        .font(.system(size: AppFontSize.scaled(13), weight: .bold))
+                }
+                .buttonStyle(.accentCircle(color: isSelected ? Color(hex: 0xF05A4F) : Color(hex: 0xD9DDE5)))
+                .help("设为当前任务")
+                .disabled(task.isDone)
             }
-            .buttonStyle(.accentCircle(color: isSelected ? Color(hex: 0xF05A4F) : Color(hex: 0xD9DDE5)))
-            .help("设为当前任务")
-            .disabled(task.isDone)
         }
         .alert("日历同步", isPresented: $isCalendarMessagePresented) {
             Button("好", role: .cancel) {}
@@ -1574,6 +1791,10 @@ private struct TaskRow: View {
             RoundedRectangle(cornerRadius: 8)
                 .stroke(isSelected ? Color(hex: 0xF05A4F).opacity(0.55) : .white.opacity(0.45), lineWidth: 1)
         )
+        .contentShape(RoundedRectangle(cornerRadius: 8))
+        .onTapGesture {
+            store.selectTask(task)
+        }
     }
 
     private func syncToCalendar() {

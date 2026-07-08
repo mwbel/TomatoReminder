@@ -84,6 +84,15 @@ enum TaskPlan: String, CaseIterable, Codable, Identifiable {
         }
     }
 
+    var systemImage: String {
+        switch self {
+        case .today: return "sun.max"
+        case .tomorrow: return "sunset"
+        case .thisWeek: return "calendar"
+        case .planned: return "calendar.badge.checkmark"
+        }
+    }
+
     var color: Color {
         switch self {
         case .today: return Color(hex: 0x28B44B)
@@ -153,6 +162,7 @@ enum PlanView: String, CaseIterable, Identifiable {
 }
 
 enum FocusItemKind: String, CaseIterable, Codable, Identifiable {
+    case reminder
     case pomodoro
     case habit
     case goal
@@ -161,6 +171,7 @@ enum FocusItemKind: String, CaseIterable, Codable, Identifiable {
 
     var title: String {
         switch self {
+        case .reminder: return "提醒事项"
         case .pomodoro: return "普通番茄钟"
         case .habit: return "定习惯"
         case .goal: return "目标"
@@ -169,6 +180,7 @@ enum FocusItemKind: String, CaseIterable, Codable, Identifiable {
 
     var shortTitle: String {
         switch self {
+        case .reminder: return "提醒"
         case .pomodoro: return "番茄"
         case .habit: return "习惯"
         case .goal: return "目标"
@@ -177,6 +189,7 @@ enum FocusItemKind: String, CaseIterable, Codable, Identifiable {
 
     var systemImage: String {
         switch self {
+        case .reminder: return "bell.badge"
         case .pomodoro: return "timer"
         case .habit: return "repeat.circle"
         case .goal: return "flag.checkered"
@@ -185,6 +198,7 @@ enum FocusItemKind: String, CaseIterable, Codable, Identifiable {
 
     var color: Color {
         switch self {
+        case .reminder: return Color(hex: 0x7D8697)
         case .pomodoro: return Color(hex: 0xF05A4F)
         case .habit: return Color(hex: 0x23A8E0)
         case .goal: return Color(hex: 0x7C58FF)
@@ -423,6 +437,10 @@ final class FocusStore: ObservableObject {
         tasks.filter { !$0.isDone }
     }
 
+    var timerEligibleTasks: [FocusTask] {
+        activeTasks.filter { itemKind(for: $0) != .reminder }
+    }
+
     func taskPlan(for task: FocusTask) -> TaskPlan {
         task.plan ?? .today
     }
@@ -466,6 +484,7 @@ final class FocusStore: ObservableObject {
         }
 
         return filteredTasks(for: view, searchText: "").reduce(0) { total, task in
+            guard itemKind(for: task) != .reminder else { return total }
             let remainingSessions = max(task.estimate - task.completedSessions, 0)
             return total + remainingSessions * durationSeconds(for: task)
         }
@@ -491,8 +510,9 @@ final class FocusStore: ObservableObject {
         guard !isRunning else { return }
         let isStartingNewInterval = intervalStartedAt == nil
 
-        if selectedMode == .focus, selectedTaskID == nil {
-            selectedTaskID = activeTasks.first?.id
+        if selectedMode == .focus,
+           selectedTaskID == nil || selectedTask.map({ itemKind(for: $0) == .reminder }) == true {
+            selectedTaskID = timerEligibleTasks.first?.id
         }
 
         if selectedMode == .focus, isStartingNewInterval {
@@ -551,6 +571,8 @@ final class FocusStore: ObservableObject {
         let minutes = durationSeconds(for: task) / 60
 
         switch itemKind(for: task) {
+        case .reminder:
+            return "提醒事项"
         case .pomodoro:
             return "\(timingStyle.title) · \(minutes) 分钟"
         case .habit:
@@ -577,6 +599,9 @@ final class FocusStore: ObservableObject {
 
         let sourceTasks = tasks.filter { task in
             !task.isDone || sessions.contains(where: { $0.taskID == task.id })
+        }
+        .filter { task in
+            itemKind(for: task) != .reminder
         }
         .filter { task in
             trimmedSearch.isEmpty || task.title.localizedCaseInsensitiveContains(trimmedSearch)
@@ -884,6 +909,7 @@ final class FocusStore: ObservableObject {
         focusCycleCount += 1
 
         guard let taskID, let index = tasks.firstIndex(where: { $0.id == taskID }) else { return }
+        guard itemKind(for: tasks[index]) != .reminder else { return }
         tasks[index].completedSessions += 1
 
         if itemKind(for: tasks[index]) != .habit, tasks[index].completedSessions >= tasks[index].estimate {
