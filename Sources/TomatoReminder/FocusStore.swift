@@ -79,7 +79,7 @@ enum TaskPlan: String, CaseIterable, Codable, Identifiable {
         switch self {
         case .today: return "今天"
         case .tomorrow: return "明天"
-        case .thisWeek: return "本周"
+        case .thisWeek: return "本周末"
         case .planned: return "稍后"
         }
     }
@@ -118,7 +118,7 @@ enum PlanView: String, CaseIterable, Identifiable {
         switch self {
         case .today: return "今天"
         case .tomorrow: return "明天"
-        case .thisWeek: return "本周"
+        case .thisWeek: return "本周末"
         case .planned: return "已计划"
         case .completed: return "已完成"
         case .all: return "任务"
