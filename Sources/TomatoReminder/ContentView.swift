@@ -58,7 +58,7 @@ struct ContentView: View {
                     .transition(.opacity.combined(with: .scale(scale: 0.98)))
             } else {
                 GeometryReader { proxy in
-                    let referenceWidth: CGFloat = 1320
+                    let referenceWidth: CGFloat = activePracticeSummary == nil ? 1220 : 900
                     let scale = min(1, proxy.size.width / referenceWidth)
                     let contentWidth = max(proxy.size.width / max(scale, 0.01), referenceWidth)
                     let contentHeight = max(proxy.size.height / max(scale, 0.01), 660)
