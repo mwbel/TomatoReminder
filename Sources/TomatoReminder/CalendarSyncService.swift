@@ -53,21 +53,26 @@ final class CalendarSyncService {
         let startDate = Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: dayStart) ?? dayStart.addingTimeInterval(32_400)
         let endDate = Calendar.current.date(byAdding: .minute, value: 30, to: startDate) ?? startDate.addingTimeInterval(1_800)
         let event = existingEvent(for: task.calendarEventID) ?? EKEvent(eventStore: eventStore)
+        let hadRecurrence = event.hasRecurrenceRules
+        let recurrenceRule = recurrenceRule(for: task.reminderRepeatFrequency ?? .none)
 
         event.calendar = targetCalendar
         event.title = task.title
         event.isAllDay = false
         event.startDate = startDate
         event.endDate = endDate
+        event.recurrenceRules = recurrenceRule.map { [$0] }
         event.notes = [
             "由 Tomato Reminder 手动同步。",
             "计划：\(planTitle)",
             "类型：\(task.kind?.title ?? FocusItemKind.pomodoro.title)",
+            "重复：\((task.reminderRepeatFrequency ?? .none).title)",
             "摘要：\(summary)",
             "说明：这里同步的是任务计划，不会写入番茄钟专注记录。"
         ].joined(separator: "\n")
 
-        try eventStore.save(event, span: .thisEvent, commit: true)
+        let saveSpan: EKSpan = hadRecurrence || recurrenceRule != nil ? .futureEvents : .thisEvent
+        try eventStore.save(event, span: saveSpan, commit: true)
 
         guard let eventIdentifier = event.eventIdentifier else {
             throw CalendarSyncError.eventIdentifierMissing
@@ -89,6 +94,23 @@ final class CalendarSyncService {
             startDate: startDate,
             endDate: endDate
         )
+    }
+
+    private func recurrenceRule(for frequency: ReminderRepeatFrequency) -> EKRecurrenceRule? {
+        let recurrenceFrequency: EKRecurrenceFrequency
+
+        switch frequency {
+        case .none:
+            return nil
+        case .daily:
+            recurrenceFrequency = .daily
+        case .weekly:
+            recurrenceFrequency = .weekly
+        case .yearly:
+            recurrenceFrequency = .yearly
+        }
+
+        return EKRecurrenceRule(recurrenceWith: recurrenceFrequency, interval: 1, end: nil)
     }
 
     private func ensureCalendarAccess() async throws {

@@ -832,6 +832,10 @@ private struct ReminderDetailView: View {
         store.taskPlan(for: task)
     }
 
+    private var repeatFrequency: ReminderRepeatFrequency {
+        store.reminderRepeatFrequency(for: task)
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
             HStack(alignment: .top, spacing: 16) {
@@ -874,15 +878,45 @@ private struct ReminderDetailView: View {
             HStack(spacing: 14) {
                 ReminderInfoTile(title: "计划", value: plan.title, systemImage: plan.systemImage, color: plan.color)
                 ReminderInfoTile(title: "状态", value: task.isDone ? "已完成" : "待处理", systemImage: task.isDone ? "checkmark.circle.fill" : "circle", color: task.isDone ? Color(hex: 0x2E9E73) : Color(hex: 0x7D8697))
+                ReminderInfoTile(title: "重复", value: repeatFrequency.title, systemImage: repeatFrequency.systemImage, color: Color(hex: 0x7D8697))
                 ReminderInfoTile(title: "日历", value: task.calendarEventID == nil ? "未同步" : "已同步", systemImage: "calendar", color: Color(hex: 0x148BFF))
             }
+
+            VStack(alignment: .leading, spacing: 12) {
+                Label("重复周期", systemImage: "arrow.triangle.2.circlepath")
+                    .font(.system(size: AppFontSize.scaled(14), weight: .semibold))
+                    .foregroundStyle(.secondary)
+
+                Picker("重复周期", selection: Binding(
+                    get: { store.reminderRepeatFrequency(for: task) },
+                    set: { store.setReminderRepeatFrequency(task, to: $0) }
+                )) {
+                    ForEach(ReminderRepeatFrequency.allCases) { frequency in
+                        Text(frequency.title).tag(frequency)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .labelsHidden()
+
+                if task.calendarEventID != nil {
+                    Text("修改重复周期后，点“更新日历”同步到 Mac 日历。")
+                        .font(.system(size: AppFontSize.scaled(12), weight: .medium))
+                        .foregroundStyle(.secondary)
+                }
+            }
+            .padding(16)
+            .background(.white.opacity(0.68), in: RoundedRectangle(cornerRadius: 8))
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(.white.opacity(0.72), lineWidth: 1)
+            )
 
             VStack(alignment: .leading, spacing: 10) {
                 Text("备注")
                     .font(.system(size: AppFontSize.scaled(14), weight: .semibold))
                     .foregroundStyle(.secondary)
 
-                Text("当前先记录提醒事项名称、计划和日历同步状态。")
+                Text("当前记录提醒事项名称、计划、重复周期和日历同步状态。")
                     .font(.system(size: AppFontSize.scaled(15), weight: .medium))
                     .foregroundStyle(Color(hex: 0x555B64))
             }
@@ -1314,6 +1348,7 @@ private struct AddFocusItemDialog: View {
     @State private var targetAmount = 1
     @State private var targetUnit: FocusGoalUnit = .times
     @State private var habitFrequency: HabitFrequency = .daily
+    @State private var reminderRepeatFrequency: ReminderRepeatFrequency = .none
     @State private var useDeadline = true
     @State private var deadline = Calendar.current.date(byAdding: .day, value: 7, to: Date()) ?? Date()
 
@@ -1411,6 +1446,10 @@ private struct AddFocusItemDialog: View {
                 .pickerStyle(.segmented)
                 .labelsHidden()
 
+                if category == .reminder {
+                    reminderRepeatFields
+                }
+
                 Button("更多设置") {}
                     .buttonStyle(.plain)
                     .foregroundStyle(Color(hex: 0x23A8E0))
@@ -1436,6 +1475,7 @@ private struct AddFocusItemDialog: View {
                 targetAmount = 1
                 estimate = 1
             case .tomato:
+                reminderRepeatFrequency = .none
                 if kind == .reminder {
                     kind = .pomodoro
                 }
@@ -1448,6 +1488,7 @@ private struct AddFocusItemDialog: View {
                 timingStyle = .none
                 targetUnit = .times
                 targetAmount = 1
+                reminderRepeatFrequency = .none
             case .pomodoro:
                 timingStyle = .countdown
                 targetUnit = .times
@@ -1589,6 +1630,22 @@ private struct AddFocusItemDialog: View {
         }
     }
 
+    private var reminderRepeatFields: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Label("重复周期", systemImage: "arrow.triangle.2.circlepath")
+                .font(.system(size: AppFontSize.scaled(15), weight: .semibold))
+                .foregroundStyle(Color(hex: 0x5A6170))
+
+            Picker("重复周期", selection: $reminderRepeatFrequency) {
+                ForEach(ReminderRepeatFrequency.allCases) { frequency in
+                    Text(frequency.title).tag(frequency)
+                }
+            }
+            .pickerStyle(.segmented)
+            .labelsHidden()
+        }
+    }
+
     private var focusDurationFields: some View {
         VStack(alignment: .leading, spacing: 14) {
             Text("最后一步，设置单次专注的时长：")
@@ -1665,7 +1722,8 @@ private struct AddFocusItemDialog: View {
             targetAmount: [.habit, .goal].contains(itemKind) ? normalizedTarget : nil,
             targetUnit: [.habit, .goal].contains(itemKind) ? targetUnit : nil,
             habitFrequency: itemKind == .habit ? habitFrequency : nil,
-            deadline: itemKind == .goal && useDeadline ? deadline : nil
+            deadline: itemKind == .goal && useDeadline ? deadline : nil,
+            reminderRepeatFrequency: itemKind == .reminder ? reminderRepeatFrequency : nil
         )
         isPresented = false
     }

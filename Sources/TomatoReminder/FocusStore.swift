@@ -252,6 +252,33 @@ enum HabitFrequency: String, CaseIterable, Codable, Identifiable {
     }
 }
 
+enum ReminderRepeatFrequency: String, CaseIterable, Codable, Identifiable {
+    case none
+    case daily
+    case weekly
+    case yearly
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .none: return "不重复"
+        case .daily: return "每天"
+        case .weekly: return "每周"
+        case .yearly: return "每年"
+        }
+    }
+
+    var systemImage: String {
+        switch self {
+        case .none: return "bell"
+        case .daily: return "arrow.clockwise"
+        case .weekly: return "calendar"
+        case .yearly: return "calendar.circle"
+        }
+    }
+}
+
 struct FocusTask: Codable, Identifiable, Equatable {
     var id: UUID = UUID()
     var title: String
@@ -267,6 +294,7 @@ struct FocusTask: Codable, Identifiable, Equatable {
     var targetUnit: FocusGoalUnit?
     var habitFrequency: HabitFrequency?
     var deadline: Date?
+    var reminderRepeatFrequency: ReminderRepeatFrequency? = nil
     var calendarEventID: String? = nil
     var createdAt: Date = Date()
 }
@@ -445,6 +473,10 @@ final class FocusStore: ObservableObject {
         task.plan ?? .today
     }
 
+    func reminderRepeatFrequency(for task: FocusTask) -> ReminderRepeatFrequency {
+        task.reminderRepeatFrequency ?? .none
+    }
+
     func filteredTasks(for view: PlanView, searchText: String) -> [FocusTask] {
         let trimmedSearch = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
         let baseTasks = tasks.filter { task in
@@ -572,7 +604,7 @@ final class FocusStore: ObservableObject {
 
         switch itemKind(for: task) {
         case .reminder:
-            return "提醒事项"
+            return reminderRepeatFrequency(for: task).title
         case .pomodoro:
             return "\(timingStyle.title) · \(minutes) 分钟"
         case .habit:
@@ -716,7 +748,8 @@ final class FocusStore: ObservableObject {
         targetAmount: Int? = nil,
         targetUnit: FocusGoalUnit? = nil,
         habitFrequency: HabitFrequency? = nil,
-        deadline: Date? = nil
+        deadline: Date? = nil,
+        reminderRepeatFrequency: ReminderRepeatFrequency? = nil
     ) {
         let trimmed = title.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty else { return }
@@ -729,6 +762,7 @@ final class FocusStore: ObservableObject {
         task.targetUnit = targetUnit
         task.habitFrequency = habitFrequency
         task.deadline = deadline
+        task.reminderRepeatFrequency = kind == .reminder ? reminderRepeatFrequency : nil
         tasks.insert(task, at: 0)
         selectedTaskID = task.id
 
@@ -771,24 +805,33 @@ final class FocusStore: ObservableObject {
         tasks[index].plan = plan
     }
 
+    func setReminderRepeatFrequency(_ task: FocusTask, to frequency: ReminderRepeatFrequency) {
+        guard let index = tasks.firstIndex(where: { $0.id == task.id }),
+              itemKind(for: tasks[index]) == .reminder
+        else { return }
+
+        tasks[index].reminderRepeatFrequency = frequency
+    }
+
     func syncTaskToCalendar(_ task: FocusTask) async -> String {
-        guard tasks.contains(where: { $0.id == task.id }) else {
+        guard let currentTask = tasks.first(where: { $0.id == task.id }) else {
             return "这个任务已经不存在。"
         }
 
         do {
             let result = try await calendarSyncService.syncTask(
-                task,
-                scheduledOn: calendarDate(for: task),
-                planTitle: taskPlan(for: task).title,
-                summary: taskSummary(for: task)
+                currentTask,
+                scheduledOn: calendarDate(for: currentTask),
+                planTitle: taskPlan(for: currentTask).title,
+                summary: taskSummary(for: currentTask)
             )
 
-            if let index = tasks.firstIndex(where: { $0.id == task.id }) {
+            if let index = tasks.firstIndex(where: { $0.id == currentTask.id }) {
                 tasks[index].calendarEventID = result.eventIdentifier
             }
 
-            return "已同步到“\(result.calendarTitle)”日历，时间：\(calendarDateTimeRangeText(start: result.startDate, end: result.endDate))。"
+            let repeatText = reminderRepeatFrequency(for: currentTask) == .none ? "" : "，重复：\(reminderRepeatFrequency(for: currentTask).title)"
+            return "已同步到“\(result.calendarTitle)”日历，时间：\(calendarDateTimeRangeText(start: result.startDate, end: result.endDate))\(repeatText)。"
         } catch {
             return error.localizedDescription
         }
