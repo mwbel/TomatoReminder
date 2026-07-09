@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var selectedPlan: PlanView = .today
     @State private var searchText = ""
     @State private var isTimerFullscreen = false
+    @State private var isTaskColumnVisible = true
     @State private var isStatsSidebarVisible = false
     @State private var isAddItemPresented = false
     @State private var selectedPracticeID: UUID?
@@ -71,31 +72,41 @@ struct ContentView: View {
             } else {
                 GeometryReader { proxy in
                     let isTimerWorkspace = activePracticeSummary == nil && selectedReminderTask == nil
-                    let referenceWidth: CGFloat = isTimerWorkspace ? (isStatsSidebarVisible ? 1220 : 980) : 900
+                    let referenceWidth: CGFloat = if isTimerWorkspace {
+                        (isTaskColumnVisible ? 980 : 620) + (isStatsSidebarVisible ? 240 : 0)
+                    } else {
+                        isTaskColumnVisible ? 900 : 540
+                    }
                     let scale = min(1, proxy.size.width / referenceWidth)
                     let contentWidth = max(proxy.size.width / max(scale, 0.01), referenceWidth)
                     let contentHeight = max(proxy.size.height / max(scale, 0.01), 660)
 
                     VStack(spacing: 18) {
-                        HeaderView(showsModePicker: shouldShowModePicker)
+                        HeaderView(
+                            showsModePicker: shouldShowModePicker,
+                            isTaskColumnVisible: $isTaskColumnVisible
+                        )
 
                         HStack(alignment: .top, spacing: 18) {
                             PlanSidebar(selectedPlan: $selectedPlan, searchText: $searchText)
                                 .frame(width: 244)
 
-                            Group {
-                                if selectedPlan == .practiceStats {
-                                    PracticeStatsColumn(
-                                        searchText: searchText,
-                                        selectedSummaryID: $selectedPracticeID
-                                    )
-                                } else {
-                                    TaskColumn(selectedPlan: $selectedPlan, searchText: searchText) {
-                                        isAddItemPresented = true
+                            if isTaskColumnVisible {
+                                Group {
+                                    if selectedPlan == .practiceStats {
+                                        PracticeStatsColumn(
+                                            searchText: searchText,
+                                            selectedSummaryID: $selectedPracticeID
+                                        )
+                                    } else {
+                                        TaskColumn(selectedPlan: $selectedPlan, searchText: searchText) {
+                                            isAddItemPresented = true
+                                        }
                                     }
                                 }
+                                .frame(width: 360)
+                                .transition(.opacity.combined(with: .move(edge: .leading)))
                             }
-                            .frame(width: 360)
 
                             if let practiceSummary = activePracticeSummary {
                                 PracticeCounterDetailView(summary: practiceSummary)
@@ -150,6 +161,7 @@ struct ContentView: View {
 private struct HeaderView: View {
     @EnvironmentObject private var store: FocusStore
     let showsModePicker: Bool
+    @Binding var isTaskColumnVisible: Bool
 
     var body: some View {
         HStack(spacing: 16) {
@@ -171,6 +183,16 @@ private struct HeaderView: View {
             .layoutPriority(1)
 
             Spacer()
+
+            Button {
+                withAnimation(.easeInOut(duration: 0.18)) {
+                    isTaskColumnVisible.toggle()
+                }
+            } label: {
+                Image(systemName: "sidebar.left")
+            }
+            .buttonStyle(.plainIcon)
+            .help(isTaskColumnVisible ? "隐藏中间栏" : "显示中间栏")
 
             if showsModePicker {
                 Picker("模式", selection: Binding(
