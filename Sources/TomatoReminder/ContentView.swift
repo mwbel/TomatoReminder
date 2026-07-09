@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var selectedPlan: PlanView = .today
     @State private var searchText = ""
     @State private var isTimerFullscreen = false
+    @State private var isStatsSidebarVisible = false
     @State private var isAddItemPresented = false
     @State private var selectedPracticeID: UUID?
 
@@ -69,7 +70,8 @@ struct ContentView: View {
                     .transition(.opacity.combined(with: .scale(scale: 0.98)))
             } else {
                 GeometryReader { proxy in
-                    let referenceWidth: CGFloat = activePracticeSummary == nil ? 1220 : 900
+                    let isTimerWorkspace = activePracticeSummary == nil && selectedReminderTask == nil
+                    let referenceWidth: CGFloat = isTimerWorkspace ? (isStatsSidebarVisible ? 1220 : 980) : 900
                     let scale = min(1, proxy.size.width / referenceWidth)
                     let contentWidth = max(proxy.size.width / max(scale, 0.01), referenceWidth)
                     let contentHeight = max(proxy.size.height / max(scale, 0.01), 660)
@@ -102,15 +104,20 @@ struct ContentView: View {
                                 ReminderDetailView(task: reminderTask)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                             } else {
-                                TimerPanel {
+                                TimerPanel(
+                                    isStatsSidebarVisible: $isStatsSidebarVisible
+                                ) {
                                     withAnimation(.easeInOut(duration: 0.18)) {
                                         isTimerFullscreen = true
                                     }
                                 }
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-                                StatsColumn()
-                                    .frame(width: 238)
+                                if isStatsSidebarVisible {
+                                    StatsColumn()
+                                        .frame(width: 238)
+                                        .transition(.opacity.combined(with: .move(edge: .trailing)))
+                                }
                             }
                         }
                         .frame(maxHeight: .infinity)
@@ -1811,12 +1818,23 @@ private struct TaskRow: View {
 
 private struct TimerPanel: View {
     @EnvironmentObject private var store: FocusStore
+    @Binding var isStatsSidebarVisible: Bool
     var onEnterFullscreen: () -> Void = {}
 
     var body: some View {
         VStack(spacing: 20) {
             HStack {
                 Spacer()
+
+                Button {
+                    withAnimation(.easeInOut(duration: 0.18)) {
+                        isStatsSidebarVisible.toggle()
+                    }
+                } label: {
+                    Image(systemName: "sidebar.right")
+                }
+                .buttonStyle(.plainIcon)
+                .help(isStatsSidebarVisible ? "隐藏右侧栏" : "显示右侧栏")
 
                 Button(action: onEnterFullscreen) {
                     Image(systemName: "arrow.up.left.and.arrow.down.right")
