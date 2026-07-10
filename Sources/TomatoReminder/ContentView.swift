@@ -22,7 +22,8 @@ struct ContentView: View {
     private var selectedTaskPracticeSummary: PracticeSummary? {
         guard selectedPlan != .practiceStats,
               let selectedTask = store.selectedTask,
-              [.habit, .goal].contains(store.itemKind(for: selectedTask))
+              [.habit, .goal].contains(store.itemKind(for: selectedTask)),
+              store.timingStyle(for: selectedTask) == .none
         else {
             return nil
         }
@@ -1854,13 +1855,17 @@ private struct TaskRow: View {
 
             if !isReminder {
                 Button {
-                    store.selectTask(task)
+                    if isSelected && store.isRunning {
+                        store.pauseTimer()
+                    } else {
+                        store.startTask(task)
+                    }
                 } label: {
-                    Image(systemName: isSelected ? "play.fill" : "play")
+                    Image(systemName: isSelected && store.isRunning ? "pause.fill" : "play.fill")
                         .font(.system(size: AppFontSize.scaled(13), weight: .bold))
                 }
                 .buttonStyle(.accentCircle(color: isSelected ? Color(hex: 0xF05A4F) : Color(hex: 0xD9DDE5)))
-                .help("设为当前任务")
+                .help(isSelected && store.isRunning ? "暂停当前任务" : "开始这个任务")
                 .disabled(task.isDone)
             }
         }

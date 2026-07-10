@@ -786,6 +786,17 @@ final class FocusStore: ObservableObject {
         }
     }
 
+    func startTask(_ task: FocusTask) {
+        guard !task.isDone, itemKind(for: task) != .reminder else { return }
+
+        if selectedMode != .focus {
+            switchMode(.focus)
+        }
+
+        selectTask(task)
+        startTimer()
+    }
+
     func toggleTaskDone(_ task: FocusTask) {
         guard let index = tasks.firstIndex(where: { $0.id == task.id }) else { return }
         tasks[index].isDone.toggle()
