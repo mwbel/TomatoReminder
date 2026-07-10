@@ -166,7 +166,7 @@ private struct HeaderView: View {
     var body: some View {
         HStack(spacing: 16) {
             VStack(alignment: .leading, spacing: 4) {
-                Text("Tomato Reminder")
+                Text("不忘")
                     .font(.system(size: AppFontSize.scaled(24), weight: .bold, design: .rounded))
                     .foregroundStyle(Color(hex: 0x232323))
                     .lineLimit(1)

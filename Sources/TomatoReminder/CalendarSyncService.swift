@@ -11,7 +11,7 @@ enum CalendarSyncError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .accessDenied:
-            return "没有日历访问权限。请在系统设置中允许 Tomato Reminder 访问日历。"
+            return "没有日历访问权限。请在系统设置中允许“不忘”访问日历。"
         case .calendarUnavailable:
             return "没有找到可写入的日历账户。请先在系统日历中启用一个可写日历。"
         case .eventIdentifierMissing:
@@ -36,7 +36,7 @@ final class CalendarSyncService {
     static let shared = CalendarSyncService()
 
     private let eventStore = EKEventStore()
-    private let calendarTitle = "Tomato Reminder"
+    private let calendarTitle = "不忘"
 
     private init() {}
 
@@ -63,7 +63,7 @@ final class CalendarSyncService {
         event.endDate = endDate
         event.recurrenceRules = recurrenceRule.map { [$0] }
         event.notes = [
-            "由 Tomato Reminder 手动同步。",
+            "由“不忘”手动同步。",
             "计划：\(planTitle)",
             "类型：\(task.kind?.title ?? FocusItemKind.pomodoro.title)",
             "重复：\((task.reminderRepeatFrequency ?? .none).title)",

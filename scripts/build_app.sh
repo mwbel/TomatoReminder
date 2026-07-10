@@ -2,9 +2,12 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-APP_NAME="TomatoReminder"
+APP_EXECUTABLE="TomatoReminder"
+APP_DISPLAY_NAME="不忘"
+APP_ICON_FILE="BuwangAppIcon"
 DIST_DIR="$ROOT_DIR/dist"
-APP_DIR="$DIST_DIR/$APP_NAME.app"
+APP_DIR="$DIST_DIR/$APP_DISPLAY_NAME.app"
+LEGACY_APP_DIR="$DIST_DIR/TomatoReminder.app"
 CONTENTS_DIR="$APP_DIR/Contents"
 MACOS_DIR="$CONTENTS_DIR/MacOS"
 RESOURCES_DIR="$CONTENTS_DIR/Resources"
@@ -12,10 +15,11 @@ RESOURCES_DIR="$CONTENTS_DIR/Resources"
 cd "$ROOT_DIR"
 swift build -c release
 
-rm -rf "$APP_DIR"
+rm -rf "$APP_DIR" "$LEGACY_APP_DIR"
 mkdir -p "$MACOS_DIR" "$RESOURCES_DIR/data"
-cp ".build/release/$APP_NAME" "$MACOS_DIR/$APP_NAME"
+cp ".build/release/$APP_EXECUTABLE" "$MACOS_DIR/$APP_EXECUTABLE"
 cp "data/qishi_ocr.json" "$RESOURCES_DIR/data/qishi_ocr.json"
+cp "assets/$APP_ICON_FILE.icns" "$RESOURCES_DIR/$APP_ICON_FILE.icns"
 
 cat > "$CONTENTS_DIR/Info.plist" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>
@@ -23,13 +27,15 @@ cat > "$CONTENTS_DIR/Info.plist" <<PLIST
 <plist version="1.0">
 <dict>
   <key>CFBundleExecutable</key>
-  <string>$APP_NAME</string>
+  <string>$APP_EXECUTABLE</string>
   <key>CFBundleIdentifier</key>
   <string>local.tomato-reminder</string>
   <key>CFBundleName</key>
-  <string>Tomato Reminder</string>
+  <string>$APP_DISPLAY_NAME</string>
   <key>CFBundleDisplayName</key>
-  <string>Tomato Reminder</string>
+  <string>$APP_DISPLAY_NAME</string>
+  <key>CFBundleIconFile</key>
+  <string>$APP_ICON_FILE</string>
   <key>CFBundlePackageType</key>
   <string>APPL</string>
   <key>CFBundleShortVersionString</key>
