@@ -2160,8 +2160,8 @@ private struct InspirationTextView: View {
     var lineLimit: Int?
 
     var body: some View {
-        if let text, !text.isEmpty {
-            Text(text)
+        if let displayText, !displayText.isEmpty {
+            Text(displayText)
                 .font(.system(size: AppFontSize.scaled(fontSize), weight: .semibold))
                 .foregroundStyle(Color(hex: 0x555B64))
                 .multilineTextAlignment(.center)
@@ -2178,6 +2178,15 @@ private struct InspirationTextView: View {
                         .stroke(Color.white.opacity(0.72), lineWidth: 1)
                 )
         }
+    }
+
+    private var displayText: String? {
+        text?
+            .replacingOccurrences(of: "，\n", with: "，")
+            .replacingOccurrences(of: ",\n", with: ",")
+            .replacingOccurrences(of: "，", with: "，\n")
+            .replacingOccurrences(of: ",", with: ",\n")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
 
