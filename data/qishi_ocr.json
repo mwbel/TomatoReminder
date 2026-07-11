@@ -41,7 +41,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0005.PNG",
-      "text": "4\n65\n我治好您 您治好世界\n聪明的人，自己做不到的东西才会随喜赞\n叹，自己做到了就不会随喜；\n智慧的人，自己做得到会随喜赞叹；自己做\n不到的，自己努力做到。\n结果生成中…"
+      "text": "聪明的人，自己做不到的东西才会随喜赞叹，自己做到了就不会随喜；智慧的人，自己做得到会随喜赞叹；自己做不到的，自己努力做到。"
     },
     {
       "file": "IMG_0006.PNG",
@@ -64,156 +64,33 @@
         },
         {
           "confidence": 0.5,
-          "text": "生命不必每时每刻都要冲刺。"
-        },
-        {
-          "confidence": 1,
-          "text": "低沉时，就当给自己放了一个"
-        },
-        {
-          "confidence": 0.5,
-          "text": "悠长假期"
-        },
-        {
-          "confidence": 0.3,
-          "text": "|1"
-        },
-        {
-          "confidence": 0.5,
-          "text": "J"
-        },
-        {
-          "confidence": 0.3,
-          "text": "V"
-        },
-        {
-          "confidence": 0.3,
-          "text": "L"
+          "text": "生命不必每时每刻都要冲刺。\n 低沉时，就当给自己放了一个悠长假期。"
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0006.PNG",
-      "text": "打开\n35\n66\n€0\n生命不必每时每刻都要冲刺。\n低沉时，就当给自己放了一个\n悠长假期\n|1\nJ\nV\nL"
+      "text": "生命不必每时每刻都要冲刺。低沉时，就当给自己放了一个悠长假期"
     },
     {
       "file": "IMG_0017.PNG",
       "lines": [
         {
-          "confidence": 0.3,
-          "text": "：8: 5G"
-        },
-        {
-          "confidence": 1,
-          "text": "59"
-        },
-        {
           "confidence": 0.5,
-          "text": "66"
-        },
-        {
-          "confidence": 0.3,
-          "text": "E0"
-        },
-        {
-          "confidence": 0.3,
-          "text": "g8"
-        },
-        {
-          "confidence": 0.5,
-          "text": "因做过的事引起的后悔会被时"
-        },
-        {
-          "confidence": 0.5,
-          "text": "间慢慢抚乎"
-        },
-        {
-          "confidence": 0.3,
-          "text": "为没做过的事产"
-        },
-        {
-          "confidence": 0.5,
-          "text": "生的后悔都会一直难以释怀。"
+          "text": "因做过的事引起的后悔会被时间慢慢抚平，\n 为没做过的事产生的后悔都会一直难以释怀。"
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0017.PNG",
-      "text": "：8: 5G\n59\n66\nE0\ng8\n因做过的事引起的后悔会被时\n间慢慢抚乎\n为没做过的事产\n生的后悔都会一直难以释怀。"
-    },
-    {
-      "file": "IMG_0080.PNG",
-      "lines": [
-        {
-          "confidence": 0.5,
-          "text": "打开"
-        },
-        {
-          "confidence": 0.3,
-          "text": "34"
-        },
-        {
-          "confidence": 0.3,
-          "text": "66"
-        },
-        {
-          "confidence": 0.3,
-          "text": "€0"
-        },
-        {
-          "confidence": 1,
-          "text": "青春是面对现实去想象的能"
-        },
-        {
-          "confidence": 0.5,
-          "text": "力，而不是按照别人的想象来"
-        },
-        {
-          "confidence": 0.5,
-          "text": "欺骗自己。"
-        },
-        {
-          "confidence": 0.3,
-          "text": "11"
-        },
-        {
-          "confidence": 0.3,
-          "text": "L"
-        }
-      ],
-      "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0080.PNG",
-      "text": "打开\n34\n66\n€0\n青春是面对现实去想象的能\n力，而不是按照别人的想象来\n欺骗自己。\n11\nL"
+      "text": "因做过的事引起的后悔会被时间慢慢抚乎为没做过的事产生的后悔都会一直难以释怀。"
     },
     {
       "file": "IMG_0081.PNG",
       "lines": [
         {
-          "confidence": 0.3,
-          "text": "66"
-        },
-        {
-          "confidence": 0.3,
-          "text": "€0"
-        },
-        {
-          "confidence": 0.3,
-          "text": "98"
-        },
-        {
           "confidence": 0.5,
-          "text": "生活的不确定性，正是我们希"
-        },
-        {
-          "confidence": 0.5,
-          "text": "望的来源。"
-        },
-        {
-          "confidence": 1,
-          "text": "休息中"
-        },
-        {
-          "confidence": 1,
-          "text": "点击填写本次专注心得"
+          "text": "生活的不确定性，正是我们希望的来源。"
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0081.PNG",
-      "text": "66\n€0\n98\n生活的不确定性，正是我们希\n望的来源。\n休息中\n点击填写本次专注心得"
+      "text": "生活的不确定性，正是我们希望的来源。"
     },
     {
       "file": "IMG_0124.PNG",
@@ -252,7 +129,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0124.PNG",
-      "text": "打开\n704\n66\n€0\n平凡的脚步也可以走完伟大\n的行程。\nJ\n<"
+      "text": "平凡的脚步也可以走完伟大的行程。"
     },
     {
       "file": "IMG_0148.PNG",
@@ -303,7 +180,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0148.PNG",
-      "text": "二\n：！\n86\n66\n€0\n忧欢虽是有情必然的一种连\n•结，但优欢也只是生命偶然的\n一场派对\n中11\n休息中\n点击填写本次专注心得"
+      "text": "忧欢虽是有情必然的一种连结，但优欢也只是生命偶然的一场派对"
     },
     {
       "file": "IMG_0175.PNG",
@@ -338,7 +215,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0175.PNG",
-      "text": "二\n25\n66\nE0\n以深深的谦虚和忍耐去期待一\n。个新的豁然贯通的时刻。\n山"
+      "text": "以深深的谦虚和忍耐去期待一个新的豁然贯通的时刻。"
     },
     {
       "file": "IMG_0176.PNG",
@@ -385,7 +262,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0176.PNG",
-      "text": "打开\n254\n66\nEU\n要贪心，不要\n不要着急，\n放弃。\nL:56\n休息中\n点击填写本次专注心得"
+      "text": "要贪心，不要不要着急，放弃。"
     },
     {
       "file": "IMG_0186.PNG",
@@ -432,7 +309,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0186.PNG",
-      "text": "打开\n：！！\n35\n€0\n虽有戈矛之刺 不如恭俭之\n利也。\n|1\nJ\nV\nL"
+      "text": "虽有戈矛之刺 不如恭俭之利也。"
     },
     {
       "file": "IMG_0187.PNG",
@@ -467,7 +344,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0187.PNG",
-      "text": "打开\n33\n€0\n66\n平衡需要积极的心态。\n休息中\n点击填写本次专注心得"
+      "text": "平衡需要积极的心态。"
     },
     {
       "file": "IMG_0241.PNG",
@@ -510,7 +387,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0241.PNG",
-      "text": "二\n48\nE0\n66\n迷失的人迷失了，相逢的人会\n再相逢。\n02:5H\n休息中\n点击填写本次专注心得"
+      "text": "迷失的人迷失了，相逢的人会再相逢。"
     },
     {
       "file": "IMG_0257.PNG",
@@ -553,7 +430,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0257.PNG",
-      "text": "66\n打开\n€0\n98\n积极的人在每一次忧患中都看\n到一个机会，而消极的人则在\n每个机会都看到某种忧患。\n42\nJ"
+      "text": "积极的人在每一次忧患中都看到一个机会，而消极的人则在每个机会都看到某种忧患。"
     },
     {
       "file": "IMG_0259.PNG",
@@ -592,7 +469,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0259.PNG",
-      "text": "二\n42\n66\n98\n如果凡事缺少了实行的勇气，\n再有智慧与仁爱也是枉然。\n休息中\n点击填写本次专注心得"
+      "text": "如果凡事缺少了实行的勇气，再有智慧与仁爱也是枉然。"
     },
     {
       "file": "IMG_0311.PNG",
@@ -615,7 +492,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0311.PNG",
-      "text": "打开\n［100\n66\n天分不够，时间来凑。"
+      "text": "天分不够，时间来凑。"
     },
     {
       "file": "IMG_0312.PNG",
@@ -658,7 +535,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0312.PNG",
-      "text": "二\n66\nE0\n宁愿做过了之后感到失望，\n不要错过了之后觉得后悔。\n休息中\n点击填写本次专注心得\n［100\n也"
+      "text": "宁愿做过了之后感到失望，不要错过了之后觉得后悔。"
     },
     {
       "file": "IMG_0314.PNG",
@@ -701,7 +578,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0314.PNG",
-      "text": "90\n66\n€0\n98\n一切事情的结局都是美好的，\n如果不好，那它就不是结局。\nJ\nV\nL"
+      "text": "一切事情的结局都是美好的，如果不好，那它就不是结局。"
     },
     {
       "file": "IMG_0315.PNG",
@@ -748,7 +625,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0315.PNG",
-      "text": "二\n89\n66\nEU\n永远都不要为了目的而忘记初\n衷，就像给风命名的不是它要\n去的方向，而是它来时的方\n向。\n休息中\n点击填写本次专注心得"
+      "text": "永远都不要为了目的而忘记初衷，就像给风命名的不是它要去的方向，而是它来时的方向。"
     },
     {
       "file": "IMG_0322.PNG",
@@ -779,7 +656,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0322.PNG",
-      "text": "≥\n：8. 5G\n37\n66\n没有一种魅力能与内心的\n柔情相比。"
+      "text": "没有一种魅力能与内心的柔情相比。"
     },
     {
       "file": "IMG_0326.PNG",
@@ -814,7 +691,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0326.PNG",
-      "text": "二\n：！\nの\n22\n66\n岁月悠悠，衰微只及肌肤，抛\n却热忱，颓废必致灵魂。"
+      "text": "岁月悠悠，衰微只及肌肤，抛却热忱，颓废必致灵魂。"
     },
     {
       "file": "IMG_0329.PNG",
@@ -857,7 +734,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0329.PNG",
-      "text": "之\nの\n97\n66\n€0\n接纳有时候可能会比抵抗更\n有力量。\nJ\n<"
+      "text": "接纳有时候可能会比抵抗更有力量。"
     },
     {
       "file": "IMG_0330.PNG",
@@ -896,7 +773,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0330.PNG",
-      "text": "之\n97\n66\n€0\n最糟糕的情况.不是出了错，\n而是没有面对出错的勇气。\n休息中\n点击填写本次专注心得"
+      "text": "最糟糕的情况，不是出了错，而是没有面对出错的勇气。"
     },
     {
       "file": "IMG_0333.PNG",
@@ -923,7 +800,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0333.PNG",
-      "text": "42½\n66\n在隆冬，我终于知道，在我身\n上有一个不可战胜的夏天。\n05:5H"
+      "text": "在隆冬，我终于知道，在我身上有一个不可战胜的夏天。"
     },
     {
       "file": "IMG_0337.PNG",
@@ -954,7 +831,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0337.PNG",
-      "text": "打开\n€0\n66\n生活的不确定性\n望的来源\n正是我们希"
+      "text": "生活的不确定性望的来源正是我们希"
     },
     {
       "file": "IMG_0338.PNG",
@@ -1001,7 +878,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0338.PNG",
-      "text": "二\nの\nC\n66\n€0\n我荒废了时间\n•废了。\n时间便把我荒\n休息中\n点击填写本次专注心得"
+      "text": "我荒废了时间废了。时间便把我荒"
     },
     {
       "file": "IMG_0348.PNG",
@@ -1044,7 +921,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0348.PNG",
-      "text": "66\n打开\n€0\n98\n书是一个暗号，人类中的某一\n些靠这样的暗号从茫茫人海中\n认出对方。\n60分\nJ"
+      "text": "书是一个暗号，人类中的某一些靠这样的暗号从茫茫人海中认出对方。"
     },
     {
       "file": "IMG_0351.PNG",
@@ -1079,7 +956,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0351.PNG",
-      "text": "64\n66\n€0\n98\n强大不是硬碰硬，而是柔韧\n地坚持。\nJ"
+      "text": "强大不是硬碰硬，而是柔韧地坚持。"
     },
     {
       "file": "IMG_0352.PNG",
@@ -1122,7 +999,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0352.PNG",
-      "text": "1\n•OUU\n63\n66\nE0\ng8\n成熟不是为了走向复杂，而是\n为了抵达天真\n山"
+      "text": "成熟不是为了走向复杂，而是为了抵达天真"
     },
     {
       "file": "IMG_0357.PNG",
@@ -1161,7 +1038,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0357.PNG",
-      "text": "二\n100）\n66\nE0\n对有些人来说，生活就是不断\n破墙而出的过程，而对另外一\n些人，生活是在为自己建起一\n座座围墙。"
+      "text": "对有些人来说，生活就是不断破墙而出的过程，而对另外一些人，生活是在为自己建起一座座围墙。"
     },
     {
       "file": "IMG_0362.PNG",
@@ -1208,7 +1085,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0362.PNG",
-      "text": "二\n：！\nの\n98\nCU\n66\n假如试都不试一下，那一切都\n会是老样子。\n休息中\n点击填写本次专注心得"
+      "text": "假如试都不试一下，那一切都会是老样子。"
     },
     {
       "file": "IMG_0370.PNG",
@@ -1247,7 +1124,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0370.PNG",
-      "text": "二\nの\n99\n66\nE0\n虽有戈矛之刺，不如恭俭之\n利也。\nJ"
+      "text": "虽有戈矛之刺，不如恭俭之利也。"
     },
     {
       "file": "IMG_0371.PNG",
@@ -1294,7 +1171,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0371.PNG",
-      "text": "打开\n99\nE0\n66\n我并不期望人生可以过得很顺\n利，但我希望碰到人生难关的\n时候.\n自己可以是它的对手。\n休息中\n点击填写本次专注心得"
+      "text": "我并不期望人生可以过得很顺利，但我希望碰到人生难关的时候.自己可以是它的对手。"
     },
     {
       "file": "IMG_0392.PNG",
@@ -1329,7 +1206,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0392.PNG",
-      "text": "打开\n27\n66\n€0\n你不能把这个世界让给你所鄙\n视的人。\n山"
+      "text": "你不能把这个世界让给你所鄙视的人。"
     },
     {
       "file": "IMG_0393.PNG",
@@ -1372,7 +1249,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0393.PNG",
-      "text": "二\n25\n66\n€0\n人凭得到的东西维持生计，用\n给子的东西构筑人生。\n山\n休息中\n点击填写本次专注心得"
+      "text": "人凭得到的东西维持生计，用给子的东西构筑人生。"
     },
     {
       "file": "IMG_0402.PNG",
@@ -1411,7 +1288,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0402.PNG",
-      "text": "二\n：！\nの\n（28\n66\n在哪里存在，就在哪里绽放，\n休息中\n点击填写本次专注心得"
+      "text": "在哪里存在，就在哪里绽放，"
     },
     {
       "file": "IMG_0407.PNG",
@@ -1442,7 +1319,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0407.PNG",
-      "text": "66\n打开\n98\n生活的不确定性，正是我们希\n望的来源。\n［100"
+      "text": "生活的不确定性，正是我们希望的来源。"
     },
     {
       "file": "IMG_0496.PNG",
@@ -1477,7 +1354,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0496.PNG",
-      "text": "：\n49\n66\n虽然辛苦，我还是会选择那种\n滚烫的人生。\n身体坛城\n0H:55"
+      "text": "虽然辛苦，我还是会选择那种滚烫的人生。身体坛城"
     },
     {
       "file": "IMG_0497.PNG",
@@ -1524,7 +1401,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0497.PNG",
-      "text": "立\n48\n66\nE0\n今天应做的事没有做，明天再\n早也是耽误了。\n身体坛城\nFH:5！\n休息中\n点击填写本次专注心得"
+      "text": "今天应做的事没有做，明天再早也是耽误了。身体坛城"
     },
     {
       "file": "IMG_0498.PNG",
@@ -1583,7 +1460,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0498.PNG",
-      "text": "1\n：！ 5G\n88\n66\n€0\n每个人都是一个月亮，都有不\n向人展示的一面。\n身体坛城\n0H:56\n少思濾\n静鉴\n相由心生\n那個涣散的神就會自己跑回來"
+      "text": "每个人都是一个月亮，都有不向人展示的一面。身体坛城少思濾静鉴相由心生那個涣散的神就會自己跑回來"
     },
     {
       "file": "IMG_0520.PNG",
@@ -1630,7 +1507,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0520.PNG",
-      "text": "之\n：！\nの\n38\n66\nE0\n成长就是慢慢的像尊重自己一\n样尊重他人，承认自己的无知\n不等于否定自己，而是为了改\n善自己。"
+      "text": "成长就是慢慢的像尊重自己一样尊重他人，承认自己的无知不等于否定自己，而是为了改善自己。"
     },
     {
       "file": "IMG_0521.PNG",
@@ -1673,7 +1550,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0521.PNG",
-      "text": "二\nの\n37\nE0\n66\n生活总是这样，夜晚卸下\n白昼，新梦卸下旧梦。\n休息中\n点击填写本次专注心得"
+      "text": "生活总是这样，夜晚卸下白昼，新梦卸下旧梦。"
     },
     {
       "file": "IMG_0543.PNG",
@@ -1720,7 +1597,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0543.PNG",
-      "text": "の\n100\n66\n€0\n一切事情的结局都是美好的，\n如果不好，那它就不是结局。\n山\n02:H6\n休息中\n点击填写本次专注心得"
+      "text": "一切事情的结局都是美好的，如果不好，那它就不是结局。"
     },
     {
       "file": "IMG_0554.PNG",
@@ -1763,7 +1640,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0554.PNG",
-      "text": "：！\n88\n66\nE0\n如果你想造一艘船，不要抓一\n批人来搜集材料，不要指挥他\n们做这做那，你只要教他们如\n何渴望大海就够了。\nJ"
+      "text": "如果你想造一艘船，不要抓一批人来搜集材料，不要指挥他们做这做那，你只要教他们如何渴望大海就够了。"
     },
     {
       "file": "IMG_0555.PNG",
@@ -1802,7 +1679,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0555.PNG",
-      "text": "二\n：\n88\n66\n鞘安于钝，以护剑利。\nE1:49\n休息中\n点击填写本次专注心得"
+      "text": "鞘安于钝，以护剑利。"
     },
     {
       "file": "IMG_0564.PNG",
@@ -1833,7 +1710,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0564.PNG",
-      "text": "の\n82\n66\nc0\n正因为我有能力跨越，这个考\n验才会降临。"
+      "text": "正因为我有能力跨越，这个考验才会降临。"
     },
     {
       "file": "IMG_0566.PNG",
@@ -1872,7 +1749,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0566.PNG",
-      "text": "の\n（76\n66\nE0\n一个人可以成为别人的光源\n哪怕他们自己并不知道，哪怕\n他们自己的生活并没有光。\nJ"
+      "text": "一个人可以成为别人的光源哪怕他们自己并不知道，哪怕他们自己的生活并没有光。"
     },
     {
       "file": "IMG_0581.PNG",
@@ -1903,7 +1780,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0581.PNG",
-      "text": "之\n66\n书必须是用来凿破人们心中冰\n封海洋的一把斧子。\n中0:06\n惯-今日04次"
+      "text": "书必须是用来凿破人们心中冰封海洋的一把斧子。中:惯-今日次"
     },
     {
       "file": "IMG_0593.PNG",
@@ -1934,7 +1811,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0593.PNG",
-      "text": "1\n75\n66\n有人把生命局促于互窥互监、\n互猜互损，有人则把生命释放\n于大地长天、远山沧海。"
+      "text": "有人把生命局促于互窥互监、互猜互损，有人则把生命释放于大地长天、远山沧海。"
     },
     {
       "file": "IMG_0608.PNG",
@@ -1969,7 +1846,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0608.PNG",
-      "text": "打开\n121\n66\n€0\n你问我有哪些进步？我开始成\n为自己的朋友。\n山"
+      "text": "你问我有哪些进步？我开始成为自己的朋友。"
     },
     {
       "file": "IMG_0615.PNG",
@@ -1996,7 +1873,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0615.PNG",
-      "text": "打开\n45\nE0\n66\n奚落是庸才对天才的颂歌。"
+      "text": "奚落是庸才对天才的颂歌。"
     },
     {
       "file": "IMG_0622.PNG",
@@ -2019,7 +1896,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0622.PNG",
-      "text": "74\n66\n我要有能做我自己的自由，和\n敢做我自己的胆量。"
+      "text": "我要有能做我自己的自由，和敢做我自己的胆量。"
     },
     {
       "file": "IMG_0623.PNG",
@@ -2058,7 +1935,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0623.PNG",
-      "text": "二\n74\nE0\n66\n问题的出现不是让你止步不\n前，而是为你指明方向。\n休息中\n点击填写本次专注心得"
+      "text": "问题的出现不是让你止步不前，而是为你指明方向。"
     },
     {
       "file": "IMG_0627.PNG",
@@ -2089,7 +1966,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0627.PNG",
-      "text": "二\n92\n66\n每一个不曾起舞的日子，都是\n对生命的辜负。\n05:5"
+      "text": "每一个不曾起舞的日子，都是对生命的辜负。"
     },
     {
       "file": "IMG_0628.PNG",
@@ -2132,7 +2009,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0628.PNG",
-      "text": "二\n92\n66\n所谓活着的人，就是不断挑战\n的人，不断攀登命运险峰的\n人。\n中：S\n休息中\n点击填写本次专注心得"
+      "text": "所谓活着的人，就是不断挑战的人，不断攀登命运险峰的人。中："
     },
     {
       "file": "IMG_0637.PNG",
@@ -2175,7 +2052,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0637.PNG",
-      "text": "二\n29\n66\n€0\n98\n千人之诺诺，\n不如一人之\n谔谔。\n山"
+      "text": "千人之诺诺，不如一人之谔谔。"
     },
     {
       "file": "IMG_0638.PNG",
@@ -2206,7 +2083,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0638.PNG",
-      "text": "22\n66\nE0\n坚定自己的价值，记住你的价\n值由自己决定，和别人无关。\nJ"
+      "text": "坚定自己的价值，记住你的价值由自己决定，和别人无关。"
     },
     {
       "file": "IMG_0644.PNG",
@@ -2229,7 +2106,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0644.PNG",
-      "text": "94\n66\n温柔，但不要软弱。\nJ"
+      "text": "温柔，但不要软弱。"
     },
     {
       "file": "IMG_0660.PNG",
@@ -2272,7 +2149,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0660.PNG",
-      "text": "38\n66\n€0\n生活如同一朵玫瑰，每瓣花代\n表一个梦想，每根刺昭示一种\n现实。\n山\n休息中\n点击填写本次专注心得"
+      "text": "生活如同一朵玫瑰，每瓣花代表一个梦想，每根刺昭示一种现实。"
     },
     {
       "file": "IMG_0663.PNG",
@@ -2299,7 +2176,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0663.PNG",
-      "text": "打开\n97\n66\n愿你熬过万丈孤独，藏下\n星辰大海，"
+      "text": "愿你熬过万丈孤独，藏下星辰大海，"
     },
     {
       "file": "IMG_0664.PNG",
@@ -2346,7 +2223,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0664.PNG",
-      "text": "•小\n96\n66\n如果我会发光，就不必害怕黑\n暗。如果我自己是那么美好.那\n么一切恐惧就可以烟消云散。\n02:0\n休息中\n点击填写本次专注心得\n二|"
+      "text": "如果我会发光，就不必害怕黑暗。如果我自己是那么美好，那么一切恐惧就可以烟消云散。"
     },
     {
       "file": "IMG_0669.PNG",
@@ -2373,7 +2250,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0669.PNG",
-      "text": "≥\n94\n66\n一直陪着你的，只有了不起\n的自己。"
+      "text": "一直陪着你的，只有了不起的自己。"
     },
     {
       "file": "IMG_0670.PNG",
@@ -2416,7 +2293,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0670.PNG",
-      "text": "二\n•の\n94\n66\n害怕批评，会扼杀我剩下的\n自信心。\nE:56\n休息中\n点击填写本次专注心得"
+      "text": "害怕批评，会扼杀我剩下的自信心。"
     },
     {
       "file": "IMG_0693.PNG",
@@ -2451,7 +2328,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0693.PNG",
-      "text": "二\n524\nE0\n66\n若不趁起风时扬帆，船是不会\n前进的。\nJ"
+      "text": "若不趁起风时扬帆，船是不会前进的。"
     },
     {
       "file": "IMG_0705.PNG",
@@ -2494,7 +2371,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0705.PNG",
-      "text": "二\n•l\n434\n66\nCU\n这个世界上，有一些错觉是危\n险的。一个是认为对方是特别\n的，一个是认为自己是特别\n的。"
+      "text": "这个世界上，有一些错觉是危险的。一个是认为对方是特别的，一个是认为自己是特别的。"
     },
     {
       "file": "IMG_0706.PNG",
@@ -2541,7 +2418,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0706.PNG",
-      "text": "打开\n45\n66\n没有人能免于等待，而大多数\n人都不能承受这等待。他们带\n着贪婪，转而投向事、人和思\n维，成了它们的奴隶。\n休息中\n点击填写本次专注心得\n二|"
+      "text": "没有人能免于等待，而大多数人都不能承受这等待。他们带着贪婪，转而投向事、人和思维，成了它们的奴隶。"
     },
     {
       "file": "IMG_0765.PNG",
@@ -2572,7 +2449,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0765.PNG",
-      "text": "≥\n66\nED\n且将新火试新茶，诗酒趁\n年华。\nJ"
+      "text": "且将新火试新茶，诗酒趁年华。"
     },
     {
       "file": "IMG_0770.PNG",
@@ -2607,7 +2484,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0770.PNG",
-      "text": "二\n60\n66\n没有什么事情有像热忱这般具\n有传染性，它能感动顽石，它\n是真诚的精髓。\nJ"
+      "text": "没有什么事情有像热忱这般具有传染性，它能感动顽石，它是真诚的精髓。"
     },
     {
       "file": "IMG_0771.PNG",
@@ -2646,7 +2523,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0771.PNG",
-      "text": "打开\n60\n66\n人生中的多数不幸并非由厄运\n造成，而是懒惰，倦怠和粗俗\n导致的。\n休息中\n点击填写本次专注心得"
+      "text": "人生中的多数不幸并非由厄运造成，而是懒惰，倦怠和粗俗导致的。"
     },
     {
       "file": "IMG_0774.PNG",
@@ -2681,7 +2558,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0774.PNG",
-      "text": "88\n66\n€0\n世界在旋转，我们跌跌撞撞\n前进，\n这就够了。\nJ"
+      "text": "世界在旋转，我们跌跌撞撞前进，这就够了。"
     },
     {
       "file": "IMG_0779.PNG",
@@ -2724,7 +2601,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0779.PNG",
-      "text": "之\n21\n66\nED\n98\n对未来的真正慷慨，\n是把一切\n献给现在。\n山"
+      "text": "对未来的真正慷慨，是把一切献给现在。"
     },
     {
       "file": "IMG_0780.PNG",
@@ -2763,7 +2640,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0780.PNG",
-      "text": "之\n20\n66\n98\n我荒废了时间，时间便把我荒\n废了。\n休息中\n点击填写本次专注心得"
+      "text": "我荒废了时间，时间便把我荒废了。"
     },
     {
       "file": "IMG_0835.PNG",
@@ -2790,7 +2667,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0835.PNG",
-      "text": "打开\n64\n66\n命是弱者的借口，运是强者的\n谦词。"
+      "text": "命是弱者的借口，运是强者的谦词。"
     },
     {
       "file": "IMG_0840.PNG",
@@ -2825,7 +2702,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0840.PNG",
-      "text": "二\n45乡\n山\n66\n每个人都是一个月亮，都有不向\n人展示的一面。\nJ"
+      "text": "每个人都是一个月亮，都有不向人展示的一面。"
     },
     {
       "file": "IMG_0857.PNG",
@@ -2868,7 +2745,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0857.PNG",
-      "text": "1\n26\n6G\nCU\n两件阻碍我们自由的事：活在过\n去和观察他人。\n休息中\n点击填写本次专注心得\n||"
+      "text": "两件阻碍我们自由的事：活在过去和观察他人。"
     },
     {
       "file": "IMG_0866.PNG",
@@ -2895,7 +2772,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0866.PNG",
-      "text": "二\n30分\n6G\n梦想可以用时间来衡量\nJ"
+      "text": "梦想可以用时间来衡量"
     },
     {
       "file": "IMG_0867.PNG",
@@ -2930,7 +2807,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0867.PNG",
-      "text": "上\nCU\n66\n人们总说时间会改变一切，但事\n实上你得自己来。\n休息中\n点击填写本次专注心得"
+      "text": "人们总说时间会改变一切，但事实上你得自己来。"
     },
     {
       "file": "IMG_0877.PNG",
@@ -2965,7 +2842,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0877.PNG",
-      "text": "打开\n17\n66\n€0\n勇气是一种拯救的力量。\n山\nJ"
+      "text": "勇气是一种拯救的力量。"
     },
     {
       "file": "IMG_0907.PNG",
@@ -3008,7 +2885,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0907.PNG",
-      "text": "≥\n.ll\n61\n66\n充满希望的旅途，\n到达。\n胜过终点的\n休息中\n点击填写本次专注心得"
+      "text": "充满希望的旅途，到达。胜过终点的"
     },
     {
       "file": "IMG_0944.PNG",
@@ -3055,7 +2932,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0944.PNG",
-      "text": "≥\n：.\n83\n66\n98\n生活是种律动.须有光有影，有左\n有右.有晴有雨.滋味就含在这变\n而不猛的曲折里。\n•\n山"
+      "text": "生活是种律动，须有光有影，有左有右，有晴有雨，滋味就含在这变而不猛的曲折里。"
     },
     {
       "file": "IMG_0945.PNG",
@@ -3106,7 +2983,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0945.PNG",
-      "text": "≥\n82\n66\nED\n98\n努力的人从不孤独，因为终有一\n天我们都会在耀眼的光芒处相\n逢。\n02:5H\n休息中\n点击填写本次专注心得"
+      "text": "努力的人从不孤独，因为终有一天我们都会在耀眼的光芒处相逢。"
     },
     {
       "file": "IMG_0954.PNG",
@@ -3133,7 +3010,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0954.PNG",
-      "text": "66\nED\n我为我喜爱的东西大费周章，所\n以我才能快乐如斯。\nJ"
+      "text": "我为我喜爱的东西大费周章，所以我才能快乐如斯。"
     },
     {
       "file": "IMG_0996.PNG",
@@ -3172,7 +3049,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_0996.PNG",
-      "text": "≥\n12\n66\nE0\n于浩歌狂热之际中寒；于天上看\n见深渊。于一切眼中看见无所\n有；于无所希望中得救。\nJ"
+      "text": "于浩歌狂热之际中寒；于天上看见深渊。于一切眼中看见无所有；于无所希望中得救。"
     },
     {
       "file": "IMG_1002.PNG",
@@ -3219,7 +3096,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1002.PNG",
-      "text": "≥\nの\n74\n66\n每个优秀的人都有一段沉默的时\n光，那段时光是付出了很多努力\n却得不到结果的日子，我们把它\n叫做扎根。\n05:5H\nJ"
+      "text": "每个优秀的人都有一段沉默的时光，那段时光是付出了很多努力却得不到结果的日子，我们把它叫做扎根。"
     },
     {
       "file": "IMG_1006.PNG",
@@ -3250,7 +3127,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1006.PNG",
-      "text": "70\n山\n66\n€O\n深刻并不等于接近事实。\nJ"
+      "text": "深刻并不等于接近事实。"
     },
     {
       "file": "IMG_1007.PNG",
@@ -3297,7 +3174,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1007.PNG",
-      "text": "53\n66\n98\n乐观是希望的明灯，它指引着你\n从危险峡谷中步向坦途，使你得\n到新的生命和希望•支持着理想\n永不泯灭。\n山\n休息中\n点击填写本次专注心得"
+      "text": "乐观是希望的明灯，它指引着你从危险峡谷中步向坦途，使你得到新的生命和希望•支持着理想永不泯灭。"
     },
     {
       "file": "IMG_1012.PNG",
@@ -3328,7 +3205,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1012.PNG",
-      "text": "之\n76\n66\n一星陨落，黯淡不了星空灿烂；\n一花凋零，荒芜不了整个春天。\nJ"
+      "text": "一星陨落，黯淡不了星空灿烂；一花凋零，荒芜不了整个春天。"
     },
     {
       "file": "IMG_1023.PNG",
@@ -3375,7 +3252,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1023.PNG",
-      "text": "二\n€0\n：！\nの\nC\n33\n山\n66\nDo one thing at a time, and do well.\nJ"
+      "text": ""
     },
     {
       "file": "IMG_1029.PNG",
@@ -3406,7 +3283,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1029.PNG",
-      "text": "二\n（23\n66\n€0\n认识自己，是为了寻找还没有认\n识的自己。"
+      "text": "认识自己，是为了寻找还没有认识的自己。"
     },
     {
       "file": "IMG_1030.PNG",
@@ -3453,7 +3330,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1030.PNG",
-      "text": "二\n（22\n66\nEU\n如果每个人都能理解我们，\n们得普通成什么样。\n那我\n01：.29\n休息中\n点击填写本次专注心得"
+      "text": "如果每个人都能理解我们，们得普通成什么样。那我"
     },
     {
       "file": "IMG_1039.PNG",
@@ -3500,7 +3377,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1039.PNG",
-      "text": "≥\n67\n66\n€O\n乐观是希望的明灯，它指引着你\n从危险峡谷中步向坦途，使你得\n到新的生命和希望，支持着理想\n永不泯灭。\n05:5H\nJ"
+      "text": "乐观是希望的明灯，它指引着你从危险峡谷中步向坦途，使你得到新的生命和希望，支持着理想永不泯灭。"
     },
     {
       "file": "IMG_1040.PNG",
@@ -3547,7 +3424,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1040.PNG",
-      "text": "二\n66\n66\n€0\n我们还站在昏暗中，怀着柔和的\n梦想，渴望走进那光明中，自己\n也化为光。\n山\n休息中\n点击填写本次专注心得"
+      "text": "我们还站在昏暗中，怀着柔和的梦想，渴望走进那光明中，自己也化为光。"
     },
     {
       "file": "IMG_1043.PNG",
@@ -3586,7 +3463,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1043.PNG",
-      "text": "之\n23\n66\n命是弱者的借口，运是强者的\n谦词。\n工作\n休息中\n点击填写本次专注心得"
+      "text": "命是弱者的借口，运是强者的谦词。"
     },
     {
       "file": "IMG_1055.PNG",
@@ -3621,7 +3498,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1055.PNG",
-      "text": "≥\n64\n66\n98\n毋庸置疑， 好的事情总会到来。\n而当它来晚时，也不失为一种惊\n喜。"
+      "text": "毋庸置疑， 好的事情总会到来。而当它来晚时，也不失为一种惊喜。"
     },
     {
       "file": "IMG_1063.PNG",
@@ -3652,7 +3529,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1063.PNG",
-      "text": "二\n13\n66\n如果结果不如你所愿，\n就在尘埃\n落定前奋力一搏。"
+      "text": "如果结果不如你所愿，就在尘埃落定前奋力一搏。"
     },
     {
       "file": "IMG_1065.PNG",
@@ -3703,7 +3580,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1065.PNG",
-      "text": "打开\n98\n72\n66\n人生碌碌，竞短论长，\n荣有数，\n得失难量。\n却不道枯\n0:5！\n休息中\n点击填写本次专注心得"
+      "text": "人生碌碌，竞短论长，荣有数，得失难量。却不道枯"
     },
     {
       "file": "IMG_1067.PNG",
@@ -3734,7 +3611,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1067.PNG",
-      "text": "の\n31\n66\n希望是一个长着羽毛的精灵，它\n栖息于人的灵魂之中。\nJ"
+      "text": "希望是一个长着羽毛的精灵，它栖息于人的灵魂之中。"
     },
     {
       "file": "IMG_1068.PNG",
@@ -3793,7 +3670,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1068.PNG",
-      "text": "立\n€0\nの\nC\n100\n66\n每个人都是一个月亮，都有不向\n人展示的一面。\n内五行\n休息中\n点击填写本次专注心得\n-本周 2/2次\n上"
+      "text": "每个人都是一个月亮，都有不向人展示的一面。内五行本周 /次"
     },
     {
       "file": "IMG_1075.PNG",
@@ -3844,7 +3721,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1075.PNG",
-      "text": "二\n：！\n19\n66\n一星陨落，\n一花凋零，\n98\n黯淡不了星空灿烂；\n荒芜不了整个春天。\n10\n10"
+      "text": "一星陨落，一花凋零，黯淡不了星空灿烂；荒芜不了整个春天。"
     },
     {
       "file": "IMG_1093.PNG",
@@ -3879,7 +3756,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1093.PNG",
-      "text": "二\n66\nE0\n为学须刚与恒，不刚则隋隳，不\n恒则退。\n山\nJ"
+      "text": "为学须刚与恒，不刚则隋隳，不恒则退。"
     },
     {
       "file": "IMG_1096.PNG",
@@ -3918,7 +3795,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1096.PNG",
-      "text": "≥\n71\n66\n98\n我还有许多弯路要走，还会失望\n于许许多多的满足，一切都要等\n日后才能显示出它的意义。\n山"
+      "text": "我还有许多弯路要走，还会失望于许许多多的满足，一切都要等日后才能显示出它的意义。"
     },
     {
       "file": "IMG_1105.PNG",
@@ -3953,7 +3830,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1105.PNG",
-      "text": "の\n49\n98\n66\n世上最令人向往的是，\n己的自由，即诚实。\n忠实于自"
+      "text": "世上最令人向往的是，己的自由，即诚实。忠实于自"
     },
     {
       "file": "IMG_1106.PNG",
@@ -4000,7 +3877,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1106.PNG",
-      "text": "二\nの\n49\n98\n66\n在命运的颠沛中，最可以看出人\n们的气节。\n02:5！\n休息中\n点击填写本次专注心得"
+      "text": "在命运的颠沛中，最可以看出人们的气节。"
     },
     {
       "file": "IMG_1120.PNG",
@@ -4047,7 +3924,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1120.PNG",
-      "text": "1\nの\n63\n66\n98\n才华是刀刃，\n辛苦是磨刀石，再\n锋利的刀刃，若日久不磨，\n也会\n生锈。"
+      "text": "才华是刀刃，辛苦是磨刀石，再锋利的刀刃，若日久不磨，也会生锈。"
     },
     {
       "file": "IMG_1121.PNG",
@@ -4086,7 +3963,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1121.PNG",
-      "text": "二\n61\n66\n98\n当你相信自己时，没有什么是不\n可能的。\n休息中\n点击填写本次专注心得"
+      "text": "当你相信自己时，没有什么是不可能的。"
     },
     {
       "file": "IMG_1123.PNG",
@@ -4121,7 +3998,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1123.PNG",
-      "text": "16\n66\n€0\n解决焦虑的最好方法就是行\n动。\n山\nJ"
+      "text": "解决焦虑的最好方法就是行动。"
     },
     {
       "file": "IMG_1133.PNG",
@@ -4156,7 +4033,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1133.PNG",
-      "text": "84\n6G\n大知闲闲，小知间间。大言\n炎炎，小言詹詹。\n工作\n2451\nJ"
+      "text": "大知闲闲，小知间间。大言炎炎，小言詹詹。"
     },
     {
       "file": "IMG_1138.PNG",
@@ -4179,7 +4056,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1138.PNG",
-      "text": "：8.\n40\n66\n要活出自己之后再被人理解。"
+      "text": "要活出自己之后再被人理解。"
     },
     {
       "file": "IMG_1139.PNG",
@@ -4214,7 +4091,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1139.PNG",
-      "text": "≥\n39\nCU\n66\n君子务本，本立而道生。\n休息中\n点击填写本次专注心得"
+      "text": "君子务本，本立而道生。"
     },
     {
       "file": "IMG_1147.PNG",
@@ -4241,7 +4118,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1147.PNG",
-      "text": "45\n€0\n66\n除了真实的病痛，其他的痛苦都\n来自于价值观。"
+      "text": "除了真实的病痛，其他的痛苦都来自于价值观。"
     },
     {
       "file": "IMG_1199.PNG",
@@ -4280,7 +4157,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1199.PNG",
-      "text": "≥\n26\n66\nE0\n你走的每一步，都在靠近更厉害\n的自己。\n0552\nJ"
+      "text": "你走的每一步，都在靠近更厉害的自己。"
     },
     {
       "file": "IMG_1200.PNG",
@@ -4319,7 +4196,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1200.PNG",
-      "text": "打开\n24\n66\n理想的路总是为有信心的人\n预备着。\n中：：0\n休息中\n点击填写本次专注心得"
+      "text": "理想的路总是为有信心的人预备着。中：："
     },
     {
       "file": "IMG_1210.PNG",
@@ -4354,7 +4231,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1210.PNG",
-      "text": "≥\n45\n66\n98\n当自己为实现存在意义而努力\n时，•幸运的巧合就会自然出现，\n他们管这个叫顺其自然。"
+      "text": "当自己为实现存在意义而努力时，•幸运的巧合就会自然出现，他们管这个叫顺其自然。"
     },
     {
       "file": "IMG_1211.PNG",
@@ -4385,7 +4262,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1211.PNG",
-      "text": "≥\n\"！！\n［36\n66\n在你什么也不想要的时候\n一切如期而至。"
+      "text": "在你什么也不想要的时候一切如期而至。"
     },
     {
       "file": "IMG_1212.PNG",
@@ -4420,7 +4297,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1212.PNG",
-      "text": "≥\n364\n66\n不畏将来，不念过往。\n中UH\n休息中\n点击填写本次专注心得"
+      "text": "不畏将来，不念过往。"
     },
     {
       "file": "IMG_1217.PNG",
@@ -4439,7 +4316,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1217.PNG",
-      "text": "42\n66\n闭门即是深山，读书随处净土。"
+      "text": "闭门即是深山，读书随处净土。"
     },
     {
       "file": "IMG_1218.PNG",
@@ -4482,7 +4359,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1218.PNG",
-      "text": "7\n32\n66\n我得到的，都是我努力争取来\n的，我失去的，都是不曾真正拥\n有的。\nE:HH\n休息中\n点击填写本次专注心得"
+      "text": "我得到的，都是我努力争取来的，我失去的，都是不曾真正拥有的。"
     },
     {
       "file": "IMG_1224.PNG",
@@ -4521,7 +4398,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1224.PNG",
-      "text": "二\n（100\n66\nE0\n若发现自己总是和大多数人站在\n一边，你就应该停下来反思一\n下。\nJ"
+      "text": "若发现自己总是和大多数人站在一边，你就应该停下来反思一下。"
     },
     {
       "file": "IMG_1225.PNG",
@@ -4556,7 +4433,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1225.PNG",
-      "text": "打开\n［100\n66\nGreat minds have purpose, others\nhave wishes.\n休息中\n点击填写本次专注心得"
+      "text": ""
     },
     {
       "file": "IMG_1258.PNG",
@@ -4587,7 +4464,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1258.PNG",
-      "text": "≥\n：\n66\n当你相信自己时，没有什么是不\n可能的。\nJ"
+      "text": "当你相信自己时，没有什么是不可能的。"
     },
     {
       "file": "IMG_1259.PNG",
@@ -4634,7 +4511,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1259.PNG",
-      "text": "二\n：\n10\nCU\n66\n别去担心无法控制的事，不如把\n精力转移到你能创造的事情上。\n02:5\n休息中\n点击填写本次专注心得"
+      "text": "别去担心无法控制的事，不如把精力转移到你能创造的事情上。"
     },
     {
       "file": "IMG_1260.PNG",
@@ -4673,7 +4550,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1260.PNG",
-      "text": "二\nの\n100\n66\n€0\n98\n愿你熬过万丈孤独，藏下星辰\n大海。"
+      "text": "愿你熬过万丈孤独，藏下星辰大海。"
     },
     {
       "file": "IMG_1261.PNG",
@@ -4716,7 +4593,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1261.PNG",
-      "text": "立\nの\n99\n98\n66\n懒惰是索价极高的奢侈品，一旦\n到期清付，必定偿还不起。\n休息中\n点击填写本次专注心得"
+      "text": "懒惰是索价极高的奢侈品，一旦到期清付，必定偿还不起。"
     },
     {
       "file": "IMG_1264.PNG",
@@ -4751,7 +4628,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1264.PNG",
-      "text": "二\nE0\n66\n我为我喜爱的东西大费周章，所\n以我才能快乐如斯。\n休息中\n点击填写本次专注心得"
+      "text": "我为我喜爱的东西大费周章，所以我才能快乐如斯。"
     },
     {
       "file": "IMG_1269.PNG",
@@ -4786,7 +4663,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1269.PNG",
-      "text": "二\n：！\n394\n66\nEU\n没有一种魅力能与内心的柔情\n相比。"
+      "text": "没有一种魅力能与内心的柔情相比。"
     },
     {
       "file": "IMG_1287.PNG",
@@ -4837,7 +4714,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1287.PNG",
-      "text": "二\n82\n山\n66\nE0\n人必须像天上的星星，永远很清\n楚地看出一切希望和愿望的火\n光，在地上永远不熄地燃烧着火\n光。\n05:5：\nJ"
+      "text": "人必须像天上的星星，永远很清楚地看出一切希望和愿望的火光，在地上永远不熄地燃烧着火光。"
     },
     {
       "file": "IMG_1294.PNG",
@@ -4872,7 +4749,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1294.PNG",
-      "text": "二\n：！\n89\n66\nEU\n在命运的颠沛中，最可以看出人\n们的气节。"
+      "text": "在命运的颠沛中，最可以看出人们的气节。"
     },
     {
       "file": "IMG_1295.PNG",
@@ -4915,7 +4792,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1295.PNG",
-      "text": "二\n：！の\n89\nEU\n66\n相信自己，就会相信未来。\n02:S2\n休息中\n点击填写本次专注心得"
+      "text": "相信自己，就会相信未来。"
     },
     {
       "file": "IMG_1297.PNG",
@@ -4946,7 +4823,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1297.PNG",
-      "text": "の\n50\n66\n98\n世界是个记忆的星球。星辰则是\n闪烁的遗忘。"
+      "text": "世界是个记忆的星球。星辰则是闪烁的遗忘。"
     },
     {
       "file": "IMG_1309.PNG",
@@ -4981,7 +4858,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1309.PNG",
-      "text": "66\nED\n98\n人们总说时间会改变一切，\n实上你得自己来。\n98\n但事"
+      "text": "人们总说时间会改变一切，实上你得自己来。但事"
     },
     {
       "file": "IMG_1318.PNG",
@@ -5008,7 +4885,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1318.PNG",
-      "text": "43\n66\n98\n人心中有一种恼人的倾向，即只\n把压倒他的东西称作命运。"
+      "text": "人心中有一种恼人的倾向，即只把压倒他的东西称作命运。"
     },
     {
       "file": "IMG_1319.PNG",
@@ -5059,7 +4936,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1319.PNG",
-      "text": "二\nの\n43\n66\n€0\n开始就是停止空谈，\n98\n马上行动。\n02:5！\n休息中\n点击填写本次专注心得"
+      "text": "开始就是停止空谈，马上行动。"
     },
     {
       "file": "IMG_1320.PNG",
@@ -5102,7 +4979,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1320.PNG",
-      "text": "≥\n100\n66\nE0\n每次被激怒，每次升起反感，观\n察身体感受的当下：就是疗愈进\n行中。\n05:H6\nJ"
+      "text": "每次被激怒，每次升起反感，观察身体感受的当下：就是疗愈进行中。"
     },
     {
       "file": "IMG_1345.PNG",
@@ -5141,7 +5018,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1345.PNG",
-      "text": "二\n19\n66\n深刻并不等于接近事实。\n中：S\n休息中\n点击填写本次专注心得\n||"
+      "text": "深刻并不等于接近事实。中："
     },
     {
       "file": "IMG_1347.PNG",
@@ -5176,7 +5053,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1347.PNG",
-      "text": "≥\nの\n11\n66\n问题的出现不是让你止步不前，\n而是为你指明方向。\nJ"
+      "text": "问题的出现不是让你止步不前，而是为你指明方向。"
     },
     {
       "file": "IMG_1348.PNG",
@@ -5211,7 +5088,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1348.PNG",
-      "text": "二\n11\n66\n行动是治愈恐惧的良药，而犹豫\n拖延将不断滋养恐惧。\n休息中\n点击填写本次专注心得"
+      "text": "行动是治愈恐惧的良药，而犹豫拖延将不断滋养恐惧。"
     },
     {
       "file": "IMG_1388.PNG",
@@ -5242,7 +5119,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1388.PNG",
-      "text": "二\n89\nE0\n66\n成功的秘诀是把平凡的事做得非\n凡好。"
+      "text": "成功的秘诀是把平凡的事做得非凡好。"
     },
     {
       "file": "IMG_1393.PNG",
@@ -5281,7 +5158,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1393.PNG",
-      "text": "1\nの\n6\n€0\n66\n永远等待一件事情，你对这件事\n情的了解仅仅就是你在等待它而\n已。"
+      "text": "永远等待一件事情，你对这件事情的了解仅仅就是你在等待它而已。"
     },
     {
       "file": "IMG_1394.PNG",
@@ -5332,7 +5209,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1394.PNG",
-      "text": "二\n：！.\n61\n66\nc0\n好运只是个副产品，只有当你不\n带任何私心杂念，单纯地去做事\n情时，它才会降临。\nH2:H9\n休息中\n点击填写本次专注心得"
+      "text": "好运只是个副产品，只有当你不带任何私心杂念，单纯地去做事情时，它才会降临。"
     },
     {
       "file": "IMG_1400.PNG",
@@ -5363,7 +5240,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1400.PNG",
-      "text": "≥\n（100\n66\n€0\n出发总是美丽的。尤其是在一\n个，阳光普照的清晨上路。"
+      "text": "出发总是美丽的。尤其是在一个，阳光普照的清晨上路。"
     },
     {
       "file": "IMG_1423.PNG",
@@ -5410,7 +5287,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1423.PNG",
-      "text": "≥\nJUL\n63\n66\n€0\n没关系，明天我们将跑得再快一\n些，手臂再伸长一些，然后是一\n个美好的黎明。\n山\nJ"
+      "text": "没关系，明天我们将跑得再快一些，手臂再伸长一些，然后是一个美好的黎明。"
     },
     {
       "file": "IMG_1424.PNG",
@@ -5457,7 +5334,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1424.PNG",
-      "text": "の\n45\nc0\n66\n我并不期望人生可以过得很顺\n利，但我希望碰到人生难关的时\n候，自己可以是它的对手。\nD2:S\n休息中\n点击填写本次专注心得"
+      "text": "我并不期望人生可以过得很顺利，但我希望碰到人生难关的时候，自己可以是它的对手。"
     },
     {
       "file": "IMG_1426.PNG",
@@ -5508,7 +5385,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1426.PNG",
-      "text": "≥\n\"！！\n98\n66\n€0\nG\n尽管我的道路从头到尾都长满了\n杂草，但也只有我自己是我这一\n生的见证人。\n山\nJ"
+      "text": "尽管我的道路从头到尾都长满了杂草，但也只有我自己是我这一生的见证人。"
     },
     {
       "file": "IMG_1427.PNG",
@@ -5547,7 +5424,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1427.PNG",
-      "text": "≥\n83\n66\n取之有制，用之有节则裕，取之\n无制，用之不节则乏。\n休息中\n点击填写本次专注心得\n||"
+      "text": "取之有制，用之有节则裕，取之无制，用之不节则乏。"
     },
     {
       "file": "IMG_1443.PNG",
@@ -5566,7 +5443,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1443.PNG",
-      "text": "54\n人生就是长跑，跑得快一点就再\n也听不见身后的非议声了。"
+      "text": "人生就是长跑，跑得快一点就再也听不见身后的非议声了。"
     },
     {
       "file": "IMG_1444.PNG",
@@ -5609,7 +5486,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1444.PNG",
-      "text": "≥\n\"！\n53\n66\n你问我有哪些进步？我开始成为\n自己的朋友。\n休息中\n点击填写本次专注心得\n||"
+      "text": "你问我有哪些进步？我开始成为自己的朋友。"
     },
     {
       "file": "IMG_1445.PNG",
@@ -5644,7 +5521,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1445.PNG",
-      "text": "之\n30\n66\nED\n98\n平凡的脚步也可以走完伟大的\n行程。"
+      "text": "平凡的脚步也可以走完伟大的行程。"
     },
     {
       "file": "IMG_1447.PNG",
@@ -5683,7 +5560,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1447.PNG",
-      "text": "之\n：：！！ 5GA\n43\n66\n98\n成熟就是在表达自己的感情和信\n念的同时，又能体谅他人的想法\n和感受的能力。"
+      "text": "成熟就是在表达自己的感情和信念的同时，又能体谅他人的想法和感受的能力。"
     },
     {
       "file": "IMG_1453.PNG",
@@ -5722,7 +5599,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1453.PNG",
-      "text": "立\nの\n93\n66\n认识自己，是为了寻找还没有认\n识的自己。\n休息中\n点击填写本次专注心得"
+      "text": "认识自己，是为了寻找还没有认识的自己。"
     },
     {
       "file": "IMG_1454.PNG",
@@ -5753,7 +5630,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1454.PNG",
-      "text": "1\n83\n66\n生活如同一朵玫瑰，每瓣花代表\n一个梦想，每根刺昭示一种现\n实。"
+      "text": "生活如同一朵玫瑰，每瓣花代表一个梦想，每根刺昭示一种现实。"
     },
     {
       "file": "IMG_1455.PNG",
@@ -5796,7 +5673,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1455.PNG",
-      "text": "立\n：！！\n［100\n66\nCU\n如果你想造一艘船，不要抓一批\n人来搜集材料，不要指挥他们做\n这做那，你只要教他们如何渴望\n大海就够了。"
+      "text": "如果你想造一艘船，不要抓一批人来搜集材料，不要指挥他们做这做那，你只要教他们如何渴望大海就够了。"
     },
     {
       "file": "IMG_1456.PNG",
@@ -5835,7 +5712,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1456.PNG",
-      "text": "二\n100\n€0\n66\n零星地变得优秀，也能拼凑出整\n个银河。\n休息中\n点击填写本次专注心得"
+      "text": "零星地变得优秀，也能拼凑出整个银河。"
     },
     {
       "file": "IMG_1472.PNG",
@@ -5878,7 +5755,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1472.PNG",
-      "text": "我治好您 您治好世界\n•••\n◎\n你一定考自己、问自己，\n到底是在干什么？为什么？\n要明白所以不做，\n而不是因为害怕所以不做。\n这才能增长智慧。\n结果生成中."
+      "text": "你一定考自己、问自己，到底是在干什么？为什么？要明白所以不做，而不是因为害怕所以不做。这才能增长智慧。"
     },
     {
       "file": "IMG_1473.PNG",
@@ -5905,7 +5782,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1473.PNG",
-      "text": "66\n€O\n98\n不需要时刻光芒万丈，只要内心\n温暖，就足够照亮自己的路。"
+      "text": "不需要时刻光芒万丈，只要内心温暖，就足够照亮自己的路。"
     },
     {
       "file": "IMG_1474.PNG",
@@ -5952,7 +5829,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1474.PNG",
-      "text": "≥\n\"！！\n11\n66\n€0\n我把荆棘当作铺满鲜花的原野，\n人间便没有什么能将我折磨。\n山\n05:5H\nJ"
+      "text": "我把荆棘当作铺满鲜花的原野，人间便没有什么能将我折磨。"
     },
     {
       "file": "IMG_1475.PNG",
@@ -5987,7 +5864,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1475.PNG",
-      "text": "①\n（57\n66\nE0\n当有人从心底认同你的时候，那\n个人对你来说就是最重要的人。\nJ"
+      "text": "当有人从心底认同你的时候，那个人对你来说就是最重要的人。"
     },
     {
       "file": "IMG_1476.PNG",
@@ -6030,7 +5907,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1476.PNG",
-      "text": "≥\n57\n66\nE0\n你必须只有内心丰富，才能摆脱\n这些表面的相似。\n00:7\n休息中\n点击填写本次专注心得"
+      "text": "你必须只有内心丰富，才能摆脱这些表面的相似。"
     },
     {
       "file": "IMG_1481.PNG",
@@ -6065,7 +5942,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1481.PNG",
-      "text": "立\n100\nE0\n66\n你的潜力无穷无尽。\n休息中\n点击填写本次专注心得"
+      "text": "你的潜力无穷无尽。"
     },
     {
       "file": "IMG_1482.PNG",
@@ -6096,7 +5973,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1482.PNG",
-      "text": "1\n：0. 5G 72\nE0\n66\n浮名浮利，虚苦劳神。叹隙中\n驹，石中火，梦中身。"
+      "text": "浮名浮利，虚苦劳神。叹隙中驹，石中火，梦中身。"
     },
     {
       "file": "IMG_1483.PNG",
@@ -6143,7 +6020,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1483.PNG",
-      "text": "打开\n92\n66\n€0\n一直陪着你的，只有了不起的\n自己。\n山\n中2:51\n休息中\n点击填写本次专注心得"
+      "text": "一直陪着你的，只有了不起的自己。中:"
     },
     {
       "file": "IMG_1484.PNG",
@@ -6182,7 +6059,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1484.PNG",
-      "text": "二\n92\n98\n66\n你像把无鞘刀锋利敏锐，但好刀\n应在刀鞘里。\n中M\n0H:45"
+      "text": "你像把无鞘刀锋利敏锐，但好刀应在刀鞘里。"
     },
     {
       "file": "IMG_1485.PNG",
@@ -6217,7 +6094,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1485.PNG",
-      "text": "二\nの\n92\n66\n岁月送给我苦难，也随赠我清醒\n与冷静。\n055"
+      "text": "岁月送给我苦难，也随赠我清醒与冷静。"
     },
     {
       "file": "IMG_1486.PNG",
@@ -6260,7 +6137,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1486.PNG",
-      "text": "二\n73\n66\n98\n是懦夫把自己变成懦夫，生活\n的意义是英雄把自己变成英雄。\n山\n休息中\n点击填写本次专注心得"
+      "text": "是懦夫把自己变成懦夫，生活的意义是英雄把自己变成英雄。"
     },
     {
       "file": "IMG_1491.PNG",
@@ -6291,7 +6168,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1491.PNG",
-      "text": "打开\n24\nE0\n6G\n尽精微，致广大。\nJ"
+      "text": "尽精微，致广大。"
     },
     {
       "file": "IMG_1492.PNG",
@@ -6330,7 +6207,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1492.PNG",
-      "text": "（22\n66\n静胜躁\n天下正。\n寒胜热，清静为\n02:5H\n休息中\n点击填写本次专注心得"
+      "text": "静胜躁天下正。寒胜热，清静为"
     },
     {
       "file": "IMG_1528.PNG",
@@ -6361,7 +6238,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1528.PNG",
-      "text": "5GA\n99\n66\n98\n相信自己，\n你拥有无限的可能。"
+      "text": "相信自己，你拥有无限的可能。"
     },
     {
       "file": "IMG_1529.PNG",
@@ -6400,7 +6277,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1529.PNG",
-      "text": "二\n：！\nの\n99\n66\n生活给了我多少积雪，我就能遇\n到多少个春天。\n中M"
+      "text": "生活给了我多少积雪，我就能遇到多少个春天。"
     },
     {
       "file": "IMG_1530.PNG",
@@ -6459,7 +6336,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1530.PNG",
-      "text": "≥\n！！！\nの\nC\n99\n66\n€0\nIf you find a path with no\nobstacles,it probably doesn' t lead\nanywhere.\n山\n中M\nEL:EH"
+      "text": ""
     },
     {
       "file": "IMG_1531.PNG",
@@ -6510,7 +6387,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1531.PNG",
-      "text": "：！\n99\n66\nE0\n自由从来不容易，不是一个姿\n态，一个手势。自由是克服重\n力，挣扎向上飞行。\n中M\n0H:57\n休息中\n点击填写本次专注心得"
+      "text": "自由从来不容易，不是一个姿态，一个手势。自由是克服重力，挣扎向上飞行。"
     },
     {
       "file": "IMG_1545.PNG",
@@ -6557,7 +6434,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1545.PNG",
-      "text": "二\n2！\n42\n66\n€0\n闭门即是深山，读书随处净土。\n中M\n0457\n休息中\n点击填写本次专注心得"
+      "text": "闭门即是深山，读书随处净土。"
     },
     {
       "file": "IMG_1609.PNG",
@@ -6596,7 +6473,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1609.PNG",
-      "text": "1\n78\n98\n山\n66\n承担责任让我们自由。\n中M\n00:0u"
+      "text": "承担责任让我们自由。"
     },
     {
       "file": "IMG_1610.PNG",
@@ -6631,7 +6508,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1610.PNG",
-      "text": "≥\n8\n66\n一切特立独行的人格都意味着\n强大。\n工作\nJ"
+      "text": "一切特立独行的人格都意味着强大。"
     },
     {
       "file": "IMG_1641.PNG",
@@ -6662,7 +6539,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1641.PNG",
-      "text": "≥\n66\n€0\n做自己生活的作者。\n休息中\n点击填写本次专注心得"
+      "text": "做自己生活的作者。"
     },
     {
       "file": "IMG_1644.PNG",
@@ -6693,7 +6570,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1644.PNG",
-      "text": "67\n66\n98\n世界上不存在逃离这一说，\n只是\n用一种困难交换另一种困难。"
+      "text": "世界上不存在逃离这一说，只是用一种困难交换另一种困难。"
     },
     {
       "file": "IMG_1645.PNG",
@@ -6732,7 +6609,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1645.PNG",
-      "text": "立\n67\n98\n66\n这辛酸的劳苦并非徒然，你们崇\n高的理想不会落空。\n休息中\n点击填写本次专注心得"
+      "text": "这辛酸的劳苦并非徒然，你们崇高的理想不会落空。"
     },
     {
       "file": "IMG_1646.PNG",
@@ -6763,7 +6640,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1646.PNG",
-      "text": "≥\n［100）\n66\n人生最大的冒险莫过于，按照自\n己所梦想的轨迹而活。\nJ"
+      "text": "人生最大的冒险莫过于，按照自己所梦想的轨迹而活。"
     },
     {
       "file": "IMG_1656.PNG",
@@ -6794,7 +6671,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1656.PNG",
-      "text": "打开\n144\n€0\n66\n永远别忘记祝福自己。\n05:5"
+      "text": "永远别忘记祝福自己。"
     },
     {
       "file": "IMG_1660.PNG",
@@ -6829,7 +6706,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1660.PNG",
-      "text": "之\n96\n98\n66\n志之难也，不在胜人，在自胜。\n休息中\n点击填写本次专注心得"
+      "text": "志之难也，不在胜人，在自胜。"
     },
     {
       "file": "IMG_1668.PNG",
@@ -6872,7 +6749,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1668.PNG",
-      "text": "67\n66\nED\n98\n我会不断成长，经历风霜，经历\n挫折，一次次沉入深渊，一次次\n饱尝痛苦，更会一次次重新站起\n来。我不会认输，不会放弃。\n山"
+      "text": "我会不断成长，经历风霜，经历挫折，一次次沉入深渊，一次次饱尝痛苦，更会一次次重新站起来。我不会认输，不会放弃。"
     },
     {
       "file": "IMG_1670.PNG",
@@ -6899,7 +6776,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1670.PNG",
-      "text": "：！\n89\n€0\n66\n温柔，但不要软弱。"
+      "text": "温柔，但不要软弱。"
     },
     {
       "file": "IMG_1671.PNG",
@@ -6942,7 +6819,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1671.PNG",
-      "text": "立\n：！\n89\n66\n€0\n凡举事必循法以动，变法者因时\n而化，若此论则无过务矣。\n休息中\n点击填写本次专注心得"
+      "text": "凡举事必循法以动，变法者因时而化，若此论则无过务矣。"
     },
     {
       "file": "IMG_1675.PNG",
@@ -6981,7 +6858,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1675.PNG",
-      "text": "打开\n65\nCU\n66\n唯有被追赶的时候，\n真正奔跑。\n你才能\n05:5"
+      "text": "唯有被追赶的时候，真正奔跑。你才能"
     },
     {
       "file": "IMG_1676.PNG",
@@ -7036,7 +6913,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1676.PNG",
-      "text": "上\n：！.\nの\n64\n66\n毋庸置疑，好的事情总会到来。\n而当它来晚时，也不失为一种惊\n喜。\n中N：\n休息中\n点击填写本次专注心得\n||"
+      "text": "毋庸置疑，好的事情总会到来。而当它来晚时，也不失为一种惊喜。中："
     },
     {
       "file": "IMG_1681.PNG",
@@ -7067,7 +6944,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1681.PNG",
-      "text": "48\n66\n98\n除了真实的病痛，\n其他的痛苦都\n来自于价值观。"
+      "text": "除了真实的病痛，其他的痛苦都来自于价值观。"
     },
     {
       "file": "IMG_1708.PNG",
@@ -7098,7 +6975,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1708.PNG",
-      "text": "≥\n44\n€0\n66\n人们总是相信别人都是单纯的坏\n人，而自己是复杂的好人."
+      "text": "人们总是相信别人都是单纯的坏人，而自己是复杂的好人."
     },
     {
       "file": "IMG_1709.PNG",
@@ -7141,7 +7018,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1709.PNG",
-      "text": "≥\n！！\nの\n［100\n66\n智慧不能创造素材，素材是自然\n或机遇的赠予，而智慧的骄傲在\n于利用了它们。\nJ"
+      "text": "智慧不能创造素材，素材是自然或机遇的赠予，而智慧的骄傲在于利用了它们。"
     },
     {
       "file": "IMG_1710.PNG",
@@ -7180,7 +7057,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1710.PNG",
-      "text": "立\n100\n山\n66\n你永远是自由的盛夏。\n02:5H\n休息中\n点击填写本次专注心得"
+      "text": "你永远是自由的盛夏。"
     },
     {
       "file": "IMG_1758.PNG",
@@ -7207,7 +7084,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1758.PNG",
-      "text": "二\n66\n弱小和无知不是生存的障碍，傲\n慢才是。\nJ"
+      "text": "弱小和无知不是生存的障碍，傲慢才是。"
     },
     {
       "file": "IMG_1759.PNG",
@@ -7246,7 +7123,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1759.PNG",
-      "text": "1\n74\n66\n就像世间不再有湖面，我这一小\n片积水就收容了月亮。\n0H:52\n休息中\n点击填写本次专注心得"
+      "text": "就像世间不再有湖面，我这一小片积水就收容了月亮。"
     },
     {
       "file": "IMG_1766.PNG",
@@ -7281,7 +7158,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1766.PNG",
-      "text": "二\n：！\n62\n€0\n66\n自由是做你喜欢的事，幸福是喜\n欢你做的事。"
+      "text": "自由是做你喜欢的事，幸福是喜欢你做的事。"
     },
     {
       "file": "IMG_1774.PNG",
@@ -7320,7 +7197,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1774.PNG",
-      "text": "≥\nの\n83\nCU\n66\n从容不迫的举止，比起咄咄逼人\n的态度，更能令人心折。\nJ"
+      "text": "从容不迫的举止，比起咄咄逼人的态度，更能令人心折。"
     },
     {
       "file": "IMG_1775.PNG",
@@ -7359,7 +7236,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1775.PNG",
-      "text": "二\n83\nE0\n66\n太害怕别人的负面评价，生活就\n永远是他人欲望的合集。\n休息中\n点击填写本次专注心得"
+      "text": "太害怕别人的负面评价，生活就永远是他人欲望的合集。"
     },
     {
       "file": "IMG_1777.PNG",
@@ -7394,7 +7271,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1777.PNG",
-      "text": "≥\n52\n66\nCU\n行动是治愈恐惧的良药，而犹豫\n拖延将不断滋养恐惧。\nJ"
+      "text": "行动是治愈恐惧的良药，而犹豫拖延将不断滋养恐惧。"
     },
     {
       "file": "IMG_1778.PNG",
@@ -7425,7 +7302,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1778.PNG",
-      "text": "之\n66\n以深深的谦虚和忍耐去期待一个\n新的豁然贯通的时刻。\n休息中\n点击填写本次专注心得"
+      "text": "以深深的谦虚和忍耐去期待一个新的豁然贯通的时刻。"
     },
     {
       "file": "IMG_1787.PNG",
@@ -7460,7 +7337,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1787.PNG",
-      "text": "E0\n66\n我们活过的刹那，前后皆是\n暗夜。\n02:5：\n休息中\n点击填写本次专注心得"
+      "text": "我们活过的刹那，前后皆是暗夜。"
     },
     {
       "file": "IMG_1788.PNG",
@@ -7499,7 +7376,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1788.PNG",
-      "text": "≥\n54\n66\n€0\n98\n以不息为体，以日新为道。\n休息中\n点击填写本次专注心得"
+      "text": "以不息为体，以日新为道。"
     },
     {
       "file": "IMG_1789.PNG",
@@ -7538,7 +7415,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1789.PNG",
-      "text": "995\n66\n我们生活若还有美处可言，只是\n把生命如何运用到正确方向上\n去，不逃避一切人类向上的责\n任。\n休息中\n点击填写本次专注心得"
+      "text": "我们生活若还有美处可言，只是把生命如何运用到正确方向上去，不逃避一切人类向上的责任。"
     },
     {
       "file": "IMG_1798.PNG",
@@ -7569,7 +7446,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1798.PNG",
-      "text": "立\n5GA 174\n66\n€0\n古之立大事者，不惟有超世之\n才，亦必有坚忍不拔之志。"
+      "text": "古之立大事者，不惟有超世之才，亦必有坚忍不拔之志。"
     },
     {
       "file": "IMG_1808.PNG",
@@ -7608,7 +7485,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1808.PNG",
-      "text": "≥\n（31\n66\n决定我们是否富有的，不是我们\n拥有的东西，而是我们没有也行\n的东西。\n休息中\n点击填写本次专注心得"
+      "text": "决定我们是否富有的，不是我们拥有的东西，而是我们没有也行的东西。"
     },
     {
       "file": "IMG_1809.PNG",
@@ -7647,7 +7524,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1809.PNG",
-      "text": "二\n100\nE0\n66\n没有可怕的深度，\n的水面。\n就没有美丽\nJ"
+      "text": "没有可怕的深度，的水面。就没有美丽"
     },
     {
       "file": "IMG_1810.PNG",
@@ -7690,7 +7567,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1810.PNG",
-      "text": "≥\nの\n99\n66\n人要么永不做梦，要么梦得有\n趣：要么永不清醒，要么清醒得\n有趣。\n休息中\n点击填写本次专注心得"
+      "text": "人要么永不做梦，要么梦得有趣：要么永不清醒，要么清醒得有趣。"
     },
     {
       "file": "IMG_1818.PNG",
@@ -7717,7 +7594,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1818.PNG",
-      "text": "之\n82\n66\n内心不渴望的东西，不可能\n靠近自己。"
+      "text": "内心不渴望的东西，不可能靠近自己。"
     },
     {
       "file": "IMG_1819.PNG",
@@ -7764,7 +7641,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1819.PNG",
-      "text": "二\n：！.\n81\n66\n太害怕别人的负面评价，\n生活就\n永远是他人欲望的合集。\n休息中\n点击填写本次专注心得\n||"
+      "text": "太害怕别人的负面评价，生活就永远是他人欲望的合集。"
     },
     {
       "file": "IMG_1823.PNG",
@@ -7803,7 +7680,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1823.PNG",
-      "text": "≥\n：！\nの\n57\n66\n人的本能是追逐从他身边飞走的\n东西，却逃避追逐他的东西。\n05:5"
+      "text": "人的本能是追逐从他身边飞走的东西，却逃避追逐他的东西。"
     },
     {
       "file": "IMG_1824.PNG",
@@ -7842,7 +7719,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1824.PNG",
-      "text": "二\n：！\n56\nCD\n66\n人的本能是追逐从他身边飞走的\n东西，却逃避追逐他的东西。\n））"
+      "text": "人的本能是追逐从他身边飞走的东西，却逃避追逐他的东西。"
     },
     {
       "file": "IMG_1825.PNG",
@@ -7873,7 +7750,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1825.PNG",
-      "text": "二\n：！\n56\n66\n人的本能是追逐从他身边飞走的\n东西，却逃避追逐他的东西。"
+      "text": "人的本能是追逐从他身边飞走的东西，却逃避追逐他的东西。"
     },
     {
       "file": "IMG_1826.PNG",
@@ -7904,7 +7781,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1826.PNG",
-      "text": "≥\n35\n€0\n66\n使人疲惫的不是远方的高山，而\n是鞋子里的一粒沙子。"
+      "text": "使人疲惫的不是远方的高山，而是鞋子里的一粒沙子。"
     },
     {
       "file": "IMG_1846.PNG",
@@ -7935,7 +7812,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1846.PNG",
-      "text": "立\n45\nE0\n66\n锲而不舍，金石可镂。\nJ"
+      "text": "锲而不舍，金石可镂。"
     },
     {
       "file": "IMG_1847.PNG",
@@ -7974,7 +7851,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1847.PNG",
-      "text": "打开\n44\nE0\n6G\n我渴望时光能够为我驻留，我想\n毫无保留地成为我自己。\n休息中\n点击填写本次专注心得"
+      "text": "我渴望时光能够为我驻留，我想毫无保留地成为我自己。"
     },
     {
       "file": "IMG_1849.PNG",
@@ -8009,7 +7886,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1849.PNG",
-      "text": "二\nの\n66\n智慧不能创造素材，素材是自然\n或机遇的赠子，而智慧的骄傲在\n于利用了它们。\nJ"
+      "text": "智慧不能创造素材，素材是自然或机遇的赠子，而智慧的骄傲在于利用了它们。"
     },
     {
       "file": "IMG_1850.PNG",
@@ -8048,7 +7925,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1850.PNG",
-      "text": "31\n66\nCD\n我很快，快到时间都会变慢。而\n我一慢，\n时间就会过得飞快。\n休息中\n点击填写本次专注心得"
+      "text": "我很快，快到时间都会变慢。而我一慢，时间就会过得飞快。"
     },
     {
       "file": "IMG_1852.PNG",
@@ -8079,7 +7956,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1852.PNG",
-      "text": "立\n43\n66\n€0\n古之立大事者，不惟有超世之\n才，亦必有坚忍不拔之志。"
+      "text": "古之立大事者，不惟有超世之才，亦必有坚忍不拔之志。"
     },
     {
       "file": "IMG_1853.PNG",
@@ -8114,7 +7991,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1853.PNG",
-      "text": "二\n43\nE0\n66\n君子慎独。\n休息中\n点击填写本次专注心得"
+      "text": "君子慎独。"
     },
     {
       "file": "IMG_1862.PNG",
@@ -8145,7 +8022,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1862.PNG",
-      "text": "二\n60\n66\n€0\n只有用水将心上的雾气淘洗干\n净，荣光才会照亮最初的梦想。"
+      "text": "只有用水将心上的雾气淘洗干净，荣光才会照亮最初的梦想。"
     },
     {
       "file": "IMG_1863.PNG",
@@ -8176,7 +8053,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1863.PNG",
-      "text": "二\n5GA\n59\n66\n正因为我有能力跨越，这个考验\n才会降临。"
+      "text": "正因为我有能力跨越，这个考验才会降临。"
     },
     {
       "file": "IMG_1953.PNG",
@@ -8207,7 +8084,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1953.PNG",
-      "text": "立\n：！ 5G\n40\n98\n66\n勇敢是处于逆境时的光芒。"
+      "text": "勇敢是处于逆境时的光芒。"
     },
     {
       "file": "IMG_1954.PNG",
@@ -8242,7 +8119,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_1954.PNG",
-      "text": "の\n804\n€0\n66\n但愿你的道路漫长，\n充满奇迹\n充满发现。"
+      "text": "但愿你的道路漫长，充满奇迹充满发现。"
     },
     {
       "file": "IMG_2028.PNG",
@@ -8289,7 +8166,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2028.PNG",
-      "text": "：！\n26分\n<\n我治好您 您治好世界\n••\n◎\n随时保持觉性、清楚、明白。\n真心爱自己、做自己的主人，人生才能拥有\n自在。\n结果生成中…"
+      "text": "随时保持觉性、清楚、明白。真心爱自己、做自己的主人，人生才能拥有自在。"
     },
     {
       "file": "IMG_2029.PNG",
@@ -8320,7 +8197,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2029.PNG",
-      "text": "之\n91\nE0\n66\n不加思考的热情就像是一条随波\n逐流的船。"
+      "text": "不加思考的热情就像是一条随波逐流的船。"
     },
     {
       "file": "IMG_2050.PNG",
@@ -8363,7 +8240,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2050.PNG",
-      "text": "立\n：！！ 5G\n（314\n66\nE0\n人们很少做他们相信是对的事，\n他们做比较方便的事，然后后\n悔。\nJ"
+      "text": "人们很少做他们相信是对的事，他们做比较方便的事，然后后悔。"
     },
     {
       "file": "IMG_2052.PNG",
@@ -8410,7 +8287,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2052.PNG",
-      "text": "立\n：\n834\n山\n66\nE0\n我只身前行，却仿佛带着一万\n雄兵。\n观眉间白色的阿字\nJ"
+      "text": "我只身前行，却仿佛带着一万雄兵。观眉间白色的阿字"
     },
     {
       "file": "IMG_2193.PNG",
@@ -8481,7 +8358,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2193.PNG",
-      "text": "二\n（38\n<\n我治好您 您治好世界\n•••\n◎\n每个人都是独一无二的。\n不管是谁，\n最后都只能成为他自己。\n每个人都只能：\n成自己的佛，\n行自己的道，\n传自己的法，\n度自己的人。\n5\n结果生成中."
+      "text": "每个人都是独一无二的。不管是谁，最后都只能成为他自己。每个人都只能：成自己的佛，行自己的道，传自己的法，度自己的人。"
     },
     {
       "file": "IMG_2194.PNG",
@@ -8544,7 +8421,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2194.PNG",
-      "text": "二\n8\n频率检测结果\n在为人处事中，要能够拿得起、放得下、想得开、\n丟得掉。\n丨调理方案推荐\n身体\n内\n肺脏\n丫\n女性\n肝胆\non 当前状态\n免疫力"
+      "text": "频率检测结果在为人处事中，要能够拿得起、放得下、想得开、丟得掉。调理方案推荐身体肺脏女性肝胆当前状态免疫力"
     },
     {
       "file": "IMG_2209.PNG",
@@ -8571,7 +8448,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2209.PNG",
-      "text": "二\n97\n66\n悲观者往往正确，而乐观者\n往往成功。"
+      "text": "悲观者往往正确，而乐观者往往成功。"
     },
     {
       "file": "IMG_2210.PNG",
@@ -8598,7 +8475,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2210.PNG",
-      "text": "二\n97\n66\n悲观者往往正确，而乐观者\n往往成功。"
+      "text": "悲观者往往正确，而乐观者往往成功。"
     },
     {
       "file": "IMG_2211.PNG",
@@ -8637,7 +8514,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2211.PNG",
-      "text": "二\n97\n66\n有时候正是人们以为的无用之\n人，成就了无人敢想之事。\n工作\n2457\nJ"
+      "text": "有时候正是人们以为的无用之人，成就了无人敢想之事。"
     },
     {
       "file": "IMG_2212.PNG",
@@ -8668,7 +8545,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2212.PNG",
-      "text": "二\n66\n人生就是长跑，跑得快一点就再\n也听不见身后的非议声了。\n内五行\n-本周 0/2次"
+      "text": "人生就是长跑，跑得快一点就再也听不见身后的非议声了。内五行本周 /次"
     },
     {
       "file": "IMG_2213.PNG",
@@ -8711,7 +8588,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2213.PNG",
-      "text": "1\n93\nE0\n66\n任何值得去的地方，都没有\n捷径。\n休息中\n点击填写本次专注心得\n-今日1/次"
+      "text": "任何值得去的地方，都没有捷径。今日/次"
     },
     {
       "file": "IMG_2214.PNG",
@@ -8746,7 +8623,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2214.PNG",
-      "text": "二\n：！\n93\n66\n人生而自由，却无处不受约束。\n内五行\n-本周 0/2次"
+      "text": "人生而自由，却无处不受约束。内五行本周 /次"
     },
     {
       "file": "IMG_2215.PNG",
@@ -8801,7 +8678,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2215.PNG",
-      "text": "二\n：！.\n93\n€0\n66\n令你痛苦的，从来不是痛苦本\n身，而是对痛苦的抗拒。\n内五行\n4H:5E\n休息中\n点击填写本次专注心得\n-本周 1/2次"
+      "text": "令你痛苦的，从来不是痛苦本身，而是对痛苦的抗拒。内五行本周 /次"
     },
     {
       "file": "IMG_2360.PNG",
@@ -8832,7 +8709,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2360.PNG",
-      "text": "二\n（26\n66\n€0\n志之难也，不在胜人，在自胜。\n观眉间白色的阿字"
+      "text": "志之难也，不在胜人，在自胜。观眉间白色的阿字"
     },
     {
       "file": "IMG_2465.PNG",
@@ -8895,7 +8772,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_2465.PNG",
-      "text": "二\n：！\n80\n<\n我治好您 您治好世界\n•••\n◎\n不管经历过多么惨烈的事，\n只要学习、向内探索，\n都能够放下过去、少忧未来、感受当下，\n重获心灵的自由。\n结果生成中.\nVConsole\nWEBVIEW"
+      "text": "不管经历过多么惨烈的事，只要学习、向内探索，都能够放下过去、少忧未来、感受当下，重获心灵的自由。"
     },
     {
       "file": "IMG_3178.PNG",
@@ -8934,7 +8811,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3178.PNG",
-      "text": "：！！\n12\n98\n66\n浮名浮利，虚苦劳神。\n驹，石中火，\n梦中身。\n叹隙中"
+      "text": "浮名浮利，虚苦劳神。驹，石中火，梦中身。叹隙中"
     },
     {
       "file": "IMG_3254.PNG",
@@ -8969,7 +8846,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3254.PNG",
-      "text": "≥\n564\n66\nED\n98\n冀以尘雾之微补益山海，荧烛末\n光增辉日月。"
+      "text": "冀以尘雾之微补益山海，荧烛末光增辉日月。"
     },
     {
       "file": "IMG_3277.PNG",
@@ -9008,7 +8885,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3277.PNG",
-      "text": "二\n49\n山\n66\n万卷古今消永日，一窗昏晓送\n流年。\n755\nJ"
+      "text": "万卷古今消永日，一窗昏晓送流年。"
     },
     {
       "file": "IMG_3280.PNG",
@@ -9051,7 +8928,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3280.PNG",
-      "text": "二\n：！\n100\nE0\n66\n当前的目标并不在于发现我们是\n谁，而是拒绝我们是谁。\n休息中\n点击填写本次专注心得"
+      "text": "当前的目标并不在于发现我们是谁，而是拒绝我们是谁。"
     },
     {
       "file": "IMG_3306.PNG",
@@ -9086,7 +8963,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3306.PNG",
-      "text": "二\n39\n66\n98\n创造美好的代价是努力、失望以\n及毅力。首先是疼痛，然后才是\n欢乐。"
+      "text": "创造美好的代价是努力、失望以及毅力。首先是疼痛，然后才是欢乐。"
     },
     {
       "file": "IMG_3307.PNG",
@@ -9141,7 +9018,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3307.PNG",
-      "text": "39\n66\nED\n98\n一切美好的事物都是曲折地接近\n自己的目标，一切笔直都是骗人\n的，所有真理都是弯曲的，时间\n本身就是一个圆圈。\n山\n01:3E\n休息中\n点击填写本次专注心得"
+      "text": "一切美好的事物都是曲折地接近自己的目标，一切笔直都是骗人的，所有真理都是弯曲的，时间本身就是一个圆圈。"
     },
     {
       "file": "IMG_3346.PNG",
@@ -9176,7 +9053,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3346.PNG",
-      "text": "≥\n36\n66\nEU\n生活是种律动，须有光有影，有\n左有右，有晴有雨，滋味就含在\n这变而不猛的曲折里。"
+      "text": "生活是种律动，须有光有影，有左有右，有晴有雨，滋味就含在这变而不猛的曲折里。"
     },
     {
       "file": "IMG_3353.PNG",
@@ -9207,7 +9084,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3353.PNG",
-      "text": "≥\n90\n66\nE0\n永不凋谢的花朵是没有香味的。\n中M"
+      "text": "永不凋谢的花朵是没有香味的。"
     },
     {
       "file": "IMG_3354.PNG",
@@ -9238,7 +9115,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3354.PNG",
-      "text": "≥\n：！\nの\n66\n夜深知雪重，时闻折竹声。\n05:5H"
+      "text": "夜深知雪重，时闻折竹声。"
     },
     {
       "file": "IMG_3355.PNG",
@@ -9293,7 +9170,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3355.PNG",
-      "text": "二\nOUU\n90\n66\n“自己”这个东西是看不见的，\n我们要把自己抛出去，撞上一些\n别的什么，反弹回来，才会了解\n什么是“自己”。\n0:5H\n休息中\n点击填写本次专注心得\n||"
+      "text": "“自己”这个东西是看不见的，我们要把自己抛出去，撞上一些别的什么，反弹回来，才会了解什么是“自己”。"
     },
     {
       "file": "IMG_3356.PNG",
@@ -9364,7 +9241,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3356.PNG",
-      "text": "• 支付宝\n<\n•.\n52\n绑定支付宝\n绑定失败\n您要绑定的支付宝账号（contactperi@gmail.com），目\n前绑定了淘宝账号（W********i）。该账号有未履约的先\n用后付订单，请交易结束后并关闭先用后付服务再进行\n绑定操作。\n您要绑定的支付宝账号（contactperi@gmail.com）目前\n绑定的淘宝账号（W********i）有进行中的交易。请登录\n淘宝账号（W********i）查看，确保所有订单交易结束\n（交易成功/交易关闭）后再进行绑定支付宝哦。\n返回\n绑定其他支付宝"
+      "text": "支付宝绑定支付宝绑定失败您要绑定的支付宝账号（@.），目前绑定了淘宝账号（********）。该账号有未履约的先用后付订单，请交易结束后并关闭先用后付服务再进行绑定操作。您要绑定的支付宝账号（@.）目前绑定的淘宝账号（********）有进行中的交易。请登录淘宝账号（********）查看，确保所有订单交易结束交易成功/交易关闭）后再进行绑定支付宝哦。返回绑定其他支付宝"
     },
     {
       "file": "IMG_3364.PNG",
@@ -9395,7 +9272,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3364.PNG",
-      "text": "立\n［33\n66\n98\n人们总是相信别人都是单纯的坏\n人，而自己是复杂的好人。"
+      "text": "人们总是相信别人都是单纯的坏人，而自己是复杂的好人。"
     },
     {
       "file": "IMG_3366.PNG",
@@ -9438,7 +9315,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3366.PNG",
-      "text": "1\nの\n60\n66\n认识自己，是为了寻找还没有认\n识的自己。\n中M\n休息中\n点击填写本次专注心得"
+      "text": "认识自己，是为了寻找还没有认识的自己。"
     },
     {
       "file": "IMG_3368.PNG",
@@ -9513,7 +9390,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3368.PNG",
-      "text": "二\n：！！ 5G 28\n×\n••\n你不需要受制于別人是否良善\n只需要对自己的行为负费\n你不需要受制于别人是否善良\n修心的核心，是把每一次情绪波动，都当作调\n伏自心的机会。\n—《心如野马°》\n吉祥智慧⋯.\n+关注\n2个朋友关注\n60\n56\n22\n写留言"
+      "text": "你不需要受制于別人是否良善只需要对自己的行为负费你不需要受制于别人是否善良修心的核心，是把每一次情绪波动，都当作调伏自心的机会。心如野马°吉祥智慧⋯.+关注个朋友关注写留言"
     },
     {
       "file": "IMG_3370.PNG",
@@ -9556,7 +9433,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3370.PNG",
-      "text": "之\n67\n€0\n山\n66\n天色越晚，越要把心里的灯\n擦亮。\n休息中\n点击填写本次专注心得"
+      "text": "天色越晚，越要把心里的灯擦亮。"
     },
     {
       "file": "IMG_3371.PNG",
@@ -9599,7 +9476,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3371.PNG",
-      "text": "立\n754\ng8\n66\n你必须只有内心丰富，\n才能摆脫\n这些表面的相似。\n休息中\n点击填写本次专注心得"
+      "text": "你必须只有内心丰富，才能摆脫这些表面的相似。"
     },
     {
       "file": "IMG_3375.PNG",
@@ -9642,7 +9519,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3375.PNG",
-      "text": "95\n€0\ng8\n66\n知而好问，然后能才。\n05:5-\nX\n①0\n10"
+      "text": "知而好问，然后能才。"
     },
     {
       "file": "IMG_3401.PNG",
@@ -9685,7 +9562,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3401.PNG",
-      "text": "二\n98\n66\ng8\n极端的行为来源于虚荣，平庸的\n行为来源于，狭隘的行为来\n源于恐惧。这样来寻找原因一般\n不会出错。\n中M"
+      "text": "极端的行为来源于虚荣，平庸的行为来源于，狭隘的行为来源于恐惧。这样来寻找原因一般不会出错。"
     },
     {
       "file": "IMG_3414.PNG",
@@ -9732,7 +9609,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3414.PNG",
-      "text": "1\n：！\n80\n€0\n66\n天下事以难而废者十之一，以惰\n而废者十之九。\n02:5！\n休息中\n点击填写本次专注心得"
+      "text": "天下事以难而废者十之一，以惰而废者十之九。"
     },
     {
       "file": "IMG_3419.PNG",
@@ -9771,7 +9648,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3419.PNG",
-      "text": "二\n87\n66\n我为我喜爱的东西大费周章，所\n以我才能快乐如斯。\n中M\n$：05\nJ"
+      "text": "我为我喜爱的东西大费周章，所以我才能快乐如斯。"
     },
     {
       "file": "IMG_3423.PNG",
@@ -9806,7 +9683,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3423.PNG",
-      "text": "打开\n43\n66\nc0\n风浪总是站在最好的航海员\n那边。\n中M"
+      "text": "风浪总是站在最好的航海员那边。"
     },
     {
       "file": "IMG_3424.PNG",
@@ -9849,7 +9726,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3424.PNG",
-      "text": "7\n42\n€0\n66\n为学须刚与恒，不刚则隋隳，不\n恒则退。\n中M\n休息中\n点击填写本次专注心得"
+      "text": "为学须刚与恒，不刚则隋隳，不恒则退。"
     },
     {
       "file": "IMG_3425.PNG",
@@ -9896,7 +9773,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3425.PNG",
-      "text": "≥\nの\n98\n66\n好好忍耐，不要沮丧。如果春天\n要来，大地会使它一点点地完\n成。\n中M\n$：05\nJ"
+      "text": "好好忍耐，不要沮丧。如果春天要来，大地会使它一点点地完成。"
     },
     {
       "file": "IMG_3426.PNG",
@@ -9935,7 +9812,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3426.PNG",
-      "text": "≥\nの\n98\n66\n别去担心无法控制的事，不如把\n精力转移到你能创造的事情上。\n中M\nJ"
+      "text": "别去担心无法控制的事，不如把精力转移到你能创造的事情上。"
     },
     {
       "file": "IMG_3427.PNG",
@@ -9974,7 +9851,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_3427.PNG",
-      "text": "二\n98\n66\n担心太多不会减轻明天的负荷，\n只会剥夺今日的快乐。\n中M\n休息中\n点击填写本次专注心得"
+      "text": "担心太多不会减轻明天的负荷，只会剥夺今日的快乐。"
     },
     {
       "file": "IMG_6355.PNG",
@@ -10025,7 +9902,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6355.PNG",
-      "text": "13\n：！\nの\n83\n66\n€0\n我要有能做我自己的自由，和\n敢做我自己的胆量。\n山\n休息中\n点击填写本次专注心得"
+      "text": "我要有能做我自己的自由，和敢做我自己的胆量。"
     },
     {
       "file": "IMG_6500.PNG",
@@ -10064,7 +9941,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6500.PNG",
-      "text": "31\n98\n66\n你必须赢过，\n不在乎输赢。\n才可以说\n休息中\n点击填写本次专注心得"
+      "text": "你必须赢过，不在乎输赢。才可以说"
     },
     {
       "file": "IMG_6512.PNG",
@@ -10107,7 +9984,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6512.PNG",
-      "text": "F\n71\n66\n98\n谦卑的心是宛如野草小花的\n心，不取笑外面的世界，也不\n在意世界的嘲讽。\n工作\nJ"
+      "text": "谦卑的心是宛如野草小花的心，不取笑外面的世界，也不在意世界的嘲讽。"
     },
     {
       "file": "IMG_6555.PNG",
@@ -10158,7 +10035,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6555.PNG",
-      "text": "④\n74\n66\nED\n98\n先是太胆小，明知不该做的事\n却不敢不做；后来也还是太胆\n小，明知该做的事却不敢去\n做。\n工作\nJ"
+      "text": "先是太胆小，明知不该做的事却不敢不做；后来也还是太胆小，明知该做的事却不敢去做。"
     },
     {
       "file": "IMG_6556.PNG",
@@ -10201,7 +10078,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6556.PNG",
-      "text": "1\n72\n98\n66\n不要试图鹤立鸡群，离开那\n群鸡。\n工作\n休息中\n点击填写本次专注心得"
+      "text": "不要试图鹤立鸡群，离开那群鸡。"
     },
     {
       "file": "IMG_6557.PNG",
@@ -10252,7 +10129,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6557.PNG",
-      "text": "13\n：！\n72\n66\n好好忍耐，\n天要来\n完成\nE0\n不要沮丧。如果春\n会使它一点点地\n工作"
+      "text": "好好忍耐，天要来完成不要沮丧。如果春会使它一点点地"
     },
     {
       "file": "IMG_6587.PNG",
@@ -10291,7 +10168,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6587.PNG",
-      "text": "76\n66\nED\n98\n你知道，有些乌儿是注定不会\n被关在牢笼里的，它们的每一\n片羽毛都闪耀着自由的光辉。\nJ"
+      "text": "你知道，有些乌儿是注定不会被关在牢笼里的，它们的每一片羽毛都闪耀着自由的光辉。"
     },
     {
       "file": "IMG_6588.PNG",
@@ -10322,7 +10199,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6588.PNG",
-      "text": "65\n66\n所有的大人曾经都是小孩，虽\n然，只有少数的人记得。\n休息中\n点击填写本次专注心得"
+      "text": "所有的大人曾经都是小孩，虽然，只有少数的人记得。"
     },
     {
       "file": "IMG_6591.PNG",
@@ -10349,7 +10226,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6591.PNG",
-      "text": "4\n51\n66\n平衡需要积极的心态。\nJ"
+      "text": "平衡需要积极的心态。"
     },
     {
       "file": "IMG_6592.PNG",
@@ -10388,7 +10265,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6592.PNG",
-      "text": "必\n50\n66\n€0\n没有什么比彻底的逆境更令人\n振奋的孓\n休息中\n点击填写本次专注心得"
+      "text": "没有什么比彻底的逆境更令人振奋的孓"
     },
     {
       "file": "IMG_6597.PNG",
@@ -10415,7 +10292,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6597.PNG",
-      "text": "6\n121\n66\n生命是一团欲望，欲望不能满足\n便痛苦，满足便无聊。"
+      "text": "生命是一团欲望，欲望不能满足便痛苦，满足便无聊。"
     },
     {
       "file": "IMG_6616.PNG",
@@ -10450,7 +10327,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6616.PNG",
-      "text": "18\n66\n我们栖息的桌子飘向麦地，\n们安坐的灯火涌向星辰，\n我\n休息中\n点击填写本次专注心得"
+      "text": "我们栖息的桌子飘向麦地，们安坐的灯火涌向星辰，"
     },
     {
       "file": "IMG_6622.PNG",
@@ -10501,7 +10378,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6622.PNG",
-      "text": "½\n＜微信\n：！\n63\nE0\n66\n为懒惰找的借口永远不\n值得听\n•工作\n休息中\n点击填写本次专注心得"
+      "text": "＜微信为懒惰找的借口永远不值得听"
     },
     {
       "file": "IMG_6623.PNG",
@@ -10536,7 +10413,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6623.PNG",
-      "text": "3\n63\n66\n凡是过去，\n€0\n皆为序章。\n山"
+      "text": "凡是过去，皆为序章。"
     },
     {
       "file": "IMG_6624.PNG",
@@ -10595,7 +10472,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6624.PNG",
-      "text": "≤\n：！\n61\n66\nEU\n对于每一个人而言，真正的职\n责只有一个：找到自我，然后\n在心中坚守其一生，全心全意\n永不停息。\n工作\n|1\nJ\nV"
+      "text": "对于每一个人而言，真正的职责只有一个：找到自我，然后在心中坚守其一生，全心全意永不停息。"
     },
     {
       "file": "IMG_6625.PNG",
@@ -10634,7 +10511,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6625.PNG",
-      "text": "：！\n58\n€0\n66\n中心定，则外物清。\n工作\n休息中\n点击填写本次专注心得"
+      "text": "中心定，则外物清。"
     },
     {
       "file": "IMG_6626.PNG",
@@ -10677,7 +10554,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6626.PNG",
-      "text": "：！\n57\n66\n€0\n思想以自己的言语喂养它\n自己，而成长起来。\n工作\nJ\nV"
+      "text": "思想以自己的言语喂养它自己，而成长起来。"
     },
     {
       "file": "IMG_6627.PNG",
@@ -10720,7 +10597,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6627.PNG",
-      "text": "≤\n54\n66\n€0\n内心不渴望的东西，不可能靠\n近自己。\n工作\n休息中\n点击填写本次专注心得"
+      "text": "内心不渴望的东西，不可能靠近自己。"
     },
     {
       "file": "IMG_6628.PNG",
@@ -10759,7 +10636,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6628.PNG",
-      "text": "½\n：！\n53\n66\n€0\n把心力全用来评论小事的好\n坏，就没有为气去在乎重要的\n事了"
+      "text": "把心力全用来评论小事的好坏，就没有为气去在乎重要的事了"
     },
     {
       "file": "IMG_6629.PNG",
@@ -10802,7 +10679,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6629.PNG",
-      "text": "3\n：！\n53\n€0\n66\n虽然明天还会有新的太阳，但\n。永远不会有会天的太阳了。\n休息中\n点击填写本次专注心得"
+      "text": "虽然明天还会有新的太阳，但永远不会有会天的太阳了。"
     },
     {
       "file": "IMG_6692.PNG",
@@ -10849,7 +10726,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6692.PNG",
-      "text": "4\n94\n98\n66\n应该有更好的方式开始新的一\n天，而不是千篇一律的在每个\n上午醒来。\n工作\n休息中\n点击填写本次专注心得"
+      "text": "应该有更好的方式开始新的一天，而不是千篇一律的在每个上午醒来。"
     },
     {
       "file": "IMG_6693.PNG",
@@ -10884,7 +10761,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6693.PNG",
-      "text": "≤\n94\n98\n66\n我们埋头奔跑，为了那些无法\n向他人说明的事。\n工作"
+      "text": "我们埋头奔跑，为了那些无法向他人说明的事。"
     },
     {
       "file": "IMG_6694.PNG",
@@ -10931,7 +10808,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6694.PNG",
-      "text": "巴\n93\n€0\n98\n66\n四方食事，不过一碗人间\n烟火。\n工作\n休息中\n点击填写本次专注心得"
+      "text": "四方食事，不过一碗人间烟火。"
     },
     {
       "file": "IMG_6695.PNG",
@@ -10970,7 +10847,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6695.PNG",
-      "text": "61\n€0\n66\n只要放弃一次就会滋生放弃\n的习性，原本可以解决的问题\n也会变得无法解决\n休息中\n点击填写本次专注心得"
+      "text": "只要放弃一次就会滋生放弃的习性，原本可以解决的问题也会变得无法解决"
     },
     {
       "file": "IMG_6696.PNG",
@@ -11005,7 +10882,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6696.PNG",
-      "text": "4\n61\n€0\n66\n强大不是硬碰硬\n地坚持\n而是柔韧"
+      "text": "强大不是硬碰硬地坚持而是柔韧"
     },
     {
       "file": "IMG_6717.PNG",
@@ -11056,7 +10933,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6717.PNG",
-      "text": "（24\n66\n€0\n当你犹豫要不要去做一件事\n时，其实你内心已经有了答\n案，只是没有充足的理由去说\n服自己。\n工作\n|1\nJ\nV"
+      "text": "当你犹豫要不要去做一件事时，其实你内心已经有了答案，只是没有充足的理由去说服自己。"
     },
     {
       "file": "IMG_6718.PNG",
@@ -11095,7 +10972,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6718.PNG",
-      "text": "④\n88\n98\n66\n表面上是拖延时间，实际上是\n拖延自己。\n休息中\n点击填写本次专注心得"
+      "text": "表面上是拖延时间，实际上是拖延自己。"
     },
     {
       "file": "IMG_6719.PNG",
@@ -11130,7 +11007,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6719.PNG",
-      "text": "：！\n884\n66\n€0\n当你看清了自己的样子，就能\n吸引到对的\n.工作"
+      "text": "当你看清了自己的样子，就能吸引到对的"
     },
     {
       "file": "IMG_6720.PNG",
@@ -11177,7 +11054,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6720.PNG",
-      "text": "4\n100\n66\n€0\n月亮是生命的尽度，有时候\n盈\n有时候受\n•工作\n休息中\n点击填写本次专注心得"
+      "text": "月亮是生命的尽度，有时候有时候受"
     },
     {
       "file": "IMG_6721.PNG",
@@ -11224,7 +11101,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6721.PNG",
-      "text": "≤\n：！\n100\n66\nCU\n为了怀抱一些新幻想，我们失\n去一些旧幻想，这就是成长。\n工作\nJ\nV"
+      "text": "为了怀抱一些新幻想，我们失去一些旧幻想，这就是成长。"
     },
     {
       "file": "IMG_6722.PNG",
@@ -11267,7 +11144,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6722.PNG",
-      "text": "C\n：！\n95\n€0\n66\n于绝望比绝望本身更令\n人恐惧。\n休息中\n点击填写本次专注心得"
+      "text": "于绝望比绝望本身更令人恐惧。"
     },
     {
       "file": "IMG_6791.PNG",
@@ -11310,7 +11187,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6791.PNG",
-      "text": "4\n16\n66\n这个世界上，有一些错觉是危\n险的。一个是认为对方是特别\n的，一个是认为自己是特别\n的。\n休息中\n点击填写本次专注心得"
+      "text": "这个世界上，有一些错觉是危险的。一个是认为对方是特别的，一个是认为自己是特别的。"
     },
     {
       "file": "IMG_6792.PNG",
@@ -11349,7 +11226,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6792.PNG",
-      "text": "½\n：！\nの\n16\n66\n宁愿做过了之后感到失望，\n不要错过了之后觉得后悔。\n也"
+      "text": "宁愿做过了之后感到失望，不要错过了之后觉得后悔。"
     },
     {
       "file": "IMG_6793.PNG",
@@ -11400,7 +11277,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6793.PNG",
-      "text": "4\n：！\n16\nCU\n66\n生命如此短暂，我们没有时间\n去争吵、道歉、伤心、仇恨、\n斤斤计较。我们只有时间去\n爱，一切稍纵即逝。\n休息中\n点击填写本次专注心得"
+      "text": "生命如此短暂，我们没有时间去争吵、道歉、伤心、仇恨、斤斤计较。我们只有时间去爱，一切稍纵即逝。"
     },
     {
       "file": "IMG_6800.PNG",
@@ -11427,7 +11304,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6800.PNG",
-      "text": "½\n93\n66\n€0\n要活出自己之后再被人理解。"
+      "text": "要活出自己之后再被人理解。"
     },
     {
       "file": "IMG_6801.PNG",
@@ -11474,7 +11351,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6801.PNG",
-      "text": "4\n93\n66\n€0\n世态有炎凉\n、而我无嗔喜；世\n味有浓淡\n两我无欣厌。\n休息中\n点击填写本次专注心得"
+      "text": "世态有炎凉而我无嗔喜；世味有浓淡两我无欣厌。"
     },
     {
       "file": "IMG_6842.PNG",
@@ -11521,7 +11398,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6842.PNG",
-      "text": "C\n95\n66\n€0\n每天清晨有多少双眼睛睁开，\n有多少人的意识苏醒过来，便\n有多少个世界。\n|1\nJ\nV"
+      "text": "每天清晨有多少双眼睛睁开，有多少人的意识苏醒过来，便有多少个世界。"
     },
     {
       "file": "IMG_6843.PNG",
@@ -11568,7 +11445,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6843.PNG",
-      "text": "の\n62\n66\nEU\n98\n不是所有的鱼都会生活在同一\n片海里。\n工作\n二\n<"
+      "text": "不是所有的鱼都会生活在同一片海里。"
     },
     {
       "file": "IMG_6844.PNG",
@@ -11619,7 +11496,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6844.PNG",
-      "text": "1微信\n：！\nの\n60\n€0\n66\n世界上的一切都在作出回答，\n迟迟不来的是提问的时机。\n工作\n休息中\n点击填写本次专注心得"
+      "text": "微信世界上的一切都在作出回答，迟迟不来的是提问的时机。"
     },
     {
       "file": "IMG_6846.PNG",
@@ -11662,7 +11539,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6846.PNG",
-      "text": "：！\n44\n66\n因做过的事引起的后悔会被时\n间慢慢抚平，为没做过的事产\n生的后悔却会一直难以释怀。\n工作\n休息中\n点击填写本次专注心得"
+      "text": "因做过的事引起的后悔会被时间慢慢抚平，为没做过的事产生的后悔却会一直难以释怀。"
     },
     {
       "file": "IMG_6847.PNG",
@@ -11705,7 +11582,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6847.PNG",
-      "text": "④\n：！\n43\n98\n66\n深刻并不等于接近事实。\n工作\n休息中\n点击填写本次专注心得"
+      "text": "深刻并不等于接近事实。"
     },
     {
       "file": "IMG_6848.PNG",
@@ -11752,7 +11629,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6848.PNG",
-      "text": "≥\n43\n66\n€0\n世界旅行不像它看上去的那么\n美好，只是在你从所有炎热和\n狼狈中归来之后，你忘记了所\n受的折磨，回忆着看见过的\n休息中\n点击填写本次专注心得"
+      "text": "世界旅行不像它看上去的那么美好，只是在你从所有炎热和狼狈中归来之后，你忘记了所受的折磨，回忆着看见过的"
     },
     {
       "file": "IMG_6851.PNG",
@@ -11823,7 +11700,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6851.PNG",
-      "text": "57\n<\n我治好您 您治好世界\n让心静下来，才能看淡一切。\n静中，我们才会反观自己，\n知道哪些行为还需要修正，哪些地方还需要\n精进，\n在静中让生命得到升华洗礼，在自观中走向\n觉悟。\n让心静下来，我们才能学会放下。\n放下了，心也就静了。\n心不静，是因为我们没有放下。\n静，能通一切境界。\n静，能生慧。\nMAHIATMA\n结果生成中."
+      "text": "让心静下来，才能看淡一切。静中，我们才会反观自己，知道哪些行为还需要修正，哪些地方还需要精进，在静中让生命得到升华洗礼，在自观中走向觉悟。让心静下来，我们才能学会放下。放下了，心也就静了。心不静，是因为我们没有放下。静，能通一切境界。静，能生慧。"
     },
     {
       "file": "IMG_6852.PNG",
@@ -11858,7 +11735,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6852.PNG",
-      "text": "C\n55\n66\n€0\n好在，别人如何分析我，跟我\n•本身是一点养系也没有的。\n山"
+      "text": "好在，别人如何分析我，跟我本身是一点养系也没有的。"
     },
     {
       "file": "IMG_6853.PNG",
@@ -11893,7 +11770,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6853.PNG",
-      "text": "C\n：！\n55\n66\n€0\n勇气是在压为之下展现出的\n优雅。"
+      "text": "勇气是在压为之下展现出的优雅。"
     },
     {
       "file": "IMG_6854.PNG",
@@ -11932,7 +11809,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6854.PNG",
-      "text": "C\n66\n€0\n其实“正常\n织中的碰巧家美\n才是无数误差交\n休息中\n点击填写本次专注心得"
+      "text": "其实“正常织中的碰巧家美才是无数误差交"
     },
     {
       "file": "IMG_6855.PNG",
@@ -11971,7 +11848,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6855.PNG",
-      "text": "：！\n49\n66\nEU\n一个犹豫不决的灵魂，奋起抗\n击无穷的忧患，而内心又矛盾\n重重，真实生活就是如此。\n<"
+      "text": "一个犹豫不决的灵魂，奋起抗击无穷的忧患，而内心又矛盾重重，真实生活就是如此。"
     },
     {
       "file": "IMG_6856.PNG",
@@ -12010,7 +11887,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6856.PNG",
-      "text": "4\n：！\n734\n66\n98\n以一小部分的你，来判别你的\n全部价值\n1，这就是势利。"
+      "text": "以一小部分的你，来判别你的全部价值这就是势利。"
     },
     {
       "file": "IMG_6857.PNG",
@@ -12053,7 +11930,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6857.PNG",
-      "text": "4\n微信\n75\n€0\n66\nGreat minds have purpose, others\nhave wishes.\n休息中\n点击填写本次专注心得"
+      "text": "微信"
     },
     {
       "file": "IMG_6861.PNG",
@@ -12096,7 +11973,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6861.PNG",
-      "text": "4\n：！ 5G\n66\n€0\n66\n一世人生有热凉\n暮要担当\n晨要担当，\n工作"
+      "text": "一世人生有热凉暮要担当晨要担当，"
     },
     {
       "file": "IMG_6862.PNG",
@@ -12131,7 +12008,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6862.PNG",
-      "text": "②\n：！ 5G\n61\n66\n真正的雄辩在于说所有应当说\n的，且只说应当说的。\n工作"
+      "text": "真正的雄辩在于说所有应当说的，且只说应当说的。"
     },
     {
       "file": "IMG_6867.PNG",
@@ -12174,7 +12051,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6867.PNG",
-      "text": "≤\n：！ 5G\n45\n66\n不能听命于自己者，就要受命\n于他人。\n工作\n休息中\n点击填写本次专注心得"
+      "text": "不能听命于自己者，就要受命于他人。"
     },
     {
       "file": "IMG_6875.PNG",
@@ -12225,7 +12102,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6875.PNG",
-      "text": "4\n：！\nの\n14\n€0\n66\nIf you find a path with no\nobstacles, it probably doesn' t\nlead anywhere.\n休息中\n点击填写本次专注心得"
+      "text": ""
     },
     {
       "file": "IMG_6876.PNG",
@@ -12268,7 +12145,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_6876.PNG",
-      "text": "½\n：！\n14\n€0\n山\n66\n勇敢是处干逆境时的光芒。\n休息中\n点击填写本次专注心得"
+      "text": "勇敢是处干逆境时的光芒。"
     },
     {
       "file": "IMG_7051.PNG",
@@ -12315,7 +12192,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7051.PNG",
-      "text": "C\n：！\n854\n66\n谦卑的心是宛如野草小花的\n心，不取笑外面的世界，也不\n在意世界的嘲讽。\n工作\n休息中\n点击填写本次专注心得"
+      "text": "谦卑的心是宛如野草小花的心，不取笑外面的世界，也不在意世界的嘲讽。"
     },
     {
       "file": "IMG_7052.PNG",
@@ -12362,7 +12239,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7052.PNG",
-      "text": "6\n2！\n94\nED\n98\n66\n若不趁起风时扬帆，船是不会\n前进的。\n休息中\n点击填写本次专注心得"
+      "text": "若不趁起风时扬帆，船是不会前进的。"
     },
     {
       "file": "IMG_7062.PNG",
@@ -12397,7 +12274,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7062.PNG",
-      "text": "40\n€0\n66\n被别人揭下面具是一种失败.\n自己揭下面具却是一种胜利。\n休息中\n点击填写本次专注心得"
+      "text": "被别人揭下面具是一种失败.自己揭下面具却是一种胜利。"
     },
     {
       "file": "IMG_7069.PNG",
@@ -12432,7 +12309,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7069.PNG",
-      "text": "：！\nの\n53\n66\n人生中的多数不幸并非由厄运\n造成，而是懒惰，倦怠和粗俗\n导致的。"
+      "text": "人生中的多数不幸并非由厄运造成，而是懒惰，倦怠和粗俗导致的。"
     },
     {
       "file": "IMG_7088.PNG",
@@ -12479,7 +12356,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7088.PNG",
-      "text": "1\n：\n324\n66\n€0\n98\n没有比脚更长的路，没有比人\n更高的山。\n二\n<"
+      "text": "没有比脚更长的路，没有比人更高的山。"
     },
     {
       "file": "IMG_7096.PNG",
@@ -12514,7 +12391,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7096.PNG",
-      "text": "4\n：0: 5G41\n66\n€0\n脑内的都是虚妄，眼前的才在\n脚下。\nJ"
+      "text": "脑内的都是虚妄，眼前的才在脚下。"
     },
     {
       "file": "IMG_7097.PNG",
@@ -12553,7 +12430,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7097.PNG",
-      "text": "49\n66\n98\n人生的盛宴已经摆在我们面\n前，唯一的问题是我们的胃口\n怎样。\n休息中\n点击填写本次专注心得"
+      "text": "人生的盛宴已经摆在我们面前，唯一的问题是我们的胃口怎样。"
     },
     {
       "file": "IMG_7102.PNG",
@@ -12592,7 +12469,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7102.PNG",
-      "text": "二\n：！\n58\n66\n尽情玩耍，尽情学习，尽情长\n大。找到热爱的事，找到值得\n爱的人，然后为了他们全力以\n赴。"
+      "text": "尽情玩耍，尽情学习，尽情长大。找到热爱的事，找到值得爱的人，然后为了他们全力以赴。"
     },
     {
       "file": "IMG_7108.PNG",
@@ -12623,7 +12500,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7108.PNG",
-      "text": "日\n€0\n66\n积一勺以成江河_\n峻极。\n累微尘以崇"
+      "text": "积一勺以成江河_峻极。累微尘以崇"
     },
     {
       "file": "IMG_7109.PNG",
@@ -12654,7 +12531,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7109.PNG",
-      "text": "66\nE0\n万卷古今消永日.一窗昏晓\n送流年\n休息中\n点击填写本次专注心得"
+      "text": "万卷古今消永日，一窗昏晓送流年"
     },
     {
       "file": "IMG_7110.PNG",
@@ -12697,7 +12574,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7110.PNG",
-      "text": "1\n：.\n⑦\n（40\n€0\n98\n66\n尽精微，致广大。\nJ"
+      "text": "尽精微，致广大。"
     },
     {
       "file": "IMG_7113.PNG",
@@ -12732,7 +12609,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7113.PNG",
-      "text": "日\n18\n66\nE0\n人们很少做他们相信是对的\n事，他但做比较方便的事，然\n后后悔"
+      "text": "人们很少做他们相信是对的事，他但做比较方便的事，然后后悔"
     },
     {
       "file": "IMG_7131.PNG",
@@ -12771,7 +12648,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7131.PNG",
-      "text": "二\n59\n66\n€0\n98\n人心中有一种恼人的倾向，即\n只把压倒他的东西称作命运。\nJ"
+      "text": "人心中有一种恼人的倾向，即只把压倒他的东西称作命运。"
     },
     {
       "file": "IMG_7132.PNG",
@@ -12810,7 +12687,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7132.PNG",
-      "text": "巴\n58\n98\n66\n对未来的真正慷慨，是把一切\n献给现在。\n休息中\n点击填写本次专注心得"
+      "text": "对未来的真正慷慨，是把一切献给现在。"
     },
     {
       "file": "IMG_7133.PNG",
@@ -12841,7 +12718,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7133.PNG",
-      "text": "66\nE0\n如果我们总是等待绝对的一切\n那我们将永远无法开\n就绪，\n始。"
+      "text": "如果我们总是等待绝对的一切那我们将永远无法开就绪，始。"
     },
     {
       "file": "IMG_7134.PNG",
@@ -12876,7 +12753,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7134.PNG",
-      "text": "≤\n66\n€0\n于绝望比绝望本身更令\n•人恐惧\n休息中\n点击填写本次专注心得"
+      "text": "于绝望比绝望本身更令人恐惧"
     },
     {
       "file": "IMG_7142.PNG",
@@ -12915,7 +12792,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7142.PNG",
-      "text": "55\n66\n€0\n98\n虽然明天还会有新的太阳，但\n永远不会有今天的太阳了。\n||\nJ"
+      "text": "虽然明天还会有新的太阳，但永远不会有今天的太阳了。"
     },
     {
       "file": "IMG_7170.PNG",
@@ -12954,7 +12831,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7170.PNG",
-      "text": "日\n. 5G 29\n66\n€0\n98\n这世上唯一扛得住岁月摧残的\n就是才华。\nJ"
+      "text": "这世上唯一扛得住岁月摧残的就是才华。"
     },
     {
       "file": "IMG_7189.PNG",
@@ -12997,7 +12874,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7189.PNG",
-      "text": "日\n：！\n21\n€0\n66\n鞘安于钝，以护剑利。\n|1\nJ\nV"
+      "text": "鞘安于钝，以护剑利。"
     },
     {
       "file": "IMG_7191.PNG",
@@ -13032,7 +12909,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7191.PNG",
-      "text": "日\n：！\n164\n66\n自己的优点，要掩藏几分：别\n人的缺点，要掩盖几分。\n工作"
+      "text": "自己的优点，要掩藏几分：别人的缺点，要掩盖几分。"
     },
     {
       "file": "IMG_7199.PNG",
@@ -13067,7 +12944,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7199.PNG",
-      "text": "B\n：！.\n66\n€0\n今天的我们并不比昨天聪明，\n。但一定要比昨天更睿智。\n工作"
+      "text": "今天的我们并不比昨天聪明，但一定要比昨天更睿智。"
     },
     {
       "file": "IMG_7204.PNG",
@@ -13106,7 +12983,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7204.PNG",
-      "text": "=\n：！\n（25\n66\n€0\n碰到好的欢喜的东西，总是要留\n得一份清淡杀地才会有中正的\n情缘"
+      "text": "碰到好的欢喜的东西，总是要留得一份清淡杀地才会有中正的情缘"
     },
     {
       "file": "IMG_7205.PNG",
@@ -13141,7 +13018,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7205.PNG",
-      "text": "日\n56\n66\n一个有勃勃生机与广泛兴趣的\n人，可以战胜一切不幸。\n休息中\n点击填写本次专注心得"
+      "text": "一个有勃勃生机与广泛兴趣的人，可以战胜一切不幸。"
     },
     {
       "file": "IMG_7206.PNG",
@@ -13180,7 +13057,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7206.PNG",
-      "text": "巴\nの\n78\n98\n66\n今天没有开始的事，明天绝不\n会完成。\nJ"
+      "text": "今天没有开始的事，明天绝不会完成。"
     },
     {
       "file": "IMG_7207.PNG",
@@ -13231,7 +13108,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7207.PNG",
-      "text": "=\n78\nED\n98\n66\n任何变化都不是突然发生的，\n都是自己无意间一点一点选择\n的。\n-\n休息中\n点击填写本次专注心得"
+      "text": "任何变化都不是突然发生的，都是自己无意间一点一点选择的。"
     },
     {
       "file": "IMG_7257.PNG",
@@ -13266,7 +13143,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7257.PNG",
-      "text": "87\n66\n98\n我们还站在昏暗中，怀着柔和\n的梦想，渴望走进那光明中，\n自己也化为光。\nJ"
+      "text": "我们还站在昏暗中，怀着柔和的梦想，渴望走进那光明中，自己也化为光。"
     },
     {
       "file": "IMG_7265.PNG",
@@ -13369,7 +13246,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7265.PNG",
-      "text": "录制中\n材料准备\n一、课程简介\n二、课程思政教学设计思路\n三、课程思政教学设计与实践\n四、课程思政成效评价\n五、课程思政可供借鉴经验做法\n六、课程思政教学反思\n教学设计案例\n从教学理念、教学方法\n简菁.l\n课程思政设计思路方法，坚持学生中心、产出\n导向、持续改进，突出学生的课程学习体验、\n学习效果。\n现场展示\n教师报名表\n一、基本信息\n二、授课教师（教学团队）教育教学情况\n• 负责人在教育教学中所获相关奖励情况\n• 展示课程所获相关教学荣誉奖励或肯定情况\n简菁的屏幕共享.◎ 。\n買以派中\n2024/12/10\n見"
+      "text": "录制中材料准备一、课程简介二、课程思政教学设计思路三、课程思政教学设计与实践四、课程思政成效评价五、课程思政可供借鉴经验做法六、课程思政教学反思教学设计案例从教学理念、教学方法简菁.课程思政设计思路方法，坚持学生中心、产出导向、持续改进，突出学生的课程学习体验、学习效果。现场展示教师报名表一、基本信息二、授课教师（教学团队）教育教学情况负责人在教育教学中所获相关奖励情况展示课程所获相关教学荣誉奖励或肯定情况简菁的屏幕共享.◎ 。買以派中"
     },
     {
       "file": "IMG_7285.PNG",
@@ -13412,7 +13289,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7285.PNG",
-      "text": "：！！\n26\n66\n€0\n当自己为实现存在意义而努力\n时，幸运的巧合就会自然出\n现\n他们管这个叫顺其自然。\n11"
+      "text": "当自己为实现存在意义而努力时，幸运的巧合就会自然出他们管这个叫顺其自然。"
     },
     {
       "file": "IMG_7397.PNG",
@@ -13455,7 +13332,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7397.PNG",
-      "text": "日\n78分\n€0\n66\nIf you find a path with no\nobstadles, it probably doesn’ t\nlead anywhere.\n休息中\n点击填写本次专注心得"
+      "text": ""
     },
     {
       "file": "IMG_7554.PNG",
@@ -13494,7 +13371,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7554.PNG",
-      "text": "≥\n：！\n84\n66\n€0\n碰到好的欢喜的东西，总是要留\n得一份清淡杀地才会有中正的\n情缘"
+      "text": "碰到好的欢喜的东西，总是要留得一份清淡杀地才会有中正的情缘"
     },
     {
       "file": "IMG_7562.PNG",
@@ -13537,7 +13414,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7562.PNG",
-      "text": "78\n66\n€0\n98\n我们有两种时间，一种是刻画\n在月历或时钟上匆忙的一天，\n另一种是模糊茫然的生命时\n刻。\n二"
+      "text": "我们有两种时间，一种是刻画在月历或时钟上匆忙的一天，另一种是模糊茫然的生命时刻。"
     },
     {
       "file": "IMG_7603.PNG",
@@ -13588,7 +13465,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7603.PNG",
-      "text": "立\n：！\n48\n66\nE0\n智慧不能创造素材，素材是自\n然或机遇的赠予、而智慧的骄\n傲在手利用了它们。\n山\n休息中\n点击填写本次专注心得"
+      "text": "智慧不能创造素材，素材是自然或机遇的赠予、而智慧的骄傲在手利用了它们。"
     },
     {
       "file": "IMG_7625.PNG",
@@ -13631,7 +13508,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7625.PNG",
-      "text": "：！\n424\n66\nE0\n非得越过一\n大片的干旱贫瘠，\n地形险恶的荒野\n才能跨入活\n生生的现实世界"
+      "text": "非得越过一大片的干旱贫瘠，地形险恶的荒野才能跨入活生生的现实世界"
     },
     {
       "file": "IMG_7654.PNG",
@@ -13670,7 +13547,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7654.PNG",
-      "text": "：！\n26\n66\n老要靠别人的鼓励才去奋斗的\n人不算强者：有别人的鼓励还\n不去奋斗的人称得上是懦夫。\n休息中\n点击填写本次专注心得"
+      "text": "老要靠别人的鼓励才去奋斗的人不算强者：有别人的鼓励还不去奋斗的人称得上是懦夫。"
     },
     {
       "file": "IMG_7667.PNG",
@@ -13705,7 +13582,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7667.PNG",
-      "text": "76\nED\n66\ng8\n及格就是\n对热爱的人来说\n糟糕。"
+      "text": "及格就是对热爱的人来说糟糕。"
     },
     {
       "file": "IMG_7682.PNG",
@@ -13748,7 +13625,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7682.PNG",
-      "text": "打开\n98\n98\n66\n知世故而不世故\n的成熟。\n才是最善良\n休息中\n点击填写本次专注心得"
+      "text": "知世故而不世故的成熟。才是最善良"
     },
     {
       "file": "IMG_7685.PNG",
@@ -13787,7 +13664,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7685.PNG",
-      "text": "之\n86\n66\n€0\n很多东西如果不是怕别人捡\n去，我们一定会扔掉。\n-今日 0/次\nJ"
+      "text": "很多东西如果不是怕别人捡去，我们一定会扔掉。今日 /次"
     },
     {
       "file": "IMG_7686.PNG",
@@ -13838,7 +13715,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7686.PNG",
-      "text": "1\n盒马\n84\n€0\n66\n要一个完成，不要千万个\n开始。\n休息中\n点击填写本次专注心得\nJ\n<"
+      "text": "盒马要一个完成，不要千万个开始。"
     },
     {
       "file": "IMG_7801.PNG",
@@ -13869,7 +13746,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7801.PNG",
-      "text": "44\n66\n€0\n98\n勇气是一种拯救的力量。\nJ"
+      "text": "勇气是一种拯救的力量。"
     },
     {
       "file": "IMG_7802.PNG",
@@ -13916,7 +13793,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7802.PNG",
-      "text": "≥\n：！\n（27\n66\nED\n98\n人生最终的价值在于觉醒和思\n考的能力.而不只在于生存。\n||\nJ"
+      "text": "人生最终的价值在于觉醒和思考的能力，而不只在于生存。"
     },
     {
       "file": "IMG_7823.PNG",
@@ -13943,7 +13820,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7823.PNG",
-      "text": "：！\n（23\n66\n我们活过的刹那，前后皆是\n暗夜."
+      "text": "我们活过的刹那，前后皆是暗夜."
     },
     {
       "file": "IMG_7824.PNG",
@@ -13982,7 +13859,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7824.PNG",
-      "text": "二\n：！\n（22\n66\n要跳出害人的常规，要狂奔，\n给希望提供全部机会。\n休息中\n点击填写本次专注心得"
+      "text": "要跳出害人的常规，要狂奔，给希望提供全部机会。"
     },
     {
       "file": "IMG_7848.PNG",
@@ -14025,7 +13902,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7848.PNG",
-      "text": "二\n：！ 5G\n53\n€0\n66\n我们必须经常保持旧日的记忆和\n新的希望\n休息中\n点击填写本次专注心得"
+      "text": "我们必须经常保持旧日的记忆和新的希望"
     },
     {
       "file": "IMG_7908.PNG",
@@ -14060,7 +13937,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7908.PNG",
-      "text": "≥\n87\n66\n€0\n懒惰是索价极高的奢侈品，一\n旦到期清付，必定偿还不起。\n山"
+      "text": "懒惰是索价极高的奢侈品，一旦到期清付，必定偿还不起。"
     },
     {
       "file": "IMG_7927.PNG",
@@ -14103,7 +13980,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_7927.PNG",
-      "text": "65\n66\nED\n98\n学习看清楚这个世界并不能让\n这个世界更美好，但能让你自\n己变得更美好。\n休息中\n点击填写本次专注心得"
+      "text": "学习看清楚这个世界并不能让这个世界更美好，但能让你自己变得更美好。"
     },
     {
       "file": "IMG_8032.PNG",
@@ -14150,7 +14027,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8032.PNG",
-      "text": "静音\n32\n66\n€0\n在我们能够对已经失去的东西\n予以确认的时候，所确认的不\n是失去它的日期，而是意识到\n失去它的日期。\n休息中\n点击填写本次专注心得"
+      "text": "静音在我们能够对已经失去的东西予以确认的时候，所确认的不是失去它的日期，而是意识到失去它的日期。"
     },
     {
       "file": "IMG_8036.PNG",
@@ -14193,7 +14070,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8036.PNG",
-      "text": "立\n11\n66\n€0\n我们生活若还有美处可言，只\n是把生命如何运用到正确方向\n上去，不逃避一切人类向上的\n责任。\nJ"
+      "text": "我们生活若还有美处可言，只是把生命如何运用到正确方向上去，不逃避一切人类向上的责任。"
     },
     {
       "file": "IMG_8037.PNG",
@@ -14240,7 +14117,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8037.PNG",
-      "text": "之\n：！.\nの\n10\n€0\n66\n在命运的颠沛中，最可以看出人\n们的气节。\n休息中\n点击填写本次专注心得"
+      "text": "在命运的颠沛中，最可以看出人们的气节。"
     },
     {
       "file": "IMG_8042.PNG",
@@ -14299,7 +14176,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8042.PNG",
-      "text": "！！\n34\n<\n我治好您 您治好世界\n人生总有几道坎，\n成功的人能屈能伸，\n敢于压迫自己，\n勇于突破自己。\n人生需要汗水，\n笨鸟先飞的汗水；\n人生需要勇气，破釜沉舟的勇气；\n人生需要激情，舍我其谁的激情。\n结果生成中"
+      "text": "人生总有几道坎，成功的人能屈能伸，敢于压迫自己，勇于突破自己。人生需要汗水，笨鸟先飞的汗水；人生需要勇气，破釜沉舟的勇气；人生需要激情，舍我其谁的激情。"
     },
     {
       "file": "IMG_8045.PNG",
@@ -14330,7 +14207,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8045.PNG",
-      "text": "≥\n19\n66\n€0\n傻瓜和狂热分子对自己坚信不\n。疑， 而智者总是充满疑虑，"
+      "text": "傻瓜和狂热分子对自己坚信不疑， 而智者总是充满疑虑，"
     },
     {
       "file": "IMG_8058.PNG",
@@ -14365,7 +14242,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8058.PNG",
-      "text": "二\n：\n15\n66\n想要试图取悦所有人只会把自\n己弄得一团糟。\n-今日 0/次"
+      "text": "想要试图取悦所有人只会把自己弄得一团糟。今日 /次"
     },
     {
       "file": "IMG_8087.PNG",
@@ -14404,7 +14281,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8087.PNG",
-      "text": "之\n85\n66\n98\n越有故事的人越沉静简单，越\n肤浅单薄的人越浮躁不安。\n工作\nJ"
+      "text": "越有故事的人越沉静简单，越肤浅单薄的人越浮躁不安。"
     },
     {
       "file": "IMG_8096.PNG",
@@ -14431,7 +14308,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8096.PNG",
-      "text": "≥\n66\nE0\n人只能扔掉真正属于他自己\n的东西"
+      "text": "人只能扔掉真正属于他自己的东西"
     },
     {
       "file": "IMG_8104.PNG",
@@ -14474,7 +14351,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8104.PNG",
-      "text": "≥\n！！\n42\n66\n98\n对骗子的惩罚，倒不是没有人\n相信他，而是他无法再相信任\n何人。\nJ"
+      "text": "对骗子的惩罚，倒不是没有人相信他，而是他无法再相信任何人。"
     },
     {
       "file": "IMG_8105.PNG",
@@ -14521,7 +14398,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8105.PNG",
-      "text": "≥\n29\n66\nED\n98\n把心力全用来评论小事的好\n坏，就没有力气去在乎重要的\n事了。\n||\nJ"
+      "text": "把心力全用来评论小事的好坏，就没有力气去在乎重要的事了。"
     },
     {
       "file": "IMG_8121.PNG",
@@ -14556,7 +14433,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8121.PNG",
-      "text": "之\n61\n66\nEU\n老要靠别人的鼓励才去奋斗的\n人不算强者：有别人的鼓励还\n不去奋斗的人称得上是懦夫。"
+      "text": "老要靠别人的鼓励才去奋斗的人不算强者：有别人的鼓励还不去奋斗的人称得上是懦夫。"
     },
     {
       "file": "IMG_8123.PNG",
@@ -14587,7 +14464,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8123.PNG",
-      "text": "≥\n37\n66\n€0\nKnowledge makes humble.\nignorance makes proud."
+      "text": ""
     },
     {
       "file": "IMG_8130.PNG",
@@ -14622,7 +14499,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8130.PNG",
-      "text": "二\n95\n66\n机会通常会伪装成艰苦的工\n作.\n，所以大多数人不认识他\n们。"
+      "text": "机会通常会伪装成艰苦的工作.所以大多数人不认识他们。"
     },
     {
       "file": "IMG_8152.PNG",
@@ -14653,7 +14530,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8152.PNG",
-      "text": "≥\n66\n66\nE0\n接纳有时候可能会比抵抗更\n有力量"
+      "text": "接纳有时候可能会比抵抗更有力量"
     },
     {
       "file": "IMG_8153.PNG",
@@ -14700,7 +14577,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8153.PNG",
-      "text": "二\n：！\n66\n66\n€0\n懒惰是身体的愚蠢.\n脑的懒惰\n愚蠢是头\n休息中\n点击填写本次专注心得"
+      "text": "懒惰是身体的愚蠢.脑的懒惰愚蠢是头"
     },
     {
       "file": "IMG_8158.PNG",
@@ -14743,7 +14620,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8158.PNG",
-      "text": "之\noU\n73\n66\n€0\n命运通过失败指出应该走的\n路。\n他人经受的，我必经受。\nJ"
+      "text": "命运通过失败指出应该走的路。他人经受的，我必经受。"
     },
     {
       "file": "IMG_8159.PNG",
@@ -14782,7 +14659,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8159.PNG",
-      "text": "之\n：！\n73\n€0\n66\nDo one thing at a time. and do well.\n休息中\n点击填写本次专注心得"
+      "text": ""
     },
     {
       "file": "IMG_8160.PNG",
@@ -14817,7 +14694,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8160.PNG",
-      "text": "73\n66\n98\n最糟糕的情况，不是出了错，\n而是没有面对出错的勇气。\n工作\nJ"
+      "text": "最糟糕的情况，不是出了错，而是没有面对出错的勇气。"
     },
     {
       "file": "IMG_8168.PNG",
@@ -14864,7 +14741,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8168.PNG",
-      "text": "二\n：！\n164\n66\nE0\n对有些人来说，生活就是不断\n破墙而出的过程，而对另外一\n些人的\n生活是在为自己建起一\n座座围生"
+      "text": "对有些人来说，生活就是不断破墙而出的过程，而对另外一些人的生活是在为自己建起一座座围生"
     },
     {
       "file": "IMG_8169.PNG",
@@ -14899,7 +14776,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8169.PNG",
-      "text": "：！\n98\n66\n一束光线，\n可能会摔碎\n旧光芒四射。\n但仍"
+      "text": "一束光线，可能会摔碎旧光芒四射。但仍"
     },
     {
       "file": "IMG_8170.PNG",
@@ -14938,7 +14815,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8170.PNG",
-      "text": "二\n：！\n98\n66\n使我们特别的东西也正是使我\n们孤独的东西。\n休息中\n点击填写本次专注心得"
+      "text": "使我们特别的东西也正是使我们孤独的东西。"
     },
     {
       "file": "IMG_8176.PNG",
@@ -14973,7 +14850,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8176.PNG",
-      "text": "之\n：！！\nの\n66\n€0\n执着于理想，纯粹于当下。\n11"
+      "text": "执着于理想，纯粹于当下。"
     },
     {
       "file": "IMG_8177.PNG",
@@ -15012,7 +14889,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8177.PNG",
-      "text": "之\n50\n66\n€0\n现在度过的每一天，\n中最年轻的一天。\n都是余生\nJ"
+      "text": "现在度过的每一天，中最年轻的一天。都是余生"
     },
     {
       "file": "IMG_8178.PNG",
@@ -15055,7 +14932,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8178.PNG",
-      "text": "二\n50\n66\n€0\n我得到的，都是我努力争取来\n的，我失去的，都是不曾真正\n拥有的。\n休息中\n点击填写本次专注心得"
+      "text": "我得到的，都是我努力争取来的，我失去的，都是不曾真正拥有的。"
     },
     {
       "file": "IMG_8193.PNG",
@@ -15094,7 +14971,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8193.PNG",
-      "text": "≥\n：！\n36\n98\n66\n勇气是一种拯救的力量。\n休息中\n点击填写本次专注心得"
+      "text": "勇气是一种拯救的力量。"
     },
     {
       "file": "IMG_8207.PNG",
@@ -15133,7 +15010,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8207.PNG",
-      "text": "打开\n604\n€0\n66\n人只有沿着黑夜之路前进才能\n到达黎明\n休息中\n点击填写本次专注心得"
+      "text": "人只有沿着黑夜之路前进才能到达黎明"
     },
     {
       "file": "IMG_8223.PNG",
@@ -15172,7 +15049,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8223.PNG",
-      "text": "二\n：！\n€0\n66\n没什么可抱怨的\n突然明白的道理\n就像很多你\n都有伏笔。"
+      "text": "没什么可抱怨的突然明白的道理就像很多你都有伏笔。"
     },
     {
       "file": "IMG_8224.PNG",
@@ -15223,7 +15100,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8224.PNG",
-      "text": "二\nの\n36\n66\nE0\n对有些人来说，生活就是不断\n破墙而出的过程，而对另外一\n些人，生活是在为自己建起一\n座座围墙.\n休息中\n点击填写本次专注心得"
+      "text": "对有些人来说，生活就是不断破墙而出的过程，而对另外一些人，生活是在为自己建起一座座围墙."
     },
     {
       "file": "IMG_8225.PNG",
@@ -15270,7 +15147,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8225.PNG",
-      "text": "之\n：！\n36\n€0\n66\n比改变更难的是觉察到自\n己的。\n|1\nJ\nV"
+      "text": "比改变更难的是觉察到自己的。"
     },
     {
       "file": "IMG_8247.PNG",
@@ -15301,7 +15178,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8247.PNG",
-      "text": "≥\n61\n66\n€0\n以心灵的秩序对抗世界的\n复杂性"
+      "text": "以心灵的秩序对抗世界的复杂性"
     },
     {
       "file": "IMG_8264.PNG",
@@ -15356,7 +15233,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8264.PNG",
-      "text": "静音\n55\nE0\n66\n太阳未出时〝全世界都像一个\n林\n唯有月亮是真实的；太阳\n按住响铃k居\n全世界都真实了，唯\n有月亮1\n个梦。\nF5:43"
+      "text": "静音太阳未出时〝全世界都像一个唯有月亮是真实的；太阳按住响铃居全世界都真实了，唯有月亮个梦。"
     },
     {
       "file": "IMG_8265.PNG",
@@ -15403,7 +15280,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8265.PNG",
-      "text": "55\n66\n€0\n创造美好的代价是努力、失望\n以及毅力。\n首先是疼痛\n然后\n才是欢乐\n休息中\n点击填写本次专注心得"
+      "text": "创造美好的代价是努力、失望以及毅力。首先是疼痛然后才是欢乐"
     },
     {
       "file": "IMG_8278.PNG",
@@ -15446,7 +15323,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8278.PNG",
-      "text": "之\n：！\n75\n66\n€0\n有一分热发一分光，就令萤\n火一般，也可以在黑暗里发一\n点光，不必等候炬火。\nJ"
+      "text": "有一分热发一分光，就令萤火一般，也可以在黑暗里发一点光，不必等候炬火。"
     },
     {
       "file": "IMG_8279.PNG",
@@ -15493,7 +15370,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8279.PNG",
-      "text": "二\n：！！\n73\n€0\n我们生活在24小时不眠不休的\n社会里，但并没有24小时不眠\n不休的身体。有些东西必须舍\n弃。\n休息中\n点击填写本次专注心得"
+      "text": "我们生活在小时不眠不休的社会里，但并没有小时不眠不休的身体。有些东西必须舍弃。"
     },
     {
       "file": "IMG_8280.PNG",
@@ -15548,7 +15425,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8280.PNG",
-      "text": "≥\n出\n72\n66\n€0\n98\n凡是令我倾心的书，都分辦不\n清是我在理解它呢还是它在理\n解我。\n00:H8\n休息中\n点击填写本次专注心得"
+      "text": "凡是令我倾心的书，都分辦不清是我在理解它呢还是它在理解我。"
     },
     {
       "file": "IMG_8283.PNG",
@@ -15587,7 +15464,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8283.PNG",
-      "text": "95\n66\n€0\n98\n才华是刀刃，辛苦是磨刀石，\n再锋利的刀刃，若日久不磨，\n也会生锈。\nJ"
+      "text": "才华是刀刃，辛苦是磨刀石，再锋利的刀刃，若日久不磨，也会生锈。"
     },
     {
       "file": "IMG_8284.PNG",
@@ -15638,7 +15515,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8284.PNG",
-      "text": "≥\n95\n66\n€0\n98\n低调是为了活在自己的世界\n里；高调是为了活在别人的世\n界里。\n00.23\n休息中\n点击填写本次专注心得"
+      "text": "低调是为了活在自己的世界里；高调是为了活在别人的世界里。"
     },
     {
       "file": "IMG_8286.PNG",
@@ -15681,7 +15558,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8286.PNG",
-      "text": "之\n56\n98\n66\n有时候一点点的信念，\n走很长的路。\n就可以\n休息中\n点击填写本次专注心得"
+      "text": "有时候一点点的信念，走很长的路。就可以"
     },
     {
       "file": "IMG_8287.PNG",
@@ -15712,7 +15589,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8287.PNG",
-      "text": "二\n：！\n55\n€0\n66\n行动是理想最高贵的表达。"
+      "text": "行动是理想最高贵的表达。"
     },
     {
       "file": "IMG_8301.PNG",
@@ -15739,7 +15616,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8301.PNG",
-      "text": "之\n58\n€0\n66\n要活出自己之后再被人理解。"
+      "text": "要活出自己之后再被人理解。"
     },
     {
       "file": "IMG_8302.PNG",
@@ -15798,7 +15675,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8302.PNG",
-      "text": "上\n：！\n58\n66\n好好忍耐，\n天要来\n完成\nE0\n不要沮丧。如果春\n地会使它一点点地\n0H:58\n休息中\n点击填写本次专注心得"
+      "text": "好好忍耐，天要来完成不要沮丧。如果春地会使它一点点地"
     },
     {
       "file": "IMG_8311.PNG",
@@ -15825,7 +15702,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8311.PNG",
-      "text": "二\n88\n66\n生活总是用自己不成文的法律\n支配着人类。"
+      "text": "生活总是用自己不成文的法律支配着人类。"
     },
     {
       "file": "IMG_8312.PNG",
@@ -15864,7 +15741,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8312.PNG",
-      "text": "打开\n88\nE0\n66\n善良是很珍贵的，但善良没有\n长出牙齿来， 那就是软弱。\n休息中\n点击填写本次专注心得"
+      "text": "善良是很珍贵的，但善良没有长出牙齿来， 那就是软弱。"
     },
     {
       "file": "IMG_8313.PNG",
@@ -15915,7 +15792,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8313.PNG",
-      "text": "立\n76\n66\nEU\n我还有许多弯路要走，还会失\n望于许许多多的满足\n一切都\n要等日后才能显示出它的意\n义。\nCH:IH\nJ"
+      "text": "我还有许多弯路要走，还会失望于许许多多的满足一切都要等日后才能显示出它的意义。"
     },
     {
       "file": "IMG_8314.PNG",
@@ -15958,7 +15835,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8314.PNG",
-      "text": "75\n66\n€0\n只要放弃一次就会滋生放弃\n的习性，原本可以解决的问题\n也会变得无法解决。\n0H:10\n休息中\n点击填写本次专注心得"
+      "text": "只要放弃一次就会滋生放弃的习性，原本可以解决的问题也会变得无法解决。"
     },
     {
       "file": "IMG_8318.PNG",
@@ -15997,7 +15874,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8318.PNG",
-      "text": "：！\n88\n66\nE0\n每个优秀的人都有一段沉默的\n时光，那段时光是付出了很多\n努力却得不到结果的日子，我\n们把它叫做扎根。"
+      "text": "每个优秀的人都有一段沉默的时光，那段时光是付出了很多努力却得不到结果的日子，我们把它叫做扎根。"
     },
     {
       "file": "IMG_8323.PNG",
@@ -16036,7 +15913,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8323.PNG",
-      "text": "打开\n54\n66\n如果结果不如你所愿，\n埃落定前奋力一搏。\n就在尘\n休息中\n点击填写本次专注心得"
+      "text": "如果结果不如你所愿，埃落定前奋力一搏。就在尘"
     },
     {
       "file": "IMG_8346.PNG",
@@ -16071,7 +15948,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8346.PNG",
-      "text": "：！\n92\n€0\n66\n夜晚我用呼吸\n点燃星辰。\nD0:07"
+      "text": "夜晚我用呼吸点燃星辰。"
     },
     {
       "file": "IMG_8357.PNG",
@@ -16098,7 +15975,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8357.PNG",
-      "text": "立\n66\n人生有走出来的美丽，没有等\n出来的辉煌。\nJ"
+      "text": "人生有走出来的美丽，没有等出来的辉煌。"
     },
     {
       "file": "IMG_8370.PNG",
@@ -16129,7 +16006,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8370.PNG",
-      "text": "UU\n100\n66\n向人生索取，不向命运乞求。\n05:5！\nJ"
+      "text": "向人生索取，不向命运乞求。"
     },
     {
       "file": "IMG_8375.PNG",
@@ -16168,7 +16045,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8375.PNG",
-      "text": "二\nの\n46\n66\n由工作产生的疲劳，能使人在\n休息时感到愉快；而由怠惰产\n生的疲劳，只能使人在休息时\n感到烦躁和悔恨。"
+      "text": "由工作产生的疲劳，能使人在休息时感到愉快；而由怠惰产生的疲劳，只能使人在休息时感到烦躁和悔恨。"
     },
     {
       "file": "IMG_8376.PNG",
@@ -16203,7 +16080,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8376.PNG",
-      "text": "66\nE0\ng8\n不如埋头\n与其仰望他\n奋斗。\n中：14"
+      "text": "不如埋头与其仰望他奋斗。中："
     },
     {
       "file": "IMG_8377.PNG",
@@ -16250,7 +16127,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8377.PNG",
-      "text": "•OUU\n91\n66\nE0\ng8\n自己的优点、要掩藏几分：别\n。人的缺点！\n要掩盖几分。\n休息中\n点击填写本次专注心得"
+      "text": "自己的优点、要掩藏几分：别人的缺点！要掩盖几分。"
     },
     {
       "file": "IMG_8378.PNG",
@@ -16301,7 +16178,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8378.PNG",
-      "text": "之\n90\n66\n€0\n“自我”不是突然的顿悟，而\n是探索、试错的结果。没有一\n个“自我”在二十岁就是成\n品。\n0E:H2\n休息中\n点击填写本次专注心得"
+      "text": "“自我”不是突然的顿悟，而是探索、试错的结果。没有一个“自我”在二十岁就是成品。"
     },
     {
       "file": "IMG_8382.PNG",
@@ -16340,7 +16217,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8382.PNG",
-      "text": "：！\n30\n66\n€0\n可用痛苦的减少\n智慧的增长\n来精确衡量。\nJ"
+      "text": "可用痛苦的减少智慧的增长来精确衡量。"
     },
     {
       "file": "IMG_8383.PNG",
@@ -16391,7 +16268,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8383.PNG",
-      "text": "之\n：！！\n28\n66\n€0\n过去发生的任何事对未来都没\n有绝对影响，关键在于如何赋\n予经验以不同意义。\nEH:SH\n休息中\n点击填写本次专注心得"
+      "text": "过去发生的任何事对未来都没有绝对影响，关键在于如何赋予经验以不同意义。"
     },
     {
       "file": "IMG_8395.PNG",
@@ -16426,7 +16303,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8395.PNG",
-      "text": "二\n：！\nE0\n66\n炫耀什么，\n。什么。\n说明内心缺少"
+      "text": "炫耀什么，什么。说明内心缺少"
     },
     {
       "file": "IMG_8396.PNG",
@@ -16473,7 +16350,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8396.PNG",
-      "text": "之\n97\n66\n€0\n要一个完成，不要千万个\n开始。\n中.2一\n|1\nJ\nV"
+      "text": "要一个完成，不要千万个开始。中.一"
     },
     {
       "file": "IMG_8402.PNG",
@@ -16516,7 +16393,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8402.PNG",
-      "text": "70\n66\nE0\n一个犹豫不决的灵魂，奋起抗\n击无穷的忧患，而内心又矛盾\n重重，真实生活就是如此。\n中2:50\n休息中\n点击填写本次专注心得"
+      "text": "一个犹豫不决的灵魂，奋起抗击无穷的忧患，而内心又矛盾重重，真实生活就是如此。中:"
     },
     {
       "file": "IMG_8404.PNG",
@@ -16559,7 +16436,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8404.PNG",
-      "text": "1\n：！\nの\n52\nCU\n66\n我们把世界看错了，反说它欺\n骗我们。\n05:5！"
+      "text": "我们把世界看错了，反说它欺骗我们。"
     },
     {
       "file": "IMG_8405.PNG",
@@ -16602,7 +16479,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8405.PNG",
-      "text": "1\n51\n66\nED\n98\n凡是令我倾心的书，都分辦不\n清是我在理解它呢还是它在理\n解我。\nJ"
+      "text": "凡是令我倾心的书，都分辦不清是我在理解它呢还是它在理解我。"
     },
     {
       "file": "IMG_8435.PNG",
@@ -16649,7 +16526,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8435.PNG",
-      "text": "之\n：8！\n42\n66\n€0\n在你什么也不想要的时候.\n切如期而至。\n|1\nJ\nV"
+      "text": "在你什么也不想要的时候.切如期而至。"
     },
     {
       "file": "IMG_8436.PNG",
@@ -16676,7 +16553,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8436.PNG",
-      "text": "1\n26\n66\n越是不思考的人，越不愿倾听\n别人说话。"
+      "text": "越是不思考的人，越不愿倾听别人说话。"
     },
     {
       "file": "IMG_8437.PNG",
@@ -16719,7 +16596,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8437.PNG",
-      "text": "二\n：！\n26\n66\n自古奇人伟士，不屈折于\n忧患，则不足以成其学。\n中中：M0\n休息中\n点击填写本次专注心得"
+      "text": "自古奇人伟士，不屈折于忧患，则不足以成其学。中中："
     },
     {
       "file": "IMG_8438.PNG",
@@ -16762,7 +16639,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8438.PNG",
-      "text": "60\n66\nE0\n取之有制、\n用之有节则裕，取\n之无制，\n今用之不节则乏。\n山\nDO:LU"
+      "text": "取之有制、用之有节则裕，取之无制，今用之不节则乏。"
     },
     {
       "file": "IMG_8439.PNG",
@@ -16809,7 +16686,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8439.PNG",
-      "text": "立\n：！\n59\n€0\n66\n真理是时间的产物，而不是权\n•威的产物\nDH:SH\n休息中\n点击填写本次专注心得"
+      "text": "真理是时间的产物，而不是权威的产物"
     },
     {
       "file": "IMG_8442.PNG",
@@ -16840,7 +16717,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8442.PNG",
-      "text": "二\n85\n66\n志向不过是记忆的奴隶， 生气\n勃勃地降生，但却很难成长。\n05:5H"
+      "text": "志向不过是记忆的奴隶， 生气勃勃地降生，但却很难成长。"
     },
     {
       "file": "IMG_8445.PNG",
@@ -16895,7 +16772,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8445.PNG",
-      "text": "之\n：！\n68\n66\n€0\n可用痛苦的减少\n智慧的增长\n来精确衡量。\n|1\nJ\nV\nL"
+      "text": "可用痛苦的减少智慧的增长来精确衡量。"
     },
     {
       "file": "IMG_8448.PNG",
@@ -16934,7 +16811,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8448.PNG",
-      "text": "69\n66\n€0\n98\n如果每个人都能理解我们，\n我们得普通成什么样。\n那\nJ"
+      "text": "如果每个人都能理解我们，我们得普通成什么样。"
     },
     {
       "file": "IMG_8450.PNG",
@@ -16985,7 +16862,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8450.PNG",
-      "text": "之\n：！\n69\n66\nED\n98\n我疯狂收集每个快乐的瞬间，\n用他们回击每一个糟糕的日\n子。\n休息中\n点击填写本次专注心得"
+      "text": "我疯狂收集每个快乐的瞬间，用他们回击每一个糟糕的日子。"
     },
     {
       "file": "IMG_8470.PNG",
@@ -17028,7 +16905,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8470.PNG",
-      "text": "之\n：！\nの\n56\nE0\n山\n66\n以深深的谦虚和忍耐去期待一\n。个新的豁然贯通的时刻。"
+      "text": "以深深的谦虚和忍耐去期待一个新的豁然贯通的时刻。"
     },
     {
       "file": "IMG_8471.PNG",
@@ -17075,7 +16952,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8471.PNG",
-      "text": "立\n53\n€0\n66\n人生最大的风险\n敢冒险\n莫过于不\n0H:52\n休息中\n点击填写本次专注心得"
+      "text": "人生最大的风险敢冒险莫过于不"
     },
     {
       "file": "IMG_8472.PNG",
@@ -17110,7 +16987,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8472.PNG",
-      "text": "二\n：！.\n53\n66\n且将新火试新茶，诗酒趁\n年华。\nJ"
+      "text": "且将新火试新茶，诗酒趁年华。"
     },
     {
       "file": "IMG_8473.PNG",
@@ -17145,7 +17022,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8473.PNG",
-      "text": "52\n66\n一个人能观察落叶，鲜花，从\n细微处欣赏一切，生活就不能\n把他怎么样。\n休息中\n点击填写本次专注心得"
+      "text": "一个人能观察落叶，鲜花，从细微处欣赏一切，生活就不能把他怎么样。"
     },
     {
       "file": "IMG_8475.PNG",
@@ -17176,7 +17053,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8475.PNG",
-      "text": "≥\n97\n66\n€0\n谈论你所爱的事物，最好的方\n法是轻轻说起它"
+      "text": "谈论你所爱的事物，最好的方法是轻轻说起它"
     },
     {
       "file": "IMG_8484.PNG",
@@ -17223,7 +17100,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8484.PNG",
-      "text": "打开\n78\n€0\n过去发生的任何事对未来都没\n有绝对影响，关键在于如何赋\n予经验以不同意义。\n|1\nJ\nV\nL"
+      "text": "过去发生的任何事对未来都没有绝对影响，关键在于如何赋予经验以不同意义。"
     },
     {
       "file": "IMG_8485.PNG",
@@ -17262,7 +17139,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8485.PNG",
-      "text": "≥\n77\n66\n€0\n一看见汪洋就认定没有陆地的\n人不过是拙劣的探索者。\n休息中\n点击填写本次专注心得"
+      "text": "一看见汪洋就认定没有陆地的人不过是拙劣的探索者。"
     },
     {
       "file": "IMG_8486.PNG",
@@ -17301,7 +17178,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8486.PNG",
-      "text": "立\n：！\nの\n67\n66\n人要么永不做梦，要么梦得有\n趣；要么永不清醒，要么清醒\n得有趣。"
+      "text": "人要么永不做梦，要么梦得有趣；要么永不清醒，要么清醒得有趣。"
     },
     {
       "file": "IMG_8487.PNG",
@@ -17340,7 +17217,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8487.PNG",
-      "text": "二\n66\nE0\n永远都不要为了目的而忘记初\n•衷， 就像给风命名的不是它要\n去的方向么而是它来时的方\n向\n工作"
+      "text": "永远都不要为了目的而忘记初衷， 就像给风命名的不是它要去的方向么而是它来时的方"
     },
     {
       "file": "IMG_8488.PNG",
@@ -17395,7 +17272,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8488.PNG",
-      "text": "二\n：！\n10\n66\nE0\n智慧不能创造素材，素材是自\n然或机遇的赠子，而智慧的骄\n傲在手利用了它们。\n工作\n0H:55\n休息中\n点击填写本次专注心得"
+      "text": "智慧不能创造素材，素材是自然或机遇的赠子，而智慧的骄傲在手利用了它们。"
     },
     {
       "file": "IMG_8503.PNG",
@@ -17434,7 +17311,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8503.PNG",
-      "text": "打开\n26\n€0\n66\n担心太多不会减轻明天的负\n荷，只会剥夺今日的快乐。\n休息中\n点击填写本次专注心得"
+      "text": "担心太多不会减轻明天的负荷，只会剥夺今日的快乐。"
     },
     {
       "file": "IMG_8508.PNG",
@@ -17465,7 +17342,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8508.PNG",
-      "text": "≥\n：！\n83\n€0\n66\n一约既定，万山无阻。"
+      "text": "一约既定，万山无阻。"
     },
     {
       "file": "IMG_8509.PNG",
@@ -17508,7 +17385,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8509.PNG",
-      "text": "82\n66\n€0\n人们总以为生命是一口不会干\n涸的井，但所有事情都是很有\n限的，多少个迷人的童年下\n午，回想起来，还是让你感\n休息中\n点击填写本次专注心得"
+      "text": "人们总以为生命是一口不会干涸的井，但所有事情都是很有限的，多少个迷人的童年下午，回想起来，还是让你感"
     },
     {
       "file": "IMG_8521.PNG",
@@ -17535,7 +17412,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8521.PNG",
-      "text": "66\n€0\n鄰无处不受\n人生而自由\n约束。"
+      "text": "鄰无处不受人生而自由约束。"
     },
     {
       "file": "IMG_8522.PNG",
@@ -17578,7 +17455,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8522.PNG",
-      "text": "立\n：！\nの\n61\n66\n正因为我有能力跨越，这个考\n验才会降临。\n休息中\n点击填写本次专注心得"
+      "text": "正因为我有能力跨越，这个考验才会降临。"
     },
     {
       "file": "IMG_8563.PNG",
@@ -17613,7 +17490,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8563.PNG",
-      "text": "打开\n64\n66\n我们最终都要远行，\n跟稚嫩的自己告别。\n最终都要\nJ"
+      "text": "我们最终都要远行，跟稚嫩的自己告别。最终都要"
     },
     {
       "file": "IMG_8564.PNG",
@@ -17656,7 +17533,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8564.PNG",
-      "text": "二\nJUI\n64\n66\n别怕美好的一切消失，\n咱们先\n来让它存在。\n休息中\n点击填写本次专注心得"
+      "text": "别怕美好的一切消失，咱们先来让它存在。"
     },
     {
       "file": "IMG_8659.PNG",
@@ -17695,7 +17572,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8659.PNG",
-      "text": "二\n93\n66\n€0\n98\n谁终将声震人间，必长久深自\n缄默。谁终将点燃闪电，必长\n久如云漂泊。"
+      "text": "谁终将声震人间，必长久深自缄默。谁终将点燃闪电，必长久如云漂泊。"
     },
     {
       "file": "IMG_8660.PNG",
@@ -17746,7 +17623,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8660.PNG",
-      "text": "≥\n：！！\n93\n66\n€0\n有时候一点点的信念，\n走很长的路。\n就可以\n中1:00\n休息中\n点击填写本次专注心得"
+      "text": "有时候一点点的信念，走很长的路。就可以中:"
     },
     {
       "file": "IMG_8661.PNG",
@@ -17781,7 +17658,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8661.PNG",
-      "text": "之\n：！\n50\n€0\n66\n好奇心比雄心走得更远。\nJ"
+      "text": "好奇心比雄心走得更远。"
     },
     {
       "file": "IMG_8695.PNG",
@@ -17820,7 +17697,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8695.PNG",
-      "text": "≥\n：！\n95\n€0\nG\n66\n冬天从这里夺去的，春天会交\n还给你"
+      "text": "冬天从这里夺去的，春天会交还给你"
     },
     {
       "file": "IMG_8696.PNG",
@@ -17859,7 +17736,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8696.PNG",
-      "text": "立\n93\n66\n€0\n为所拥有的而开心，也为想要\n的而努力\n休息中\n点击填写本次专注心得"
+      "text": "为所拥有的而开心，也为想要的而努力"
     },
     {
       "file": "IMG_8710.PNG",
@@ -17898,7 +17775,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8710.PNG",
-      "text": "二\n174\n66\nE0\n世界上不存在逃离这一说，只\n是用一种困难交换另一种困\n难\n山"
+      "text": "世界上不存在逃离这一说，只是用一种困难交换另一种困"
     },
     {
       "file": "IMG_8711.PNG",
@@ -17937,7 +17814,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8711.PNG",
-      "text": "立\n2！\n97\n98\n66\n表面上是拖延时间，实际上是\n拖延自己。\n20R2"
+      "text": "表面上是拖延时间，实际上是拖延自己。"
     },
     {
       "file": "IMG_8722.PNG",
@@ -17980,7 +17857,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8722.PNG",
-      "text": "我治好您 您治好世界\n））\n一段好的关系，\n不是各自精彩，\n而是交叉而行。\n结果生成中.\n99\n••\n◎"
+      "text": "一段好的关系，不是各自精彩，而是交叉而行。"
     },
     {
       "file": "IMG_8723.PNG",
@@ -18051,7 +17928,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8723.PNG",
-      "text": "二\n：！！\n99分\n频率检测结果\n•••\n◎\n安忍不是不反抗，\n而是心态上转变。\n|调理方案推荐\n身体\n肾脏\n◎\n排毒\n放松\n免疫力\n循环系统"
+      "text": "频率检测结果安忍不是不反抗，而是心态上转变。调理方案推荐身体肾脏排毒放松免疫力循环系统"
     },
     {
       "file": "IMG_8738.PNG",
@@ -18098,7 +17975,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8738.PNG",
-      "text": "立\n85\n66\n€0\n一个勇敢而率真的灵魂，能用\n自己的眼睛去观察，用自己的\n心去爱，用自己的理智去判\n断。不做影子，而做人。\n11\nL"
+      "text": "一个勇敢而率真的灵魂，能用自己的眼睛去观察，用自己的心去爱，用自己的理智去判断。不做影子，而做人。"
     },
     {
       "file": "IMG_8748.PNG",
@@ -18129,7 +18006,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8748.PNG",
-      "text": "二\n：！\n［100\n66\n那些看向大海的人，会成为\n大海。"
+      "text": "那些看向大海的人，会成为大海。"
     },
     {
       "file": "IMG_8749.PNG",
@@ -18160,7 +18037,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8749.PNG",
-      "text": "二\n［100\n66\n我与我周旋久，宁作我。\n休息中\n点击填写本次专注心得"
+      "text": "我与我周旋久，宁作我。"
     },
     {
       "file": "IMG_8754.PNG",
@@ -18211,7 +18088,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8754.PNG",
-      "text": "立\n：！\n49\n66\n€0\n自私很容易，爱自己却很难。\n05:5！\n|1\nJ\nV\nL"
+      "text": "自私很容易，爱自己却很难。"
     },
     {
       "file": "IMG_8755.PNG",
@@ -18258,7 +18135,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8755.PNG",
-      "text": "96\n66\nEU\n奈何一个人随着年龄增长，梦\n想便不复轻盈。他开始用双手\n掂量生活，更看重果实而非花\n朵。\n中0:1|\n二\nJ"
+      "text": "奈何一个人随着年龄增长，梦想便不复轻盈。他开始用双手掂量生活，更看重果实而非花朵。中:"
     },
     {
       "file": "IMG_8765.PNG",
@@ -18289,7 +18166,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8765.PNG",
-      "text": "打开\n€0\n66\n大部分的恐惧出于懒惰。\n休息中\n点击填写本次专注心得"
+      "text": "大部分的恐惧出于懒惰。"
     },
     {
       "file": "IMG_8766.PNG",
@@ -18324,7 +18201,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8766.PNG",
-      "text": "27\nE0\n66\n再也无须前思后想，\n已然过往\n一切岂非\n白0:05"
+      "text": "再也无须前思后想，已然过往一切岂非白:"
     },
     {
       "file": "IMG_8767.PNG",
@@ -18363,7 +18240,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8767.PNG",
-      "text": "二\n72\n66\n98\n世界是个记忆的星球。星辰则\n是闪烁的遗忘。\n休息中\n点击填写本次专注心得"
+      "text": "世界是个记忆的星球。星辰则是闪烁的遗忘。"
     },
     {
       "file": "IMG_8859.PNG",
@@ -18398,7 +18275,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8859.PNG",
-      "text": "1\n32\n66\nCU\n让自己深陷进去的感动全都是\n危险的。\nJ"
+      "text": "让自己深陷进去的感动全都是危险的。"
     },
     {
       "file": "IMG_8954.PNG",
@@ -18433,7 +18310,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8954.PNG",
-      "text": "二\n：！\n［100\n66\n懒惰是索价极高的奢侈品，一\n旦到期清付，必定偿还不起。\n中H山|"
+      "text": "懒惰是索价极高的奢侈品，一旦到期清付，必定偿还不起。中山"
     },
     {
       "file": "IMG_8962.PNG",
@@ -18476,7 +18353,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8962.PNG",
-      "text": "立\n87\n66\nE0\n“自我”不是突然的顿悟，而\n是探索，试错的结果。没有一\n个 “自我么在二十岁就是成\n品\nEO:OE"
+      "text": "“自我”不是突然的顿悟，而是探索，试错的结果。没有一个 “自我么在二十岁就是成"
     },
     {
       "file": "IMG_8973.PNG",
@@ -18511,7 +18388,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8973.PNG",
-      "text": "打开\n97\n€0\n我们的认知边界，就是我们世\n界的边界\nJ\n<"
+      "text": "我们的认知边界，就是我们世界的边界"
     },
     {
       "file": "IMG_8979.PNG",
@@ -18554,7 +18431,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8979.PNG",
-      "text": "≥\n80\n€0\n66\n预测未来的最好方法就是去创\n造未来。\nFH:S5\n休息中\n点击填写本次专注心得"
+      "text": "预测未来的最好方法就是去创造未来。"
     },
     {
       "file": "IMG_8984.PNG",
@@ -18589,7 +18466,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8984.PNG",
-      "text": "打开\n58\n66\n我们最终都要远行，\n跟稚嫩的自己告别。\n最终都要\nJ"
+      "text": "我们最终都要远行，跟稚嫩的自己告别。最终都要"
     },
     {
       "file": "IMG_8985.PNG",
@@ -18632,7 +18509,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8985.PNG",
-      "text": "立\n（40\n66\n€0\n当自己为实现存在意义而努力\n时，幸运的巧合就会自然出\n现\n他们管这个叫顺其自然。\nJ"
+      "text": "当自己为实现存在意义而努力时，幸运的巧合就会自然出他们管这个叫顺其自然。"
     },
     {
       "file": "IMG_8986.PNG",
@@ -18675,7 +18552,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8986.PNG",
-      "text": "二\n：！\n［38\n€0\n66\n享受今天。\nEH:58\n休息中\n点击填写本次专注心得"
+      "text": "享受今天。"
     },
     {
       "file": "IMG_8988.PNG",
@@ -18706,7 +18583,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8988.PNG",
-      "text": "二\n39\n66\n月缺不改光\n€0\n剑折不改刚。"
+      "text": "月缺不改光剑折不改刚。"
     },
     {
       "file": "IMG_8989.PNG",
@@ -18749,7 +18626,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8989.PNG",
-      "text": "二\n：！\n39\n66\n€0\n躬身自问和沉思默想会充实我\n们的头脑\n休息中\n点击填写本次专注心得"
+      "text": "躬身自问和沉思默想会充实我们的头脑"
     },
     {
       "file": "IMG_8997.PNG",
@@ -18784,7 +18661,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8997.PNG",
-      "text": "二\n121\n€0\n66\n夏天就是吹拂着不可预期\n的风。\nDO:LU"
+      "text": "夏天就是吹拂着不可预期的风。"
     },
     {
       "file": "IMG_8998.PNG",
@@ -18839,7 +18716,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_8998.PNG",
-      "text": "二\nの\n（21\n66\n€0\n好运只是个副产品，只有当你\n• 不带任但私必杂念\n单纯地去\n做事情时么已才会降临。\n0H:52\n休息中\n点击填写本次专注心得"
+      "text": "好运只是个副产品，只有当你不带任但私必杂念单纯地去做事情时么已才会降临。"
     },
     {
       "file": "IMG_9050.PNG",
@@ -18894,7 +18771,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9050.PNG",
-      "text": "二\n我治好您 您治好世界\n：⑦\n65\n•••\n◎\n没有人一开始就知道怎么做，\n想法不可能一开始就能完全成型的。\n只有当你不断地推进时，\n它才会逐渐清晰。\n你只需要做的就是开始。\n结果生成中"
+      "text": "没有人一开始就知道怎么做，想法不可能一开始就能完全成型的。只有当你不断地推进时，它才会逐渐清晰。你只需要做的就是开始。"
     },
     {
       "file": "IMG_9051.PNG",
@@ -18929,7 +18806,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9051.PNG",
-      "text": "66\n打开\n98\n我们把世界看错了，反说它欺\n骗我们。\n39\nJ"
+      "text": "我们把世界看错了，反说它欺骗我们。"
     },
     {
       "file": "IMG_9052.PNG",
@@ -18968,7 +18845,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9052.PNG",
-      "text": "38\n66\n€0\n98\n学习，是为了成为一个有温度\n懂情趣会思考的人。\n休息中\n点击填写本次专注心得"
+      "text": "学习，是为了成为一个有温度懂情趣会思考的人。"
     },
     {
       "file": "IMG_9062.PNG",
@@ -19003,7 +18880,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9062.PNG",
-      "text": "二\n84\n66\n君子务本，本立而道生。\nDH:SH\n休息中\n点击填写本次专注心得"
+      "text": "君子务本，本立而道生。"
     },
     {
       "file": "IMG_9078.PNG",
@@ -19054,7 +18931,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9078.PNG",
-      "text": "打开\n474\n66\n€0\n若发现自己总是和大多数人站\n在一边，你就应该停下来反思\n一下。\n|1\nJ\nV\nL"
+      "text": "若发现自己总是和大多数人站在一边，你就应该停下来反思一下。"
     },
     {
       "file": "IMG_9079.PNG",
@@ -19109,7 +18986,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9079.PNG",
-      "text": "打开\n574\n66\n€0\n我们生命面对的苦恼不是我们\n的敌人，而是对自己的延伸.\n应该透过烦恼来认识自我。\nL2:11\n休息中\n点击填写本次专注心得\n11\nJ"
+      "text": "我们生命面对的苦恼不是我们的敌人，而是对自己的延伸.应该透过烦恼来认识自我。"
     },
     {
       "file": "IMG_9080.PNG",
@@ -19156,7 +19033,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9080.PNG",
-      "text": "の\n100\n66\nE0\n取之有制、\n用之有节则裕，取\n之无制，\n今用之不节则乏。\n山\nEO:OE"
+      "text": "取之有制、用之有节则裕，取之无制，今用之不节则乏。"
     },
     {
       "file": "IMG_9088.PNG",
@@ -19199,7 +19076,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9088.PNG",
-      "text": "立\n：\n66\n€0\n98\n从容不迫的举止，比起咄咄逼\n人的态度，更能令人心折。\nHO:0u\nJ"
+      "text": "从容不迫的举止，比起咄咄逼人的态度，更能令人心折。"
     },
     {
       "file": "IMG_9093.PNG",
@@ -19234,7 +19111,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9093.PNG",
-      "text": "打开\n76\n€0\n开始就是停止空谈，马上\n行动。\nJ\n<"
+      "text": "开始就是停止空谈，马上行动。"
     },
     {
       "file": "IMG_9094.PNG",
@@ -19281,7 +19158,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9094.PNG",
-      "text": "76\n66\n€0\n98\n世上最令人向往的是，忠实于\n自己的自由，即诚实。\n休息中\n点击填写本次专注心得\n11\nJ"
+      "text": "世上最令人向往的是，忠实于自己的自由，即诚实。"
     },
     {
       "file": "IMG_9103.PNG",
@@ -19300,7 +19177,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9103.PNG",
-      "text": "m\n534\n张渝"
+      "text": "张渝"
     },
     {
       "file": "IMG_9125.PNG",
@@ -19339,7 +19216,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9125.PNG",
-      "text": "78\n66\n€0\n98\n老要靠别人的鼓励才去奋斗的\n人不算强者：有别人的鼓励还\n不去奋斗的人称得上是懦夫。\nJ"
+      "text": "老要靠别人的鼓励才去奋斗的人不算强者：有别人的鼓励还不去奋斗的人称得上是懦夫。"
     },
     {
       "file": "IMG_9126.PNG",
@@ -19386,7 +19263,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9126.PNG",
-      "text": "二\n：！\n72\n<\n我治好您 您治好世界\n•••\n遍体鳞伤总比全然无知好，\n挑战困难是最有幸福感的。\ni\n结果生成中…"
+      "text": "遍体鳞伤总比全然无知好，挑战困难是最有幸福感的。"
     },
     {
       "file": "IMG_9131.PNG",
@@ -19441,7 +19318,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9131.PNG",
-      "text": "円\n135\n<\n我治好您 您治好世界\n•••\n◎\n空代表富，\n你的空间有多大，财富就有多大。\n当你格局足够大的时候，\n没有什么是你一定想要的，\n这时，所有东西都是你的财富。\n结果生成中"
+      "text": "空代表富，你的空间有多大，财富就有多大。当你格局足够大的时候，没有什么是你一定想要的，这时，所有东西都是你的财富。"
     },
     {
       "file": "IMG_9133.PNG",
@@ -19476,7 +19353,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9133.PNG",
-      "text": "364\n山\n66\n€0\n你学过的每一样东西，你遭受\n的每一次苦难都会在你一生\n中某余时候派上用场。"
+      "text": "你学过的每一样东西，你遭受的每一次苦难都会在你一生中某余时候派上用场。"
     },
     {
       "file": "IMG_9137.PNG",
@@ -19539,7 +19416,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9137.PNG",
-      "text": "228\n<\n我治好您 您治好世界\n•••\n◎\n什么是尊重？\n我想有一句可以概括：\n在人之上，要把别人当人；\n在人之下，要把自己当人。\n尊重别人，\n其实是在以另一种积福的方式\n尊重自己。\n。\n结果生成中"
+      "text": "什么是尊重？我想有一句可以概括：在人之上，要把别人当人；在人之下，要把自己当人。尊重别人，其实是在以另一种积福的方式尊重自己。"
     },
     {
       "file": "IMG_9166.PNG",
@@ -19578,7 +19455,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9166.PNG",
-      "text": "≥\n14\n66\nE0\n当你犹豫要不要去做一件事\n时，其实你肉心已经有了答\n案，只是没有充定的理由去说\n服自己"
+      "text": "当你犹豫要不要去做一件事时，其实你肉心已经有了答案，只是没有充定的理由去说服自己"
     },
     {
       "file": "IMG_9179.PNG",
@@ -19621,7 +19498,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9179.PNG",
-      "text": "90\n66\nEU\n才能、心肠、头脑，缺一不\n可。三者难平均：也好，也就\n此滋生风格。\nFH:Mu\n休息中\n点击填写本次专注心得"
+      "text": "才能、心肠、头脑，缺一不可。三者难平均：也好，也就此滋生风格。"
     },
     {
       "file": "IMG_9185.PNG",
@@ -19684,7 +19561,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9185.PNG",
-      "text": "4\n：！\n<\n我治好您 您治好世界\n•••\n◎\n山有山的高度，水有水的深度，\n没必要攀掾。\n风有风的自由，云有云的温柔，\n没必要模仿。\n你认为快乐的，就去寻找。\n你认为值得的，就去守候。\n你认为幸福的，就去珍视。\n结果生成中."
+      "text": "山有山的高度，水有水的深度，没必要攀掾。风有风的自由，云有云的温柔，没必要模仿。你认为快乐的，就去寻找。你认为值得的，就去守候。你认为幸福的，就去珍视。"
     },
     {
       "file": "IMG_9186.PNG",
@@ -19739,7 +19616,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9186.PNG",
-      "text": "频率检测结果\n•••\n◎\n•伴侣相处有距离感，偶尔摩擦。\n•定期进行户外活动，接触自然。\n性格类型\n冒险\n威严\n本自具足，因机呈现\n独立\n• 培养团队合作意识，学会倾听他人意见。\n•尊重自己的承诺，学会承担责任。"
+      "text": "频率检测结果伴侣相处有距离感，偶尔摩擦。定期进行户外活动，接触自然。性格类型冒险威严本自具足，因机呈现独立培养团队合作意识，学会倾听他人意见。尊重自己的承诺，学会承担责任。"
     },
     {
       "file": "IMG_9187.PNG",
@@ -19778,7 +19655,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9187.PNG",
-      "text": "≥\n82\n66\nE0\n我站在今天设想过去又幻想未\n•来 过去和未来在今天随意交\n叉，因而过去和未来都刮着现\n在的风。"
+      "text": "我站在今天设想过去又幻想未来 过去和未来在今天随意交叉，因而过去和未来都刮着现在的风。"
     },
     {
       "file": "IMG_9203.PNG",
@@ -19805,7 +19682,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9203.PNG",
-      "text": "打开\n57\n66\n两件阻碍我们自由的事：活在\n过去和观察他人。"
+      "text": "两件阻碍我们自由的事：活在过去和观察他人。"
     },
     {
       "file": "IMG_9204.PNG",
@@ -19852,7 +19729,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9204.PNG",
-      "text": "≥\n：！.\n57\nCU\n66\n生活总会给你答案，\n上把一切都告诉你。\n但不会马\n休息中\n点击填写本次专注心得"
+      "text": "生活总会给你答案，上把一切都告诉你。但不会马"
     },
     {
       "file": "IMG_9205.PNG",
@@ -19883,7 +19760,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9205.PNG",
-      "text": "上\n100\n66\n君子不隐其短，\n能则学。\n不知则问，不"
+      "text": "君子不隐其短，能则学。不知则问，不"
     },
     {
       "file": "IMG_9213.PNG",
@@ -19918,7 +19795,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9213.PNG",
-      "text": "77\n66\n€0\n98\n接纳有时候可能会比抵抗更\n有力量。\nJ"
+      "text": "接纳有时候可能会比抵抗更有力量。"
     },
     {
       "file": "IMG_9214.PNG",
@@ -19957,7 +19834,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9214.PNG",
-      "text": "77\n66\n€O\n98\n古之立大事者，不惟有超世之\n才，亦必有坚忍不拔之志。\n休息中\n点击填写本次专注心得"
+      "text": "古之立大事者，不惟有超世之才，亦必有坚忍不拔之志。"
     },
     {
       "file": "IMG_9223.PNG",
@@ -19988,7 +19865,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9223.PNG",
-      "text": "66\n打开\n98\n这是一个充满行动的世界，而\n不是为了蠢蠢欲动。\nJ"
+      "text": "这是一个充满行动的世界，而不是为了蠢蠢欲动。"
     },
     {
       "file": "IMG_9224.PNG",
@@ -20027,7 +19904,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9224.PNG",
-      "text": "76\n66\n€0\n98\n世上最令人向往的是，忠实于\n自己的自由，即诚实。\n休息中\n点击填写本次专注心得"
+      "text": "世上最令人向往的是，忠实于自己的自由，即诚实。"
     },
     {
       "file": "IMG_9231.PNG",
@@ -20062,7 +19939,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9231.PNG",
-      "text": "打开\n98\n5\n66\n€O\n更好的事情正在来临。\nJ"
+      "text": "更好的事情正在来临。"
     },
     {
       "file": "IMG_9232.PNG",
@@ -20097,7 +19974,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9232.PNG",
-      "text": "打开\n［100\n66\n我只身前行，\n却仿佛带着一万\n雄兵。\n中中：中u"
+      "text": "我只身前行，却仿佛带着一万雄兵。中中：中"
     },
     {
       "file": "IMG_9233.PNG",
@@ -20136,7 +20013,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9233.PNG",
-      "text": "：！\n［100\n66\n懒惰是索价极高的奢侈品，一\n旦到期清付，必定偿还不起。\n休息中\n点击填写本次专注心得\n-今日 1/次"
+      "text": "懒惰是索价极高的奢侈品，一旦到期清付，必定偿还不起。今日 /次"
     },
     {
       "file": "IMG_9236.PNG",
@@ -20163,7 +20040,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9236.PNG",
-      "text": "打开\n42\n€0\n66\n勇敢是处干逆境时的光芒。"
+      "text": "勇敢是处干逆境时的光芒。"
     },
     {
       "file": "IMG_9237.PNG",
@@ -20210,7 +20087,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9237.PNG",
-      "text": "打开\n42\n66\nE0\n“自我”不是突然的顿悟，而\n是探索，试错的结果。没有一\n个 “自我么在二十岁就是成\n品\n休息中\n点击填写本次专注心得"
+      "text": "“自我”不是突然的顿悟，而是探索，试错的结果。没有一个 “自我么在二十岁就是成"
     },
     {
       "file": "IMG_9270.PNG",
@@ -20257,7 +20134,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9270.PNG",
-      "text": "≥\n：！\n24\n66\n98\n是把一切\n对未来最好的馈赠，\n都献给现在。\n休息中\n点击填写本次专注心得"
+      "text": "是把一切对未来最好的馈赠，都献给现在。"
     },
     {
       "file": "IMG_9300.PNG",
@@ -20304,7 +20181,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9300.PNG",
-      "text": "1\n18\n66\n€0\n98\n最糟糕的情况.不是出了错，\n而是没有面对出错的勇气。\nJ\nV\nL"
+      "text": "最糟糕的情况，不是出了错，而是没有面对出错的勇气。"
     },
     {
       "file": "IMG_9304.PNG",
@@ -20347,7 +20224,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9304.PNG",
-      "text": "之\n：！\n90\n66\n€0\n98\n担心太多不会减轻明天的负\n荷，只会剥夺今日的快乐。\nL"
+      "text": "担心太多不会减轻明天的负荷，只会剥夺今日的快乐。"
     },
     {
       "file": "IMG_9305.PNG",
@@ -20390,7 +20267,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9305.PNG",
-      "text": "≥\n：！\n90\n66\n€0\n人生是树林里的大树，我们只\n是穿行而过的风。\n休息中\n点击填写本次专注心得"
+      "text": "人生是树林里的大树，我们只是穿行而过的风。"
     },
     {
       "file": "IMG_9498.PNG",
@@ -20437,7 +20314,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9498.PNG",
-      "text": "≥\n77\n66\n€0\n98\n天下事以难而废者十之一，以\n惰而废者十之九。\n02:5\n休息中\n点击填写本次专注心得"
+      "text": "天下事以难而废者十之一，以惰而废者十之九。"
     },
     {
       "file": "IMG_9516.PNG",
@@ -20476,7 +20353,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9516.PNG",
-      "text": "66\n打开\n€0\n98\n我当然不会试图摘月，我要月\n亮奔我而来。\n100\nJ"
+      "text": "我当然不会试图摘月，我要月亮奔我而来。"
     },
     {
       "file": "IMG_9517.PNG",
@@ -20519,7 +20396,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9517.PNG",
-      "text": "1\n：！\n100\n66\n€0\n98\n你爱自己时，生活也会爱你。\n休息中\n点击填写本次专注心得"
+      "text": "你爱自己时，生活也会爱你。"
     },
     {
       "file": "IMG_9522.PNG",
@@ -20562,7 +20439,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9522.PNG",
-      "text": "二\n66\nE0\n今日之脱酒处\n_皆从先年之不\n如意处得来。\n今日之不如意\n处\n安知非异日之脱洒乎？"
+      "text": "今日之脱酒处_皆从先年之不如意处得来。今日之不如意安知非异日之脱洒乎？"
     },
     {
       "file": "IMG_9523.PNG",
@@ -20609,7 +20486,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9523.PNG",
-      "text": "二\n：！\n63\n66\n€0\n把心力全用来评论小事的好\n坏，就没有为气去在乎重要的\n事了\n休息中\n点击填写本次专注心得"
+      "text": "把心力全用来评论小事的好坏，就没有为气去在乎重要的事了"
     },
     {
       "file": "IMG_9536.PNG",
@@ -20636,7 +20513,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9536.PNG",
-      "text": "（100\n66\n永远等待一件事情，你对这件\n事情的了解仅仅就是你在等待\n它而已。"
+      "text": "永远等待一件事情，你对这件事情的了解仅仅就是你在等待它而已。"
     },
     {
       "file": "IMG_9537.PNG",
@@ -20683,7 +20560,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9537.PNG",
-      "text": "二\n：！\n［100\nE0\n66\n过去的事情是因为熟透了，才\n从你身上掉下去。\nE1:H0\n休息中\n点击填写本次专注心得"
+      "text": "过去的事情是因为熟透了，才从你身上掉下去。"
     },
     {
       "file": "IMG_9559.PNG",
@@ -20726,7 +20603,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9559.PNG",
-      "text": "二\n：！\n38\n€0\n66\n对热爱的人来说\n糟糕。\n及格就是\nEO:OE"
+      "text": "对热爱的人来说糟糕。及格就是"
     },
     {
       "file": "IMG_9561.PNG",
@@ -20769,7 +20646,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9561.PNG",
-      "text": "≥\n：！\n35\n€0\n66\n行动是理想最高贵的表达。\n中4:S7\n休息中\n点击填写本次专注心得"
+      "text": "行动是理想最高贵的表达。中:"
     },
     {
       "file": "IMG_9570.PNG",
@@ -20808,7 +20685,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9570.PNG",
-      "text": "打开\nの\n34\n66\n这个世界上，有一些错觉是危\n险的。一个是认为对方是特别\n的，一个是认为自己是特别\n的。"
+      "text": "这个世界上，有一些错觉是危险的。一个是认为对方是特别的，一个是认为自己是特别的。"
     },
     {
       "file": "IMG_9571.PNG",
@@ -20843,7 +20720,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9571.PNG",
-      "text": "打开\n34\n66\n每个人的心里都有一团火，路\n过的人只看到烟。\n休息中\n点击填写本次专注心得"
+      "text": "每个人的心里都有一团火，路过的人只看到烟。"
     },
     {
       "file": "IMG_9579.PNG",
@@ -20878,7 +20755,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9579.PNG",
-      "text": "打开\n72\n€0\n新的转机和星星闪斗，正缀满\n没有遮挡的天空。\n11\nL"
+      "text": "新的转机和星星闪斗，正缀满没有遮挡的天空。"
     },
     {
       "file": "IMG_9580.PNG",
@@ -20925,7 +20802,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9580.PNG",
-      "text": "の\n72\n66\n€0\n我们有两种时间，一种是刻画\n在月历或时钟上匆忙的一天，\n另一种是模糊茫然的生命时\n刻。\n休息中\n点击填写本次专注心得"
+      "text": "我们有两种时间，一种是刻画在月历或时钟上匆忙的一天，另一种是模糊茫然的生命时刻。"
     },
     {
       "file": "IMG_9592.PNG",
@@ -20964,7 +20841,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9592.PNG",
-      "text": "≥\n57\n66\n€0\n98\n凡举事必循法以动.变法者因时\n而化，若此论则无过务矣。\nJ"
+      "text": "凡举事必循法以动，变法者因时而化，若此论则无过务矣。"
     },
     {
       "file": "IMG_9614.PNG",
@@ -20995,7 +20872,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9614.PNG",
-      "text": "二\n：今 ⑦2\n€0\n66\nKeep good men company and you\nshall be of the number."
+      "text": "今 ⑦"
     },
     {
       "file": "IMG_9615.PNG",
@@ -21042,7 +20919,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9615.PNG",
-      "text": "≥\n72\n66\n温柔，\n€0\n但不要软弱。\n山\nH2:52\n休息中\n点击填写本次专注心得"
+      "text": "温柔，但不要软弱。"
     },
     {
       "file": "IMG_9616.PNG",
@@ -21081,7 +20958,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9616.PNG",
-      "text": "≥\n：\n66\n98\n伸手摘星，即使徒劳无功也不\n致一手污泥。\n休息中\n点击填写本次专注心得"
+      "text": "伸手摘星，即使徒劳无功也不致一手污泥。"
     },
     {
       "file": "IMG_9620.PNG",
@@ -21116,7 +20993,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9620.PNG",
-      "text": "二\n12\n66\n€0\n每个人身上都有太阳，主要是\n如何让它发光\n山"
+      "text": "每个人身上都有太阳，主要是如何让它发光"
     },
     {
       "file": "IMG_9629.PNG",
@@ -21143,7 +21020,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9629.PNG",
-      "text": "66\n己U\n充满希望的旅途，胜过终点\n的到达。\nJ"
+      "text": "充满希望的旅途，胜过终点的到达。"
     },
     {
       "file": "IMG_9630.PNG",
@@ -21194,7 +21071,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9630.PNG",
-      "text": "二\n：！\n67\nCU\n66\n人们很少做他们相信是对的\n事，他们做比较方便的事，然\n后后悔。\n中：5\n休息中\n点击填写本次专注心得"
+      "text": "人们很少做他们相信是对的事，他们做比较方便的事，然后后悔。中："
     },
     {
       "file": "IMG_9635.PNG",
@@ -21233,7 +21110,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9635.PNG",
-      "text": "≥\n67\n66\n有些鸟儿注定是不会被关在牢\n笼里的，他们的每一片羽毛都闪\n耀着自由的光辉。\n05:5H\nJ"
+      "text": "有些鸟儿注定是不会被关在牢笼里的，他们的每一片羽毛都闪耀着自由的光辉。"
     },
     {
       "file": "IMG_9636.PNG",
@@ -21276,7 +21153,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9636.PNG",
-      "text": "二\n：！\n67\n66\n对热爱的人来说，及格就是\n糟糕。\n41:H2\n休息中\n点击填写本次专注心得"
+      "text": "对热爱的人来说，及格就是糟糕。"
     },
     {
       "file": "IMG_9642.PNG",
@@ -21315,7 +21192,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9642.PNG",
-      "text": "打开\n87\n66\n我们碰巧成为自己，但我们可\n以不止于此。\nE:56\n休息中\n点击填写本次专注心得"
+      "text": "我们碰巧成为自己，但我们可以不止于此。"
     },
     {
       "file": "IMG_9668.PNG",
@@ -21346,7 +21223,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9668.PNG",
-      "text": "60\n66\n€0\n98\n人无非是时间里的顿挫。\nJ"
+      "text": "人无非是时间里的顿挫。"
     },
     {
       "file": "IMG_9688.PNG",
@@ -21389,7 +21266,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9688.PNG",
-      "text": "：\n100\n66\n€0\n98\n旧书不厌百回读，熟读深思\n子自知。\n05:5H\nJ"
+      "text": "旧书不厌百回读，熟读深思子自知。"
     },
     {
       "file": "IMG_9742.jpg",
@@ -21420,7 +21297,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9742.jpg",
-      "text": "66\n也不过只是为了想让这世界知\n道，反复坚持之后，柔水终成\n雕刀。\nJ\n<"
+      "text": "也不过只是为了想让这世界知道，反复坚持之后，柔水终成雕刀。"
     },
     {
       "file": "IMG_9743.PNG",
@@ -21467,7 +21344,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9743.PNG",
-      "text": "≥\n53\n66\n98\n也许大海给贝壳下的定义是珍\n珠，也许时间给煤炭下的定义\n是钻石。\n01:5H\n休息中\n点击填写本次专注心得"
+      "text": "也许大海给贝壳下的定义是珍珠，也许时间给煤炭下的定义是钻石。"
     },
     {
       "file": "IMG_9749.PNG",
@@ -21510,7 +21387,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9749.PNG",
-      "text": "之\n：： 5G10\n66\n€0\n百川赴海返潮易，一叶报秋归\n树难\nJ\nV\nL"
+      "text": "百川赴海返潮易，一叶报秋归树难"
     },
     {
       "file": "IMG_9750.PNG",
@@ -21557,7 +21434,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9750.PNG",
-      "text": "≥\n：8！.5G\n9\n66\nEU\n世界上任何书籍都不能带给你\n好运，但它们能让你悄悄成为\n你自己。\n休息中\n点击填写本次专注心得"
+      "text": "世界上任何书籍都不能带给你好运，但它们能让你悄悄成为你自己。"
     },
     {
       "file": "IMG_9751.PNG",
@@ -21608,7 +21485,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9751.PNG",
-      "text": "m\n：！\n1114\n<\n我治好您 您治好世界\n◎\n这个世界，\n这个宇宙，\n只有自己能帮自己。\n这时候，世界才会给你路。\n结果生成中…"
+      "text": "这个世界，这个宇宙，只有自己能帮自己。这时候，世界才会给你路。"
     },
     {
       "file": "IMG_9753.PNG",
@@ -21639,7 +21516,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9753.PNG",
-      "text": "二\n79\n66\n€0\n生活并不要求我们成为最好\n只求我们全力以赴。"
+      "text": "生活并不要求我们成为最好只求我们全力以赴。"
     },
     {
       "file": "IMG_9754.PNG",
@@ -21698,7 +21575,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9754.PNG",
-      "text": "66\n二\n：！\nE0\nC\n我会不断成长，经历风霜，经\n•历挫折，=近淡次沉入深渊，一\n次次饱尝痛苦，更会一次次重\n新站起匀\n我不会认输，不：\n78\n休息中\n点击填写本次专注心得"
+      "text": "我会不断成长，经历风霜，经历挫折，=近淡次沉入深渊，一次次饱尝痛苦，更会一次次重新站起匀我不会认输，不："
     },
     {
       "file": "IMG_9772.PNG",
@@ -21737,7 +21614,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9772.PNG",
-      "text": "15\n66\n€0\n98\n如果我会发光，就不必害怕黑\n暗。如果我自己是那么美好.那\n么一切恐惧就可以烟消云散。\nL"
+      "text": "如果我会发光，就不必害怕黑暗。如果我自己是那么美好，那么一切恐惧就可以烟消云散。"
     },
     {
       "file": "IMG_9773.PNG",
@@ -21788,7 +21665,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9773.PNG",
-      "text": "≥\nOU\n15\n66\n€0\n如果结果不如你所愿，\n就在尘\n埃落定前奋力一搏。\n02:1H\n休息中\n点击填写本次专注心得"
+      "text": "如果结果不如你所愿，就在尘埃落定前奋力一搏。"
     },
     {
       "file": "IMG_9774.PNG",
@@ -21823,7 +21700,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9774.PNG",
-      "text": "打开\n［100\n66\nE0\n出发总是美丽的…尤其是在一\n个.\n阳光普照的清晨上路。"
+      "text": "出发总是美丽的…尤其是在一个.阳光普照的清晨上路。"
     },
     {
       "file": "IMG_9779.PNG",
@@ -21862,7 +21739,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9779.PNG",
-      "text": "99\n66\n€0\n98\n一个人可以成为别人的光源.\n哪怕他们自己并不知道，哪怕\n他们自己的生活并没有光。\nL"
+      "text": "一个人可以成为别人的光源.哪怕他们自己并不知道，哪怕他们自己的生活并没有光。"
     },
     {
       "file": "IMG_9783.PNG",
@@ -21897,7 +21774,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9783.PNG",
-      "text": "67\n66\n€0\n98\n悲观者往往正确，而乐观者往\n往成功。\nJ"
+      "text": "悲观者往往正确，而乐观者往往成功。"
     },
     {
       "file": "IMG_9784.PNG",
@@ -21936,7 +21813,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9784.PNG",
-      "text": "二\n67\n66\n98\n欲买桂花同载酒，终不似、少\n年游。\n休息中\n点击填写本次专注心得"
+      "text": "欲买桂花同载酒，终不似、少年游。"
     },
     {
       "file": "IMG_9791.PNG",
@@ -21971,7 +21848,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9791.PNG",
-      "text": "90\n€0\n平衡需要积极的心态。\n98\n|1\nJ\nV"
+      "text": "平衡需要积极的心态。"
     },
     {
       "file": "IMG_9795.PNG",
@@ -22006,7 +21883,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9795.PNG",
-      "text": "打开\n62\n66\n€0\n弱小和无知不是生存的障碍，\n傲慢才是。\nL"
+      "text": "弱小和无知不是生存的障碍，傲慢才是。"
     },
     {
       "file": "IMG_9803.PNG",
@@ -22049,7 +21926,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9803.PNG",
-      "text": "66\n打开\n€0\n98\n若发现自己总是和大多数人站\n在一边，你就应该停下来反思\n一下。\n66\nJ"
+      "text": "若发现自己总是和大多数人站在一边，你就应该停下来反思一下。"
     },
     {
       "file": "IMG_9804.PNG",
@@ -22092,7 +21969,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9804.PNG",
-      "text": "二\n65\n66\nED\n98\n其实 “正常”才是无数误差交\n织中的碰巧完美。\n休息中\n点击填写本次专注心得"
+      "text": "其实 “正常”才是无数误差交织中的碰巧完美。"
     },
     {
       "file": "IMG_9807.PNG",
@@ -22143,7 +22020,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9807.PNG",
-      "text": "④\n：！\n<\n我治好您 您治好世界\n•••\n最好的投资是投资自己。\n和高尚的人交往，\n为你尊敬的人工作，\n忽视投资中的噪音，\n成功更关乎于爱，而不是金钱。\n结果生成中⋯"
+      "text": "最好的投资是投资自己。和高尚的人交往，为你尊敬的人工作，忽视投资中的噪音，成功更关乎于爱，而不是金钱。"
     },
     {
       "file": "IMG_9808.PNG",
@@ -22174,7 +22051,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9808.PNG",
-      "text": "打开\n664\n66\n在隆冬，我终于知道，在我身\n上有一个不可战胜的夏天。\nJ"
+      "text": "在隆冬，我终于知道，在我身上有一个不可战胜的夏天。"
     },
     {
       "file": "IMG_9818.PNG",
@@ -22213,7 +22090,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9818.PNG",
-      "text": "打开\n98\n94\n66\n€O\n世间是世间，我是我。\nJ\n>"
+      "text": "世间是世间，我是我。"
     },
     {
       "file": "IMG_9852.PNG",
@@ -22260,7 +22137,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9852.PNG",
-      "text": "打开\n34\n€0\n如果我们总是等待绝对的一切\n就绪，那我们将永远无法开\n始。\n|1\nJ\nV\nL"
+      "text": "如果我们总是等待绝对的一切就绪，那我们将永远无法开始。"
     },
     {
       "file": "IMG_9907.PNG",
@@ -22299,7 +22176,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9907.PNG",
-      "text": "二\n：！\n80\n66\n€0\n98\n你生而真实，而非完美。\nJ"
+      "text": "你生而真实，而非完美。"
     },
     {
       "file": "IMG_9908.PNG",
@@ -22342,7 +22219,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9908.PNG",
-      "text": "1\n80\n66\n€0\n98\n有源之水，寒冽不冻：有德之\n人，厄穷不塞。\n休息中\n点击填写本次专注心得"
+      "text": "有源之水，寒冽不冻：有德之人，厄穷不塞。"
     },
     {
       "file": "IMG_9949.PNG",
@@ -22397,7 +22274,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9949.PNG",
-      "text": "打开\n444\n66\n€0\n书籍便是这种改造灵魂的工\n具。人类所需要的，是富有启\n发性的养料。而阅读，则正是\n这种养料。\n|1\nJ\nV\nL"
+      "text": "书籍便是这种改造灵魂的工具。人类所需要的，是富有启发性的养料。而阅读，则正是这种养料。"
     },
     {
       "file": "IMG_9953.PNG",
@@ -22440,7 +22317,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9953.PNG",
-      "text": "66\n打开\nED\n98\n如果一个人不知道他要驶向哪\n个码头，那么任何风都不会是\n顺风。\n80\nJ"
+      "text": "如果一个人不知道他要驶向哪个码头，那么任何风都不会是顺风。"
     },
     {
       "file": "IMG_9954.PNG",
@@ -22483,7 +22360,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9954.PNG",
-      "text": "66\n打开\n€0\n98\n浮名浮利，虚苦劳神。叹隙中\n驹，石中火，\n梦中身\n61\nJ"
+      "text": "浮名浮利，虚苦劳神。叹隙中驹，石中火，梦中身"
     },
     {
       "file": "IMG_9955.PNG",
@@ -22526,7 +22403,7 @@
         }
       ],
       "path": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示/IMG_9955.PNG",
-      "text": "66\n打开\n€0\n98\n任何变化都不是突然发生的，\n都是自己无意间一点一点选择\n的。\n休息中\n点击填写本次专注心得"
+      "text": "任何变化都不是突然发生的，都是自己无意间一点一点选择的。"
     }
   ],
   "sourceFolder": "/Users/Min369/Documents/同步空间/Manju/AIProjects/TomatoReminder/启示",
