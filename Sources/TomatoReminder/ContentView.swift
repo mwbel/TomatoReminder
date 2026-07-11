@@ -1983,8 +1983,7 @@ private struct TimerPanel: View {
                 InspirationTextView(
                     text: store.currentInspirationText,
                     maxWidth: panelWidth - padding * 2,
-                    fontSize: isCompact ? 12 : 14,
-                    lineLimit: isCompact ? 2 : nil
+                    fontSize: isCompact ? 12 : 14
                 )
 
                 HStack(spacing: isCompact ? 12 : 14) {

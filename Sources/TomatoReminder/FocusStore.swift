@@ -1107,7 +1107,7 @@ final class FocusStore: ObservableObject {
             "习惯"
         ]
 
-        let lines = text
+        let cleanedLines = text
             .components(separatedBy: .newlines)
             .map { Self.cleanedInspirationLine($0) }
             .filter { line in
@@ -1115,15 +1115,46 @@ final class FocusStore: ObservableObject {
                 guard !ignoredFragments.contains(where: { line.contains($0) }) else { return false }
                 guard !line.allSatisfy({ $0.isNumber || $0 == ":" || $0 == " " }) else { return false }
                 guard line.range(of: "\\p{Han}", options: .regularExpression) != nil else { return false }
-                if line.count >= 3 { return true }
-                return line.rangeOfCharacter(from: CharacterSet(charactersIn: "的一是在不有中人了为和以到始向上子己自心力生")) != nil
+                return true
             }
 
-        let quote = lines.joined()
-            .trimmingCharacters(in: .whitespacesAndNewlines)
+        var lines: [String] = []
+        for line in cleanedLines {
+            if line.count >= 3 || Self.hasSentenceEnding(in: line) {
+                lines.append(line)
+                continue
+            }
+
+            guard
+                let previousLine = lines.last,
+                !Self.hasSentenceEnding(in: previousLine),
+                line.allSatisfy({ $0.isChineseCharacter })
+            else { continue }
+
+            lines.append(line)
+        }
+
+        let quote = Self.normalizedInspirationQuote(lines.joined()
+            .trimmingCharacters(in: .whitespacesAndNewlines))
 
         guard quote.count >= 12 else { return nil }
         return quote
+    }
+
+    private static func normalizedInspirationQuote(_ quote: String) -> String {
+        quote
+            .replacingOccurrences(of: "个 “", with: "个“")
+            .replacingOccurrences(of: "“自我么在", with: "“自我”在")
+            .replacingOccurrences(of: "是探索，试错的结果", with: "是探索、试错的结果")
+            .replacingOccurrences(
+                of: "个“自我”在二十岁就是成品(?![。！？!?])",
+                with: "个“自我”在二十岁就是成品。",
+                options: .regularExpression
+            )
+    }
+
+    private static func hasSentenceEnding(in line: String) -> Bool {
+        line.rangeOfCharacter(from: CharacterSet(charactersIn: "。！？!?」”）)")) != nil
     }
 
     private static func cleanedInspirationLine(_ line: String) -> String {
@@ -1145,6 +1176,14 @@ final class FocusStore: ObservableObject {
                 options: .regularExpression
             )
             .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+}
+
+private extension Character {
+    var isChineseCharacter: Bool {
+        unicodeScalars.allSatisfy { scalar in
+            (0x4E00...0x9FFF).contains(Int(scalar.value))
+        }
     }
 }
 
