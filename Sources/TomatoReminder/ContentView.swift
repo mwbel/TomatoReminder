@@ -80,7 +80,8 @@ struct ContentView: View {
                     }
                     let scale = min(1, proxy.size.width / referenceWidth)
                     let contentWidth = max(proxy.size.width / max(scale, 0.01), referenceWidth)
-                    let contentHeight = max(proxy.size.height / max(scale, 0.01), 660)
+                    let availableContentHeight = proxy.size.height / max(scale, 0.01)
+                    let contentHeight = isTimerWorkspace ? max(availableContentHeight, 360) : max(availableContentHeight, 660)
 
                     VStack(spacing: 18) {
                         HeaderView(
@@ -1910,7 +1911,7 @@ private struct TimerPanel: View {
         GeometryReader { proxy in
             let panelWidth = max(proxy.size.width, 1)
             let panelHeight = max(proxy.size.height, 1)
-            let isCompact = panelHeight < 540
+            let isCompact = panelHeight < 580
             let padding = min(max(panelWidth * 0.055, 16), 22)
             let spacing = isCompact ? CGFloat(10) : CGFloat(18)
             let ringSide = min(
