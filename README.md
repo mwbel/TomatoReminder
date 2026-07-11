@@ -25,7 +25,7 @@ swift run TomatoReminder
 ```bash
 chmod +x scripts/build_app.sh
 ./scripts/build_app.sh
-open dist/不忘.app
+open /Applications/不忘.app
 ```
 
 第一次运行时，macOS 可能会询问通知权限。
