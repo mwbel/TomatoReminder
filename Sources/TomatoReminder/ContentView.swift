@@ -2181,12 +2181,14 @@ private struct InspirationTextView: View {
     }
 
     private var displayText: String? {
-        text?
-            .replacingOccurrences(of: "，\n", with: "，")
-            .replacingOccurrences(of: ",\n", with: ",")
-            .replacingOccurrences(of: "，", with: "，\n")
-            .replacingOccurrences(of: ",", with: ",\n")
-            .trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let text else { return nil }
+
+        return ["，", ",", "。", "．", "."].reduce(text) { result, punctuation in
+            result
+                .replacingOccurrences(of: "\(punctuation)\n", with: punctuation)
+                .replacingOccurrences(of: punctuation, with: "\(punctuation)\n")
+        }
+        .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
 
