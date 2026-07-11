@@ -1175,6 +1175,16 @@ final class FocusStore: ObservableObject {
                 with: "，",
                 options: .regularExpression
             )
+            .replacingOccurrences(
+                of: #"[0-9０-９]+"#,
+                with: "",
+                options: .regularExpression
+            )
+            .replacingOccurrences(
+                of: #"^[\s,，、.．。:：;；!！?？]+"#,
+                with: "",
+                options: .regularExpression
+            )
             .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
