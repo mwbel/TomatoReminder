@@ -1907,95 +1907,125 @@ private struct TimerPanel: View {
     var onEnterFullscreen: () -> Void = {}
 
     var body: some View {
-        VStack(spacing: 20) {
-            HStack {
-                Spacer()
+        GeometryReader { proxy in
+            let panelWidth = max(proxy.size.width, 1)
+            let panelHeight = max(proxy.size.height, 1)
+            let isCompact = panelHeight < 540
+            let padding = min(max(panelWidth * 0.055, 16), 22)
+            let spacing = isCompact ? CGFloat(10) : CGFloat(18)
+            let ringSide = min(
+                max(
+                    min(panelWidth - padding * 2, panelHeight * (isCompact ? 0.36 : 0.46)),
+                    168
+                ),
+                340
+            )
+            let ringLineWidth = min(max(ringSide * 0.065, 12), 22)
+            let timeFontSize = min(max(ringSide * 0.22, 40), 64)
+            let taskWidth = min(max(ringSide * 0.76, 170), panelWidth - padding * 2)
+            let smallButtonSize = min(max(ringSide * 0.18, 44), 56)
+            let primaryButtonSize = min(max(ringSide * 0.26, 58), 76)
 
-                Button {
-                    withAnimation(.easeInOut(duration: 0.18)) {
-                        isStatsSidebarVisible.toggle()
+            VStack(spacing: spacing) {
+                HStack {
+                    Spacer()
+
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.18)) {
+                            isStatsSidebarVisible.toggle()
+                        }
+                    } label: {
+                        Image(systemName: "sidebar.right")
                     }
-                } label: {
-                    Image(systemName: "sidebar.right")
+                    .buttonStyle(.plainIcon)
+                    .help(isStatsSidebarVisible ? "隐藏右侧栏" : "显示右侧栏")
+
+                    Button(action: onEnterFullscreen) {
+                        Image(systemName: "arrow.up.left.and.arrow.down.right")
+                    }
+                    .buttonStyle(.plainIcon)
+                    .help("全屏计时")
                 }
-                .buttonStyle(.plainIcon)
-                .help(isStatsSidebarVisible ? "隐藏右侧栏" : "显示右侧栏")
 
-                Button(action: onEnterFullscreen) {
-                    Image(systemName: "arrow.up.left.and.arrow.down.right")
-                }
-                .buttonStyle(.plainIcon)
-                .help("全屏计时")
-            }
+                VStack(spacing: isCompact ? 4 : 6) {
+                    Text(store.selectedMode.title)
+                        .font(.system(size: AppFontSize.scaled(isCompact ? 16 : 18), weight: .bold, design: .rounded))
+                        .foregroundStyle(store.selectedMode.accent)
 
-            VStack(spacing: 6) {
-                Text(store.selectedMode.title)
-                    .font(.system(size: AppFontSize.scaled(18), weight: .bold, design: .rounded))
-                    .foregroundStyle(store.selectedMode.accent)
-
-                Text(store.selectedMode.subtitle)
-                    .font(.system(size: AppFontSize.scaled(13), weight: .medium))
-                    .foregroundStyle(.secondary)
-            }
-
-            ZStack {
-                ProgressRing(progress: store.progress, color: store.selectedMode.accent)
-                    .frame(width: 268, height: 268)
-
-                VStack(spacing: 10) {
-                    Text(store.remainingSeconds.timerText)
-                        .font(.system(size: AppFontSize.scaled(58), weight: .heavy, design: .rounded))
-                        .monospacedDigit()
-                        .foregroundStyle(Color(hex: 0x222222))
-
-                    Text(store.selectedTask?.title ?? "选择一个任务开始")
-                        .font(.system(size: AppFontSize.scaled(14), weight: .semibold))
+                    Text(store.selectedMode.subtitle)
+                        .font(.system(size: AppFontSize.scaled(isCompact ? 12 : 13), weight: .medium))
                         .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.center)
-                        .frame(width: 210)
                 }
+
+                ZStack {
+                    ProgressRing(progress: store.progress, color: store.selectedMode.accent, lineWidth: ringLineWidth)
+                        .frame(width: ringSide, height: ringSide)
+
+                    VStack(spacing: isCompact ? 7 : 10) {
+                        Text(store.remainingSeconds.timerText)
+                            .font(.system(size: AppFontSize.scaled(timeFontSize), weight: .heavy, design: .rounded))
+                            .monospacedDigit()
+                            .foregroundStyle(Color(hex: 0x222222))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.72)
+
+                        Text(store.selectedTask?.title ?? "选择一个任务开始")
+                            .font(.system(size: AppFontSize.scaled(isCompact ? 12 : 14), weight: .semibold))
+                            .foregroundStyle(.secondary)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.center)
+                            .frame(width: taskWidth)
+                    }
+                }
+                .padding(.vertical, isCompact ? 0 : 6)
+
+                InspirationTextView(
+                    text: store.currentInspirationText,
+                    maxWidth: panelWidth - padding * 2,
+                    fontSize: isCompact ? 12 : 14,
+                    lineLimit: isCompact ? 2 : nil
+                )
+
+                HStack(spacing: isCompact ? 12 : 14) {
+                    Button {
+                        store.resetTimer()
+                    } label: {
+                        Image(systemName: "arrow.counterclockwise")
+                            .font(.system(size: AppFontSize.scaled(isCompact ? 15 : 17), weight: .semibold))
+                    }
+                    .buttonStyle(.largeCircle(color: Color(hex: 0xE9ECEF), foreground: Color(hex: 0x40444D), size: smallButtonSize))
+                    .help("重置")
+
+                    Button {
+                        store.toggleTimer()
+                    } label: {
+                        Image(systemName: store.isRunning ? "pause.fill" : "play.fill")
+                            .font(.system(size: AppFontSize.scaled(isCompact ? 21 : 24), weight: .bold))
+                    }
+                    .buttonStyle(.largeCircle(color: store.selectedMode.accent, foreground: .white, size: primaryButtonSize))
+                    .help(store.isRunning ? "暂停" : "开始")
+
+                    Button {
+                        store.finishCurrentIntervalNow()
+                    } label: {
+                        Image(systemName: "checkmark")
+                            .font(.system(size: AppFontSize.scaled(isCompact ? 15 : 17), weight: .semibold))
+                    }
+                    .buttonStyle(.largeCircle(color: Color(hex: 0xE9ECEF), foreground: Color(hex: 0x40444D), size: smallButtonSize))
+                    .help(store.isRunning ? "完成当前计时" : "完成当前任务")
+                    .disabled(!store.isRunning && store.selectedTask == nil)
+                }
+
+                if !isCompact {
+                    FocusDots()
+                }
+
+                Spacer(minLength: 0)
             }
-            .padding(.vertical, 8)
-
-            InspirationTextView(text: store.currentInspirationText, maxWidth: 340)
-
-            HStack(spacing: 14) {
-                Button {
-                    store.resetTimer()
-                } label: {
-                    Image(systemName: "arrow.counterclockwise")
-                        .font(.system(size: AppFontSize.scaled(17), weight: .semibold))
-                }
-                .buttonStyle(.largeCircle(color: Color(hex: 0xE9ECEF), foreground: Color(hex: 0x40444D)))
-                .help("重置")
-
-                Button {
-                    store.toggleTimer()
-                } label: {
-                    Image(systemName: store.isRunning ? "pause.fill" : "play.fill")
-                        .font(.system(size: AppFontSize.scaled(24), weight: .bold))
-                }
-                .buttonStyle(.largeCircle(color: store.selectedMode.accent, foreground: .white, size: 72))
-                .help(store.isRunning ? "暂停" : "开始")
-
-                Button {
-                    store.finishCurrentIntervalNow()
-                } label: {
-                    Image(systemName: "checkmark")
-                        .font(.system(size: AppFontSize.scaled(17), weight: .semibold))
-                }
-                .buttonStyle(.largeCircle(color: Color(hex: 0xE9ECEF), foreground: Color(hex: 0x40444D)))
-                .help(store.isRunning ? "完成当前计时" : "完成当前任务")
-                .disabled(!store.isRunning && store.selectedTask == nil)
-            }
-
-            FocusDots()
-
-            Spacer(minLength: 10)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(padding)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(22)
         .background(.white.opacity(0.66), in: RoundedRectangle(cornerRadius: 8))
         .overlay(
             RoundedRectangle(cornerRadius: 8)
@@ -2127,6 +2157,7 @@ private struct InspirationTextView: View {
     let text: String?
     var maxWidth: CGFloat
     var fontSize: CGFloat = 14
+    var lineLimit: Int?
 
     var body: some View {
         if let text, !text.isEmpty {
@@ -2135,7 +2166,7 @@ private struct InspirationTextView: View {
                 .foregroundStyle(Color(hex: 0x555B64))
                 .multilineTextAlignment(.center)
                 .lineSpacing(4)
-                .lineLimit(nil)
+                .lineLimit(lineLimit)
                 .padding(.horizontal, 18)
                 .padding(.vertical, 12)
                 .frame(maxWidth: maxWidth)
