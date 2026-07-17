@@ -771,6 +771,62 @@ final class FocusStore: ObservableObject {
         }
     }
 
+    func updateTask(
+        _ task: FocusTask,
+        title: String,
+        estimate: Int,
+        priority: TaskPriority,
+        plan: TaskPlan,
+        kind: FocusItemKind,
+        timingStyle: FocusTimingStyle,
+        durationSeconds: Int? = nil,
+        targetAmount: Int? = nil,
+        targetUnit: FocusGoalUnit? = nil,
+        habitFrequency: HabitFrequency? = nil,
+        deadline: Date? = nil,
+        reminderRepeatFrequency: ReminderRepeatFrequency? = nil
+    ) {
+        let trimmed = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty,
+              let index = tasks.firstIndex(where: { $0.id == task.id })
+        else { return }
+
+        var updatedTask = tasks[index]
+        updatedTask.title = trimmed
+        updatedTask.estimate = max(1, estimate)
+        updatedTask.priority = priority
+        updatedTask.plan = plan
+        updatedTask.kind = kind
+
+        if kind == .reminder {
+            updatedTask.timingStyle = FocusTimingStyle.none
+            updatedTask.customDurationSeconds = nil
+            updatedTask.targetAmount = nil
+            updatedTask.targetUnit = nil
+            updatedTask.habitFrequency = nil
+            updatedTask.deadline = nil
+            updatedTask.reminderRepeatFrequency = reminderRepeatFrequency
+        } else {
+            updatedTask.timingStyle = timingStyle
+            updatedTask.customDurationSeconds = durationSeconds.map(clampedDuration)
+            updatedTask.targetAmount = [.habit, .goal].contains(kind) ? targetAmount.map { max(1, $0) } : nil
+            updatedTask.targetUnit = [.habit, .goal].contains(kind) ? targetUnit : nil
+            updatedTask.habitFrequency = kind == .habit ? habitFrequency : nil
+            updatedTask.deadline = kind == .goal ? deadline : nil
+            updatedTask.reminderRepeatFrequency = nil
+        }
+
+        tasks[index] = updatedTask
+
+        if selectedTaskID == task.id, kind == .reminder, isRunning {
+            pauseTimer()
+        }
+
+        if selectedTaskID == task.id, selectedMode == .focus, !isRunning {
+            remainingSeconds = duration(for: .focus)
+        }
+    }
+
     func deleteTasks(at offsets: IndexSet) {
         let ids = offsets.map { tasks[$0].id }
         tasks.remove(atOffsets: offsets)

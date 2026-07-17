@@ -8,6 +8,7 @@ struct ContentView: View {
     @State private var isTaskColumnVisible = true
     @State private var isStatsSidebarVisible = false
     @State private var isAddItemPresented = false
+    @State private var editingTask: FocusTask?
     @State private var selectedPracticeID: UUID?
 
     private var selectedPracticeSummary: PracticeSummary? {
@@ -101,7 +102,13 @@ struct ContentView: View {
                                             selectedSummaryID: $selectedPracticeID
                                         )
                                     } else {
-                                        TaskColumn(selectedPlan: $selectedPlan, searchText: searchText) {
+                                        TaskColumn(
+                                            selectedPlan: $selectedPlan,
+                                            searchText: searchText,
+                                            onEditItem: { task in
+                                                editingTask = task
+                                            }
+                                        ) {
                                             isAddItemPresented = true
                                         }
                                     }
@@ -151,6 +158,28 @@ struct ContentView: View {
                 AddFocusItemDialog(
                     isPresented: $isAddItemPresented,
                     defaultPlan: selectedPlan == .completed ? .today : selectedPlan.defaultTaskPlan
+                )
+                .environmentObject(store)
+                .transition(.opacity.combined(with: .scale(scale: 0.98)))
+                .zIndex(2)
+            }
+
+            if let editingTask {
+                Color.black.opacity(0.24)
+                    .ignoresSafeArea()
+                    .transition(.opacity)
+
+                AddFocusItemDialog(
+                    isPresented: Binding(
+                        get: { self.editingTask != nil },
+                        set: { isPresented in
+                            if !isPresented {
+                                self.editingTask = nil
+                            }
+                        }
+                    ),
+                    defaultPlan: selectedPlan == .completed ? .today : selectedPlan.defaultTaskPlan,
+                    editingTask: editingTask
                 )
                 .environmentObject(store)
                 .transition(.opacity.combined(with: .scale(scale: 0.98)))
@@ -341,6 +370,7 @@ private struct TaskColumn: View {
     @EnvironmentObject private var store: FocusStore
     @Binding var selectedPlan: PlanView
     let searchText: String
+    let onEditItem: (FocusTask) -> Void
     let onAddItem: () -> Void
 
     private var visibleTasks: [FocusTask] {
@@ -372,7 +402,9 @@ private struct TaskColumn: View {
             ScrollView {
                 LazyVStack(spacing: 10) {
                     ForEach(visibleTasks) { task in
-                        TaskRow(task: task)
+                        TaskRow(task: task) {
+                            onEditItem(task)
+                        }
                     }
 
                     if visibleTasks.isEmpty {
@@ -1338,6 +1370,7 @@ private struct AddFocusItemDialog: View {
     @EnvironmentObject private var store: FocusStore
     @Binding var isPresented: Bool
     let defaultPlan: TaskPlan
+    let editingTask: FocusTask?
 
     @State private var category: AddItemCategory = .reminder
     @State private var kind: FocusItemKind = .pomodoro
@@ -1354,16 +1387,53 @@ private struct AddFocusItemDialog: View {
     @State private var useDeadline = true
     @State private var deadline = Calendar.current.date(byAdding: .day, value: 7, to: Date()) ?? Date()
 
+    init(isPresented: Binding<Bool>, defaultPlan: TaskPlan, editingTask: FocusTask? = nil) {
+        self._isPresented = isPresented
+        self.defaultPlan = defaultPlan
+        self.editingTask = editingTask
+
+        let taskKind = editingTask?.kind ?? .pomodoro
+        let isEditingReminder = taskKind == .reminder
+        let durationMinutes = max(1, (editingTask?.customDurationSeconds ?? FocusMode.focus.defaultSeconds) / 60)
+        let fallbackTarget: Int = {
+            switch taskKind {
+            case .goal:
+                return max(durationMinutes, 25)
+            case .habit:
+                return 1
+            case .pomodoro, .reminder:
+                return max(editingTask?.estimate ?? 1, 1)
+            }
+        }()
+
+        self._category = State(initialValue: isEditingReminder ? .reminder : .tomato)
+        self._kind = State(initialValue: taskKind)
+        self._title = State(initialValue: editingTask?.title ?? "")
+        self._plan = State(initialValue: editingTask?.plan ?? defaultPlan)
+        self._priority = State(initialValue: editingTask?.priority ?? .medium)
+        self._estimate = State(initialValue: max(editingTask?.estimate ?? 1, 1))
+        self._timingStyle = State(initialValue: editingTask?.timingStyle ?? (isEditingReminder ? .none : .countdown))
+        self._durationMinutes = State(initialValue: durationMinutes)
+        self._targetAmount = State(initialValue: max(editingTask?.targetAmount ?? fallbackTarget, 1))
+        self._targetUnit = State(initialValue: editingTask?.targetUnit ?? (taskKind == .goal ? .minutes : .times))
+        self._habitFrequency = State(initialValue: editingTask?.habitFrequency ?? .daily)
+        self._reminderRepeatFrequency = State(initialValue: editingTask?.reminderRepeatFrequency ?? .none)
+        self._useDeadline = State(initialValue: editingTask?.deadline != nil || editingTask == nil)
+        self._deadline = State(initialValue: editingTask?.deadline ?? Calendar.current.date(byAdding: .day, value: 7, to: Date()) ?? Date())
+    }
+
     private var dialogTitle: String {
+        let prefix = editingTask == nil ? "添加" : "编辑"
+
         guard category == .tomato else {
-            return "添加提醒事项"
+            return "\(prefix)提醒事项"
         }
 
         switch kind {
-        case .reminder: return "添加提醒事项"
-        case .pomodoro: return "添加待办"
-        case .habit: return "添加习惯养成"
-        case .goal: return "添加目标"
+        case .reminder: return "\(prefix)提醒事项"
+        case .pomodoro: return editingTask == nil ? "添加待办" : "编辑待办"
+        case .habit: return "\(prefix)习惯养成"
+        case .goal: return "\(prefix)目标"
         }
     }
 
@@ -1391,7 +1461,7 @@ private struct AddFocusItemDialog: View {
 
                 Spacer()
 
-                Button(action: createItem) {
+                Button(action: saveItem) {
                     Image(systemName: "checkmark")
                         .font(.system(size: AppFontSize.scaled(24), weight: .black))
                 }
@@ -1433,7 +1503,7 @@ private struct AddFocusItemDialog: View {
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color(hex: 0xDFE3EA), lineWidth: 1)
                     )
-                    .onSubmit(createItem)
+                    .onSubmit(saveItem)
 
                 if category == .tomato {
                     kindSpecificFields
@@ -1465,8 +1535,9 @@ private struct AddFocusItemDialog: View {
         .background(.white, in: RoundedRectangle(cornerRadius: 28, style: .continuous))
         .shadow(color: .black.opacity(0.22), radius: 28, y: 14)
         .onAppear {
-            plan = defaultPlan
-            durationMinutes = store.focusSeconds / 60
+            if editingTask == nil {
+                durationMinutes = store.focusSeconds / 60
+            }
         }
         .onChange(of: category) { _, newCategory in
             switch newCategory {
@@ -1697,7 +1768,7 @@ private struct AddFocusItemDialog: View {
         }
     }
 
-    private func createItem() {
+    private func saveItem() {
         guard canCreate else { return }
 
         let itemKind: FocusItemKind = category == .reminder ? .reminder : kind
@@ -1713,20 +1784,39 @@ private struct AddFocusItemDialog: View {
             normalizedEstimate = targetUnit == .times ? normalizedTarget : max(1, normalizedTarget / max(durationMinutes, 1))
         }
 
-        store.addTask(
-            title: title,
-            estimate: normalizedEstimate,
-            priority: priority,
-            plan: plan,
-            kind: itemKind,
-            timingStyle: itemKind == .reminder ? .none : timingStyle,
-            durationSeconds: itemKind == .reminder ? nil : durationMinutes * 60,
-            targetAmount: [.habit, .goal].contains(itemKind) ? normalizedTarget : nil,
-            targetUnit: [.habit, .goal].contains(itemKind) ? targetUnit : nil,
-            habitFrequency: itemKind == .habit ? habitFrequency : nil,
-            deadline: itemKind == .goal && useDeadline ? deadline : nil,
-            reminderRepeatFrequency: itemKind == .reminder ? reminderRepeatFrequency : nil
-        )
+        if let editingTask {
+            store.updateTask(
+                editingTask,
+                title: title,
+                estimate: normalizedEstimate,
+                priority: priority,
+                plan: plan,
+                kind: itemKind,
+                timingStyle: itemKind == .reminder ? .none : timingStyle,
+                durationSeconds: itemKind == .reminder ? nil : durationMinutes * 60,
+                targetAmount: [.habit, .goal].contains(itemKind) ? normalizedTarget : nil,
+                targetUnit: [.habit, .goal].contains(itemKind) ? targetUnit : nil,
+                habitFrequency: itemKind == .habit ? habitFrequency : nil,
+                deadline: itemKind == .goal && useDeadline ? deadline : nil,
+                reminderRepeatFrequency: itemKind == .reminder ? reminderRepeatFrequency : nil
+            )
+        } else {
+            store.addTask(
+                title: title,
+                estimate: normalizedEstimate,
+                priority: priority,
+                plan: plan,
+                kind: itemKind,
+                timingStyle: itemKind == .reminder ? .none : timingStyle,
+                durationSeconds: itemKind == .reminder ? nil : durationMinutes * 60,
+                targetAmount: [.habit, .goal].contains(itemKind) ? normalizedTarget : nil,
+                targetUnit: [.habit, .goal].contains(itemKind) ? targetUnit : nil,
+                habitFrequency: itemKind == .habit ? habitFrequency : nil,
+                deadline: itemKind == .goal && useDeadline ? deadline : nil,
+                reminderRepeatFrequency: itemKind == .reminder ? reminderRepeatFrequency : nil
+            )
+        }
+
         isPresented = false
     }
 }
@@ -1752,6 +1842,7 @@ private struct TimingStyleChip: View {
 private struct TaskRow: View {
     @EnvironmentObject private var store: FocusStore
     let task: FocusTask
+    let onEdit: () -> Void
     @State private var isSyncingCalendar = false
     @State private var calendarMessage = ""
     @State private var isCalendarMessagePresented = false
@@ -1838,6 +1929,13 @@ private struct TaskRow: View {
             }
 
             Spacer(minLength: 4)
+
+            Button(action: onEdit) {
+                Image(systemName: "pencil")
+                    .font(.system(size: AppFontSize.scaled(13), weight: .bold))
+            }
+            .buttonStyle(.plainIcon)
+            .help("修改名称和番茄钟设置")
 
             Button {
                 syncToCalendar()
